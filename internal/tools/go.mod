@@ -17,9 +17,7 @@ require (
 	github.com/securego/gosec/v2 v2.13.1
 	github.com/uudashr/gopkgs/v2 v2.1.2
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616
-	golang.org/x/oauth2 v0.0.0-20220822191816-0ebed06d0094
-	golang.org/x/tools v0.13.0
-	golang.org/x/tools/gopls v0.9.4
+	golang.org/x/oauth2 v0.24.0
 )
 
 require (
@@ -131,6 +129,7 @@ require (
 	github.com/julz/importas v0.1.0 // indirect
 	github.com/karrick/godirwalk v1.12.0 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
+	github.com/khulnasoft/khulnasoft-go v0.0.0-20241125112000-28307c6bbe7c // indirect
 	github.com/kisielk/errcheck v1.6.2 // indirect
 	github.com/kisielk/gotool v1.0.0 // indirect
 	github.com/kulti/thelper v0.6.3 // indirect
@@ -223,13 +222,13 @@ require (
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.17.0 // indirect
 	golang.org/x/arch v0.0.0-20190927153633-4e8777c89be4 // indirect
-	golang.org/x/crypto v0.21.0 // indirect
+	golang.org/x/crypto v0.29.0 // indirect
 	golang.org/x/exp/typeparams v0.0.0-20220722155223-a9213eeb770e // indirect
-	golang.org/x/mod v0.12.0 // indirect
-	golang.org/x/net v0.23.0 // indirect
-	golang.org/x/sync v0.3.0 // indirect
-	golang.org/x/sys v0.20.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/mod v0.22.0 // indirect
+	golang.org/x/net v0.31.0 // indirect
+	golang.org/x/sync v0.9.0 // indirect
+	golang.org/x/sys v0.27.0 // indirect
+	golang.org/x/text v0.20.0 // indirect
 	golang.org/x/time v0.0.0-20220224211638-0e9765cccd65 // indirect
 	golang.org/x/vuln v0.0.0-20220725105440-4151a5aca1df // indirect
 	google.golang.org/appengine v1.6.7 // indirect
