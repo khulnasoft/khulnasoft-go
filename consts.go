@@ -15,8 +15,8 @@ const (
 	// ZoneRouteRoot is the zones route namespace.
 	ZoneRouteRoot RouteRoot = "zones"
 
-	originCARootCertEccURL = "https://developers.khulnasoft.com/ssl/static/origin_ca_ecc_root.pem"
-	originCARootCertRsaURL = "https://developers.khulnasoft.com/ssl/static/origin_ca_rsa_root.pem"
+	originCARootCertEccURL = "https://developers.cloudflare.com/ssl/static/origin_ca_ecc_root.pem"
+	originCARootCertRsaURL = "https://developers.cloudflare.com/ssl/static/origin_ca_rsa_root.pem"
 
 	// Used for testing.
 	testAccountID    = "01a7362d577a6c3019a474fd6f485823"

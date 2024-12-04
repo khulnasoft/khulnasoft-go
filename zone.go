@@ -867,7 +867,7 @@ func (api *API) UpdateZoneSSLSettings(ctx context.Context, zoneID string, sslVal
 
 // FallbackOrigin returns information about the fallback origin for the specified zone.
 //
-// API reference: https://developers.khulnasoft.com/ssl/ssl-for-saas/api-calls/#fallback-origin-configuration
+// API reference: https://developers.cloudflare.com/ssl/ssl-for-saas/api-calls/#fallback-origin-configuration
 func (api *API) FallbackOrigin(ctx context.Context, zoneID string) (FallbackOrigin, error) {
 	uri := fmt.Sprintf("/zones/%s/fallback_origin", zoneID)
 	res, err := api.makeRequestContext(ctx, http.MethodGet, uri, nil)
@@ -886,7 +886,7 @@ func (api *API) FallbackOrigin(ctx context.Context, zoneID string) (FallbackOrig
 
 // UpdateFallbackOrigin updates the fallback origin for a given zone.
 //
-// API reference: https://developers.khulnasoft.com/ssl/ssl-for-saas/api-calls/#4-example-patch-to-change-fallback-origin
+// API reference: https://developers.cloudflare.com/ssl/ssl-for-saas/api-calls/#4-example-patch-to-change-fallback-origin
 func (api *API) UpdateFallbackOrigin(ctx context.Context, zoneID string, fbo FallbackOrigin) (*FallbackOriginResponse, error) {
 	uri := fmt.Sprintf("/zones/%s/fallback_origin", zoneID)
 	res, err := api.makeRequestContext(ctx, http.MethodPatch, uri, fbo)
