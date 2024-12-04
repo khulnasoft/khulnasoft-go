@@ -161,12 +161,12 @@ type KeylessCertificate struct {
 	// Available permissions for the Keyless SSL for the current user requesting the
 	// item.
 	Permissions []string `json:"permissions,required"`
-	// The keyless SSL port used to communicate between Cloudflare and the client's
+	// The keyless SSL port used to communicate between Khulnasoft and the client's
 	// Keyless SSL server.
 	Port float64 `json:"port,required"`
 	// Status of the Keyless SSL.
 	Status KeylessCertificateStatus `json:"status,required"`
-	// Configuration for using Keyless SSL through a Cloudflare Tunnel
+	// Configuration for using Keyless SSL through a Khulnasoft Tunnel
 	Tunnel Tunnel                 `json:"tunnel"`
 	JSON   keylessCertificateJSON `json:"-"`
 }
@@ -212,11 +212,11 @@ func (r KeylessCertificateStatus) IsKnown() bool {
 	return false
 }
 
-// Configuration for using Keyless SSL through a Cloudflare Tunnel
+// Configuration for using Keyless SSL through a Khulnasoft Tunnel
 type Tunnel struct {
 	// Private IP of the Key Server Host
 	PrivateIP string `json:"private_ip,required"`
-	// Cloudflare Tunnel Virtual Network ID
+	// Khulnasoft Tunnel Virtual Network ID
 	VnetID string     `json:"vnet_id,required"`
 	JSON   tunnelJSON `json:"-"`
 }
@@ -237,11 +237,11 @@ func (r tunnelJSON) RawJSON() string {
 	return r.raw
 }
 
-// Configuration for using Keyless SSL through a Cloudflare Tunnel
+// Configuration for using Keyless SSL through a Khulnasoft Tunnel
 type TunnelParam struct {
 	// Private IP of the Key Server Host
 	PrivateIP param.Field[string] `json:"private_ip,required"`
-	// Cloudflare Tunnel Virtual Network ID
+	// Khulnasoft Tunnel Virtual Network ID
 	VnetID param.Field[string] `json:"vnet_id,required"`
 }
 
@@ -278,7 +278,7 @@ type KeylessCertificateNewParams struct {
 	Certificate param.Field[string] `json:"certificate,required"`
 	// The keyless SSL name.
 	Host param.Field[string] `json:"host,required" format:"hostname"`
-	// The keyless SSL port used to communicate between Cloudflare and the client's
+	// The keyless SSL port used to communicate between Khulnasoft and the client's
 	// Keyless SSL server.
 	Port param.Field[float64] `json:"port,required"`
 	// A ubiquitous bundle has the highest probability of being verified everywhere,
@@ -288,7 +288,7 @@ type KeylessCertificateNewParams struct {
 	BundleMethod param.Field[custom_hostnames.BundleMethod] `json:"bundle_method"`
 	// The keyless SSL name.
 	Name param.Field[string] `json:"name"`
-	// Configuration for using Keyless SSL through a Cloudflare Tunnel
+	// Configuration for using Keyless SSL through a Khulnasoft Tunnel
 	Tunnel param.Field[TunnelParam] `json:"tunnel"`
 }
 
@@ -401,10 +401,10 @@ type KeylessCertificateEditParams struct {
 	Host param.Field[string] `json:"host" format:"hostname"`
 	// The keyless SSL name.
 	Name param.Field[string] `json:"name"`
-	// The keyless SSL port used to communicate between Cloudflare and the client's
+	// The keyless SSL port used to communicate between Khulnasoft and the client's
 	// Keyless SSL server.
 	Port param.Field[float64] `json:"port"`
-	// Configuration for using Keyless SSL through a Cloudflare Tunnel
+	// Configuration for using Keyless SSL through a Khulnasoft Tunnel
 	Tunnel param.Field[TunnelParam] `json:"tunnel"`
 }
 

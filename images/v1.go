@@ -97,7 +97,7 @@ func (r *V1Service) ListAutoPaging(ctx context.Context, params V1ListParams, opt
 	return pagination.NewV4PagePaginationAutoPager(r.List(ctx, params, opts...))
 }
 
-// Delete an image on Cloudflare Images. On success, all copies of the image are
+// Delete an image on Khulnasoft Images. On success, all copies of the image are
 // deleted and purged from cache.
 func (r *V1Service) Delete(ctx context.Context, imageID string, body V1DeleteParams, opts ...option.RequestOption) (res *interface{}, err error) {
 	var env V1DeleteResponseEnvelope

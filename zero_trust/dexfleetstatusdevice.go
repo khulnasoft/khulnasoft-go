@@ -64,7 +64,7 @@ func (r *DEXFleetStatusDeviceService) ListAutoPaging(ctx context.Context, params
 }
 
 type DEXFleetStatusDeviceListResponse struct {
-	// Cloudflare colo
+	// Khulnasoft colo
 	Colo string `json:"colo,required"`
 	// Device identifier (UUID v4)
 	DeviceID string `json:"deviceId,required"`
@@ -113,7 +113,7 @@ type DEXFleetStatusDeviceListParams struct {
 	PerPage param.Field[float64] `query:"per_page,required"`
 	// Time range end in ISO format
 	To param.Field[string] `query:"to,required"`
-	// Cloudflare colo
+	// Khulnasoft colo
 	Colo param.Field[string] `query:"colo"`
 	// Device-specific ID, given as UUID v4
 	DeviceID param.Field[string] `query:"device_id"`

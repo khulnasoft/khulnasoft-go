@@ -172,7 +172,7 @@ func (r *PoolService) Get(ctx context.Context, poolID string, query PoolGetParam
 
 type Pool struct {
 	ID string `json:"id"`
-	// A list of regions from which to run health checks. Null means every Cloudflare
+	// A list of regions from which to run health checks. Null means every Khulnasoft
 	// data center.
 	CheckRegions []CheckRegion `json:"check_regions,nullable"`
 	CreatedOn    string        `json:"created_on"`
@@ -206,7 +206,7 @@ type Pool struct {
 	Name string `json:"name"`
 	// List of networks where Load Balancer or Pool is enabled.
 	Networks []string `json:"networks"`
-	// This field is now deprecated. It has been moved to Cloudflare's Centralized
+	// This field is now deprecated. It has been moved to Khulnasoft's Centralized
 	// Notification service
 	// https://developers.khulnasoft.com/fundamentals/notifications/. The email address
 	// to send health status notifications to. This can be an individual mailbox or a
@@ -307,7 +307,7 @@ type PoolNewParams struct {
 	// The ID of the Monitor to use for checking the health of origins within this
 	// pool.
 	Monitor param.Field[string] `json:"monitor"`
-	// This field is now deprecated. It has been moved to Cloudflare's Centralized
+	// This field is now deprecated. It has been moved to Khulnasoft's Centralized
 	// Notification service
 	// https://developers.khulnasoft.com/fundamentals/notifications/. The email address
 	// to send health status notifications to. This can be an individual mailbox or a
@@ -377,7 +377,7 @@ type PoolUpdateParams struct {
 	// The list of origins within this pool. Traffic directed at this pool is balanced
 	// across all currently healthy origins, provided the pool itself is healthy.
 	Origins param.Field[[]OriginParam] `json:"origins,required"`
-	// A list of regions from which to run health checks. Null means every Cloudflare
+	// A list of regions from which to run health checks. Null means every Khulnasoft
 	// data center.
 	CheckRegions param.Field[[]CheckRegion] `json:"check_regions"`
 	// A human-readable description of the pool.
@@ -401,7 +401,7 @@ type PoolUpdateParams struct {
 	// The ID of the Monitor to use for checking the health of origins within this
 	// pool.
 	Monitor param.Field[string] `json:"monitor"`
-	// This field is now deprecated. It has been moved to Cloudflare's Centralized
+	// This field is now deprecated. It has been moved to Khulnasoft's Centralized
 	// Notification service
 	// https://developers.khulnasoft.com/fundamentals/notifications/. The email address
 	// to send health status notifications to. This can be an individual mailbox or a
@@ -529,7 +529,7 @@ func (r PoolDeleteResponseEnvelopeSuccess) IsKnown() bool {
 type PoolEditParams struct {
 	// Identifier
 	AccountID param.Field[string] `path:"account_id,required"`
-	// A list of regions from which to run health checks. Null means every Cloudflare
+	// A list of regions from which to run health checks. Null means every Khulnasoft
 	// data center.
 	CheckRegions param.Field[[]CheckRegion] `json:"check_regions"`
 	// A human-readable description of the pool.
@@ -556,7 +556,7 @@ type PoolEditParams struct {
 	// A short name (tag) for the pool. Only alphanumeric characters, hyphens, and
 	// underscores are allowed.
 	Name param.Field[string] `json:"name"`
-	// This field is now deprecated. It has been moved to Cloudflare's Centralized
+	// This field is now deprecated. It has been moved to Khulnasoft's Centralized
 	// Notification service
 	// https://developers.khulnasoft.com/fundamentals/notifications/. The email address
 	// to send health status notifications to. This can be an individual mailbox or a

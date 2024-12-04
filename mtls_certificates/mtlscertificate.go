@@ -38,7 +38,7 @@ func NewMTLSCertificateService(opts ...option.RequestOption) (r *MTLSCertificate
 	return
 }
 
-// Upload a certificate that you want to use with mTLS-enabled Cloudflare services.
+// Upload a certificate that you want to use with mTLS-enabled Khulnasoft services.
 func (r *MTLSCertificateService) New(ctx context.Context, params MTLSCertificateNewParams, opts ...option.RequestOption) (res *MTLSCertificateNewResponse, err error) {
 	var env MTLSCertificateNewResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -83,7 +83,7 @@ func (r *MTLSCertificateService) ListAutoPaging(ctx context.Context, query MTLSC
 }
 
 // Deletes the mTLS certificate unless the certificate is in use by one or more
-// Cloudflare services.
+// Khulnasoft services.
 func (r *MTLSCertificateService) Delete(ctx context.Context, mtlsCertificateID string, body MTLSCertificateDeleteParams, opts ...option.RequestOption) (res *MTLSCertificate, err error) {
 	var env MTLSCertificateDeleteResponseEnvelope
 	opts = append(r.Options[:], opts...)

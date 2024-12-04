@@ -36,9 +36,9 @@ func NewPrefixBGPBindingService(opts ...option.RequestOption) (r *PrefixBGPBindi
 }
 
 // Creates a new Service Binding, routing traffic to IPs within the given CIDR to a
-// service running on Cloudflare's network. **Note:** This API may only be used on
+// service running on Khulnasoft's network. **Note:** This API may only be used on
 // prefixes currently configured with a Magic Transit service binding, and only
-// allows creating service bindings for the Cloudflare CDN or Cloudflare Spectrum.
+// allows creating service bindings for the Khulnasoft CDN or Khulnasoft Spectrum.
 func (r *PrefixBGPBindingService) New(ctx context.Context, prefixID string, params PrefixBGPBindingNewParams, opts ...option.RequestOption) (res *ServiceBinding, err error) {
 	var env PrefixBGPBindingNewResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -59,12 +59,12 @@ func (r *PrefixBGPBindingService) New(ctx context.Context, prefixID string, para
 	return
 }
 
-// List the Cloudflare services this prefix is currently bound to. Traffic sent to
-// an address within an IP prefix will be routed to the Cloudflare service of the
+// List the Khulnasoft services this prefix is currently bound to. Traffic sent to
+// an address within an IP prefix will be routed to the Khulnasoft service of the
 // most-specific Service Binding matching the address. **Example:** binding
-// `192.0.2.0/24` to Cloudflare Magic Transit and `192.0.2.1/32` to the Cloudflare
+// `192.0.2.0/24` to Khulnasoft Magic Transit and `192.0.2.1/32` to the Khulnasoft
 // CDN would route traffic for `192.0.2.1` to the CDN, and traffic for all other
-// IPs in the prefix to Cloudflare Magic Transit.
+// IPs in the prefix to Khulnasoft Magic Transit.
 func (r *PrefixBGPBindingService) List(ctx context.Context, prefixID string, query PrefixBGPBindingListParams, opts ...option.RequestOption) (res *pagination.SinglePage[ServiceBinding], err error) {
 	var raw *http.Response
 	opts = append(r.Options[:], opts...)
@@ -90,12 +90,12 @@ func (r *PrefixBGPBindingService) List(ctx context.Context, prefixID string, que
 	return res, nil
 }
 
-// List the Cloudflare services this prefix is currently bound to. Traffic sent to
-// an address within an IP prefix will be routed to the Cloudflare service of the
+// List the Khulnasoft services this prefix is currently bound to. Traffic sent to
+// an address within an IP prefix will be routed to the Khulnasoft service of the
 // most-specific Service Binding matching the address. **Example:** binding
-// `192.0.2.0/24` to Cloudflare Magic Transit and `192.0.2.1/32` to the Cloudflare
+// `192.0.2.0/24` to Khulnasoft Magic Transit and `192.0.2.1/32` to the Khulnasoft
 // CDN would route traffic for `192.0.2.1` to the CDN, and traffic for all other
-// IPs in the prefix to Cloudflare Magic Transit.
+// IPs in the prefix to Khulnasoft Magic Transit.
 func (r *PrefixBGPBindingService) ListAutoPaging(ctx context.Context, prefixID string, query PrefixBGPBindingListParams, opts ...option.RequestOption) *pagination.SinglePageAutoPager[ServiceBinding] {
 	return pagination.NewSinglePageAutoPager(r.List(ctx, prefixID, query, opts...))
 }
@@ -150,11 +150,11 @@ type ServiceBinding struct {
 	ID string `json:"id"`
 	// IP Prefix in Classless Inter-Domain Routing format.
 	CIDR string `json:"cidr"`
-	// Status of a Service Binding's deployment to the Cloudflare network
+	// Status of a Service Binding's deployment to the Khulnasoft network
 	Provisioning ServiceBindingProvisioning `json:"provisioning"`
 	// Identifier
 	ServiceID string `json:"service_id"`
-	// Name of a service running on the Cloudflare network
+	// Name of a service running on the Khulnasoft network
 	ServiceName string             `json:"service_name"`
 	JSON        serviceBindingJSON `json:"-"`
 }
@@ -180,9 +180,9 @@ func (r serviceBindingJSON) RawJSON() string {
 
 func (r ServiceBinding) implementsWorkersBinding() {}
 
-// Status of a Service Binding's deployment to the Cloudflare network
+// Status of a Service Binding's deployment to the Khulnasoft network
 type ServiceBindingProvisioning struct {
-	// When a binding has been deployed to a majority of Cloudflare datacenters, the
+	// When a binding has been deployed to a majority of Khulnasoft datacenters, the
 	// binding will become active and can be used with its associated service.
 	State ServiceBindingProvisioningState `json:"state"`
 	JSON  serviceBindingProvisioningJSON  `json:"-"`
@@ -204,7 +204,7 @@ func (r serviceBindingProvisioningJSON) RawJSON() string {
 	return r.raw
 }
 
-// When a binding has been deployed to a majority of Cloudflare datacenters, the
+// When a binding has been deployed to a majority of Khulnasoft datacenters, the
 // binding will become active and can be used with its associated service.
 type ServiceBindingProvisioningState string
 

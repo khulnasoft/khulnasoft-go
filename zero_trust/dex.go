@@ -94,9 +94,9 @@ type NetworkPathSlot struct {
 	ID string `json:"id,required"`
 	// Round trip time in ms of the client to app mile
 	ClientToAppRTTMs int64 `json:"clientToAppRttMs,required,nullable"`
-	// Round trip time in ms of the client to Cloudflare egress mile
+	// Round trip time in ms of the client to Khulnasoft egress mile
 	ClientToCfEgressRTTMs int64 `json:"clientToCfEgressRttMs,required,nullable"`
-	// Round trip time in ms of the client to Cloudflare ingress mile
+	// Round trip time in ms of the client to Khulnasoft ingress mile
 	ClientToCfIngressRTTMs int64  `json:"clientToCfIngressRttMs,required,nullable"`
 	Timestamp              string `json:"timestamp,required"`
 	// Round trip time in ms of the client to ISP mile

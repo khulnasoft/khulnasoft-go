@@ -34,7 +34,7 @@ func TestCfInterconnectUpdateWithOptionalParams(t *testing.T) {
 			AccountID:   khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
 			Description: khulnasoft.F("Tunnel for Interconnect to ORD"),
 			GRE: khulnasoft.F(magic_transit.CfInterconnectUpdateParamsGRE{
-				CloudflareEndpoint: khulnasoft.F("203.0.113.1"),
+				KhulnasoftEndpoint: khulnasoft.F("203.0.113.1"),
 			}),
 			HealthCheck: khulnasoft.F(magic_transit.CfInterconnectUpdateParamsHealthCheck{
 				Enabled: khulnasoft.F(true),

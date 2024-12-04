@@ -165,7 +165,7 @@ type AppNewResponse struct {
 	// `"1000-2000"`. Notes: If specifying a port range, the number of ports in the
 	// range must match the number of ports specified in the "protocol" field.
 	OriginPort OriginPortUnion `json:"origin_port"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -178,7 +178,7 @@ type AppNewResponse struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType AppNewResponseTrafficType `json:"traffic_type"`
 	JSON        appNewResponseJSON        `json:"-"`
@@ -261,7 +261,7 @@ type AppNewResponseSpectrumConfigAppConfig struct {
 	IPFirewall bool `json:"ip_firewall,required"`
 	// When the Application was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -274,7 +274,7 @@ type AppNewResponseSpectrumConfigAppConfig struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType AppNewResponseSpectrumConfigAppConfigTrafficType `json:"traffic_type,required"`
 	// Enables Argo Smart Routing for this application. Notes: Only available for TCP
@@ -369,7 +369,7 @@ func (r AppNewResponseSpectrumConfigAppConfigTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppNewResponseSpectrumConfigAppConfigTrafficType string
 
@@ -396,7 +396,7 @@ type AppNewResponseSpectrumConfigPaygoAppConfig struct {
 	DNS DNS `json:"dns,required"`
 	// When the Application was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// List of origin IP addresses. Array may contain multiple IP addresses for load
@@ -470,7 +470,7 @@ func (r AppNewResponseTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppNewResponseTrafficType string
 
@@ -515,7 +515,7 @@ type AppUpdateResponse struct {
 	// `"1000-2000"`. Notes: If specifying a port range, the number of ports in the
 	// range must match the number of ports specified in the "protocol" field.
 	OriginPort OriginPortUnion `json:"origin_port"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -528,7 +528,7 @@ type AppUpdateResponse struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType AppUpdateResponseTrafficType `json:"traffic_type"`
 	JSON        appUpdateResponseJSON        `json:"-"`
@@ -612,7 +612,7 @@ type AppUpdateResponseSpectrumConfigAppConfig struct {
 	IPFirewall bool `json:"ip_firewall,required"`
 	// When the Application was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -625,7 +625,7 @@ type AppUpdateResponseSpectrumConfigAppConfig struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType AppUpdateResponseSpectrumConfigAppConfigTrafficType `json:"traffic_type,required"`
 	// Enables Argo Smart Routing for this application. Notes: Only available for TCP
@@ -720,7 +720,7 @@ func (r AppUpdateResponseSpectrumConfigAppConfigTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppUpdateResponseSpectrumConfigAppConfigTrafficType string
 
@@ -747,7 +747,7 @@ type AppUpdateResponseSpectrumConfigPaygoAppConfig struct {
 	DNS DNS `json:"dns,required"`
 	// When the Application was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// List of origin IP addresses. Array may contain multiple IP addresses for load
@@ -821,7 +821,7 @@ func (r AppUpdateResponseTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppUpdateResponseTrafficType string
 
@@ -876,7 +876,7 @@ type AppListResponseArrayItem struct {
 	IPFirewall bool `json:"ip_firewall,required"`
 	// When the Application was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -889,7 +889,7 @@ type AppListResponseArrayItem struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType AppListResponseArrayTrafficType `json:"traffic_type,required"`
 	// Enables Argo Smart Routing for this application. Notes: Only available for TCP
@@ -982,7 +982,7 @@ func (r AppListResponseArrayTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppListResponseArrayTrafficType string
 
@@ -1049,7 +1049,7 @@ type AppGetResponse struct {
 	// `"1000-2000"`. Notes: If specifying a port range, the number of ports in the
 	// range must match the number of ports specified in the "protocol" field.
 	OriginPort OriginPortUnion `json:"origin_port"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -1062,7 +1062,7 @@ type AppGetResponse struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType AppGetResponseTrafficType `json:"traffic_type"`
 	JSON        appGetResponseJSON        `json:"-"`
@@ -1145,7 +1145,7 @@ type AppGetResponseSpectrumConfigAppConfig struct {
 	IPFirewall bool `json:"ip_firewall,required"`
 	// When the Application was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -1158,7 +1158,7 @@ type AppGetResponseSpectrumConfigAppConfig struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType AppGetResponseSpectrumConfigAppConfigTrafficType `json:"traffic_type,required"`
 	// Enables Argo Smart Routing for this application. Notes: Only available for TCP
@@ -1253,7 +1253,7 @@ func (r AppGetResponseSpectrumConfigAppConfigTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppGetResponseSpectrumConfigAppConfigTrafficType string
 
@@ -1280,7 +1280,7 @@ type AppGetResponseSpectrumConfigPaygoAppConfig struct {
 	DNS DNS `json:"dns,required"`
 	// When the Application was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol string `json:"protocol,required"`
 	// List of origin IP addresses. Array may contain multiple IP addresses for load
@@ -1354,7 +1354,7 @@ func (r AppGetResponseTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppGetResponseTrafficType string
 
@@ -1402,7 +1402,7 @@ type AppNewParamsBody struct {
 	// `"1000-2000"`. Notes: If specifying a port range, the number of ports in the
 	// range must match the number of ports specified in the "protocol" field.
 	OriginPort param.Field[OriginPortUnionParam] `json:"origin_port"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol param.Field[string] `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -1415,7 +1415,7 @@ type AppNewParamsBody struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType param.Field[AppNewParamsBodyTrafficType] `json:"traffic_type"`
 }
@@ -1438,7 +1438,7 @@ type AppNewParamsBodySpectrumConfigAppConfig struct {
 	// Enables IP Access Rules for this application. Notes: Only available for TCP
 	// applications.
 	IPFirewall param.Field[bool] `json:"ip_firewall,required"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol param.Field[string] `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -1451,7 +1451,7 @@ type AppNewParamsBodySpectrumConfigAppConfig struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType param.Field[AppNewParamsBodySpectrumConfigAppConfigTrafficType] `json:"traffic_type,required"`
 	// Enables Argo Smart Routing for this application. Notes: Only available for TCP
@@ -1520,7 +1520,7 @@ func (r AppNewParamsBodySpectrumConfigAppConfigTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppNewParamsBodySpectrumConfigAppConfigTrafficType string
 
@@ -1541,7 +1541,7 @@ func (r AppNewParamsBodySpectrumConfigAppConfigTrafficType) IsKnown() bool {
 type AppNewParamsBodySpectrumConfigPaygoAppConfig struct {
 	// The name and type of DNS record for the Spectrum application.
 	DNS param.Field[DNSParam] `json:"dns,required"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol param.Field[string] `json:"protocol,required"`
 	// List of origin IP addresses. Array may contain multiple IP addresses for load
@@ -1597,7 +1597,7 @@ func (r AppNewParamsBodyTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppNewParamsBodyTrafficType string
 
@@ -1688,7 +1688,7 @@ type AppUpdateParamsBody struct {
 	// `"1000-2000"`. Notes: If specifying a port range, the number of ports in the
 	// range must match the number of ports specified in the "protocol" field.
 	OriginPort param.Field[OriginPortUnionParam] `json:"origin_port"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol param.Field[string] `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -1701,7 +1701,7 @@ type AppUpdateParamsBody struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType param.Field[AppUpdateParamsBodyTrafficType] `json:"traffic_type"`
 }
@@ -1725,7 +1725,7 @@ type AppUpdateParamsBodySpectrumConfigAppConfig struct {
 	// Enables IP Access Rules for this application. Notes: Only available for TCP
 	// applications.
 	IPFirewall param.Field[bool] `json:"ip_firewall,required"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol param.Field[string] `json:"protocol,required"`
 	// Enables Proxy Protocol to the origin. Refer to
@@ -1738,7 +1738,7 @@ type AppUpdateParamsBodySpectrumConfigAppConfig struct {
 	// Determines how data travels from the edge to your origin. When set to "direct",
 	// Spectrum will send traffic directly to your origin, and the application's type
 	// is derived from the `protocol`. When set to "http" or "https", Spectrum will
-	// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+	// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 	// the application type matches this property exactly.
 	TrafficType param.Field[AppUpdateParamsBodySpectrumConfigAppConfigTrafficType] `json:"traffic_type,required"`
 	// Enables Argo Smart Routing for this application. Notes: Only available for TCP
@@ -1807,7 +1807,7 @@ func (r AppUpdateParamsBodySpectrumConfigAppConfigTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppUpdateParamsBodySpectrumConfigAppConfigTrafficType string
 
@@ -1828,7 +1828,7 @@ func (r AppUpdateParamsBodySpectrumConfigAppConfigTrafficType) IsKnown() bool {
 type AppUpdateParamsBodySpectrumConfigPaygoAppConfig struct {
 	// The name and type of DNS record for the Spectrum application.
 	DNS param.Field[DNSParam] `json:"dns,required"`
-	// The port configuration at Cloudflare's edge. May specify a single port, for
+	// The port configuration at Khulnasoft's edge. May specify a single port, for
 	// example `"tcp/1000"`, or a range of ports, for example `"tcp/1000-2000"`.
 	Protocol param.Field[string] `json:"protocol,required"`
 	// List of origin IP addresses. Array may contain multiple IP addresses for load
@@ -1885,7 +1885,7 @@ func (r AppUpdateParamsBodyTLS) IsKnown() bool {
 // Determines how data travels from the edge to your origin. When set to "direct",
 // Spectrum will send traffic directly to your origin, and the application's type
 // is derived from the `protocol`. When set to "http" or "https", Spectrum will
-// apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and
+// apply Khulnasoft's HTTP/HTTPS features as it sends traffic to your origin, and
 // the application type matches this property exactly.
 type AppUpdateParamsBodyTrafficType string
 

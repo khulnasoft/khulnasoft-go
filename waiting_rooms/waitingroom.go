@@ -342,7 +342,7 @@ type QueryParam struct {
 	// Configures cookie attributes for the waiting room cookie. This encrypted cookie
 	// stores a user's status in the waiting room, such as queue position.
 	CookieAttributes param.Field[CookieAttributesParam] `json:"cookie_attributes"`
-	// Appends a '\_' + a custom suffix to the end of Cloudflare Waiting Room's cookie
+	// Appends a '\_' + a custom suffix to the end of Khulnasoft Waiting Room's cookie
 	// name(**cf_waitingroom). If `cookie_suffix` is "abcd", the cookie name will be
 	// `**cf_waitingroom_abcd`. This field is required if using `additional_routes`.
 	CookieSuffix param.Field[string] `json:"cookie_suffix"`
@@ -350,7 +350,7 @@ type QueryParam struct {
 	// html file that will be rendered at the edge. If no custom_page_html is provided,
 	// the default waiting room will be used. The template is based on mustache (
 	// https://mustache.github.io/ ). There are several variables that are evaluated by
-	// the Cloudflare edge:
+	// the Khulnasoft edge:
 	//
 	//  1. {{`waitTimeKnown`}} Acts like a boolean value that indicates the behavior to
 	//     take when wait time is not available, for instance when queue_all is
@@ -566,8 +566,8 @@ type QueryParam struct {
 	QueueingMethod param.Field[QueryQueueingMethod] `json:"queueing_method"`
 	// HTTP status code returned to a user while in the queue.
 	QueueingStatusCode param.Field[QueryQueueingStatusCode] `json:"queueing_status_code"`
-	// Lifetime of a cookie (in minutes) set by Cloudflare for users who get access to
-	// the route. If a user is not seen by Cloudflare again in that time period, they
+	// Lifetime of a cookie (in minutes) set by Khulnasoft for users who get access to
+	// the route. If a user is not seen by Khulnasoft again in that time period, they
 	// will be treated as a new user that visits the route.
 	SessionDuration param.Field[int64] `json:"session_duration"`
 	// Suspends or allows traffic going to the waiting room. If set to `true`, the
@@ -696,7 +696,7 @@ type WaitingRoom struct {
 	// Configures cookie attributes for the waiting room cookie. This encrypted cookie
 	// stores a user's status in the waiting room, such as queue position.
 	CookieAttributes CookieAttributes `json:"cookie_attributes"`
-	// Appends a '\_' + a custom suffix to the end of Cloudflare Waiting Room's cookie
+	// Appends a '\_' + a custom suffix to the end of Khulnasoft Waiting Room's cookie
 	// name(**cf_waitingroom). If `cookie_suffix` is "abcd", the cookie name will be
 	// `**cf_waitingroom_abcd`. This field is required if using `additional_routes`.
 	CookieSuffix string    `json:"cookie_suffix"`
@@ -705,7 +705,7 @@ type WaitingRoom struct {
 	// html file that will be rendered at the edge. If no custom_page_html is provided,
 	// the default waiting room will be used. The template is based on mustache (
 	// https://mustache.github.io/ ). There are several variables that are evaluated by
-	// the Cloudflare edge:
+	// the Khulnasoft edge:
 	//
 	//  1. {{`waitTimeKnown`}} Acts like a boolean value that indicates the behavior to
 	//     take when wait time is not available, for instance when queue_all is
@@ -938,8 +938,8 @@ type WaitingRoom struct {
 	QueueingMethod WaitingRoomQueueingMethod `json:"queueing_method"`
 	// HTTP status code returned to a user while in the queue.
 	QueueingStatusCode WaitingRoomQueueingStatusCode `json:"queueing_status_code"`
-	// Lifetime of a cookie (in minutes) set by Cloudflare for users who get access to
-	// the route. If a user is not seen by Cloudflare again in that time period, they
+	// Lifetime of a cookie (in minutes) set by Khulnasoft for users who get access to
+	// the route. If a user is not seen by Khulnasoft again in that time period, they
 	// will be treated as a new user that visits the route.
 	SessionDuration int64 `json:"session_duration"`
 	// Suspends or allows traffic going to the waiting room. If set to `true`, the

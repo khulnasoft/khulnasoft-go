@@ -83,7 +83,7 @@ type TunnelTokenGetResponseArray []interface{}
 func (r TunnelTokenGetResponseArray) ImplementsZeroTrustTunnelTokenGetResponseUnion() {}
 
 type TunnelTokenGetParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 

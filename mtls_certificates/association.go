@@ -34,7 +34,7 @@ func NewAssociationService(opts ...option.RequestOption) (r *AssociationService)
 	return
 }
 
-// Lists all active associations between the certificate and Cloudflare services.
+// Lists all active associations between the certificate and Khulnasoft services.
 func (r *AssociationService) Get(ctx context.Context, mtlsCertificateID string, query AssociationGetParams, opts ...option.RequestOption) (res *[]CertificateAsssociation, err error) {
 	var env AssociationGetResponseEnvelope
 	opts = append(r.Options[:], opts...)

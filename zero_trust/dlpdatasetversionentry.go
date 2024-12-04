@@ -35,7 +35,7 @@ func NewDLPDatasetVersionEntryService(opts ...option.RequestOption) (r *DLPDatas
 }
 
 // This is used for multi-column EDMv2 datasets. The EDMv2 format can only be
-// created in the Cloudflare dashboard.
+// created in the Khulnasoft dashboard.
 func (r *DLPDatasetVersionEntryService) New(ctx context.Context, datasetID string, version int64, entryID string, params DLPDatasetVersionEntryNewParams, opts ...option.RequestOption) (res *DLPDatasetVersionEntryNewResponse, err error) {
 	var env DLPDatasetVersionEntryNewResponseEnvelope
 	opts = append(r.Options[:], opts...)

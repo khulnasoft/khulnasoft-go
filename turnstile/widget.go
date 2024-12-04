@@ -171,10 +171,10 @@ func (r *WidgetService) RotateSecret(ctx context.Context, sitekey string, params
 
 // A Turnstile widget's detailed configuration
 type Widget struct {
-	// If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive
+	// If bot_fight_mode is set to `true`, Khulnasoft issues computationally expensive
 	// challenges in response to malicious bots (ENT only).
 	BotFightMode bool `json:"bot_fight_mode,required"`
-	// If Turnstile is embedded on a Cloudflare site and the widget should grant
+	// If Turnstile is embedded on a Khulnasoft site and the widget should grant
 	// challenge clearance, this setting can determine the clearance level to be set
 	ClearanceLevel WidgetClearanceLevel `json:"clearance_level,required"`
 	// When the widget was created.
@@ -184,11 +184,11 @@ type Widget struct {
 	Mode WidgetMode `json:"mode,required"`
 	// When the widget was modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// Human readable widget name. Not unique. Cloudflare suggests that you set this to
+	// Human readable widget name. Not unique. Khulnasoft suggests that you set this to
 	// a meaningful string to make it easier to identify your widget, and where it is
 	// used.
 	Name string `json:"name,required"`
-	// Do not show any Cloudflare branding on the widget (ENT only).
+	// Do not show any Khulnasoft branding on the widget (ENT only).
 	Offlabel bool `json:"offlabel,required"`
 	// Region where this widget can be used.
 	Region WidgetRegion `json:"region,required"`
@@ -224,7 +224,7 @@ func (r widgetJSON) RawJSON() string {
 	return r.raw
 }
 
-// If Turnstile is embedded on a Cloudflare site and the widget should grant
+// If Turnstile is embedded on a Khulnasoft site and the widget should grant
 // challenge clearance, this setting can determine the clearance level to be set
 type WidgetClearanceLevel string
 
@@ -281,10 +281,10 @@ type WidgetDomainParam = string
 
 // A Turnstile Widgets configuration as it appears in listings
 type WidgetListResponse struct {
-	// If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive
+	// If bot_fight_mode is set to `true`, Khulnasoft issues computationally expensive
 	// challenges in response to malicious bots (ENT only).
 	BotFightMode bool `json:"bot_fight_mode,required"`
-	// If Turnstile is embedded on a Cloudflare site and the widget should grant
+	// If Turnstile is embedded on a Khulnasoft site and the widget should grant
 	// challenge clearance, this setting can determine the clearance level to be set
 	ClearanceLevel WidgetListResponseClearanceLevel `json:"clearance_level,required"`
 	// When the widget was created.
@@ -294,11 +294,11 @@ type WidgetListResponse struct {
 	Mode WidgetListResponseMode `json:"mode,required"`
 	// When the widget was modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
-	// Human readable widget name. Not unique. Cloudflare suggests that you set this to
+	// Human readable widget name. Not unique. Khulnasoft suggests that you set this to
 	// a meaningful string to make it easier to identify your widget, and where it is
 	// used.
 	Name string `json:"name,required"`
-	// Do not show any Cloudflare branding on the widget (ENT only).
+	// Do not show any Khulnasoft branding on the widget (ENT only).
 	Offlabel bool `json:"offlabel,required"`
 	// Region where this widget can be used.
 	Region WidgetListResponseRegion `json:"region,required"`
@@ -332,7 +332,7 @@ func (r widgetListResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// If Turnstile is embedded on a Cloudflare site and the widget should grant
+// If Turnstile is embedded on a Khulnasoft site and the widget should grant
 // challenge clearance, this setting can determine the clearance level to be set
 type WidgetListResponseClearanceLevel string
 
@@ -389,7 +389,7 @@ type WidgetNewParams struct {
 	Domains   param.Field[[]WidgetDomainParam] `json:"domains,required"`
 	// Widget Mode
 	Mode param.Field[WidgetNewParamsMode] `json:"mode,required"`
-	// Human readable widget name. Not unique. Cloudflare suggests that you set this to
+	// Human readable widget name. Not unique. Khulnasoft suggests that you set this to
 	// a meaningful string to make it easier to identify your widget, and where it is
 	// used.
 	Name param.Field[string] `json:"name,required"`
@@ -401,13 +401,13 @@ type WidgetNewParams struct {
 	Page param.Field[float64] `query:"page"`
 	// Number of items per page.
 	PerPage param.Field[float64] `query:"per_page"`
-	// If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive
+	// If bot_fight_mode is set to `true`, Khulnasoft issues computationally expensive
 	// challenges in response to malicious bots (ENT only).
 	BotFightMode param.Field[bool] `json:"bot_fight_mode"`
-	// If Turnstile is embedded on a Cloudflare site and the widget should grant
+	// If Turnstile is embedded on a Khulnasoft site and the widget should grant
 	// challenge clearance, this setting can determine the clearance level to be set
 	ClearanceLevel param.Field[WidgetNewParamsClearanceLevel] `json:"clearance_level"`
-	// Do not show any Cloudflare branding on the widget (ENT only).
+	// Do not show any Khulnasoft branding on the widget (ENT only).
 	Offlabel param.Field[bool] `json:"offlabel"`
 	// Region where this widget can be used.
 	Region param.Field[WidgetNewParamsRegion] `json:"region"`
@@ -477,7 +477,7 @@ func (r WidgetNewParamsOrder) IsKnown() bool {
 	return false
 }
 
-// If Turnstile is embedded on a Cloudflare site and the widget should grant
+// If Turnstile is embedded on a Khulnasoft site and the widget should grant
 // challenge clearance, this setting can determine the clearance level to be set
 type WidgetNewParamsClearanceLevel string
 
@@ -579,17 +579,17 @@ type WidgetUpdateParams struct {
 	Domains   param.Field[[]WidgetDomainParam] `json:"domains,required"`
 	// Widget Mode
 	Mode param.Field[WidgetUpdateParamsMode] `json:"mode,required"`
-	// Human readable widget name. Not unique. Cloudflare suggests that you set this to
+	// Human readable widget name. Not unique. Khulnasoft suggests that you set this to
 	// a meaningful string to make it easier to identify your widget, and where it is
 	// used.
 	Name param.Field[string] `json:"name,required"`
-	// If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive
+	// If bot_fight_mode is set to `true`, Khulnasoft issues computationally expensive
 	// challenges in response to malicious bots (ENT only).
 	BotFightMode param.Field[bool] `json:"bot_fight_mode"`
-	// If Turnstile is embedded on a Cloudflare site and the widget should grant
+	// If Turnstile is embedded on a Khulnasoft site and the widget should grant
 	// challenge clearance, this setting can determine the clearance level to be set
 	ClearanceLevel param.Field[WidgetUpdateParamsClearanceLevel] `json:"clearance_level"`
-	// Do not show any Cloudflare branding on the widget (ENT only).
+	// Do not show any Khulnasoft branding on the widget (ENT only).
 	Offlabel param.Field[bool] `json:"offlabel"`
 }
 
@@ -614,7 +614,7 @@ func (r WidgetUpdateParamsMode) IsKnown() bool {
 	return false
 }
 
-// If Turnstile is embedded on a Cloudflare site and the widget should grant
+// If Turnstile is embedded on a Khulnasoft site and the widget should grant
 // challenge clearance, this setting can determine the clearance level to be set
 type WidgetUpdateParamsClearanceLevel string
 

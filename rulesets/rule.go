@@ -3413,7 +3413,7 @@ func (r SetCacheSettingsRuleAction) IsKnown() bool {
 type SetCacheSettingsRuleActionParameters struct {
 	// List of additional ports that caching can be enabled on.
 	AdditionalCacheablePorts []int64 `json:"additional_cacheable_ports"`
-	// Specify how long client browsers should cache the response. Cloudflare cache
+	// Specify how long client browsers should cache the response. Khulnasoft cache
 	// purge will not purge content cached on client browsers, so high browser TTLs may
 	// lead to stale content.
 	BrowserTTL SetCacheSettingsRuleActionParametersBrowserTTL `json:"browser_ttl"`
@@ -3422,30 +3422,30 @@ type SetCacheSettingsRuleActionParameters struct {
 	// configurations.
 	Cache bool `json:"cache"`
 	// Define which components of the request are included or excluded from the cache
-	// key Cloudflare uses to store the response in cache.
+	// key Khulnasoft uses to store the response in cache.
 	CacheKey SetCacheSettingsRuleActionParametersCacheKey `json:"cache_key"`
 	// Mark whether the request's response from origin is eligible for Cache Reserve
 	// (requires a Cache Reserve add-on plan).
 	CacheReserve SetCacheSettingsRuleActionParametersCacheReserve `json:"cache_reserve"`
 	// TTL (Time to Live) specifies the maximum time to cache a resource in the
-	// Cloudflare edge network.
+	// Khulnasoft edge network.
 	EdgeTTL SetCacheSettingsRuleActionParametersEdgeTTL `json:"edge_ttl"`
-	// When enabled, Cloudflare will aim to strictly adhere to RFC 7234.
+	// When enabled, Khulnasoft will aim to strictly adhere to RFC 7234.
 	OriginCacheControl bool `json:"origin_cache_control"`
-	// Generate Cloudflare error pages from issues sent from the origin server. When
+	// Generate Khulnasoft error pages from issues sent from the origin server. When
 	// on, error pages will trigger for issues from the origin
 	OriginErrorPagePassthru bool `json:"origin_error_page_passthru"`
 	// Define a timeout value between two successive read operations to your origin
-	// server. Historically, the timeout value between two read options from Cloudflare
+	// server. Historically, the timeout value between two read options from Khulnasoft
 	// to an origin server is 100 seconds. If you are attempting to reduce HTTP 524
 	// errors because of timeouts from an origin server, try increasing this timeout
 	// value.
 	ReadTimeout int64 `json:"read_timeout"`
-	// Specify whether or not Cloudflare should respect strong ETag (entity tag)
-	// headers. When off, Cloudflare converts strong ETag headers to weak ETag headers.
+	// Specify whether or not Khulnasoft should respect strong ETag (entity tag)
+	// headers. When off, Khulnasoft converts strong ETag headers to weak ETag headers.
 	RespectStrongEtags bool `json:"respect_strong_etags"`
-	// Define if Cloudflare should serve stale content while getting the latest content
-	// from the origin. If on, Cloudflare will not serve stale content while getting
+	// Define if Khulnasoft should serve stale content while getting the latest content
+	// from the origin. If on, Khulnasoft will not serve stale content while getting
 	// the latest content from the origin.
 	ServeStale SetCacheSettingsRuleActionParametersServeStale `json:"serve_stale"`
 	JSON       setCacheSettingsRuleActionParametersJSON       `json:"-"`
@@ -3477,7 +3477,7 @@ func (r setCacheSettingsRuleActionParametersJSON) RawJSON() string {
 	return r.raw
 }
 
-// Specify how long client browsers should cache the response. Cloudflare cache
+// Specify how long client browsers should cache the response. Khulnasoft cache
 // purge will not purge content cached on client browsers, so high browser TTLs may
 // lead to stale content.
 type SetCacheSettingsRuleActionParametersBrowserTTL struct {
@@ -3523,7 +3523,7 @@ func (r SetCacheSettingsRuleActionParametersBrowserTTLMode) IsKnown() bool {
 }
 
 // Define which components of the request are included or excluded from the cache
-// key Cloudflare uses to store the response in cache.
+// key Khulnasoft uses to store the response in cache.
 type SetCacheSettingsRuleActionParametersCacheKey struct {
 	// Separate cached content based on the visitor’s device type
 	CacheByDeviceType bool `json:"cache_by_device_type"`
@@ -3808,7 +3808,7 @@ func (r setCacheSettingsRuleActionParametersCacheKeyCustomKeyUserJSON) RawJSON()
 // (requires a Cache Reserve add-on plan).
 type SetCacheSettingsRuleActionParametersCacheReserve struct {
 	// Determines whether cache reserve is enabled. If this is true and a request meets
-	// eligibility criteria, Cloudflare will write the resource to cache reserve.
+	// eligibility criteria, Khulnasoft will write the resource to cache reserve.
 	Eligible bool `json:"eligible,required"`
 	// The minimum file size eligible for store in cache reserve.
 	MinimumFileSize int64                                                `json:"minimum_file_size,required"`
@@ -3833,7 +3833,7 @@ func (r setCacheSettingsRuleActionParametersCacheReserveJSON) RawJSON() string {
 }
 
 // TTL (Time to Live) specifies the maximum time to cache a resource in the
-// Cloudflare edge network.
+// Khulnasoft edge network.
 type SetCacheSettingsRuleActionParametersEdgeTTL struct {
 	// The TTL (in seconds) if you choose override_origin mode.
 	Default int64 `json:"default,required"`
@@ -3879,7 +3879,7 @@ func (r SetCacheSettingsRuleActionParametersEdgeTTLMode) IsKnown() bool {
 	return false
 }
 
-// Specify how long Cloudflare should cache the response based on the status code
+// Specify how long Khulnasoft should cache the response based on the status code
 // from the origin. Can be a single status code or a range or status codes
 type SetCacheSettingsRuleActionParametersEdgeTTLStatusCodeTTL struct {
 	// Time to cache a response (in seconds). A value of 0 is equivalent to setting the
@@ -3939,12 +3939,12 @@ func (r setCacheSettingsRuleActionParametersEdgeTTLStatusCodeTTLStatusCodeRangeJ
 	return r.raw
 }
 
-// Define if Cloudflare should serve stale content while getting the latest content
-// from the origin. If on, Cloudflare will not serve stale content while getting
+// Define if Khulnasoft should serve stale content while getting the latest content
+// from the origin. If on, Khulnasoft will not serve stale content while getting
 // the latest content from the origin.
 type SetCacheSettingsRuleActionParametersServeStale struct {
-	// Defines whether Cloudflare should serve stale content while updating. If true,
-	// Cloudflare will not serve stale content while getting the latest content from
+	// Defines whether Khulnasoft should serve stale content while updating. If true,
+	// Khulnasoft will not serve stale content while getting the latest content from
 	// the origin.
 	DisableStaleWhileUpdating bool                                               `json:"disable_stale_while_updating,required"`
 	JSON                      setCacheSettingsRuleActionParametersServeStaleJSON `json:"-"`
@@ -3999,7 +3999,7 @@ func (r SetCacheSettingsRuleParam) implementsRulesetsPhaseUpdateParamsRuleUnion(
 type SetCacheSettingsRuleActionParametersParam struct {
 	// List of additional ports that caching can be enabled on.
 	AdditionalCacheablePorts param.Field[[]int64] `json:"additional_cacheable_ports"`
-	// Specify how long client browsers should cache the response. Cloudflare cache
+	// Specify how long client browsers should cache the response. Khulnasoft cache
 	// purge will not purge content cached on client browsers, so high browser TTLs may
 	// lead to stale content.
 	BrowserTTL param.Field[SetCacheSettingsRuleActionParametersBrowserTTLParam] `json:"browser_ttl"`
@@ -4008,30 +4008,30 @@ type SetCacheSettingsRuleActionParametersParam struct {
 	// configurations.
 	Cache param.Field[bool] `json:"cache"`
 	// Define which components of the request are included or excluded from the cache
-	// key Cloudflare uses to store the response in cache.
+	// key Khulnasoft uses to store the response in cache.
 	CacheKey param.Field[SetCacheSettingsRuleActionParametersCacheKeyParam] `json:"cache_key"`
 	// Mark whether the request's response from origin is eligible for Cache Reserve
 	// (requires a Cache Reserve add-on plan).
 	CacheReserve param.Field[SetCacheSettingsRuleActionParametersCacheReserveParam] `json:"cache_reserve"`
 	// TTL (Time to Live) specifies the maximum time to cache a resource in the
-	// Cloudflare edge network.
+	// Khulnasoft edge network.
 	EdgeTTL param.Field[SetCacheSettingsRuleActionParametersEdgeTTLParam] `json:"edge_ttl"`
-	// When enabled, Cloudflare will aim to strictly adhere to RFC 7234.
+	// When enabled, Khulnasoft will aim to strictly adhere to RFC 7234.
 	OriginCacheControl param.Field[bool] `json:"origin_cache_control"`
-	// Generate Cloudflare error pages from issues sent from the origin server. When
+	// Generate Khulnasoft error pages from issues sent from the origin server. When
 	// on, error pages will trigger for issues from the origin
 	OriginErrorPagePassthru param.Field[bool] `json:"origin_error_page_passthru"`
 	// Define a timeout value between two successive read operations to your origin
-	// server. Historically, the timeout value between two read options from Cloudflare
+	// server. Historically, the timeout value between two read options from Khulnasoft
 	// to an origin server is 100 seconds. If you are attempting to reduce HTTP 524
 	// errors because of timeouts from an origin server, try increasing this timeout
 	// value.
 	ReadTimeout param.Field[int64] `json:"read_timeout"`
-	// Specify whether or not Cloudflare should respect strong ETag (entity tag)
-	// headers. When off, Cloudflare converts strong ETag headers to weak ETag headers.
+	// Specify whether or not Khulnasoft should respect strong ETag (entity tag)
+	// headers. When off, Khulnasoft converts strong ETag headers to weak ETag headers.
 	RespectStrongEtags param.Field[bool] `json:"respect_strong_etags"`
-	// Define if Cloudflare should serve stale content while getting the latest content
-	// from the origin. If on, Cloudflare will not serve stale content while getting
+	// Define if Khulnasoft should serve stale content while getting the latest content
+	// from the origin. If on, Khulnasoft will not serve stale content while getting
 	// the latest content from the origin.
 	ServeStale param.Field[SetCacheSettingsRuleActionParametersServeStaleParam] `json:"serve_stale"`
 }
@@ -4040,7 +4040,7 @@ func (r SetCacheSettingsRuleActionParametersParam) MarshalJSON() (data []byte, e
 	return apijson.MarshalRoot(r)
 }
 
-// Specify how long client browsers should cache the response. Cloudflare cache
+// Specify how long client browsers should cache the response. Khulnasoft cache
 // purge will not purge content cached on client browsers, so high browser TTLs may
 // lead to stale content.
 type SetCacheSettingsRuleActionParametersBrowserTTLParam struct {
@@ -4055,7 +4055,7 @@ func (r SetCacheSettingsRuleActionParametersBrowserTTLParam) MarshalJSON() (data
 }
 
 // Define which components of the request are included or excluded from the cache
-// key Cloudflare uses to store the response in cache.
+// key Khulnasoft uses to store the response in cache.
 type SetCacheSettingsRuleActionParametersCacheKeyParam struct {
 	// Separate cached content based on the visitor’s device type
 	CacheByDeviceType param.Field[bool] `json:"cache_by_device_type"`
@@ -4200,7 +4200,7 @@ func (r SetCacheSettingsRuleActionParametersCacheKeyCustomKeyUserParam) MarshalJ
 // (requires a Cache Reserve add-on plan).
 type SetCacheSettingsRuleActionParametersCacheReserveParam struct {
 	// Determines whether cache reserve is enabled. If this is true and a request meets
-	// eligibility criteria, Cloudflare will write the resource to cache reserve.
+	// eligibility criteria, Khulnasoft will write the resource to cache reserve.
 	Eligible param.Field[bool] `json:"eligible,required"`
 	// The minimum file size eligible for store in cache reserve.
 	MinimumFileSize param.Field[int64] `json:"minimum_file_size,required"`
@@ -4211,7 +4211,7 @@ func (r SetCacheSettingsRuleActionParametersCacheReserveParam) MarshalJSON() (da
 }
 
 // TTL (Time to Live) specifies the maximum time to cache a resource in the
-// Cloudflare edge network.
+// Khulnasoft edge network.
 type SetCacheSettingsRuleActionParametersEdgeTTLParam struct {
 	// The TTL (in seconds) if you choose override_origin mode.
 	Default param.Field[int64] `json:"default,required"`
@@ -4225,7 +4225,7 @@ func (r SetCacheSettingsRuleActionParametersEdgeTTLParam) MarshalJSON() (data []
 	return apijson.MarshalRoot(r)
 }
 
-// Specify how long Cloudflare should cache the response based on the status code
+// Specify how long Khulnasoft should cache the response based on the status code
 // from the origin. Can be a single status code or a range or status codes
 type SetCacheSettingsRuleActionParametersEdgeTTLStatusCodeTTLParam struct {
 	// Time to cache a response (in seconds). A value of 0 is equivalent to setting the
@@ -4254,12 +4254,12 @@ func (r SetCacheSettingsRuleActionParametersEdgeTTLStatusCodeTTLStatusCodeRangeP
 	return apijson.MarshalRoot(r)
 }
 
-// Define if Cloudflare should serve stale content while getting the latest content
-// from the origin. If on, Cloudflare will not serve stale content while getting
+// Define if Khulnasoft should serve stale content while getting the latest content
+// from the origin. If on, Khulnasoft will not serve stale content while getting
 // the latest content from the origin.
 type SetCacheSettingsRuleActionParametersServeStaleParam struct {
-	// Defines whether Cloudflare should serve stale content while updating. If true,
-	// Cloudflare will not serve stale content while getting the latest content from
+	// Defines whether Khulnasoft should serve stale content while updating. If true,
+	// Khulnasoft will not serve stale content while getting the latest content from
 	// the origin.
 	DisableStaleWhileUpdating param.Field[bool] `json:"disable_stale_while_updating,required"`
 }
@@ -4364,7 +4364,7 @@ type SetConfigRuleActionParameters struct {
 	Autominify SetConfigRuleActionParametersAutominify `json:"autominify"`
 	// Turn on or off Browser Integrity Check.
 	BIC bool `json:"bic"`
-	// Turn off all active Cloudflare Apps.
+	// Turn off all active Khulnasoft Apps.
 	DisableApps SetConfigRuleActionParametersDisableApps `json:"disable_apps"`
 	// Turn off Real User Monitoring (RUM).
 	DisableRUM SetConfigRuleActionParametersDisableRUM `json:"disable_rum"`
@@ -4372,7 +4372,7 @@ type SetConfigRuleActionParameters struct {
 	DisableZaraz SetConfigRuleActionParametersDisableZaraz `json:"disable_zaraz"`
 	// Turn on or off Email Obfuscation.
 	EmailObfuscation bool `json:"email_obfuscation"`
-	// Turn on or off Cloudflare Fonts.
+	// Turn on or off Khulnasoft Fonts.
 	Fonts bool `json:"fonts"`
 	// Turn on or off the Hotlink Protection.
 	HotlinkProtection bool `json:"hotlink_protection"`
@@ -4456,7 +4456,7 @@ func (r setConfigRuleActionParametersAutominifyJSON) RawJSON() string {
 	return r.raw
 }
 
-// Turn off all active Cloudflare Apps.
+// Turn off all active Khulnasoft Apps.
 type SetConfigRuleActionParametersDisableApps bool
 
 const (
@@ -4594,7 +4594,7 @@ type SetConfigRuleActionParametersParam struct {
 	Autominify param.Field[SetConfigRuleActionParametersAutominifyParam] `json:"autominify"`
 	// Turn on or off Browser Integrity Check.
 	BIC param.Field[bool] `json:"bic"`
-	// Turn off all active Cloudflare Apps.
+	// Turn off all active Khulnasoft Apps.
 	DisableApps param.Field[SetConfigRuleActionParametersDisableApps] `json:"disable_apps"`
 	// Turn off Real User Monitoring (RUM).
 	DisableRUM param.Field[SetConfigRuleActionParametersDisableRUM] `json:"disable_rum"`
@@ -4602,7 +4602,7 @@ type SetConfigRuleActionParametersParam struct {
 	DisableZaraz param.Field[SetConfigRuleActionParametersDisableZaraz] `json:"disable_zaraz"`
 	// Turn on or off Email Obfuscation.
 	EmailObfuscation param.Field[bool] `json:"email_obfuscation"`
-	// Turn on or off Cloudflare Fonts.
+	// Turn on or off Khulnasoft Fonts.
 	Fonts param.Field[bool] `json:"fonts"`
 	// Turn on or off the Hotlink Protection.
 	HotlinkProtection param.Field[bool] `json:"hotlink_protection"`

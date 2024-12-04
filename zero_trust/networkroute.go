@@ -42,7 +42,7 @@ func NewNetworkRouteService(opts ...option.RequestOption) (r *NetworkRouteServic
 	return
 }
 
-// Routes a private network through a Cloudflare Tunnel.
+// Routes a private network through a Khulnasoft Tunnel.
 func (r *NetworkRouteService) New(ctx context.Context, params NetworkRouteNewParams, opts ...option.RequestOption) (res *Route, err error) {
 	var env NetworkRouteNewResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -259,7 +259,7 @@ func (r TeamnetTunType) IsKnown() bool {
 }
 
 type NetworkRouteNewParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// The private IPv4 or IPv6 range connected by the route, in CIDR notation.
 	Network param.Field[string] `json:"network,required"`
@@ -319,7 +319,7 @@ func (r NetworkRouteNewResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type NetworkRouteListParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// Optional remark describing the route.
 	Comment param.Field[string] `query:"comment"`
@@ -356,7 +356,7 @@ func (r NetworkRouteListParams) URLQuery() (v url.Values) {
 }
 
 type NetworkRouteDeleteParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 
@@ -404,7 +404,7 @@ func (r NetworkRouteDeleteResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type NetworkRouteEditParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// Optional remark describing the route.
 	Comment param.Field[string] `json:"comment"`
@@ -464,7 +464,7 @@ func (r NetworkRouteEditResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type NetworkRouteGetParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 

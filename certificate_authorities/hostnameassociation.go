@@ -78,7 +78,7 @@ type TLSHostnameAssociationParam struct {
 	Hostnames param.Field[[]HostnameAssociationParam] `json:"hostnames"`
 	// The UUID for a certificate that was uploaded to the mTLS Certificate Management
 	// endpoint. If no mtls_certificate_id is given, the hostnames will be associated
-	// to your active Cloudflare Managed CA.
+	// to your active Khulnasoft Managed CA.
 	MTLSCertificateID param.Field[string] `json:"mtls_certificate_id"`
 }
 
@@ -186,7 +186,7 @@ type HostnameAssociationGetParams struct {
 	ZoneID param.Field[string] `path:"zone_id,required"`
 	// The UUID to match against for a certificate that was uploaded to the mTLS
 	// Certificate Management endpoint. If no mtls_certificate_id is given, the results
-	// will be the hostnames associated to your active Cloudflare Managed CA.
+	// will be the hostnames associated to your active Khulnasoft Managed CA.
 	MTLSCertificateID param.Field[string] `query:"mtls_certificate_id"`
 }
 

@@ -109,7 +109,7 @@ func (r *StreamService) ListAutoPaging(ctx context.Context, params StreamListPar
 	return pagination.NewSinglePageAutoPager(r.List(ctx, params, opts...))
 }
 
-// Deletes a video and its copies from Cloudflare Stream.
+// Deletes a video and its copies from Khulnasoft Stream.
 func (r *StreamService) Delete(ctx context.Context, identifier string, body StreamDeleteParams, opts ...option.RequestOption) (err error) {
 	opts = append(r.Options[:], opts...)
 	opts = append([]option.RequestOption{option.WithHeader("Accept", "")}, opts...)
@@ -209,7 +209,7 @@ type Video struct {
 	// divide the desired timestamp by the total duration of the video. If this value
 	// is not set, the default thumbnail image is taken from 0s of the video.
 	ThumbnailTimestampPct float64 `json:"thumbnailTimestampPct"`
-	// A Cloudflare-generated unique identifier for a media item.
+	// A Khulnasoft-generated unique identifier for a media item.
 	UID string `json:"uid"`
 	// The date and time the media item was uploaded.
 	Uploaded time.Time `json:"uploaded" format:"date-time"`

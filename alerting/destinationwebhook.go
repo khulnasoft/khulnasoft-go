@@ -146,7 +146,7 @@ type Webhooks struct {
 	// Timestamp of the last time an attempt to dispatch a notification to this webhook
 	// failed.
 	LastFailure time.Time `json:"last_failure" format:"date-time"`
-	// Timestamp of the last time Cloudflare was able to successfully dispatch a
+	// Timestamp of the last time Khulnasoft was able to successfully dispatch a
 	// notification using this webhook.
 	LastSuccess time.Time `json:"last_success" format:"date-time"`
 	// The name of the webhook destination. This will be included in the request body

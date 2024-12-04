@@ -58,7 +58,7 @@ func (r *NetworkRouteIPService) Get(ctx context.Context, ip string, params Netwo
 }
 
 type NetworkRouteIPGetParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// UUID of the virtual network.
 	VirtualNetworkID param.Field[string] `query:"virtual_network_id" format:"uuid"`

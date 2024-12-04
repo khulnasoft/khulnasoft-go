@@ -149,14 +149,14 @@ type AddressMap struct {
 	// Identifier
 	ID string `json:"id"`
 	// If set to false, then the Address Map cannot be deleted via API. This is true
-	// for Cloudflare-managed maps.
+	// for Khulnasoft-managed maps.
 	CanDelete bool `json:"can_delete"`
 	// If set to false, then the IPs on the Address Map cannot be modified via the API.
-	// This is true for Cloudflare-managed maps.
+	// This is true for Khulnasoft-managed maps.
 	CanModifyIPs bool      `json:"can_modify_ips"`
 	CreatedAt    time.Time `json:"created_at" format:"date-time"`
 	// If you have legacy TLS clients which do not send the TLS server name indicator,
-	// then you can specify one default SNI on the map. If Cloudflare receives a TLS
+	// then you can specify one default SNI on the map. If Khulnasoft receives a TLS
 	// handshake from a client without an SNI, it will respond with the default SNI on
 	// those IPs. The default SNI can be any valid zone or subdomain owned by the
 	// account.
@@ -164,7 +164,7 @@ type AddressMap struct {
 	// An optional description field which may be used to describe the types of IPs or
 	// zones on the map.
 	Description string `json:"description,nullable"`
-	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond
+	// Whether the Address Map is enabled or not. Khulnasoft's DNS will not respond
 	// with IP addresses on an Address Map until the map is enabled.
 	Enabled    bool           `json:"enabled,nullable"`
 	ModifiedAt time.Time      `json:"modified_at" format:"date-time"`
@@ -213,14 +213,14 @@ type AddressMapNewResponse struct {
 	// Identifier
 	ID string `json:"id"`
 	// If set to false, then the Address Map cannot be deleted via API. This is true
-	// for Cloudflare-managed maps.
+	// for Khulnasoft-managed maps.
 	CanDelete bool `json:"can_delete"`
 	// If set to false, then the IPs on the Address Map cannot be modified via the API.
-	// This is true for Cloudflare-managed maps.
+	// This is true for Khulnasoft-managed maps.
 	CanModifyIPs bool      `json:"can_modify_ips"`
 	CreatedAt    time.Time `json:"created_at" format:"date-time"`
 	// If you have legacy TLS clients which do not send the TLS server name indicator,
-	// then you can specify one default SNI on the map. If Cloudflare receives a TLS
+	// then you can specify one default SNI on the map. If Khulnasoft receives a TLS
 	// handshake from a client without an SNI, it will respond with the default SNI on
 	// those IPs. The default SNI can be any valid zone or subdomain owned by the
 	// account.
@@ -228,7 +228,7 @@ type AddressMapNewResponse struct {
 	// An optional description field which may be used to describe the types of IPs or
 	// zones on the map.
 	Description string `json:"description,nullable"`
-	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond
+	// Whether the Address Map is enabled or not. Khulnasoft's DNS will not respond
 	// with IP addresses on an Address Map until the map is enabled.
 	Enabled bool `json:"enabled,nullable"`
 	// The set of IPs on the Address Map.
@@ -397,14 +397,14 @@ type AddressMapGetResponse struct {
 	// Identifier
 	ID string `json:"id"`
 	// If set to false, then the Address Map cannot be deleted via API. This is true
-	// for Cloudflare-managed maps.
+	// for Khulnasoft-managed maps.
 	CanDelete bool `json:"can_delete"`
 	// If set to false, then the IPs on the Address Map cannot be modified via the API.
-	// This is true for Cloudflare-managed maps.
+	// This is true for Khulnasoft-managed maps.
 	CanModifyIPs bool      `json:"can_modify_ips"`
 	CreatedAt    time.Time `json:"created_at" format:"date-time"`
 	// If you have legacy TLS clients which do not send the TLS server name indicator,
-	// then you can specify one default SNI on the map. If Cloudflare receives a TLS
+	// then you can specify one default SNI on the map. If Khulnasoft receives a TLS
 	// handshake from a client without an SNI, it will respond with the default SNI on
 	// those IPs. The default SNI can be any valid zone or subdomain owned by the
 	// account.
@@ -412,7 +412,7 @@ type AddressMapGetResponse struct {
 	// An optional description field which may be used to describe the types of IPs or
 	// zones on the map.
 	Description string `json:"description,nullable"`
-	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond
+	// Whether the Address Map is enabled or not. Khulnasoft's DNS will not respond
 	// with IP addresses on an Address Map until the map is enabled.
 	Enabled bool `json:"enabled,nullable"`
 	// The set of IPs on the Address Map.
@@ -509,7 +509,7 @@ type AddressMapNewParams struct {
 	// An optional description field which may be used to describe the types of IPs or
 	// zones on the map.
 	Description param.Field[string] `json:"description"`
-	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond
+	// Whether the Address Map is enabled or not. Khulnasoft's DNS will not respond
 	// with IP addresses on an Address Map until the map is enabled.
 	Enabled param.Field[bool]     `json:"enabled"`
 	IPs     param.Field[[]string] `json:"ips"`
@@ -590,7 +590,7 @@ type AddressMapEditParams struct {
 	// Identifier
 	AccountID param.Field[string] `path:"account_id,required"`
 	// If you have legacy TLS clients which do not send the TLS server name indicator,
-	// then you can specify one default SNI on the map. If Cloudflare receives a TLS
+	// then you can specify one default SNI on the map. If Khulnasoft receives a TLS
 	// handshake from a client without an SNI, it will respond with the default SNI on
 	// those IPs. The default SNI can be any valid zone or subdomain owned by the
 	// account.
@@ -598,7 +598,7 @@ type AddressMapEditParams struct {
 	// An optional description field which may be used to describe the types of IPs or
 	// zones on the map.
 	Description param.Field[string] `json:"description"`
-	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond
+	// Whether the Address Map is enabled or not. Khulnasoft's DNS will not respond
 	// with IP addresses on an Address Map until the map is enabled.
 	Enabled param.Field[bool] `json:"enabled"`
 }

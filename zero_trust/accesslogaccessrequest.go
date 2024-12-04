@@ -68,7 +68,7 @@ type AccessRequests struct {
 	CreatedAt  time.Time `json:"created_at" format:"date-time"`
 	// The IP address of the authenticating user.
 	IPAddress string `json:"ip_address"`
-	// The unique identifier for the request to Cloudflare.
+	// The unique identifier for the request to Khulnasoft.
 	RayID string `json:"ray_id"`
 	// The email address of the authenticating user.
 	UserEmail string             `json:"user_email" format:"email"`

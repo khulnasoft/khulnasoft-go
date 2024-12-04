@@ -24,7 +24,7 @@ type AuditLogAction = shared.AuditLogAction
 // This is an alias to an internal type.
 type AuditLogActor = shared.AuditLogActor
 
-// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
+// The type of actor, whether a User, Khulnasoft Admin, or an Automated System.
 //
 // This is an alias to an internal type.
 type AuditLogActorType = shared.AuditLogActorType
@@ -36,7 +36,7 @@ const AuditLogActorTypeUser = shared.AuditLogActorTypeUser
 const AuditLogActorTypeAdmin = shared.AuditLogActorTypeAdmin
 
 // This is an alias to an internal value.
-const AuditLogActorTypeCloudflare = shared.AuditLogActorTypeCloudflare
+const AuditLogActorTypeKhulnasoft = shared.AuditLogActorTypeKhulnasoft
 
 // This is an alias to an internal type.
 type AuditLogOwner = shared.AuditLogOwner
@@ -76,53 +76,53 @@ const CertificateRequestTypeOriginECC = shared.CertificateRequestTypeOriginECC
 // This is an alias to an internal value.
 const CertificateRequestTypeKeylessCertificate = shared.CertificateRequestTypeKeylessCertificate
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 //
 // This is an alias to an internal type.
-type CloudflareTunnel = shared.CloudflareTunnel
+type KhulnasoftTunnel = shared.KhulnasoftTunnel
 
 // This is an alias to an internal type.
-type CloudflareTunnelConnection = shared.CloudflareTunnelConnection
+type KhulnasoftTunnelConnection = shared.KhulnasoftTunnelConnection
 
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 //
 // This is an alias to an internal type.
-type CloudflareTunnelStatus = shared.CloudflareTunnelStatus
+type KhulnasoftTunnelStatus = shared.KhulnasoftTunnelStatus
 
 // This is an alias to an internal value.
-const CloudflareTunnelStatusInactive = shared.CloudflareTunnelStatusInactive
+const KhulnasoftTunnelStatusInactive = shared.KhulnasoftTunnelStatusInactive
 
 // This is an alias to an internal value.
-const CloudflareTunnelStatusDegraded = shared.CloudflareTunnelStatusDegraded
+const KhulnasoftTunnelStatusDegraded = shared.KhulnasoftTunnelStatusDegraded
 
 // This is an alias to an internal value.
-const CloudflareTunnelStatusHealthy = shared.CloudflareTunnelStatusHealthy
+const KhulnasoftTunnelStatusHealthy = shared.KhulnasoftTunnelStatusHealthy
 
 // This is an alias to an internal value.
-const CloudflareTunnelStatusDown = shared.CloudflareTunnelStatusDown
+const KhulnasoftTunnelStatusDown = shared.KhulnasoftTunnelStatusDown
 
 // The type of tunnel.
 //
 // This is an alias to an internal type.
-type CloudflareTunnelTunType = shared.CloudflareTunnelTunType
+type KhulnasoftTunnelTunType = shared.KhulnasoftTunnelTunType
 
 // This is an alias to an internal value.
-const CloudflareTunnelTunTypeCfdTunnel = shared.CloudflareTunnelTunTypeCfdTunnel
+const KhulnasoftTunnelTunTypeCfdTunnel = shared.KhulnasoftTunnelTunTypeCfdTunnel
 
 // This is an alias to an internal value.
-const CloudflareTunnelTunTypeWARPConnector = shared.CloudflareTunnelTunTypeWARPConnector
+const KhulnasoftTunnelTunTypeWARPConnector = shared.KhulnasoftTunnelTunTypeWARPConnector
 
 // This is an alias to an internal value.
-const CloudflareTunnelTunTypeIPSec = shared.CloudflareTunnelTunTypeIPSec
+const KhulnasoftTunnelTunTypeIPSec = shared.KhulnasoftTunnelTunTypeIPSec
 
 // This is an alias to an internal value.
-const CloudflareTunnelTunTypeGRE = shared.CloudflareTunnelTunTypeGRE
+const KhulnasoftTunnelTunTypeGRE = shared.KhulnasoftTunnelTunTypeGRE
 
 // This is an alias to an internal value.
-const CloudflareTunnelTunTypeCNI = shared.CloudflareTunnelTunTypeCNI
+const KhulnasoftTunnelTunTypeCNI = shared.KhulnasoftTunnelTunTypeCNI
 
 // This is an alias to an internal type.
 type ErrorData = shared.ErrorData

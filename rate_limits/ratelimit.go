@@ -235,7 +235,7 @@ type RateLimit struct {
 	// Determines which traffic the rate limit counts towards the threshold.
 	Match RateLimitMatch `json:"match"`
 	// The time in seconds (an integer value) to count matching traffic. If the count
-	// exceeds the configured threshold within this period, Cloudflare will perform the
+	// exceeds the configured threshold within this period, Khulnasoft will perform the
 	// configured action.
 	Period float64 `json:"period"`
 	// The threshold that will trigger the configured mitigation action. Configure this
@@ -273,14 +273,14 @@ type RateLimitAction struct {
 	Mode RateLimitActionMode `json:"mode"`
 	// A custom content type and reponse to return when the threshold is exceeded. The
 	// custom response configured in this object will override the custom error for the
-	// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+	// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 	// use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-	// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+	// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 	// not provide the "response" object.
 	Response RateLimitActionResponse `json:"response"`
-	// The time in seconds during which Cloudflare will perform the mitigation action.
+	// The time in seconds during which Khulnasoft will perform the mitigation action.
 	// Must be an integer value greater than or equal to the period. Notes: If "mode"
-	// is "challenge", "managed_challenge", or "js_challenge", Cloudflare will use the
+	// is "challenge", "managed_challenge", or "js_challenge", Khulnasoft will use the
 	// zone's Challenge Passage time and you should not provide this value.
 	Timeout float64             `json:"timeout"`
 	JSON    rateLimitActionJSON `json:"-"`
@@ -324,9 +324,9 @@ func (r RateLimitActionMode) IsKnown() bool {
 
 // A custom content type and reponse to return when the threshold is exceeded. The
 // custom response configured in this object will override the custom error for the
-// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 // use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 // not provide the "response" object.
 type RateLimitActionResponse struct {
 	// The response body to return. The value must conform to the configured content
@@ -498,7 +498,7 @@ func (r rateLimitMatchRequestJSON) RawJSON() string {
 
 type RateLimitMatchResponse struct {
 	// When true, only the uncached traffic served from your origin servers will count
-	// towards rate limiting. In this case, any cached traffic served by Cloudflare
+	// towards rate limiting. In this case, any cached traffic served by Khulnasoft
 	// will not count towards rate limiting. This field is optional. Notes: This field
 	// is deprecated. Instead, use response headers and set "origin_traffic" to "false"
 	// to avoid legacy behaviour interacting with the "response_headers" property.
@@ -551,7 +551,7 @@ type RateLimitNewParams struct {
 	// Determines which traffic the rate limit counts towards the threshold.
 	Match param.Field[RateLimitNewParamsMatch] `json:"match,required"`
 	// The time in seconds (an integer value) to count matching traffic. If the count
-	// exceeds the configured threshold within this period, Cloudflare will perform the
+	// exceeds the configured threshold within this period, Khulnasoft will perform the
 	// configured action.
 	Period param.Field[float64] `json:"period,required"`
 	// The threshold that will trigger the configured mitigation action. Configure this
@@ -570,14 +570,14 @@ type RateLimitNewParamsAction struct {
 	Mode param.Field[RateLimitNewParamsActionMode] `json:"mode"`
 	// A custom content type and reponse to return when the threshold is exceeded. The
 	// custom response configured in this object will override the custom error for the
-	// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+	// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 	// use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-	// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+	// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 	// not provide the "response" object.
 	Response param.Field[RateLimitNewParamsActionResponse] `json:"response"`
-	// The time in seconds during which Cloudflare will perform the mitigation action.
+	// The time in seconds during which Khulnasoft will perform the mitigation action.
 	// Must be an integer value greater than or equal to the period. Notes: If "mode"
-	// is "challenge", "managed_challenge", or "js_challenge", Cloudflare will use the
+	// is "challenge", "managed_challenge", or "js_challenge", Khulnasoft will use the
 	// zone's Challenge Passage time and you should not provide this value.
 	Timeout param.Field[float64] `json:"timeout"`
 }
@@ -607,9 +607,9 @@ func (r RateLimitNewParamsActionMode) IsKnown() bool {
 
 // A custom content type and reponse to return when the threshold is exceeded. The
 // custom response configured in this object will override the custom error for the
-// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 // use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 // not provide the "response" object.
 type RateLimitNewParamsActionResponse struct {
 	// The response body to return. The value must conform to the configured content
@@ -686,7 +686,7 @@ func (r RateLimitNewParamsMatchRequest) MarshalJSON() (data []byte, err error) {
 
 type RateLimitNewParamsMatchResponse struct {
 	// When true, only the uncached traffic served from your origin servers will count
-	// towards rate limiting. In this case, any cached traffic served by Cloudflare
+	// towards rate limiting. In this case, any cached traffic served by Khulnasoft
 	// will not count towards rate limiting. This field is optional. Notes: This field
 	// is deprecated. Instead, use response headers and set "origin_traffic" to "false"
 	// to avoid legacy behaviour interacting with the "response_headers" property.
@@ -806,7 +806,7 @@ type RateLimitEditParams struct {
 	// Determines which traffic the rate limit counts towards the threshold.
 	Match param.Field[RateLimitEditParamsMatch] `json:"match,required"`
 	// The time in seconds (an integer value) to count matching traffic. If the count
-	// exceeds the configured threshold within this period, Cloudflare will perform the
+	// exceeds the configured threshold within this period, Khulnasoft will perform the
 	// configured action.
 	Period param.Field[float64] `json:"period,required"`
 	// The threshold that will trigger the configured mitigation action. Configure this
@@ -825,14 +825,14 @@ type RateLimitEditParamsAction struct {
 	Mode param.Field[RateLimitEditParamsActionMode] `json:"mode"`
 	// A custom content type and reponse to return when the threshold is exceeded. The
 	// custom response configured in this object will override the custom error for the
-	// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+	// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 	// use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-	// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+	// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 	// not provide the "response" object.
 	Response param.Field[RateLimitEditParamsActionResponse] `json:"response"`
-	// The time in seconds during which Cloudflare will perform the mitigation action.
+	// The time in seconds during which Khulnasoft will perform the mitigation action.
 	// Must be an integer value greater than or equal to the period. Notes: If "mode"
-	// is "challenge", "managed_challenge", or "js_challenge", Cloudflare will use the
+	// is "challenge", "managed_challenge", or "js_challenge", Khulnasoft will use the
 	// zone's Challenge Passage time and you should not provide this value.
 	Timeout param.Field[float64] `json:"timeout"`
 }
@@ -862,9 +862,9 @@ func (r RateLimitEditParamsActionMode) IsKnown() bool {
 
 // A custom content type and reponse to return when the threshold is exceeded. The
 // custom response configured in this object will override the custom error for the
-// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 // use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 // not provide the "response" object.
 type RateLimitEditParamsActionResponse struct {
 	// The response body to return. The value must conform to the configured content
@@ -941,7 +941,7 @@ func (r RateLimitEditParamsMatchRequest) MarshalJSON() (data []byte, err error) 
 
 type RateLimitEditParamsMatchResponse struct {
 	// When true, only the uncached traffic served from your origin servers will count
-	// towards rate limiting. In this case, any cached traffic served by Cloudflare
+	// towards rate limiting. In this case, any cached traffic served by Khulnasoft
 	// will not count towards rate limiting. This field is optional. Notes: This field
 	// is deprecated. Instead, use response headers and set "origin_traffic" to "false"
 	// to avoid legacy behaviour interacting with the "response_headers" property.

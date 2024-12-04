@@ -266,7 +266,7 @@ type AzureADConfig struct {
 	ClientID string `json:"client_id"`
 	// Your OAuth Client Secret
 	ClientSecret string `json:"client_secret"`
-	// Should Cloudflare try to load authentication contexts from your account
+	// Should Khulnasoft try to load authentication contexts from your account
 	ConditionalAccessEnabled bool `json:"conditional_access_enabled"`
 	// Your Azure directory uuid
 	DirectoryID string `json:"directory_id"`
@@ -281,7 +281,7 @@ type AzureADConfig struct {
 	// selection experience listing all the accounts either in session or any
 	// remembered account or an option to choose to use a different account altogether.
 	Prompt AzureADConfigPrompt `json:"prompt"`
-	// Should Cloudflare try to load groups from your account
+	// Should Khulnasoft try to load groups from your account
 	SupportGroups bool              `json:"support_groups"`
 	JSON          azureADConfigJSON `json:"-"`
 }
@@ -364,7 +364,7 @@ type AzureADConfigParam struct {
 	ClientID param.Field[string] `json:"client_id"`
 	// Your OAuth Client Secret
 	ClientSecret param.Field[string] `json:"client_secret"`
-	// Should Cloudflare try to load authentication contexts from your account
+	// Should Khulnasoft try to load authentication contexts from your account
 	ConditionalAccessEnabled param.Field[bool] `json:"conditional_access_enabled"`
 	// Your Azure directory uuid
 	DirectoryID param.Field[string] `json:"directory_id"`
@@ -379,7 +379,7 @@ type AzureADConfigParam struct {
 	// selection experience listing all the accounts either in session or any
 	// remembered account or an option to choose to use a different account altogether.
 	Prompt param.Field[AzureADConfigPrompt] `json:"prompt"`
-	// Should Cloudflare try to load groups from your account
+	// Should Khulnasoft try to load groups from your account
 	SupportGroups param.Field[bool] `json:"support_groups"`
 }
 

@@ -170,7 +170,7 @@ type AccountSettings struct {
 	// Specifies the default nameservers to be used for new zones added to this
 	// account.
 	//
-	// - `khulnasoft.standard` for Cloudflare-branded nameservers
+	// - `khulnasoft.standard` for Khulnasoft-branded nameservers
 	// - `custom.account` for account custom nameservers
 	// - `custom.tenant` for tenant custom nameservers
 	//
@@ -210,7 +210,7 @@ func (r accountSettingsJSON) RawJSON() string {
 // Specifies the default nameservers to be used for new zones added to this
 // account.
 //
-// - `khulnasoft.standard` for Cloudflare-branded nameservers
+// - `khulnasoft.standard` for Khulnasoft-branded nameservers
 // - `custom.account` for account custom nameservers
 // - `custom.tenant` for tenant custom nameservers
 //
@@ -220,14 +220,14 @@ func (r accountSettingsJSON) RawJSON() string {
 type AccountSettingsDefaultNameservers string
 
 const (
-	AccountSettingsDefaultNameserversCloudflareStandard AccountSettingsDefaultNameservers = "khulnasoft.standard"
+	AccountSettingsDefaultNameserversKhulnasoftStandard AccountSettingsDefaultNameservers = "khulnasoft.standard"
 	AccountSettingsDefaultNameserversCustomAccount      AccountSettingsDefaultNameservers = "custom.account"
 	AccountSettingsDefaultNameserversCustomTenant       AccountSettingsDefaultNameservers = "custom.tenant"
 )
 
 func (r AccountSettingsDefaultNameservers) IsKnown() bool {
 	switch r {
-	case AccountSettingsDefaultNameserversCloudflareStandard, AccountSettingsDefaultNameserversCustomAccount, AccountSettingsDefaultNameserversCustomTenant:
+	case AccountSettingsDefaultNameserversKhulnasoftStandard, AccountSettingsDefaultNameserversCustomAccount, AccountSettingsDefaultNameserversCustomTenant:
 		return true
 	}
 	return false
@@ -251,7 +251,7 @@ type AccountSettingsParam struct {
 	// Specifies the default nameservers to be used for new zones added to this
 	// account.
 	//
-	// - `khulnasoft.standard` for Cloudflare-branded nameservers
+	// - `khulnasoft.standard` for Khulnasoft-branded nameservers
 	// - `custom.account` for account custom nameservers
 	// - `custom.tenant` for tenant custom nameservers
 	//

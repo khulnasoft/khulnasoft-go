@@ -140,7 +140,7 @@ func (r sippyJSON) RawJSON() string {
 
 // Details about the configured destination bucket
 type SippyDestination struct {
-	// ID of the Cloudflare API token used when writing objects to this bucket
+	// ID of the Khulnasoft API token used when writing objects to this bucket
 	AccessKeyID string `json:"accessKeyId"`
 	Account     string `json:"account"`
 	// Name of the bucket on the provider
@@ -287,7 +287,7 @@ func (r SippyUpdateParamsBodyR2EnableSippyAws) implementsR2SippyUpdateParamsBody
 
 // R2 bucket to copy objects to
 type SippyUpdateParamsBodyR2EnableSippyAwsDestination struct {
-	// ID of a Cloudflare API token. This is the value labelled "Access Key ID" when
+	// ID of a Khulnasoft API token. This is the value labelled "Access Key ID" when
 	// creating an API token from the
 	// [R2 dashboard](https://dash.khulnasoft.com/?to=/:account/r2/api-tokens).
 	//
@@ -295,7 +295,7 @@ type SippyUpdateParamsBodyR2EnableSippyAwsDestination struct {
 	// this token to the bucket you're enabling Sippy for.
 	AccessKeyID param.Field[string]   `json:"accessKeyId"`
 	Provider    param.Field[Provider] `json:"provider"`
-	// Value of a Cloudflare API token. This is the value labelled "Secret Access Key"
+	// Value of a Khulnasoft API token. This is the value labelled "Secret Access Key"
 	// when creating an API token from the
 	// [R2 dashboard](https://dash.khulnasoft.com/?to=/:account/r2/api-tokens).
 	//
@@ -354,7 +354,7 @@ func (r SippyUpdateParamsBodyR2EnableSippyGcs) implementsR2SippyUpdateParamsBody
 
 // R2 bucket to copy objects to
 type SippyUpdateParamsBodyR2EnableSippyGcsDestination struct {
-	// ID of a Cloudflare API token. This is the value labelled "Access Key ID" when
+	// ID of a Khulnasoft API token. This is the value labelled "Access Key ID" when
 	// creating an API token from the
 	// [R2 dashboard](https://dash.khulnasoft.com/?to=/:account/r2/api-tokens).
 	//
@@ -362,7 +362,7 @@ type SippyUpdateParamsBodyR2EnableSippyGcsDestination struct {
 	// this token to the bucket you're enabling Sippy for.
 	AccessKeyID param.Field[string]   `json:"accessKeyId"`
 	Provider    param.Field[Provider] `json:"provider"`
-	// Value of a Cloudflare API token. This is the value labelled "Secret Access Key"
+	// Value of a Khulnasoft API token. This is the value labelled "Secret Access Key"
 	// when creating an API token from the
 	// [R2 dashboard](https://dash.khulnasoft.com/?to=/:account/r2/api-tokens).
 	//

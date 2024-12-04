@@ -44,7 +44,7 @@ func NewCacheService(opts ...option.RequestOption) (r *CacheService) {
 
 // ### Purge All Cached Content
 //
-// Removes ALL files from Cloudflare's cache. All tiers can purge everything.
+// Removes ALL files from Khulnasoft's cache. All tiers can purge everything.
 //
 // ```
 // {"purge_everything": true}
@@ -52,7 +52,7 @@ func NewCacheService(opts ...option.RequestOption) (r *CacheService) {
 //
 // ### Purge Cached Content by URL
 //
-// Granularly removes one or more files from Cloudflare's cache by specifying URLs.
+// Granularly removes one or more files from Khulnasoft's cache by specifying URLs.
 // All tiers can purge by URL.
 //
 // To purge files with custom cache keys, include the headers used to compute the
@@ -82,7 +82,7 @@ func NewCacheService(opts ...option.RequestOption) (r *CacheService) {
 //
 // ### Purge Cached Content by Tag, Host or Prefix
 //
-// Granularly removes one or more files from Cloudflare's cache either by
+// Granularly removes one or more files from Khulnasoft's cache either by
 // specifying the host, the associated Cache-Tag, or a Prefix. Only Enterprise
 // customers are permitted to purge by Tag, Host or Prefix.
 //

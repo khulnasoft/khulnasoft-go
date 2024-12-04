@@ -49,7 +49,7 @@ func (r *EntityASNService) List(ctx context.Context, query EntityASNListParams, 
 
 // Get the requested autonomous system information. A confidence level below `5`
 // indicates a low level of confidence in the traffic data - normally this happens
-// because Cloudflare has a small amount of traffic from/to this AS). Population
+// because Khulnasoft has a small amount of traffic from/to this AS). Population
 // estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 func (r *EntityASNService) Get(ctx context.Context, asn int64, query EntityASNGetParams, opts ...option.RequestOption) (res *EntityASNGetResponse, err error) {
 	var env EntityASNGetResponseEnvelope

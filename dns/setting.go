@@ -102,8 +102,8 @@ type DNSSetting struct {
 	FlattenAllCNAMEs bool `json:"flatten_all_cnames"`
 	// Whether to enable Foundation DNS Advanced Nameservers on the zone.
 	FoundationDNS bool `json:"foundation_dns"`
-	// Whether to enable multi-provider DNS, which causes Cloudflare to activate the
-	// zone even when non-Cloudflare NS records exist, and to respect NS records at the
+	// Whether to enable multi-provider DNS, which causes Khulnasoft to activate the
+	// zone even when non-Khulnasoft NS records exist, and to respect NS records at the
 	// zone apex during outbound zone transfers.
 	MultiProvider bool `json:"multi_provider"`
 	// Settings determining the nameservers through which the zone should be available.
@@ -209,8 +209,8 @@ type DNSSettingParam struct {
 	FlattenAllCNAMEs param.Field[bool] `json:"flatten_all_cnames"`
 	// Whether to enable Foundation DNS Advanced Nameservers on the zone.
 	FoundationDNS param.Field[bool] `json:"foundation_dns"`
-	// Whether to enable multi-provider DNS, which causes Cloudflare to activate the
-	// zone even when non-Cloudflare NS records exist, and to respect NS records at the
+	// Whether to enable multi-provider DNS, which causes Khulnasoft to activate the
+	// zone even when non-Khulnasoft NS records exist, and to respect NS records at the
 	// zone apex during outbound zone transfers.
 	MultiProvider param.Field[bool] `json:"multi_provider"`
 	// Settings determining the nameservers through which the zone should be available.
@@ -282,8 +282,8 @@ func (r nameserverJSON) RawJSON() string {
 type NameserverType string
 
 const (
-	NameserverTypeCloudflareStandard       NameserverType = "khulnasoft.standard"
-	NameserverTypeCloudflareStandardRandom NameserverType = "khulnasoft.standard.random"
+	NameserverTypeKhulnasoftStandard       NameserverType = "khulnasoft.standard"
+	NameserverTypeKhulnasoftStandardRandom NameserverType = "khulnasoft.standard.random"
 	NameserverTypeCustomAccount            NameserverType = "custom.account"
 	NameserverTypeCustomTenant             NameserverType = "custom.tenant"
 	NameserverTypeCustomZone               NameserverType = "custom.zone"
@@ -291,7 +291,7 @@ const (
 
 func (r NameserverType) IsKnown() bool {
 	switch r {
-	case NameserverTypeCloudflareStandard, NameserverTypeCloudflareStandardRandom, NameserverTypeCustomAccount, NameserverTypeCustomTenant, NameserverTypeCustomZone:
+	case NameserverTypeKhulnasoftStandard, NameserverTypeKhulnasoftStandardRandom, NameserverTypeCustomAccount, NameserverTypeCustomTenant, NameserverTypeCustomZone:
 		return true
 	}
 	return false

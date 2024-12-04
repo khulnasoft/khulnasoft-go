@@ -1,8 +1,8 @@
-# Cloudflare Go API Library
+# Khulnasoft Go API Library
 
 <a href="https://pkg.go.dev/github.com/khulnasoft/khulnasoft-go"><img src="https://pkg.go.dev/badge/github.com/khulnasoft/khulnasoft-go.svg" alt="Go Reference"></a>
 
-The Cloudflare Go library provides convenient access to [the Cloudflare REST
+The Khulnasoft Go library provides convenient access to [the Khulnasoft REST
 API](https://developers.khulnasoft.com/api) from applications written in Go. The full API of this library can be found in [api.md](api.md).
 
 ## Installation
@@ -49,8 +49,8 @@ import (
 
 func main() {
 	client := khulnasoft.NewClient(
-		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"), // defaults to os.LookupEnv("CLOUDFLARE_API_KEY")
-		option.WithAPIEmail("user@example.com"),               // defaults to os.LookupEnv("CLOUDFLARE_EMAIL")
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"), // defaults to os.LookupEnv("KHULNASOFT_API_KEY")
+		option.WithAPIEmail("user@example.com"),               // defaults to os.LookupEnv("KHULNASOFT_EMAIL")
 	)
 	zone, err := client.Zones.New(context.TODO(), zones.ZoneNewParams{
 		Account: khulnasoft.F(zones.ZoneNewParamsAccount{

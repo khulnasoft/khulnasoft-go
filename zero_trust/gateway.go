@@ -54,7 +54,7 @@ func NewGatewayService(opts ...option.RequestOption) (r *GatewayService) {
 	return
 }
 
-// Creates a Zero Trust account with an existing Cloudflare account.
+// Creates a Zero Trust account with an existing Khulnasoft account.
 func (r *GatewayService) New(ctx context.Context, body GatewayNewParams, opts ...option.RequestOption) (res *GatewayNewResponse, err error) {
 	var env GatewayNewResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -89,11 +89,11 @@ func (r *GatewayService) List(ctx context.Context, query GatewayListParams, opts
 }
 
 type GatewayNewResponse struct {
-	// Cloudflare account ID.
+	// Khulnasoft account ID.
 	ID string `json:"id"`
 	// Gateway internal ID.
 	GatewayTag string `json:"gateway_tag"`
-	// The name of the provider. Usually Cloudflare.
+	// The name of the provider. Usually Khulnasoft.
 	ProviderName string                 `json:"provider_name"`
 	JSON         gatewayNewResponseJSON `json:"-"`
 }
@@ -117,11 +117,11 @@ func (r gatewayNewResponseJSON) RawJSON() string {
 }
 
 type GatewayListResponse struct {
-	// Cloudflare account ID.
+	// Khulnasoft account ID.
 	ID string `json:"id"`
 	// Gateway internal ID.
 	GatewayTag string `json:"gateway_tag"`
-	// The name of the provider. Usually Cloudflare.
+	// The name of the provider. Usually Khulnasoft.
 	ProviderName string                  `json:"provider_name"`
 	JSON         gatewayListResponseJSON `json:"-"`
 }

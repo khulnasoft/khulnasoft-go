@@ -40,7 +40,7 @@ func NewLiveInputService(opts ...option.RequestOption) (r *LiveInputService) {
 }
 
 // Creates a live input, and returns credentials that you or your users can use to
-// stream live video to Cloudflare Stream.
+// stream live video to Khulnasoft Stream.
 func (r *LiveInputService) New(ctx context.Context, params LiveInputNewParams, opts ...option.RequestOption) (res *LiveInput, err error) {
 	var env LiveInputNewResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -150,7 +150,7 @@ type LiveInput struct {
 	Meta interface{} `json:"meta"`
 	// The date and time the live input was last modified.
 	Modified time.Time `json:"modified" format:"date-time"`
-	// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In
+	// Records the input to a Khulnasoft Stream video. Behavior depends on the mode. In
 	// most cases, the video will initially be viewable as a live video and transition
 	// to on-demand after a condition is satisfied.
 	Recording LiveInputRecording `json:"recording"`
@@ -200,7 +200,7 @@ func (r liveInputJSON) RawJSON() string {
 	return r.raw
 }
 
-// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In
+// Records the input to a Khulnasoft Stream video. Behavior depends on the mode. In
 // most cases, the video will initially be viewable as a live video and transition
 // to on-demand after a condition is satisfied.
 type LiveInputRecording struct {
@@ -519,7 +519,7 @@ type LiveInputNewParams struct {
 	// A user modifiable key-value store used to reference other systems of record for
 	// managing live inputs.
 	Meta param.Field[interface{}] `json:"meta"`
-	// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In
+	// Records the input to a Khulnasoft Stream video. Behavior depends on the mode. In
 	// most cases, the video will initially be viewable as a live video and transition
 	// to on-demand after a condition is satisfied.
 	Recording param.Field[LiveInputNewParamsRecording] `json:"recording"`
@@ -529,7 +529,7 @@ func (r LiveInputNewParams) MarshalJSON() (data []byte, err error) {
 	return apijson.MarshalRoot(r)
 }
 
-// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In
+// Records the input to a Khulnasoft Stream video. Behavior depends on the mode. In
 // most cases, the video will initially be viewable as a live video and transition
 // to on-demand after a condition is satisfied.
 type LiveInputNewParamsRecording struct {
@@ -634,7 +634,7 @@ type LiveInputUpdateParams struct {
 	// A user modifiable key-value store used to reference other systems of record for
 	// managing live inputs.
 	Meta param.Field[interface{}] `json:"meta"`
-	// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In
+	// Records the input to a Khulnasoft Stream video. Behavior depends on the mode. In
 	// most cases, the video will initially be viewable as a live video and transition
 	// to on-demand after a condition is satisfied.
 	Recording param.Field[LiveInputUpdateParamsRecording] `json:"recording"`
@@ -644,7 +644,7 @@ func (r LiveInputUpdateParams) MarshalJSON() (data []byte, err error) {
 	return apijson.MarshalRoot(r)
 }
 
-// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In
+// Records the input to a Khulnasoft Stream video. Behavior depends on the mode. In
 // most cases, the video will initially be viewable as a live video and transition
 // to on-demand after a condition is satisfied.
 type LiveInputUpdateParamsRecording struct {

@@ -148,7 +148,7 @@ func (r *RiskScoringIntegrationService) Get(ctx context.Context, integrationID s
 type RiskScoringIntegrationNewResponse struct {
 	// The id of the integration, a UUIDv4.
 	ID string `json:"id,required" format:"uuid"`
-	// The Cloudflare account tag.
+	// The Khulnasoft account tag.
 	AccountTag string `json:"account_tag,required"`
 	// Whether this integration is enabled and should export changes in risk score.
 	Active bool `json:"active,required"`
@@ -208,7 +208,7 @@ func (r RiskScoringIntegrationNewResponseIntegrationType) IsKnown() bool {
 type RiskScoringIntegrationUpdateResponse struct {
 	// The id of the integration, a UUIDv4.
 	ID string `json:"id,required" format:"uuid"`
-	// The Cloudflare account tag.
+	// The Khulnasoft account tag.
 	AccountTag string `json:"account_tag,required"`
 	// Whether this integration is enabled and should export changes in risk score.
 	Active bool `json:"active,required"`
@@ -268,7 +268,7 @@ func (r RiskScoringIntegrationUpdateResponseIntegrationType) IsKnown() bool {
 type RiskScoringIntegrationListResponse struct {
 	// The id of the integration, a UUIDv4.
 	ID string `json:"id,required" format:"uuid"`
-	// The Cloudflare account tag.
+	// The Khulnasoft account tag.
 	AccountTag string `json:"account_tag,required"`
 	// Whether this integration is enabled and should export changes in risk score.
 	Active bool `json:"active,required"`
@@ -330,7 +330,7 @@ type RiskScoringIntegrationDeleteResponse = interface{}
 type RiskScoringIntegrationGetResponse struct {
 	// The id of the integration, a UUIDv4.
 	ID string `json:"id,required" format:"uuid"`
-	// The Cloudflare account tag.
+	// The Khulnasoft account tag.
 	AccountTag string `json:"account_tag,required"`
 	// Whether this integration is enabled and should export changes in risk score.
 	Active bool `json:"active,required"`

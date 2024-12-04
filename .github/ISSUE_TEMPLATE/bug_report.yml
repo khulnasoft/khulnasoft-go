@@ -17,8 +17,8 @@ body:
   - type: checkboxes
     id: non_api
     attributes:
-      label: Confirm this is a Go library issue and not an underlying Cloudflare API issue
-      description: Issues with the underlying Cloudflare API should be reported via [Cloudflare Support](https://developers.khulnasoft.com/support/contacting-khulnasoft-support)
+      label: Confirm this is a Go library issue and not an underlying Khulnasoft API issue
+      description: Issues with the underlying Khulnasoft API should be reported via [Khulnasoft Support](https://developers.khulnasoft.com/support/contacting-khulnasoft-support)
       options:
         - label: This is an issue with the Go library
           required: true

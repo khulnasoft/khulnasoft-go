@@ -35,7 +35,7 @@ func NewDEXColoService(opts ...option.RequestOption) (r *DEXColoService) {
 	return
 }
 
-// List Cloudflare colos that account's devices were connected to during a time
+// List Khulnasoft colos that account's devices were connected to during a time
 // period, sorted by usage starting from the most used colo. Colos without traffic
 // are also returned and sorted alphabetically.
 func (r *DEXColoService) List(ctx context.Context, params DEXColoListParams, opts ...option.RequestOption) (res *pagination.SinglePage[DEXColoListResponse], err error) {
@@ -59,7 +59,7 @@ func (r *DEXColoService) List(ctx context.Context, params DEXColoListParams, opt
 	return res, nil
 }
 
-// List Cloudflare colos that account's devices were connected to during a time
+// List Khulnasoft colos that account's devices were connected to during a time
 // period, sorted by usage starting from the most used colo. Colos without traffic
 // are also returned and sorted alphabetically.
 func (r *DEXColoService) ListAutoPaging(ctx context.Context, params DEXColoListParams, opts ...option.RequestOption) *pagination.SinglePageAutoPager[DEXColoListResponse] {
@@ -75,7 +75,7 @@ type DEXColoListParams struct {
 	// End time for connection period in RFC3339 (ISO 8601) format.
 	To param.Field[string] `query:"to,required"`
 	// Type of usage that colos should be sorted by. If unspecified, returns all
-	// Cloudflare colos sorted alphabetically.
+	// Khulnasoft colos sorted alphabetically.
 	SortBy param.Field[DEXColoListParamsSortBy] `query:"sortBy"`
 }
 
@@ -88,7 +88,7 @@ func (r DEXColoListParams) URLQuery() (v url.Values) {
 }
 
 // Type of usage that colos should be sorted by. If unspecified, returns all
-// Cloudflare colos sorted alphabetically.
+// Khulnasoft colos sorted alphabetically.
 type DEXColoListParamsSortBy string
 
 const (

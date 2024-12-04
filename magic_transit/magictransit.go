@@ -45,7 +45,7 @@ func NewMagicTransitService(opts ...option.RequestOption) (r *MagicTransitServic
 
 type HealthCheck struct {
 	// The direction of the flow of the healthcheck. Either unidirectional, where the
-	// probe comes to you via the tunnel and the result comes back to Cloudflare via
+	// probe comes to you via the tunnel and the result comes back to Khulnasoft via
 	// the open Internet, or bidirectional where both the probe and result come and go
 	// via the tunnel. Note in the case of bidirecitonal healthchecks, the target field
 	// in health_check is ignored as the interface_address is used to send traffic into
@@ -59,7 +59,7 @@ type HealthCheck struct {
 	// decapsulated at the customer end of the tunnel, the ICMP echo will be forwarded
 	// to this address. This field defaults to `customer_gre_endpoint address`. This
 	// field is ignored for bidirectional healthchecks as the interface_address (not
-	// assigned to the Cloudflare side of the tunnel) is used as the target.
+	// assigned to the Khulnasoft side of the tunnel) is used as the target.
 	Target string `json:"target"`
 	// The type of healthcheck to run, reply or request. The default value is `reply`.
 	Type HealthCheckType `json:"type"`
@@ -86,7 +86,7 @@ func (r healthCheckJSON) RawJSON() string {
 }
 
 // The direction of the flow of the healthcheck. Either unidirectional, where the
-// probe comes to you via the tunnel and the result comes back to Cloudflare via
+// probe comes to you via the tunnel and the result comes back to Khulnasoft via
 // the open Internet, or bidirectional where both the probe and result come and go
 // via the tunnel. Note in the case of bidirecitonal healthchecks, the target field
 // in health_check is ignored as the interface_address is used to send traffic into
@@ -108,7 +108,7 @@ func (r HealthCheckDirection) IsKnown() bool {
 
 type HealthCheckParam struct {
 	// The direction of the flow of the healthcheck. Either unidirectional, where the
-	// probe comes to you via the tunnel and the result comes back to Cloudflare via
+	// probe comes to you via the tunnel and the result comes back to Khulnasoft via
 	// the open Internet, or bidirectional where both the probe and result come and go
 	// via the tunnel. Note in the case of bidirecitonal healthchecks, the target field
 	// in health_check is ignored as the interface_address is used to send traffic into
@@ -122,7 +122,7 @@ type HealthCheckParam struct {
 	// decapsulated at the customer end of the tunnel, the ICMP echo will be forwarded
 	// to this address. This field defaults to `customer_gre_endpoint address`. This
 	// field is ignored for bidirectional healthchecks as the interface_address (not
-	// assigned to the Cloudflare side of the tunnel) is used as the target.
+	// assigned to the Khulnasoft side of the tunnel) is used as the target.
 	Target param.Field[string] `json:"target"`
 	// The type of healthcheck to run, reply or request. The default value is `reply`.
 	Type param.Field[HealthCheckType] `json:"type"`

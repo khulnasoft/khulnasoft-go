@@ -55,7 +55,7 @@ func (r *V1KeyService) Update(ctx context.Context, signingKeyName string, body V
 	return
 }
 
-// Lists your signing keys. These can be found on your Cloudflare Images dashboard.
+// Lists your signing keys. These can be found on your Khulnasoft Images dashboard.
 func (r *V1KeyService) List(ctx context.Context, query V1KeyListParams, opts ...option.RequestOption) (res *V1KeyListResponse, err error) {
 	var env V1KeyListResponseEnvelope
 	opts = append(r.Options[:], opts...)

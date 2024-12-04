@@ -69,7 +69,7 @@ func (r *EdgeService) Get(ctx context.Context, query EdgeGetParams, opts ...opti
 }
 
 type InstantLogpushJob struct {
-	// Unique WebSocket address that will receive messages from Cloudflare’s edge.
+	// Unique WebSocket address that will receive messages from Khulnasoft’s edge.
 	DestinationConf string `json:"destination_conf" format:"uri"`
 	// Comma-separated list of fields.
 	Fields string `json:"fields"`

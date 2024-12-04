@@ -305,7 +305,7 @@ func (r appListResponseMagicAccountAppJSON) RawJSON() string {
 
 func (r AppListResponseMagicAccountApp) implementsMagicTransitAppListResponse() {}
 
-// Managed app defined by Cloudflare.
+// Managed app defined by Khulnasoft.
 type AppListResponseMagicManagedApp struct {
 	// Managed app ID.
 	ManagedAppID string `json:"managed_app_id,required"`

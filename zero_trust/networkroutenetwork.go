@@ -36,7 +36,7 @@ func NewNetworkRouteNetworkService(opts ...option.RequestOption) (r *NetworkRout
 	return
 }
 
-// Routes a private network through a Cloudflare Tunnel. The CIDR in
+// Routes a private network through a Khulnasoft Tunnel. The CIDR in
 // `ip_network_encoded` must be written in URL-encoded format.
 func (r *NetworkRouteNetworkService) New(ctx context.Context, ipNetworkEncoded string, params NetworkRouteNetworkNewParams, opts ...option.RequestOption) (res *Route, err error) {
 	var env NetworkRouteNetworkNewResponseEnvelope
@@ -62,7 +62,7 @@ func (r *NetworkRouteNetworkService) New(ctx context.Context, ipNetworkEncoded s
 // `ip_network_encoded` must be written in URL-encoded format. If no
 // virtual_network_id is provided it will delete the route from the default vnet.
 // If no tun_type is provided it will fetch the type from the tunnel_id or if that
-// is missing it will assume Cloudflare Tunnel as default. If tunnel_id is provided
+// is missing it will assume Khulnasoft Tunnel as default. If tunnel_id is provided
 // it will delete the route from that tunnel, otherwise it will delete the route
 // based on the vnet and tun_type.
 func (r *NetworkRouteNetworkService) Delete(ctx context.Context, ipNetworkEncoded string, params NetworkRouteNetworkDeleteParams, opts ...option.RequestOption) (res *Route, err error) {
@@ -108,7 +108,7 @@ func (r *NetworkRouteNetworkService) Edit(ctx context.Context, ipNetworkEncoded 
 }
 
 type NetworkRouteNetworkNewParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// UUID of the tunnel.
 	TunnelID param.Field[string] `json:"tunnel_id,required" format:"uuid"`
@@ -166,7 +166,7 @@ func (r NetworkRouteNetworkNewResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type NetworkRouteNetworkDeleteParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// The type of tunnel.
 	TunType param.Field[NetworkRouteNetworkDeleteParamsTunType] `query:"tun_type"`
@@ -248,7 +248,7 @@ func (r NetworkRouteNetworkDeleteResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type NetworkRouteNetworkEditParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 

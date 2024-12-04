@@ -58,9 +58,9 @@ type CertificatePackOrderNewResponse struct {
 	// authority specific details or restrictions
 	// [see this page for more details.](https://developers.khulnasoft.com/ssl/reference/certificate-authorities)
 	CertificateAuthority CertificatePackOrderNewResponseCertificateAuthority `json:"certificate_authority"`
-	// Whether or not to add Cloudflare Branding for the order. This will add
+	// Whether or not to add Khulnasoft Branding for the order. This will add
 	// sni.khulnasoftssl.com as the Common Name if set true.
-	CloudflareBranding bool `json:"khulnasoft_branding"`
+	KhulnasoftBranding bool `json:"khulnasoft_branding"`
 	// Comma separated list of valid host names for the certificate packs. Must contain
 	// the zone apex, may not contain more than 50 hosts, and may not be empty.
 	Hosts []Host `json:"hosts"`
@@ -80,7 +80,7 @@ type CertificatePackOrderNewResponse struct {
 type certificatePackOrderNewResponseJSON struct {
 	ID                   apijson.Field
 	CertificateAuthority apijson.Field
-	CloudflareBranding   apijson.Field
+	KhulnasoftBranding   apijson.Field
 	Hosts                apijson.Field
 	Status               apijson.Field
 	Type                 apijson.Field
@@ -183,9 +183,9 @@ type CertificatePackOrderNewParams struct {
 	ValidationMethod param.Field[CertificatePackOrderNewParamsValidationMethod] `json:"validation_method,required"`
 	// Validity Days selected for the order.
 	ValidityDays param.Field[CertificatePackOrderNewParamsValidityDays] `json:"validity_days,required"`
-	// Whether or not to add Cloudflare Branding for the order. This will add
+	// Whether or not to add Khulnasoft Branding for the order. This will add
 	// sni.khulnasoftssl.com as the Common Name if set true.
-	CloudflareBranding param.Field[bool] `json:"khulnasoft_branding"`
+	KhulnasoftBranding param.Field[bool] `json:"khulnasoft_branding"`
 }
 
 func (r CertificatePackOrderNewParams) MarshalJSON() (data []byte, err error) {

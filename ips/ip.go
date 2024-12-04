@@ -36,8 +36,8 @@ func NewIPService(opts ...option.RequestOption) (r *IPService) {
 	return
 }
 
-// Get IPs used on the Cloudflare/JD Cloud network, see
-// https://www.khulnasoft.com/ips for Cloudflare IPs or
+// Get IPs used on the Khulnasoft/JD Cloud network, see
+// https://www.khulnasoft.com/ips for Khulnasoft IPs or
 // https://developers.khulnasoft.com/china-network/reference/infrastructure/ for JD
 // Cloud IPs.
 func (r *IPService) List(ctx context.Context, query IPListParams, opts ...option.RequestOption) (res *IPListResponse, err error) {
@@ -55,9 +55,9 @@ func (r *IPService) List(ctx context.Context, query IPListParams, opts ...option
 type IPs struct {
 	// A digest of the IP data. Useful for determining if the data has changed.
 	Etag string `json:"etag"`
-	// List of Cloudflare IPv4 CIDR addresses.
+	// List of Khulnasoft IPv4 CIDR addresses.
 	IPV4CIDRs []string `json:"ipv4_cidrs"`
-	// List of Cloudflare IPv6 CIDR addresses.
+	// List of Khulnasoft IPv6 CIDR addresses.
 	IPV6CIDRs []string `json:"ipv6_cidrs"`
 	JSON      ipsJSON  `json:"-"`
 }
@@ -84,9 +84,9 @@ func (r IPs) implementsIPsIPListResponse() {}
 type JDCloudIPs struct {
 	// A digest of the IP data. Useful for determining if the data has changed.
 	Etag string `json:"etag"`
-	// List of Cloudflare IPv4 CIDR addresses.
+	// List of Khulnasoft IPv4 CIDR addresses.
 	IPV4CIDRs []string `json:"ipv4_cidrs"`
-	// List of Cloudflare IPv6 CIDR addresses.
+	// List of Khulnasoft IPv6 CIDR addresses.
 	IPV6CIDRs []string `json:"ipv6_cidrs"`
 	// List IPv4 and IPv6 CIDRs, only populated if `?networks=jdcloud` is used.
 	JDCloudCIDRs []string       `json:"jdcloud_cidrs"`

@@ -101,7 +101,7 @@ func (r poolHealthNewResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// A list of regions from which to run health checks. Null means every Cloudflare
+// A list of regions from which to run health checks. Null means every Khulnasoft
 // data center.
 type PoolHealthGetResponse struct {
 	// Pool ID
@@ -335,7 +335,7 @@ type PoolHealthGetParams struct {
 type PoolHealthGetResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
-	// A list of regions from which to run health checks. Null means every Cloudflare
+	// A list of regions from which to run health checks. Null means every Khulnasoft
 	// data center.
 	Result PoolHealthGetResponse `json:"result,required"`
 	// Whether the API call was successful

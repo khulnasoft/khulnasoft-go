@@ -172,16 +172,16 @@ func (r cfInterconnectUpdateResponseModifiedInterconnectJSON) RawJSON() string {
 
 // The configuration specific to GRE interconnects.
 type CfInterconnectUpdateResponseModifiedInterconnectGRE struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel created as part
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel created as part
 	// of the Interconnect.
-	CloudflareEndpoint string                                                  `json:"khulnasoft_endpoint"`
+	KhulnasoftEndpoint string                                                  `json:"khulnasoft_endpoint"`
 	JSON               cfInterconnectUpdateResponseModifiedInterconnectGREJSON `json:"-"`
 }
 
 // cfInterconnectUpdateResponseModifiedInterconnectGREJSON contains the JSON
 // metadata for the struct [CfInterconnectUpdateResponseModifiedInterconnectGRE]
 type cfInterconnectUpdateResponseModifiedInterconnectGREJSON struct {
-	CloudflareEndpoint apijson.Field
+	KhulnasoftEndpoint apijson.Field
 	raw                string
 	ExtraFields        map[string]apijson.Field
 }
@@ -302,16 +302,16 @@ func (r cfInterconnectListResponseInterconnectJSON) RawJSON() string {
 
 // The configuration specific to GRE interconnects.
 type CfInterconnectListResponseInterconnectsGRE struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel created as part
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel created as part
 	// of the Interconnect.
-	CloudflareEndpoint string                                         `json:"khulnasoft_endpoint"`
+	KhulnasoftEndpoint string                                         `json:"khulnasoft_endpoint"`
 	JSON               cfInterconnectListResponseInterconnectsGREJSON `json:"-"`
 }
 
 // cfInterconnectListResponseInterconnectsGREJSON contains the JSON metadata for
 // the struct [CfInterconnectListResponseInterconnectsGRE]
 type cfInterconnectListResponseInterconnectsGREJSON struct {
-	CloudflareEndpoint apijson.Field
+	KhulnasoftEndpoint apijson.Field
 	raw                string
 	ExtraFields        map[string]apijson.Field
 }
@@ -431,16 +431,16 @@ func (r cfInterconnectGetResponseInterconnectJSON) RawJSON() string {
 
 // The configuration specific to GRE interconnects.
 type CfInterconnectGetResponseInterconnectGRE struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel created as part
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel created as part
 	// of the Interconnect.
-	CloudflareEndpoint string                                       `json:"khulnasoft_endpoint"`
+	KhulnasoftEndpoint string                                       `json:"khulnasoft_endpoint"`
 	JSON               cfInterconnectGetResponseInterconnectGREJSON `json:"-"`
 }
 
 // cfInterconnectGetResponseInterconnectGREJSON contains the JSON metadata for the
 // struct [CfInterconnectGetResponseInterconnectGRE]
 type cfInterconnectGetResponseInterconnectGREJSON struct {
-	CloudflareEndpoint apijson.Field
+	KhulnasoftEndpoint apijson.Field
 	raw                string
 	ExtraFields        map[string]apijson.Field
 }
@@ -509,9 +509,9 @@ func (r CfInterconnectUpdateParams) MarshalJSON() (data []byte, err error) {
 
 // The configuration specific to GRE interconnects.
 type CfInterconnectUpdateParamsGRE struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel created as part
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel created as part
 	// of the Interconnect.
-	CloudflareEndpoint param.Field[string] `json:"khulnasoft_endpoint"`
+	KhulnasoftEndpoint param.Field[string] `json:"khulnasoft_endpoint"`
 }
 
 func (r CfInterconnectUpdateParamsGRE) MarshalJSON() (data []byte, err error) {

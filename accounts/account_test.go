@@ -62,7 +62,7 @@ func TestAccountUpdateWithOptionalParams(t *testing.T) {
 			Name: khulnasoft.F("Demo Account"),
 			Settings: khulnasoft.F(accounts.AccountSettingsParam{
 				AbuseContactEmail:           khulnasoft.F("abuse_contact_email"),
-				DefaultNameservers:          khulnasoft.F(accounts.AccountSettingsDefaultNameserversCloudflareStandard),
+				DefaultNameservers:          khulnasoft.F(accounts.AccountSettingsDefaultNameserversKhulnasoftStandard),
 				EnforceTwofactor:            khulnasoft.F(true),
 				UseAccountCustomNSByDefault: khulnasoft.F(true),
 			}),

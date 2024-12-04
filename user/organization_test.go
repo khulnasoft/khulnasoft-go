@@ -30,7 +30,7 @@ func TestOrganizationListWithOptionalParams(t *testing.T) {
 	_, err := client.User.Organizations.List(context.TODO(), user.OrganizationListParams{
 		Direction: khulnasoft.F(user.OrganizationListParamsDirectionAsc),
 		Match:     khulnasoft.F(user.OrganizationListParamsMatchAny),
-		Name:      khulnasoft.F("Cloudflare, Inc."),
+		Name:      khulnasoft.F("Khulnasoft, Inc."),
 		Order:     khulnasoft.F(user.OrganizationListParamsOrderID),
 		Page:      khulnasoft.F(1.000000),
 		PerPage:   khulnasoft.F(5.000000),

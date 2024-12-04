@@ -119,7 +119,7 @@ func (r connectivitySettingGetResponseJSON) RawJSON() string {
 }
 
 type ConnectivitySettingEditParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// A flag to enable the ICMP proxy for the account network.
 	IcmpProxyEnabled param.Field[bool] `json:"icmp_proxy_enabled"`
@@ -175,7 +175,7 @@ func (r ConnectivitySettingEditResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type ConnectivitySettingGetParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 

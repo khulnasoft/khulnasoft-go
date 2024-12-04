@@ -75,7 +75,7 @@ type UniversalSSLSettings struct {
 	// uploaded for the domain, visitors will be unable to access the domain over
 	// HTTPS.
 	//
-	// By disabling Universal SSL, you understand that the following Cloudflare
+	// By disabling Universal SSL, you understand that the following Khulnasoft
 	// settings and preferences will result in visitors being unable to visit your
 	// domain unless you have uploaded a custom certificate or purchased an advanced
 	// certificate.
@@ -86,12 +86,12 @@ type UniversalSSLSettings struct {
 	// - Onion Routing
 	// - Any Page Rules redirecting traffic to HTTPS
 	//
-	// Similarly, any HTTP redirect to HTTPS at the origin while the Cloudflare proxy
+	// Similarly, any HTTP redirect to HTTPS at the origin while the Khulnasoft proxy
 	// is enabled will result in users being unable to visit your site without a valid
-	// certificate at Cloudflare's edge.
+	// certificate at Khulnasoft's edge.
 	//
-	// If you do not have a valid custom or advanced certificate at Cloudflare's edge
-	// and are unsure if any of the above Cloudflare settings are enabled, or if any
+	// If you do not have a valid custom or advanced certificate at Khulnasoft's edge
+	// and are unsure if any of the above Khulnasoft settings are enabled, or if any
 	// HTTP redirects exist at your origin, we advise leaving Universal SSL enabled for
 	// your domain.
 	Enabled bool                     `json:"enabled"`
@@ -121,7 +121,7 @@ type UniversalSSLSettingsParam struct {
 	// uploaded for the domain, visitors will be unable to access the domain over
 	// HTTPS.
 	//
-	// By disabling Universal SSL, you understand that the following Cloudflare
+	// By disabling Universal SSL, you understand that the following Khulnasoft
 	// settings and preferences will result in visitors being unable to visit your
 	// domain unless you have uploaded a custom certificate or purchased an advanced
 	// certificate.
@@ -132,12 +132,12 @@ type UniversalSSLSettingsParam struct {
 	// - Onion Routing
 	// - Any Page Rules redirecting traffic to HTTPS
 	//
-	// Similarly, any HTTP redirect to HTTPS at the origin while the Cloudflare proxy
+	// Similarly, any HTTP redirect to HTTPS at the origin while the Khulnasoft proxy
 	// is enabled will result in users being unable to visit your site without a valid
-	// certificate at Cloudflare's edge.
+	// certificate at Khulnasoft's edge.
 	//
-	// If you do not have a valid custom or advanced certificate at Cloudflare's edge
-	// and are unsure if any of the above Cloudflare settings are enabled, or if any
+	// If you do not have a valid custom or advanced certificate at Khulnasoft's edge
+	// and are unsure if any of the above Khulnasoft settings are enabled, or if any
 	// HTTP redirects exist at your origin, we advise leaving Universal SSL enabled for
 	// your domain.
 	Enabled param.Field[bool] `json:"enabled"`

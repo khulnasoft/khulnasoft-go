@@ -51,7 +51,7 @@ func TestGatewayConfigurationUpdateWithOptionalParams(t *testing.T) {
 				LogoPath:        khulnasoft.F("https://logos.com/a.png"),
 				MailtoAddress:   khulnasoft.F("admin@example.com"),
 				MailtoSubject:   khulnasoft.F("Blocked User Inquiry"),
-				Name:            khulnasoft.F("Cloudflare"),
+				Name:            khulnasoft.F("Khulnasoft"),
 				SuppressFooter:  khulnasoft.F(false),
 			}),
 			BodyScanning: khulnasoft.F(zero_trust.BodyScanningSettingsParam{
@@ -128,7 +128,7 @@ func TestGatewayConfigurationEditWithOptionalParams(t *testing.T) {
 				LogoPath:        khulnasoft.F("https://logos.com/a.png"),
 				MailtoAddress:   khulnasoft.F("admin@example.com"),
 				MailtoSubject:   khulnasoft.F("Blocked User Inquiry"),
-				Name:            khulnasoft.F("Cloudflare"),
+				Name:            khulnasoft.F("Khulnasoft"),
 				SuppressFooter:  khulnasoft.F(false),
 			}),
 			BodyScanning: khulnasoft.F(zero_trust.BodyScanningSettingsParam{

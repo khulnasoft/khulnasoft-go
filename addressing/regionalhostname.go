@@ -38,7 +38,7 @@ func NewRegionalHostnameService(opts ...option.RequestOption) (r *RegionalHostna
 	return
 }
 
-// Create a new Regional Hostname entry. Cloudflare will only use data centers that
+// Create a new Regional Hostname entry. Khulnasoft will only use data centers that
 // are physically located within the chosen region to decrypt and service HTTPS
 // traffic. Learn more about
 // [Regional Services](https://developers.khulnasoft.com/data-localization/regional-services/get-started/).

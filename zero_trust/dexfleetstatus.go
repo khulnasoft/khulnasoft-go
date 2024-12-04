@@ -208,7 +208,7 @@ type DEXFleetStatusOverTimeParams struct {
 	From param.Field[string] `query:"from,required"`
 	// Time range end in ISO format
 	To param.Field[string] `query:"to,required"`
-	// Cloudflare colo
+	// Khulnasoft colo
 	Colo param.Field[string] `query:"colo"`
 	// Device-specific ID, given as UUID v4
 	DeviceID param.Field[string] `query:"device_id"`

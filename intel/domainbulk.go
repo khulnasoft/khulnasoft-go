@@ -66,7 +66,7 @@ type DomainBulkGetResponse struct {
 	// inherited, if applicable.
 	InheritedFrom      string                                   `json:"inherited_from"`
 	InheritedRiskTypes []DomainBulkGetResponseInheritedRiskType `json:"inherited_risk_types"`
-	// Global Cloudflare 100k ranking for the last 30 days, if available for the
+	// Global Khulnasoft 100k ranking for the last 30 days, if available for the
 	// hostname. The top ranked domain is 1, the lowest ranked domain is 100,000.
 	PopularityRank int64 `json:"popularity_rank"`
 	// Hostname risk score, which is a value between 0 (lowest risk) to 1 (highest

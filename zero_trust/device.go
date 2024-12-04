@@ -112,7 +112,7 @@ type Device struct {
 	IP string `json:"ip"`
 	// The device's public key.
 	Key string `json:"key"`
-	// When the device last connected to Cloudflare services.
+	// When the device last connected to Khulnasoft services.
 	LastSeen time.Time `json:"last_seen" format:"date-time"`
 	// The device mac address.
 	MacAddress string `json:"mac_address"`

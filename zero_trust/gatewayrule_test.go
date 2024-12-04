@@ -116,7 +116,7 @@ func TestGatewayRuleNewWithOptionalParams(t *testing.T) {
 			PayloadLog: khulnasoft.F(zero_trust.RuleSettingPayloadLogParam{
 				Enabled: khulnasoft.F(true),
 			}),
-			ResolveDNSThroughCloudflare: khulnasoft.F(true),
+			ResolveDNSThroughKhulnasoft: khulnasoft.F(true),
 			UntrustedCERT: khulnasoft.F(zero_trust.RuleSettingUntrustedCERTParam{
 				Action: khulnasoft.F(zero_trust.RuleSettingUntrustedCERTActionPassThrough),
 			}),
@@ -247,7 +247,7 @@ func TestGatewayRuleUpdateWithOptionalParams(t *testing.T) {
 				PayloadLog: khulnasoft.F(zero_trust.RuleSettingPayloadLogParam{
 					Enabled: khulnasoft.F(true),
 				}),
-				ResolveDNSThroughCloudflare: khulnasoft.F(true),
+				ResolveDNSThroughKhulnasoft: khulnasoft.F(true),
 				UntrustedCERT: khulnasoft.F(zero_trust.RuleSettingUntrustedCERTParam{
 					Action: khulnasoft.F(zero_trust.RuleSettingUntrustedCERTActionPassThrough),
 				}),

@@ -29,7 +29,7 @@ func TestIPSECTunnelNewWithOptionalParams(t *testing.T) {
 	)
 	_, err := client.MagicTransit.IPSECTunnels.New(context.TODO(), magic_transit.IPSECTunnelNewParams{
 		AccountID:          khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
-		CloudflareEndpoint: khulnasoft.F("203.0.113.1"),
+		KhulnasoftEndpoint: khulnasoft.F("203.0.113.1"),
 		InterfaceAddress:   khulnasoft.F("192.0.2.0/31"),
 		Name:               khulnasoft.F("IPsec_1"),
 		CustomerEndpoint:   khulnasoft.F("203.0.113.1"),
@@ -71,7 +71,7 @@ func TestIPSECTunnelUpdateWithOptionalParams(t *testing.T) {
 		"023e105f4ecef8ad9ca31a8372d0c353",
 		magic_transit.IPSECTunnelUpdateParams{
 			AccountID:          khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
-			CloudflareEndpoint: khulnasoft.F("203.0.113.1"),
+			KhulnasoftEndpoint: khulnasoft.F("203.0.113.1"),
 			InterfaceAddress:   khulnasoft.F("192.0.2.0/31"),
 			Name:               khulnasoft.F("IPsec_1"),
 			CustomerEndpoint:   khulnasoft.F("203.0.113.1"),

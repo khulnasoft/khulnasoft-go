@@ -75,7 +75,7 @@ func (r *UserSchemaOperationService) ListAutoPaging(ctx context.Context, schemaI
 type UserSchemaOperationListResponse struct {
 	// The endpoint which can contain path parameter templates in curly braces, each
 	// will be replaced from left to right with {varN}, starting with {var1}, during
-	// insertion. This will further be Cloudflare-normalized upon insertion. See:
+	// insertion. This will further be Khulnasoft-normalized upon insertion. See:
 	// https://developers.khulnasoft.com/rules/normalization/how-it-works/.
 	Endpoint string `json:"endpoint,required" format:"uri-template"`
 	// RFC3986-compliant host.
@@ -150,7 +150,7 @@ func init() {
 type UserSchemaOperationListResponseAPIShieldBasicOperation struct {
 	// The endpoint which can contain path parameter templates in curly braces, each
 	// will be replaced from left to right with {varN}, starting with {var1}, during
-	// insertion. This will further be Cloudflare-normalized upon insertion. See:
+	// insertion. This will further be Khulnasoft-normalized upon insertion. See:
 	// https://developers.khulnasoft.com/rules/normalization/how-it-works/.
 	Endpoint string `json:"endpoint,required" format:"uri-template"`
 	// RFC3986-compliant host.

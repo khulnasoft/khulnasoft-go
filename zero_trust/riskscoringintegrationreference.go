@@ -59,7 +59,7 @@ func (r *RiskScoringIntegrationReferenceService) Get(ctx context.Context, refere
 type RiskScoringIntegrationReferenceGetResponse struct {
 	// The id of the integration, a UUIDv4.
 	ID string `json:"id,required" format:"uuid"`
-	// The Cloudflare account tag.
+	// The Khulnasoft account tag.
 	AccountTag string `json:"account_tag,required"`
 	// Whether this integration is enabled and should export changes in risk score.
 	Active bool `json:"active,required"`

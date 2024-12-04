@@ -148,8 +148,8 @@ type Peer struct {
 	Name string `json:"name,required"`
 	// IPv4/IPv6 address of primary or secondary nameserver, depending on what zone
 	// this peer is linked to. For primary zones this IP defines the IP of the
-	// secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary
-	// zones this IP defines the IP of the primary nameserver Cloudflare will send
+	// secondary nameserver Khulnasoft will NOTIFY upon zone changes. For secondary
+	// zones this IP defines the IP of the primary nameserver Khulnasoft will send
 	// AXFR/IXFR requests to.
 	IP string `json:"ip"`
 	// Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary
@@ -188,8 +188,8 @@ type PeerParam struct {
 	Name param.Field[string] `json:"name,required"`
 	// IPv4/IPv6 address of primary or secondary nameserver, depending on what zone
 	// this peer is linked to. For primary zones this IP defines the IP of the
-	// secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary
-	// zones this IP defines the IP of the primary nameserver Cloudflare will send
+	// secondary nameserver Khulnasoft will NOTIFY upon zone changes. For secondary
+	// zones this IP defines the IP of the primary nameserver Khulnasoft will send
 	// AXFR/IXFR requests to.
 	IP param.Field[string] `json:"ip"`
 	// Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary

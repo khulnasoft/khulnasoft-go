@@ -88,7 +88,7 @@ type AdvancedDDoS struct {
 	// Current value of the zone setting.
 	Value AdvancedDDoSValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable AdvancedDDoSEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time        `json:"modified_on,nullable" format:"date-time"`
@@ -149,7 +149,7 @@ func (r AdvancedDDoSValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type AdvancedDDoSEditable bool
 
 const (
@@ -181,7 +181,7 @@ func (r AdvancedDDoSParam) MarshalJSON() (data []byte, err error) {
 
 func (r AdvancedDDoSParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// When enabled, Cloudflare serves limited copies of web pages available from the
+// When enabled, Khulnasoft serves limited copies of web pages available from the
 // [Internet Archive's Wayback Machine](https://archive.org/web/) if your server is
 // offline. Refer to
 // [Always Online](https://developers.khulnasoft.com/cache/about/always-online) for
@@ -192,7 +192,7 @@ type AlwaysOnline struct {
 	// Current value of the zone setting.
 	Value AlwaysOnlineValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable AlwaysOnlineEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time        `json:"modified_on,nullable" format:"date-time"`
@@ -253,7 +253,7 @@ func (r AlwaysOnlineValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type AlwaysOnlineEditable bool
 
 const (
@@ -269,7 +269,7 @@ func (r AlwaysOnlineEditable) IsKnown() bool {
 	return false
 }
 
-// When enabled, Cloudflare serves limited copies of web pages available from the
+// When enabled, Khulnasoft serves limited copies of web pages available from the
 // [Internet Archive's Wayback Machine](https://archive.org/web/) if your server is
 // offline. Refer to
 // [Always Online](https://developers.khulnasoft.com/cache/about/always-online) for
@@ -296,7 +296,7 @@ type AlwaysUseHTTPS struct {
 	// Current value of the zone setting.
 	Value AlwaysUseHTTPSValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable AlwaysUseHTTPSEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time          `json:"modified_on,nullable" format:"date-time"`
@@ -357,7 +357,7 @@ func (r AlwaysUseHTTPSValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type AlwaysUseHTTPSEditable bool
 
 const (
@@ -396,7 +396,7 @@ type AutomaticHTTPSRewrites struct {
 	// Current value of the zone setting.
 	Value AutomaticHTTPSRewritesValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable AutomaticHTTPSRewritesEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                  `json:"modified_on,nullable" format:"date-time"`
@@ -458,7 +458,7 @@ func (r AutomaticHTTPSRewritesValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type AutomaticHTTPSRewritesEditable bool
 
 const (
@@ -493,7 +493,7 @@ type AutomaticPlatformOptimization struct {
 	// [cache by device type](https://developers.khulnasoft.com/automatic-platform-optimization/reference/cache-device-type/)
 	// is enabled.
 	CacheByDeviceType bool `json:"cache_by_device_type,required"`
-	// Indicates whether or not Cloudflare proxy is enabled.
+	// Indicates whether or not Khulnasoft proxy is enabled.
 	Cf bool `json:"cf,required"`
 	// Indicates whether or not Automatic Platform Optimization is enabled.
 	Enabled bool `json:"enabled,required"`
@@ -503,7 +503,7 @@ type AutomaticPlatformOptimization struct {
 	// Indicates whether or not site is powered by WordPress.
 	Wordpress bool `json:"wordpress,required"`
 	// Indicates whether or not
-	// [Cloudflare for WordPress plugin](https://wordpress.org/plugins/khulnasoft/) is
+	// [Khulnasoft for WordPress plugin](https://wordpress.org/plugins/khulnasoft/) is
 	// installed.
 	WpPlugin bool                              `json:"wp_plugin,required"`
 	JSON     automaticPlatformOptimizationJSON `json:"-"`
@@ -535,7 +535,7 @@ type AutomaticPlatformOptimizationParam struct {
 	// [cache by device type](https://developers.khulnasoft.com/automatic-platform-optimization/reference/cache-device-type/)
 	// is enabled.
 	CacheByDeviceType param.Field[bool] `json:"cache_by_device_type,required"`
-	// Indicates whether or not Cloudflare proxy is enabled.
+	// Indicates whether or not Khulnasoft proxy is enabled.
 	Cf param.Field[bool] `json:"cf,required"`
 	// Indicates whether or not Automatic Platform Optimization is enabled.
 	Enabled param.Field[bool] `json:"enabled,required"`
@@ -545,7 +545,7 @@ type AutomaticPlatformOptimizationParam struct {
 	// Indicates whether or not site is powered by WordPress.
 	Wordpress param.Field[bool] `json:"wordpress,required"`
 	// Indicates whether or not
-	// [Cloudflare for WordPress plugin](https://wordpress.org/plugins/khulnasoft/) is
+	// [Khulnasoft for WordPress plugin](https://wordpress.org/plugins/khulnasoft/) is
 	// installed.
 	WpPlugin param.Field[bool] `json:"wp_plugin,required"`
 }
@@ -555,14 +555,14 @@ func (r AutomaticPlatformOptimizationParam) MarshalJSON() (data []byte, err erro
 }
 
 // When the client requesting an asset supports the Brotli compression algorithm,
-// Cloudflare will serve a Brotli compressed version of the asset.
+// Khulnasoft will serve a Brotli compressed version of the asset.
 type Brotli struct {
 	// ID of the zone setting.
 	ID BrotliID `json:"id,required"`
 	// Current value of the zone setting.
 	Value BrotliValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable BrotliEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time  `json:"modified_on,nullable" format:"date-time"`
@@ -623,7 +623,7 @@ func (r BrotliValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type BrotliEditable bool
 
 const (
@@ -640,7 +640,7 @@ func (r BrotliEditable) IsKnown() bool {
 }
 
 // When the client requesting an asset supports the Brotli compression algorithm,
-// Cloudflare will serve a Brotli compressed version of the asset.
+// Khulnasoft will serve a Brotli compressed version of the asset.
 type BrotliParam struct {
 	// ID of the zone setting.
 	ID param.Field[BrotliID] `json:"id,required"`
@@ -654,8 +654,8 @@ func (r BrotliParam) MarshalJSON() (data []byte, err error) {
 
 func (r BrotliParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Browser Cache TTL (in seconds) specifies how long Cloudflare-cached resources
-// will remain on your visitors' computers. Cloudflare will honor any larger times
+// Browser Cache TTL (in seconds) specifies how long Khulnasoft-cached resources
+// will remain on your visitors' computers. Khulnasoft will honor any larger times
 // specified by your server.
 // (https://support.khulnasoft.com/hc/en-us/articles/200168276).
 type BrowserCacheTTL struct {
@@ -664,7 +664,7 @@ type BrowserCacheTTL struct {
 	// Current value of the zone setting.
 	Value BrowserCacheTTLValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable BrowserCacheTTLEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time           `json:"modified_on,nullable" format:"date-time"`
@@ -751,7 +751,7 @@ func (r BrowserCacheTTLValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type BrowserCacheTTLEditable bool
 
 const (
@@ -767,8 +767,8 @@ func (r BrowserCacheTTLEditable) IsKnown() bool {
 	return false
 }
 
-// Browser Cache TTL (in seconds) specifies how long Cloudflare-cached resources
-// will remain on your visitors' computers. Cloudflare will honor any larger times
+// Browser Cache TTL (in seconds) specifies how long Khulnasoft-cached resources
+// will remain on your visitors' computers. Khulnasoft will honor any larger times
 // specified by your server.
 // (https://support.khulnasoft.com/hc/en-us/articles/200168276).
 type BrowserCacheTTLParam struct {
@@ -795,7 +795,7 @@ type BrowserCheck struct {
 	// Current value of the zone setting.
 	Value BrowserCheckValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable BrowserCheckEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time        `json:"modified_on,nullable" format:"date-time"`
@@ -856,7 +856,7 @@ func (r BrowserCheckValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type BrowserCheckEditable bool
 
 const (
@@ -901,7 +901,7 @@ type CacheLevel struct {
 	// Current value of the zone setting.
 	Value CacheLevelValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable CacheLevelEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time      `json:"modified_on,nullable" format:"date-time"`
@@ -963,7 +963,7 @@ func (r CacheLevelValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type CacheLevelEditable bool
 
 const (
@@ -1008,7 +1008,7 @@ type ChallengeTTL struct {
 	// Current value of the zone setting.
 	Value ChallengeTTLValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable ChallengeTTLEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time        `json:"modified_on,nullable" format:"date-time"`
@@ -1081,7 +1081,7 @@ func (r ChallengeTTLValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type ChallengeTTLEditable bool
 
 const (
@@ -1123,7 +1123,7 @@ type Ciphers struct {
 	// Current value of the zone setting.
 	Value []string `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable CiphersEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time   `json:"modified_on,nullable" format:"date-time"`
@@ -1168,7 +1168,7 @@ func (r CiphersID) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type CiphersEditable bool
 
 const (
@@ -1200,7 +1200,7 @@ func (r CiphersParam) MarshalJSON() (data []byte, err error) {
 func (r CiphersParam) implementsZonesSettingEditParamsBodyUnion() {}
 
 // Development Mode temporarily allows you to enter development mode for your
-// websites if you need to make changes to your site. This will bypass Cloudflare's
+// websites if you need to make changes to your site. This will bypass Khulnasoft's
 // accelerated cache and slow down your site, but is useful if you are making
 // changes to cacheable content (like images, css, or JavaScript) and would like to
 // see those changes right away. Once entered, development mode will last for 3
@@ -1211,7 +1211,7 @@ type DevelopmentMode struct {
 	// Current value of the zone setting.
 	Value DevelopmentModeValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable DevelopmentModeEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,nullable" format:"date-time"`
@@ -1277,7 +1277,7 @@ func (r DevelopmentModeValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type DevelopmentModeEditable bool
 
 const (
@@ -1294,7 +1294,7 @@ func (r DevelopmentModeEditable) IsKnown() bool {
 }
 
 // Development Mode temporarily allows you to enter development mode for your
-// websites if you need to make changes to your site. This will bypass Cloudflare's
+// websites if you need to make changes to your site. This will bypass Khulnasoft's
 // accelerated cache and slow down your site, but is useful if you are making
 // changes to cacheable content (like images, css, or JavaScript) and would like to
 // see those changes right away. Once entered, development mode will last for 3
@@ -1312,7 +1312,7 @@ func (r DevelopmentModeParam) MarshalJSON() (data []byte, err error) {
 
 func (r DevelopmentModeParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// When enabled, Cloudflare will attempt to speed up overall page loads by serving
+// When enabled, Khulnasoft will attempt to speed up overall page loads by serving
 // `103` responses with `Link` headers from the final response. Refer to
 // [Early Hints](https://developers.khulnasoft.com/cache/about/early-hints) for
 // more information.
@@ -1322,7 +1322,7 @@ type EarlyHints struct {
 	// Current value of the zone setting.
 	Value EarlyHintsValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable EarlyHintsEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time      `json:"modified_on,nullable" format:"date-time"`
@@ -1383,7 +1383,7 @@ func (r EarlyHintsValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type EarlyHintsEditable bool
 
 const (
@@ -1399,7 +1399,7 @@ func (r EarlyHintsEditable) IsKnown() bool {
 	return false
 }
 
-// When enabled, Cloudflare will attempt to speed up overall page loads by serving
+// When enabled, Khulnasoft will attempt to speed up overall page loads by serving
 // `103` responses with `Link` headers from the final response. Refer to
 // [Early Hints](https://developers.khulnasoft.com/cache/about/early-hints) for
 // more information.
@@ -1424,7 +1424,7 @@ type EmailObfuscation struct {
 	// Current value of the zone setting.
 	Value EmailObfuscationValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable EmailObfuscationEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time            `json:"modified_on,nullable" format:"date-time"`
@@ -1486,7 +1486,7 @@ func (r EmailObfuscationValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type EmailObfuscationEditable bool
 
 const (
@@ -1526,7 +1526,7 @@ type H2Prioritization struct {
 	// Current value of the zone setting.
 	Value H2PrioritizationValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable H2PrioritizationEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time            `json:"modified_on,nullable" format:"date-time"`
@@ -1589,7 +1589,7 @@ func (r H2PrioritizationValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type H2PrioritizationEditable bool
 
 const (
@@ -1623,7 +1623,7 @@ func (r H2PrioritizationParam) implementsZonesSettingEditParamsBodyUnion() {}
 
 // When enabled, the Hotlink Protection option ensures that other sites cannot suck
 // up your bandwidth by building pages that use images hosted on your site. Anytime
-// a request for an image on your site hits Cloudflare, we check to ensure that
+// a request for an image on your site hits Khulnasoft, we check to ensure that
 // it's not another site requesting them. People will still be able to download and
 // view images from your page, but other sites won't be able to steal them for use
 // on their own pages.
@@ -1634,7 +1634,7 @@ type HotlinkProtection struct {
 	// Current value of the zone setting.
 	Value HotlinkProtectionValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable HotlinkProtectionEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time             `json:"modified_on,nullable" format:"date-time"`
@@ -1696,7 +1696,7 @@ func (r HotlinkProtectionValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type HotlinkProtectionEditable bool
 
 const (
@@ -1714,7 +1714,7 @@ func (r HotlinkProtectionEditable) IsKnown() bool {
 
 // When enabled, the Hotlink Protection option ensures that other sites cannot suck
 // up your bandwidth by building pages that use images hosted on your site. Anytime
-// a request for an image on your site hits Cloudflare, we check to ensure that
+// a request for an image on your site hits Khulnasoft, we check to ensure that
 // it's not another site requesting them. People will still be able to download and
 // view images from your page, but other sites won't be able to steal them for use
 // on their own pages.
@@ -1739,7 +1739,7 @@ type HTTP2 struct {
 	// Current value of the zone setting.
 	Value HTTP2Value `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable HTTP2Editable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,nullable" format:"date-time"`
@@ -1800,7 +1800,7 @@ func (r HTTP2Value) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type HTTP2Editable bool
 
 const (
@@ -1837,7 +1837,7 @@ type HTTP3 struct {
 	// Current value of the zone setting.
 	Value HTTP3Value `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable HTTP3Editable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,nullable" format:"date-time"`
@@ -1898,7 +1898,7 @@ func (r HTTP3Value) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type HTTP3Editable bool
 
 const (
@@ -1929,7 +1929,7 @@ func (r HTTP3Param) MarshalJSON() (data []byte, err error) {
 func (r HTTP3Param) implementsZonesSettingEditParamsBodyUnion() {}
 
 // Image Resizing provides on-demand resizing, conversion and optimisation for
-// images served through Cloudflare's network. Refer to the
+// images served through Khulnasoft's network. Refer to the
 // [Image Resizing documentation](https://developers.khulnasoft.com/images/) for
 // more information.
 type ImageResizing struct {
@@ -1938,7 +1938,7 @@ type ImageResizing struct {
 	// Current value of the zone setting.
 	Value ImageResizingValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable ImageResizingEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time         `json:"modified_on,nullable" format:"date-time"`
@@ -2000,7 +2000,7 @@ func (r ImageResizingValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type ImageResizingEditable bool
 
 const (
@@ -2017,7 +2017,7 @@ func (r ImageResizingEditable) IsKnown() bool {
 }
 
 // Image Resizing provides on-demand resizing, conversion and optimisation for
-// images served through Cloudflare's network. Refer to the
+// images served through Khulnasoft's network. Refer to the
 // [Image Resizing documentation](https://developers.khulnasoft.com/images/) for
 // more information.
 type ImageResizingParam struct {
@@ -2033,7 +2033,7 @@ func (r ImageResizingParam) MarshalJSON() (data []byte, err error) {
 
 func (r ImageResizingParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Enable IP Geolocation to have Cloudflare geolocate visitors to your website and
+// Enable IP Geolocation to have Khulnasoft geolocate visitors to your website and
 // pass the country code to you.
 // (https://support.khulnasoft.com/hc/en-us/articles/200168236).
 type IPGeolocation struct {
@@ -2042,7 +2042,7 @@ type IPGeolocation struct {
 	// Current value of the zone setting.
 	Value IPGeolocationValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable IPGeolocationEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time         `json:"modified_on,nullable" format:"date-time"`
@@ -2103,7 +2103,7 @@ func (r IPGeolocationValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type IPGeolocationEditable bool
 
 const (
@@ -2119,7 +2119,7 @@ func (r IPGeolocationEditable) IsKnown() bool {
 	return false
 }
 
-// Enable IP Geolocation to have Cloudflare geolocate visitors to your website and
+// Enable IP Geolocation to have Khulnasoft geolocate visitors to your website and
 // pass the country code to you.
 // (https://support.khulnasoft.com/hc/en-us/articles/200168236).
 type IPGeolocationParam struct {
@@ -2135,7 +2135,7 @@ func (r IPGeolocationParam) MarshalJSON() (data []byte, err error) {
 
 func (r IPGeolocationParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Enable IPv6 on all subdomains that are Cloudflare enabled.
+// Enable IPv6 on all subdomains that are Khulnasoft enabled.
 // (https://support.khulnasoft.com/hc/en-us/articles/200168586).
 type IPV6 struct {
 	// ID of the zone setting.
@@ -2143,7 +2143,7 @@ type IPV6 struct {
 	// Current value of the zone setting.
 	Value IPV6Value `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable IPV6Editable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,nullable" format:"date-time"`
@@ -2204,7 +2204,7 @@ func (r IPV6Value) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type IPV6Editable bool
 
 const (
@@ -2220,7 +2220,7 @@ func (r IPV6Editable) IsKnown() bool {
 	return false
 }
 
-// Enable IPv6 on all subdomains that are Cloudflare enabled.
+// Enable IPv6 on all subdomains that are Khulnasoft enabled.
 // (https://support.khulnasoft.com/hc/en-us/articles/200168586).
 type IPV6Param struct {
 	// ID of the zone setting.
@@ -2244,7 +2244,7 @@ type MinTLSVersion struct {
 	// Current value of the zone setting.
 	Value MinTLSVersionValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable MinTLSVersionEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time         `json:"modified_on,nullable" format:"date-time"`
@@ -2307,7 +2307,7 @@ func (r MinTLSVersionValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type MinTLSVersionEditable bool
 
 const (
@@ -2349,7 +2349,7 @@ type Mirage struct {
 	// Current value of the zone setting.
 	Value MirageValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable MirageEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time  `json:"modified_on,nullable" format:"date-time"`
@@ -2410,7 +2410,7 @@ func (r MirageValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type MirageEditable bool
 
 const (
@@ -2450,7 +2450,7 @@ type NEL struct {
 	// Current value of the zone setting.
 	Value NELValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable NELEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,nullable" format:"date-time"`
@@ -2516,7 +2516,7 @@ func (r nelValueJSON) RawJSON() string {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type NELEditable bool
 
 const (
@@ -2562,7 +2562,7 @@ type OpportunisticEncryption struct {
 	// Current value of the zone setting.
 	Value OpportunisticEncryptionValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable OpportunisticEncryptionEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                   `json:"modified_on,nullable" format:"date-time"`
@@ -2624,7 +2624,7 @@ func (r OpportunisticEncryptionValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type OpportunisticEncryptionEditable bool
 
 const (
@@ -2662,7 +2662,7 @@ type OpportunisticOnion struct {
 	// Current value of the zone setting.
 	Value OpportunisticOnionValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable OpportunisticOnionEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time              `json:"modified_on,nullable" format:"date-time"`
@@ -2724,7 +2724,7 @@ func (r OpportunisticOnionValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type OpportunisticOnionEditable bool
 
 const (
@@ -2755,15 +2755,15 @@ func (r OpportunisticOnionParam) MarshalJSON() (data []byte, err error) {
 
 func (r OpportunisticOnionParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Orange to Orange (O2O) allows zones on Cloudflare to CNAME to other zones also
-// on Cloudflare.
+// Orange to Orange (O2O) allows zones on Khulnasoft to CNAME to other zones also
+// on Khulnasoft.
 type OrangeToOrange struct {
 	// ID of the zone setting.
 	ID OrangeToOrangeID `json:"id,required"`
 	// Current value of the zone setting.
 	Value OrangeToOrangeValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable OrangeToOrangeEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time          `json:"modified_on,nullable" format:"date-time"`
@@ -2824,7 +2824,7 @@ func (r OrangeToOrangeValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type OrangeToOrangeEditable bool
 
 const (
@@ -2840,8 +2840,8 @@ func (r OrangeToOrangeEditable) IsKnown() bool {
 	return false
 }
 
-// Orange to Orange (O2O) allows zones on Cloudflare to CNAME to other zones also
-// on Cloudflare.
+// Orange to Orange (O2O) allows zones on Khulnasoft to CNAME to other zones also
+// on Khulnasoft.
 type OrangeToOrangeParam struct {
 	// ID of the zone setting.
 	ID param.Field[OrangeToOrangeID] `json:"id,required"`
@@ -2855,8 +2855,8 @@ func (r OrangeToOrangeParam) MarshalJSON() (data []byte, err error) {
 
 func (r OrangeToOrangeParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Cloudflare will proxy customer error pages on any 502,504 errors on origin
-// server instead of showing a default Cloudflare error page. This does not apply
+// Khulnasoft will proxy customer error pages on any 502,504 errors on origin
+// server instead of showing a default Khulnasoft error page. This does not apply
 // to 522 errors and is limited to Enterprise Zones.
 type OriginErrorPagePassThru struct {
 	// ID of the zone setting.
@@ -2864,7 +2864,7 @@ type OriginErrorPagePassThru struct {
 	// Current value of the zone setting.
 	Value OriginErrorPagePassThruValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable OriginErrorPagePassThruEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                   `json:"modified_on,nullable" format:"date-time"`
@@ -2926,7 +2926,7 @@ func (r OriginErrorPagePassThruValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type OriginErrorPagePassThruEditable bool
 
 const (
@@ -2942,8 +2942,8 @@ func (r OriginErrorPagePassThruEditable) IsKnown() bool {
 	return false
 }
 
-// Cloudflare will proxy customer error pages on any 502,504 errors on origin
-// server instead of showing a default Cloudflare error page. This does not apply
+// Khulnasoft will proxy customer error pages on any 502,504 errors on origin
+// server instead of showing a default Khulnasoft error page. This does not apply
 // to 522 errors and is limited to Enterprise Zones.
 type OriginErrorPagePassThruParam struct {
 	// ID of the zone setting.
@@ -2970,7 +2970,7 @@ type Polish struct {
 	// Current value of the zone setting.
 	Value PolishValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable PolishEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time  `json:"modified_on,nullable" format:"date-time"`
@@ -3032,7 +3032,7 @@ func (r PolishValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type PolishEditable bool
 
 const (
@@ -3067,7 +3067,7 @@ func (r PolishParam) MarshalJSON() (data []byte, err error) {
 
 func (r PolishParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Cloudflare will prefetch any URLs that are included in the response headers.
+// Khulnasoft will prefetch any URLs that are included in the response headers.
 // This is limited to Enterprise Zones.
 type PrefetchPreload struct {
 	// ID of the zone setting.
@@ -3075,7 +3075,7 @@ type PrefetchPreload struct {
 	// Current value of the zone setting.
 	Value PrefetchPreloadValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable PrefetchPreloadEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time           `json:"modified_on,nullable" format:"date-time"`
@@ -3136,7 +3136,7 @@ func (r PrefetchPreloadValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type PrefetchPreloadEditable bool
 
 const (
@@ -3152,7 +3152,7 @@ func (r PrefetchPreloadEditable) IsKnown() bool {
 	return false
 }
 
-// Cloudflare will prefetch any URLs that are included in the response headers.
+// Khulnasoft will prefetch any URLs that are included in the response headers.
 // This is limited to Enterprise Zones.
 type PrefetchPreloadParam struct {
 	// ID of the zone setting.
@@ -3174,7 +3174,7 @@ type ProxyReadTimeout struct {
 	// Current value of the zone setting.
 	Value float64 `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable ProxyReadTimeoutEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time            `json:"modified_on,nullable" format:"date-time"`
@@ -3220,7 +3220,7 @@ func (r ProxyReadTimeoutID) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type ProxyReadTimeoutEditable bool
 
 const (
@@ -3257,7 +3257,7 @@ type PseudoIPV4 struct {
 	// Current value of the zone setting.
 	Value PseudoIPV4Value `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable PseudoIPV4Editable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time      `json:"modified_on,nullable" format:"date-time"`
@@ -3319,7 +3319,7 @@ func (r PseudoIPV4Value) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type PseudoIPV4Editable bool
 
 const (
@@ -3349,17 +3349,17 @@ func (r PseudoIPV4Param) MarshalJSON() (data []byte, err error) {
 
 func (r PseudoIPV4Param) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Enables or disables buffering of responses from the proxied server. Cloudflare
+// Enables or disables buffering of responses from the proxied server. Khulnasoft
 // may buffer the whole payload to deliver it at once to the client versus allowing
 // it to be delivered in chunks. By default, the proxied server streams directly
-// and is not buffered by Cloudflare. This is limited to Enterprise Zones.
+// and is not buffered by Khulnasoft. This is limited to Enterprise Zones.
 type ResponseBuffering struct {
 	// ID of the zone setting.
 	ID ResponseBufferingID `json:"id,required"`
 	// Current value of the zone setting.
 	Value ResponseBufferingValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable ResponseBufferingEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time             `json:"modified_on,nullable" format:"date-time"`
@@ -3421,7 +3421,7 @@ func (r ResponseBufferingValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type ResponseBufferingEditable bool
 
 const (
@@ -3437,10 +3437,10 @@ func (r ResponseBufferingEditable) IsKnown() bool {
 	return false
 }
 
-// Enables or disables buffering of responses from the proxied server. Cloudflare
+// Enables or disables buffering of responses from the proxied server. Khulnasoft
 // may buffer the whole payload to deliver it at once to the client versus allowing
 // it to be delivered in chunks. By default, the proxied server streams directly
-// and is not buffered by Cloudflare. This is limited to Enterprise Zones.
+// and is not buffered by Khulnasoft. This is limited to Enterprise Zones.
 type ResponseBufferingParam struct {
 	// ID of the zone setting.
 	ID param.Field[ResponseBufferingID] `json:"id,required"`
@@ -3470,7 +3470,7 @@ type RocketLoader struct {
 	// Current value of the zone setting.
 	Value RocketLoaderValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable RocketLoaderEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time        `json:"modified_on,nullable" format:"date-time"`
@@ -3531,7 +3531,7 @@ func (r RocketLoaderValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type RocketLoaderEditable bool
 
 const (
@@ -3570,14 +3570,14 @@ func (r RocketLoaderParam) MarshalJSON() (data []byte, err error) {
 
 func (r RocketLoaderParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Cloudflare security header for a zone.
+// Khulnasoft security header for a zone.
 type SecurityHeaders struct {
 	// ID of the zone's security header.
 	ID SecurityHeadersID `json:"id,required"`
 	// Current value of the zone setting.
 	Value SecurityHeadersValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SecurityHeadersEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time           `json:"modified_on,nullable" format:"date-time"`
@@ -3680,7 +3680,7 @@ func (r securityHeadersValueStrictTransportSecurityJSON) RawJSON() string {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SecurityHeadersEditable bool
 
 const (
@@ -3696,7 +3696,7 @@ func (r SecurityHeadersEditable) IsKnown() bool {
 	return false
 }
 
-// Cloudflare security header for a zone.
+// Khulnasoft security header for a zone.
 type SecurityHeadersParam struct {
 	// ID of the zone's security header.
 	ID param.Field[SecurityHeadersID] `json:"id,required"`
@@ -3748,7 +3748,7 @@ type SecurityLevel struct {
 	// Current value of the zone setting.
 	Value SecurityLevelValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SecurityLevelEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time         `json:"modified_on,nullable" format:"date-time"`
@@ -3813,7 +3813,7 @@ func (r SecurityLevelValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SecurityLevelEditable bool
 
 const (
@@ -3848,13 +3848,13 @@ func (r SecurityLevelParam) implementsZonesSettingEditParamsBodyUnion() {}
 
 // If there is sensitive content on your website that you want visible to real
 // visitors, but that you want to hide from suspicious visitors, all you have to do
-// is wrap the content with Cloudflare SSE tags. Wrap any content that you want to
+// is wrap the content with Khulnasoft SSE tags. Wrap any content that you want to
 // be excluded from suspicious visitors in the following SSE tags:
 // <!--sse--><!--/sse-->. For example: <!--sse--> Bad visitors won't see my phone
 // number, 555-555-5555 <!--/sse-->. Note: SSE only will work with HTML. If you
 // have HTML minification enabled, you won't see the SSE tags in your HTML source
-// when it's served through Cloudflare. SSE will still function in this case, as
-// Cloudflare's HTML minification and SSE functionality occur on-the-fly as the
+// when it's served through Khulnasoft. SSE will still function in this case, as
+// Khulnasoft's HTML minification and SSE functionality occur on-the-fly as the
 // resource moves through our network to the visitor's computer.
 // (https://support.khulnasoft.com/hc/en-us/articles/200170036).
 type ServerSideExcludes struct {
@@ -3863,7 +3863,7 @@ type ServerSideExcludes struct {
 	// Current value of the zone setting.
 	Value ServerSideExcludesValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable ServerSideExcludesEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time              `json:"modified_on,nullable" format:"date-time"`
@@ -3925,7 +3925,7 @@ func (r ServerSideExcludesValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type ServerSideExcludesEditable bool
 
 const (
@@ -3943,13 +3943,13 @@ func (r ServerSideExcludesEditable) IsKnown() bool {
 
 // If there is sensitive content on your website that you want visible to real
 // visitors, but that you want to hide from suspicious visitors, all you have to do
-// is wrap the content with Cloudflare SSE tags. Wrap any content that you want to
+// is wrap the content with Khulnasoft SSE tags. Wrap any content that you want to
 // be excluded from suspicious visitors in the following SSE tags:
 // <!--sse--><!--/sse-->. For example: <!--sse--> Bad visitors won't see my phone
 // number, 555-555-5555 <!--/sse-->. Note: SSE only will work with HTML. If you
 // have HTML minification enabled, you won't see the SSE tags in your HTML source
-// when it's served through Cloudflare. SSE will still function in this case, as
-// Cloudflare's HTML minification and SSE functionality occur on-the-fly as the
+// when it's served through Khulnasoft. SSE will still function in this case, as
+// Khulnasoft's HTML minification and SSE functionality occur on-the-fly as the
 // resource moves through our network to the visitor's computer.
 // (https://support.khulnasoft.com/hc/en-us/articles/200170036).
 type ServerSideExcludesParam struct {
@@ -3965,7 +3965,7 @@ func (r ServerSideExcludesParam) MarshalJSON() (data []byte, err error) {
 
 func (r ServerSideExcludesParam) implementsZonesSettingEditParamsBodyUnion() {}
 
-// Cloudflare will treat files with the same query strings as the same file in
+// Khulnasoft will treat files with the same query strings as the same file in
 // cache, regardless of the order of the query strings. This is limited to
 // Enterprise Zones.
 type SortQueryStringForCache struct {
@@ -3974,7 +3974,7 @@ type SortQueryStringForCache struct {
 	// Current value of the zone setting.
 	Value SortQueryStringForCacheValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SortQueryStringForCacheEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                   `json:"modified_on,nullable" format:"date-time"`
@@ -4036,7 +4036,7 @@ func (r SortQueryStringForCacheValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SortQueryStringForCacheEditable bool
 
 const (
@@ -4052,7 +4052,7 @@ func (r SortQueryStringForCacheEditable) IsKnown() bool {
 	return false
 }
 
-// Cloudflare will treat files with the same query strings as the same file in
+// Khulnasoft will treat files with the same query strings as the same file in
 // cache, regardless of the order of the query strings. This is limited to
 // Enterprise Zones.
 type SortQueryStringForCacheParam struct {
@@ -4070,16 +4070,16 @@ func (r SortQueryStringForCacheParam) implementsZonesSettingEditParamsBodyUnion(
 
 // SSL encrypts your visitor's connection and safeguards credit card numbers and
 // other personal data to and from your website. SSL can take up to 5 minutes to
-// fully activate. Requires Cloudflare active on your root domain or www domain.
-// Off: no SSL between the visitor and Cloudflare, and no SSL between Cloudflare
+// fully activate. Requires Khulnasoft active on your root domain or www domain.
+// Off: no SSL between the visitor and Khulnasoft, and no SSL between Khulnasoft
 // and your web server (all HTTP traffic). Flexible: SSL between the visitor and
-// Cloudflare -- visitor sees HTTPS on your site, but no SSL between Cloudflare and
+// Khulnasoft -- visitor sees HTTPS on your site, but no SSL between Khulnasoft and
 // your web server. You don't need to have an SSL cert on your web server, but your
 // vistors will still see the site as being HTTPS enabled. Full: SSL between the
-// visitor and Cloudflare -- visitor sees HTTPS on your site, and SSL between
-// Cloudflare and your web server. You'll need to have your own SSL cert or
+// visitor and Khulnasoft -- visitor sees HTTPS on your site, and SSL between
+// Khulnasoft and your web server. You'll need to have your own SSL cert or
 // self-signed cert at the very least. Full (Strict): SSL between the visitor and
-// Cloudflare -- visitor sees HTTPS on your site, and SSL between Cloudflare and
+// Khulnasoft -- visitor sees HTTPS on your site, and SSL between Khulnasoft and
 // your web server. You'll need to have a valid SSL certificate installed on your
 // web server. This certificate must be signed by a certificate authority, have an
 // expiration date in the future, and respond for the request domain name
@@ -4090,7 +4090,7 @@ type SSL struct {
 	// Current value of the zone setting.
 	Value SSLValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SSLEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,nullable" format:"date-time"`
@@ -4153,7 +4153,7 @@ func (r SSLValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SSLEditable bool
 
 const (
@@ -4171,16 +4171,16 @@ func (r SSLEditable) IsKnown() bool {
 
 // SSL encrypts your visitor's connection and safeguards credit card numbers and
 // other personal data to and from your website. SSL can take up to 5 minutes to
-// fully activate. Requires Cloudflare active on your root domain or www domain.
-// Off: no SSL between the visitor and Cloudflare, and no SSL between Cloudflare
+// fully activate. Requires Khulnasoft active on your root domain or www domain.
+// Off: no SSL between the visitor and Khulnasoft, and no SSL between Khulnasoft
 // and your web server (all HTTP traffic). Flexible: SSL between the visitor and
-// Cloudflare -- visitor sees HTTPS on your site, but no SSL between Cloudflare and
+// Khulnasoft -- visitor sees HTTPS on your site, but no SSL between Khulnasoft and
 // your web server. You don't need to have an SSL cert on your web server, but your
 // vistors will still see the site as being HTTPS enabled. Full: SSL between the
-// visitor and Cloudflare -- visitor sees HTTPS on your site, and SSL between
-// Cloudflare and your web server. You'll need to have your own SSL cert or
+// visitor and Khulnasoft -- visitor sees HTTPS on your site, and SSL between
+// Khulnasoft and your web server. You'll need to have your own SSL cert or
 // self-signed cert at the very least. Full (Strict): SSL between the visitor and
-// Cloudflare -- visitor sees HTTPS on your site, and SSL between Cloudflare and
+// Khulnasoft -- visitor sees HTTPS on your site, and SSL between Khulnasoft and
 // your web server. You'll need to have a valid SSL certificate installed on your
 // web server. This certificate must be signed by a certificate authority, have an
 // expiration date in the future, and respond for the request domain name
@@ -4267,7 +4267,7 @@ type TLS1_3 struct {
 	// Current value of the zone setting.
 	Value TLS1_3Value `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable TLS1_3Editable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time  `json:"modified_on,nullable" format:"date-time"`
@@ -4329,7 +4329,7 @@ func (r TLS1_3Value) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type TLS1_3Editable bool
 
 const (
@@ -4359,7 +4359,7 @@ func (r TLS1_3Param) MarshalJSON() (data []byte, err error) {
 
 func (r TLS1_3Param) implementsZonesSettingEditParamsBodyUnion() {}
 
-// TLS Client Auth requires Cloudflare to connect to your origin server using a
+// TLS Client Auth requires Khulnasoft to connect to your origin server using a
 // client certificate (Enterprise Only).
 type TLSClientAuth struct {
 	// ID of the zone setting.
@@ -4367,7 +4367,7 @@ type TLSClientAuth struct {
 	// Current value of the zone setting.
 	Value TLSClientAuthValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable TLSClientAuthEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time         `json:"modified_on,nullable" format:"date-time"`
@@ -4428,7 +4428,7 @@ func (r TLSClientAuthValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type TLSClientAuthEditable bool
 
 const (
@@ -4444,7 +4444,7 @@ func (r TLSClientAuthEditable) IsKnown() bool {
 	return false
 }
 
-// TLS Client Auth requires Cloudflare to connect to your origin server using a
+// TLS Client Auth requires Khulnasoft to connect to your origin server using a
 // client certificate (Enterprise Only).
 type TLSClientAuthParam struct {
 	// ID of the zone setting.
@@ -4467,7 +4467,7 @@ type TrueClientIPHeader struct {
 	// Current value of the zone setting.
 	Value TrueClientIPHeaderValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable TrueClientIPHeaderEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time              `json:"modified_on,nullable" format:"date-time"`
@@ -4529,7 +4529,7 @@ func (r TrueClientIPHeaderValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type TrueClientIPHeaderEditable bool
 
 const (
@@ -4562,12 +4562,12 @@ func (r TrueClientIPHeaderParam) implementsZonesSettingEditParamsBodyUnion() {}
 
 // The WAF examines HTTP requests to your website. It inspects both GET and POST
 // requests and applies rules to help filter out illegitimate traffic from
-// legitimate website visitors. The Cloudflare WAF inspects website addresses or
-// URLs to detect anything out of the ordinary. If the Cloudflare WAF determines
+// legitimate website visitors. The Khulnasoft WAF inspects website addresses or
+// URLs to detect anything out of the ordinary. If the Khulnasoft WAF determines
 // suspicious user behavior, then the WAF will 'challenge' the web visitor with a
 // page that asks them to submit a CAPTCHA successfully to continue their action.
 // If the challenge is failed, the action will be stopped. What this means is that
-// Cloudflare's WAF will block any traffic identified as illegitimate before it
+// Khulnasoft's WAF will block any traffic identified as illegitimate before it
 // reaches your origin web server.
 // (https://support.khulnasoft.com/hc/en-us/articles/200172016).
 type WAF struct {
@@ -4576,7 +4576,7 @@ type WAF struct {
 	// Current value of the zone setting.
 	Value WAFValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable WAFEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,nullable" format:"date-time"`
@@ -4637,7 +4637,7 @@ func (r WAFValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type WAFEditable bool
 
 const (
@@ -4655,12 +4655,12 @@ func (r WAFEditable) IsKnown() bool {
 
 // The WAF examines HTTP requests to your website. It inspects both GET and POST
 // requests and applies rules to help filter out illegitimate traffic from
-// legitimate website visitors. The Cloudflare WAF inspects website addresses or
-// URLs to detect anything out of the ordinary. If the Cloudflare WAF determines
+// legitimate website visitors. The Khulnasoft WAF inspects website addresses or
+// URLs to detect anything out of the ordinary. If the Khulnasoft WAF determines
 // suspicious user behavior, then the WAF will 'challenge' the web visitor with a
 // page that asks them to submit a CAPTCHA successfully to continue their action.
 // If the challenge is failed, the action will be stopped. What this means is that
-// Cloudflare's WAF will block any traffic identified as illegitimate before it
+// Khulnasoft's WAF will block any traffic identified as illegitimate before it
 // reaches your origin web server.
 // (https://support.khulnasoft.com/hc/en-us/articles/200172016).
 type WAFParam struct {
@@ -4677,7 +4677,7 @@ func (r WAFParam) MarshalJSON() (data []byte, err error) {
 func (r WAFParam) implementsZonesSettingEditParamsBodyUnion() {}
 
 // When the client requesting the image supports the WebP image codec, and WebP
-// offers a performance advantage over the original image format, Cloudflare will
+// offers a performance advantage over the original image format, Khulnasoft will
 // serve a WebP version of the original image.
 type WebP struct {
 	// ID of the zone setting.
@@ -4685,7 +4685,7 @@ type WebP struct {
 	// Current value of the zone setting.
 	Value WebPValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable WebPEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,nullable" format:"date-time"`
@@ -4746,7 +4746,7 @@ func (r WebPValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type WebPEditable bool
 
 const (
@@ -4763,7 +4763,7 @@ func (r WebPEditable) IsKnown() bool {
 }
 
 // When the client requesting the image supports the WebP image codec, and WebP
-// offers a performance advantage over the original image format, Cloudflare will
+// offers a performance advantage over the original image format, Khulnasoft will
 // serve a WebP version of the original image.
 type WebPParam struct {
 	// ID of the zone setting.
@@ -4784,14 +4784,14 @@ func (r WebPParam) implementsZonesSettingEditParamsBodyUnion() {}
 // data within a WebSockets connection fast. WebSockets are often used for
 // real-time applications such as live chat and gaming. For more information refer
 // to
-// [Can I use Cloudflare with Websockets](https://support.khulnasoft.com/hc/en-us/articles/200169466-Can-I-use-Cloudflare-with-WebSockets-).
+// [Can I use Khulnasoft with Websockets](https://support.khulnasoft.com/hc/en-us/articles/200169466-Can-I-use-Khulnasoft-with-WebSockets-).
 type Websocket struct {
 	// ID of the zone setting.
 	ID WebsocketID `json:"id,required"`
 	// Current value of the zone setting.
 	Value WebsocketValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable WebsocketEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time     `json:"modified_on,nullable" format:"date-time"`
@@ -4852,7 +4852,7 @@ func (r WebsocketValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type WebsocketEditable bool
 
 const (
@@ -4874,7 +4874,7 @@ func (r WebsocketEditable) IsKnown() bool {
 // data within a WebSockets connection fast. WebSockets are often used for
 // real-time applications such as live chat and gaming. For more information refer
 // to
-// [Can I use Cloudflare with Websockets](https://support.khulnasoft.com/hc/en-us/articles/200169466-Can-I-use-Cloudflare-with-WebSockets-).
+// [Can I use Khulnasoft with Websockets](https://support.khulnasoft.com/hc/en-us/articles/200169466-Can-I-use-Khulnasoft-with-WebSockets-).
 type WebsocketParam struct {
 	// ID of the zone setting.
 	ID param.Field[WebsocketID] `json:"id,required"`
@@ -4895,7 +4895,7 @@ type ZeroRTT struct {
 	// Current value of the zone setting.
 	Value ZeroRTTValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable ZeroRTTEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time   `json:"modified_on,nullable" format:"date-time"`
@@ -4956,7 +4956,7 @@ func (r ZeroRTTValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type ZeroRTTEditable bool
 
 const (
@@ -4989,7 +4989,7 @@ func (r ZeroRTTParam) implementsZonesSettingEditParamsBodyUnion() {}
 // 0-RTT session resumption enabled for this zone.
 type SettingEditResponse struct {
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingEditResponseEditable `json:"editable"`
 	// ID of the zone setting.
 	ID SettingEditResponseID `json:"id"`
@@ -5332,7 +5332,7 @@ type SettingEditResponseZonesCNAMEFlattening struct {
 	// Current value of the zone setting.
 	Value SettingEditResponseZonesCNAMEFlatteningValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingEditResponseZonesCNAMEFlatteningEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                                   `json:"modified_on,nullable" format:"date-time"`
@@ -5392,7 +5392,7 @@ func (r SettingEditResponseZonesCNAMEFlatteningValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditResponseZonesCNAMEFlatteningEditable bool
 
 const (
@@ -5408,7 +5408,7 @@ func (r SettingEditResponseZonesCNAMEFlatteningEditable) IsKnown() bool {
 	return false
 }
 
-// Time (in seconds) that a resource will be ensured to remain on Cloudflare's
+// Time (in seconds) that a resource will be ensured to remain on Khulnasoft's
 // cache servers.
 type SettingEditResponseZonesEdgeCacheTTL struct {
 	// ID of the zone setting.
@@ -5416,7 +5416,7 @@ type SettingEditResponseZonesEdgeCacheTTL struct {
 	// Current value of the zone setting.
 	Value SettingEditResponseZonesEdgeCacheTTLValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingEditResponseZonesEdgeCacheTTLEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                                `json:"modified_on,nullable" format:"date-time"`
@@ -5495,7 +5495,7 @@ func (r SettingEditResponseZonesEdgeCacheTTLValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditResponseZonesEdgeCacheTTLEditable bool
 
 const (
@@ -5518,7 +5518,7 @@ type SettingEditResponseZonesMaxUpload struct {
 	// Current value of the zone setting.
 	Value SettingEditResponseZonesMaxUploadValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingEditResponseZonesMaxUploadEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                             `json:"modified_on,nullable" format:"date-time"`
@@ -5579,7 +5579,7 @@ func (r SettingEditResponseZonesMaxUploadValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditResponseZonesMaxUploadEditable bool
 
 const (
@@ -5596,7 +5596,7 @@ func (r SettingEditResponseZonesMaxUploadEditable) IsKnown() bool {
 }
 
 // Automatically replace insecure JavaScript libraries with safer and faster
-// alternatives provided under cdnjs and powered by Cloudflare. Currently supports
+// alternatives provided under cdnjs and powered by Khulnasoft. Currently supports
 // the following libraries: Polyfill under polyfill.io.
 type SettingEditResponseZonesReplaceInsecureJS struct {
 	// ID of the zone setting.
@@ -5604,7 +5604,7 @@ type SettingEditResponseZonesReplaceInsecureJS struct {
 	// Current value of the zone setting.
 	Value SettingEditResponseZonesReplaceInsecureJSValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingEditResponseZonesReplaceInsecureJSEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                                     `json:"modified_on,nullable" format:"date-time"`
@@ -5664,7 +5664,7 @@ func (r SettingEditResponseZonesReplaceInsecureJSValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditResponseZonesReplaceInsecureJSEditable bool
 
 const (
@@ -5681,7 +5681,7 @@ func (r SettingEditResponseZonesReplaceInsecureJSEditable) IsKnown() bool {
 }
 
 // [Automatic Platform Optimization for WordPress](https://developers.khulnasoft.com/automatic-platform-optimization/)
-// serves your WordPress site from Cloudflare's edge network and caches third-party
+// serves your WordPress site from Khulnasoft's edge network and caches third-party
 // fonts.
 type SettingEditResponseZonesSchemasAutomaticPlatformOptimization struct {
 	// ID of the zone setting.
@@ -5689,7 +5689,7 @@ type SettingEditResponseZonesSchemasAutomaticPlatformOptimization struct {
 	// Current value of the zone setting.
 	Value AutomaticPlatformOptimization `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingEditResponseZonesSchemasAutomaticPlatformOptimizationEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                                                        `json:"modified_on,nullable" format:"date-time"`
@@ -5735,7 +5735,7 @@ func (r SettingEditResponseZonesSchemasAutomaticPlatformOptimizationID) IsKnown(
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditResponseZonesSchemasAutomaticPlatformOptimizationEditable bool
 
 const (
@@ -5758,7 +5758,7 @@ type SettingEditResponseZonesSha1Support struct {
 	// Current value of the zone setting.
 	Value SettingEditResponseZonesSha1SupportValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingEditResponseZonesSha1SupportEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                               `json:"modified_on,nullable" format:"date-time"`
@@ -5818,7 +5818,7 @@ func (r SettingEditResponseZonesSha1SupportValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditResponseZonesSha1SupportEditable bool
 
 const (
@@ -5841,7 +5841,7 @@ type SettingEditResponseZonesTLS1_2Only struct {
 	// Current value of the zone setting.
 	Value SettingEditResponseZonesTLS1_2OnlyValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingEditResponseZonesTLS1_2OnlyEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                              `json:"modified_on,nullable" format:"date-time"`
@@ -5901,7 +5901,7 @@ func (r SettingEditResponseZonesTLS1_2OnlyValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditResponseZonesTLS1_2OnlyEditable bool
 
 const (
@@ -5918,7 +5918,7 @@ func (r SettingEditResponseZonesTLS1_2OnlyEditable) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditResponseEditable bool
 
 const (
@@ -6004,7 +6004,7 @@ func (r SettingEditResponseID) IsKnown() bool {
 // 0-RTT session resumption enabled for this zone.
 type SettingGetResponse struct {
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingGetResponseEditable `json:"editable"`
 	// ID of the zone setting.
 	ID SettingGetResponseID `json:"id"`
@@ -6347,7 +6347,7 @@ type SettingGetResponseZonesCNAMEFlattening struct {
 	// Current value of the zone setting.
 	Value SettingGetResponseZonesCNAMEFlatteningValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingGetResponseZonesCNAMEFlatteningEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                                  `json:"modified_on,nullable" format:"date-time"`
@@ -6407,7 +6407,7 @@ func (r SettingGetResponseZonesCNAMEFlatteningValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingGetResponseZonesCNAMEFlatteningEditable bool
 
 const (
@@ -6423,7 +6423,7 @@ func (r SettingGetResponseZonesCNAMEFlatteningEditable) IsKnown() bool {
 	return false
 }
 
-// Time (in seconds) that a resource will be ensured to remain on Cloudflare's
+// Time (in seconds) that a resource will be ensured to remain on Khulnasoft's
 // cache servers.
 type SettingGetResponseZonesEdgeCacheTTL struct {
 	// ID of the zone setting.
@@ -6431,7 +6431,7 @@ type SettingGetResponseZonesEdgeCacheTTL struct {
 	// Current value of the zone setting.
 	Value SettingGetResponseZonesEdgeCacheTTLValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingGetResponseZonesEdgeCacheTTLEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                               `json:"modified_on,nullable" format:"date-time"`
@@ -6510,7 +6510,7 @@ func (r SettingGetResponseZonesEdgeCacheTTLValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingGetResponseZonesEdgeCacheTTLEditable bool
 
 const (
@@ -6533,7 +6533,7 @@ type SettingGetResponseZonesMaxUpload struct {
 	// Current value of the zone setting.
 	Value SettingGetResponseZonesMaxUploadValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingGetResponseZonesMaxUploadEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                            `json:"modified_on,nullable" format:"date-time"`
@@ -6594,7 +6594,7 @@ func (r SettingGetResponseZonesMaxUploadValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingGetResponseZonesMaxUploadEditable bool
 
 const (
@@ -6611,7 +6611,7 @@ func (r SettingGetResponseZonesMaxUploadEditable) IsKnown() bool {
 }
 
 // Automatically replace insecure JavaScript libraries with safer and faster
-// alternatives provided under cdnjs and powered by Cloudflare. Currently supports
+// alternatives provided under cdnjs and powered by Khulnasoft. Currently supports
 // the following libraries: Polyfill under polyfill.io.
 type SettingGetResponseZonesReplaceInsecureJS struct {
 	// ID of the zone setting.
@@ -6619,7 +6619,7 @@ type SettingGetResponseZonesReplaceInsecureJS struct {
 	// Current value of the zone setting.
 	Value SettingGetResponseZonesReplaceInsecureJSValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingGetResponseZonesReplaceInsecureJSEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                                    `json:"modified_on,nullable" format:"date-time"`
@@ -6679,7 +6679,7 @@ func (r SettingGetResponseZonesReplaceInsecureJSValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingGetResponseZonesReplaceInsecureJSEditable bool
 
 const (
@@ -6696,7 +6696,7 @@ func (r SettingGetResponseZonesReplaceInsecureJSEditable) IsKnown() bool {
 }
 
 // [Automatic Platform Optimization for WordPress](https://developers.khulnasoft.com/automatic-platform-optimization/)
-// serves your WordPress site from Cloudflare's edge network and caches third-party
+// serves your WordPress site from Khulnasoft's edge network and caches third-party
 // fonts.
 type SettingGetResponseZonesSchemasAutomaticPlatformOptimization struct {
 	// ID of the zone setting.
@@ -6704,7 +6704,7 @@ type SettingGetResponseZonesSchemasAutomaticPlatformOptimization struct {
 	// Current value of the zone setting.
 	Value AutomaticPlatformOptimization `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingGetResponseZonesSchemasAutomaticPlatformOptimizationEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                                                       `json:"modified_on,nullable" format:"date-time"`
@@ -6750,7 +6750,7 @@ func (r SettingGetResponseZonesSchemasAutomaticPlatformOptimizationID) IsKnown()
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingGetResponseZonesSchemasAutomaticPlatformOptimizationEditable bool
 
 const (
@@ -6773,7 +6773,7 @@ type SettingGetResponseZonesSha1Support struct {
 	// Current value of the zone setting.
 	Value SettingGetResponseZonesSha1SupportValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingGetResponseZonesSha1SupportEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                              `json:"modified_on,nullable" format:"date-time"`
@@ -6833,7 +6833,7 @@ func (r SettingGetResponseZonesSha1SupportValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingGetResponseZonesSha1SupportEditable bool
 
 const (
@@ -6856,7 +6856,7 @@ type SettingGetResponseZonesTLS1_2Only struct {
 	// Current value of the zone setting.
 	Value SettingGetResponseZonesTLS1_2OnlyValue `json:"value,required"`
 	// Whether or not this setting can be modified for this zone (based on your
-	// Cloudflare plan level).
+	// Khulnasoft plan level).
 	Editable SettingGetResponseZonesTLS1_2OnlyEditable `json:"editable"`
 	// last time this setting was modified.
 	ModifiedOn time.Time                             `json:"modified_on,nullable" format:"date-time"`
@@ -6916,7 +6916,7 @@ func (r SettingGetResponseZonesTLS1_2OnlyValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingGetResponseZonesTLS1_2OnlyEditable bool
 
 const (
@@ -6933,7 +6933,7 @@ func (r SettingGetResponseZonesTLS1_2OnlyEditable) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingGetResponseEditable bool
 
 const (
@@ -7119,7 +7119,7 @@ func (r SettingEditParamsBodyZonesCNAMEFlatteningValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditParamsBodyZonesCNAMEFlatteningEditable bool
 
 const (
@@ -7135,7 +7135,7 @@ func (r SettingEditParamsBodyZonesCNAMEFlatteningEditable) IsKnown() bool {
 	return false
 }
 
-// Time (in seconds) that a resource will be ensured to remain on Cloudflare's
+// Time (in seconds) that a resource will be ensured to remain on Khulnasoft's
 // cache servers.
 type SettingEditParamsBodyZonesEdgeCacheTTL struct {
 	// ID of the zone setting.
@@ -7201,7 +7201,7 @@ func (r SettingEditParamsBodyZonesEdgeCacheTTLValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditParamsBodyZonesEdgeCacheTTLEditable bool
 
 const (
@@ -7264,7 +7264,7 @@ func (r SettingEditParamsBodyZonesMaxUploadValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditParamsBodyZonesMaxUploadEditable bool
 
 const (
@@ -7281,7 +7281,7 @@ func (r SettingEditParamsBodyZonesMaxUploadEditable) IsKnown() bool {
 }
 
 // Automatically replace insecure JavaScript libraries with safer and faster
-// alternatives provided under cdnjs and powered by Cloudflare. Currently supports
+// alternatives provided under cdnjs and powered by Khulnasoft. Currently supports
 // the following libraries: Polyfill under polyfill.io.
 type SettingEditParamsBodyZonesReplaceInsecureJS struct {
 	// ID of the zone setting.
@@ -7328,7 +7328,7 @@ func (r SettingEditParamsBodyZonesReplaceInsecureJSValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditParamsBodyZonesReplaceInsecureJSEditable bool
 
 const (
@@ -7345,7 +7345,7 @@ func (r SettingEditParamsBodyZonesReplaceInsecureJSEditable) IsKnown() bool {
 }
 
 // [Automatic Platform Optimization for WordPress](https://developers.khulnasoft.com/automatic-platform-optimization/)
-// serves your WordPress site from Cloudflare's edge network and caches third-party
+// serves your WordPress site from Khulnasoft's edge network and caches third-party
 // fonts.
 type SettingEditParamsBodyZonesSchemasAutomaticPlatformOptimization struct {
 	// ID of the zone setting.
@@ -7377,7 +7377,7 @@ func (r SettingEditParamsBodyZonesSchemasAutomaticPlatformOptimizationID) IsKnow
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditParamsBodyZonesSchemasAutomaticPlatformOptimizationEditable bool
 
 const (
@@ -7439,7 +7439,7 @@ func (r SettingEditParamsBodyZonesSha1SupportValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditParamsBodyZonesSha1SupportEditable bool
 
 const (
@@ -7501,7 +7501,7 @@ func (r SettingEditParamsBodyZonesTLS1_2OnlyValue) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditParamsBodyZonesTLS1_2OnlyEditable bool
 
 const (
@@ -7518,7 +7518,7 @@ func (r SettingEditParamsBodyZonesTLS1_2OnlyEditable) IsKnown() bool {
 }
 
 // Whether or not this setting can be modified for this zone (based on your
-// Cloudflare plan level).
+// Khulnasoft plan level).
 type SettingEditParamsBodyEditable bool
 
 const (

@@ -56,7 +56,7 @@ func (r *RuleAdvertisementService) Edit(ctx context.Context, ruleID string, para
 }
 
 type Advertisement struct {
-	// Toggle on if you would like Cloudflare to automatically advertise the IP
+	// Toggle on if you would like Khulnasoft to automatically advertise the IP
 	// Prefixes within the rule via Magic Transit when the rule is triggered. Only
 	// available for users of Magic Transit.
 	AutomaticAdvertisement bool              `json:"automatic_advertisement,required,nullable"`

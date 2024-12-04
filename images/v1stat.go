@@ -34,7 +34,7 @@ func NewV1StatService(opts ...option.RequestOption) (r *V1StatService) {
 	return
 }
 
-// Fetch usage statistics details for Cloudflare Images.
+// Fetch usage statistics details for Khulnasoft Images.
 func (r *V1StatService) Get(ctx context.Context, query V1StatGetParams, opts ...option.RequestOption) (res *Stat, err error) {
 	var env V1StatGetResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -72,9 +72,9 @@ func (r statJSON) RawJSON() string {
 }
 
 type StatCount struct {
-	// Cloudflare Images allowed usage.
+	// Khulnasoft Images allowed usage.
 	Allowed float64 `json:"allowed"`
-	// Cloudflare Images current usage.
+	// Khulnasoft Images current usage.
 	Current float64       `json:"current"`
 	JSON    statCountJSON `json:"-"`
 }

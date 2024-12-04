@@ -36,7 +36,7 @@ func NewHTTPAseBotClassService(opts ...option.RequestOption) (r *HTTPAseBotClass
 }
 
 // Get the top autonomous systems (AS), by HTTP traffic, of the requested bot
-// class. These two categories use Cloudflare's bot score - refer to
+// class. These two categories use Khulnasoft's bot score - refer to
 // [Bot Scores](https://developers.khulnasoft.com/bots/concepts/bot-score) for more
 // information. Values are a percentage out of the total traffic.
 func (r *HTTPAseBotClassService) Get(ctx context.Context, botClass HTTPAseBotClassGetParamsBotClass, query HTTPAseBotClassGetParams, opts ...option.RequestOption) (res *HTTPAseBotClassGetResponse, err error) {

@@ -38,7 +38,7 @@ func NewCallService(opts ...option.RequestOption) (r *CallService) {
 	return
 }
 
-// Creates a new Cloudflare calls app. An app is an unique enviroment where each
+// Creates a new Khulnasoft calls app. An app is an unique enviroment where each
 // Session can access all Tracks within the app.
 func (r *CallService) New(ctx context.Context, params CallNewParams, opts ...option.RequestOption) (res *CallsAppWithSecret, err error) {
 	var env CallNewResponseEnvelope
@@ -77,7 +77,7 @@ func (r *CallService) Update(ctx context.Context, appID string, params CallUpdat
 	return
 }
 
-// Lists all apps in the Cloudflare account
+// Lists all apps in the Khulnasoft account
 func (r *CallService) List(ctx context.Context, query CallListParams, opts ...option.RequestOption) (res *pagination.SinglePage[string], err error) {
 	var raw *http.Response
 	opts = append(r.Options[:], opts...)
@@ -99,12 +99,12 @@ func (r *CallService) List(ctx context.Context, query CallListParams, opts ...op
 	return res, nil
 }
 
-// Lists all apps in the Cloudflare account
+// Lists all apps in the Khulnasoft account
 func (r *CallService) ListAutoPaging(ctx context.Context, query CallListParams, opts ...option.RequestOption) *pagination.SinglePageAutoPager[string] {
 	return pagination.NewSinglePageAutoPager(r.List(ctx, query, opts...))
 }
 
-// Deletes an app from Cloudflare Calls
+// Deletes an app from Khulnasoft Calls
 func (r *CallService) Delete(ctx context.Context, appID string, body CallDeleteParams, opts ...option.RequestOption) (res *CallsApp, err error) {
 	var env CallDeleteResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -153,7 +153,7 @@ type CallsApp struct {
 	Modified time.Time `json:"modified" format:"date-time"`
 	// A short description of Calls app, not shown to end users.
 	Name string `json:"name"`
-	// A Cloudflare-generated unique identifier for a item.
+	// A Khulnasoft-generated unique identifier for a item.
 	UID  string       `json:"uid"`
 	JSON callsAppJSON `json:"-"`
 }
@@ -185,7 +185,7 @@ type CallsAppWithSecret struct {
 	Name string `json:"name"`
 	// Bearer token
 	Secret string `json:"secret"`
-	// A Cloudflare-generated unique identifier for a item.
+	// A Khulnasoft-generated unique identifier for a item.
 	UID  string                 `json:"uid"`
 	JSON callsAppWithSecretJSON `json:"-"`
 }

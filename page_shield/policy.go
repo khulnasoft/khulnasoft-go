@@ -146,7 +146,7 @@ type PolicyParam struct {
 	// Whether the policy is enabled
 	Enabled param.Field[bool] `json:"enabled,required"`
 	// The expression which must match for the policy to be applied, using the
-	// Cloudflare Firewall rule expression syntax
+	// Khulnasoft Firewall rule expression syntax
 	Expression param.Field[string] `json:"expression,required"`
 	// The policy which will be applied
 	Value param.Field[string] `json:"value,required"`
@@ -182,7 +182,7 @@ type PolicyNewResponse struct {
 	// Whether the policy is enabled
 	Enabled bool `json:"enabled,required"`
 	// The expression which must match for the policy to be applied, using the
-	// Cloudflare Firewall rule expression syntax
+	// Khulnasoft Firewall rule expression syntax
 	Expression string `json:"expression,required"`
 	// The policy which will be applied
 	Value string                `json:"value,required"`
@@ -236,7 +236,7 @@ type PolicyUpdateResponse struct {
 	// Whether the policy is enabled
 	Enabled bool `json:"enabled,required"`
 	// The expression which must match for the policy to be applied, using the
-	// Cloudflare Firewall rule expression syntax
+	// Khulnasoft Firewall rule expression syntax
 	Expression string `json:"expression,required"`
 	// The policy which will be applied
 	Value string                   `json:"value,required"`
@@ -290,7 +290,7 @@ type PolicyListResponse struct {
 	// Whether the policy is enabled
 	Enabled bool `json:"enabled,required"`
 	// The expression which must match for the policy to be applied, using the
-	// Cloudflare Firewall rule expression syntax
+	// Khulnasoft Firewall rule expression syntax
 	Expression string `json:"expression,required"`
 	// The policy which will be applied
 	Value string                 `json:"value,required"`
@@ -344,7 +344,7 @@ type PolicyGetResponse struct {
 	// Whether the policy is enabled
 	Enabled bool `json:"enabled,required"`
 	// The expression which must match for the policy to be applied, using the
-	// Cloudflare Firewall rule expression syntax
+	// Khulnasoft Firewall rule expression syntax
 	Expression string `json:"expression,required"`
 	// The policy which will be applied
 	Value string                `json:"value,required"`
@@ -451,7 +451,7 @@ type PolicyUpdateParams struct {
 	// Whether the policy is enabled
 	Enabled param.Field[bool] `json:"enabled"`
 	// The expression which must match for the policy to be applied, using the
-	// Cloudflare Firewall rule expression syntax
+	// Khulnasoft Firewall rule expression syntax
 	Expression param.Field[string] `json:"expression"`
 	// The policy which will be applied
 	Value param.Field[string] `json:"value"`

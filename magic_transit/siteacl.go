@@ -194,7 +194,7 @@ type ACL struct {
 	// Description for the ACL.
 	Description string `json:"description"`
 	// The desired forwarding action for this ACL policy. If set to "false", the policy
-	// will forward traffic to Cloudflare. If set to "true", the policy will forward
+	// will forward traffic to Khulnasoft. If set to "true", the policy will forward
 	// traffic locally on the Magic Connector. If not included in request, will default
 	// to false.
 	ForwardLocally bool             `json:"forward_locally"`
@@ -309,7 +309,7 @@ type SiteACLNewParams struct {
 	// Description for the ACL.
 	Description param.Field[string] `json:"description"`
 	// The desired forwarding action for this ACL policy. If set to "false", the policy
-	// will forward traffic to Cloudflare. If set to "true", the policy will forward
+	// will forward traffic to Khulnasoft. If set to "true", the policy will forward
 	// traffic locally on the Magic Connector. If not included in request, will default
 	// to false.
 	ForwardLocally param.Field[bool]              `json:"forward_locally"`
@@ -370,7 +370,7 @@ type SiteACLUpdateParams struct {
 	// Description for the ACL.
 	Description param.Field[string] `json:"description"`
 	// The desired forwarding action for this ACL policy. If set to "false", the policy
-	// will forward traffic to Cloudflare. If set to "true", the policy will forward
+	// will forward traffic to Khulnasoft. If set to "true", the policy will forward
 	// traffic locally on the Magic Connector. If not included in request, will default
 	// to false.
 	ForwardLocally param.Field[bool]                  `json:"forward_locally"`
@@ -489,7 +489,7 @@ type SiteACLEditParams struct {
 	// Description for the ACL.
 	Description param.Field[string] `json:"description"`
 	// The desired forwarding action for this ACL policy. If set to "false", the policy
-	// will forward traffic to Cloudflare. If set to "true", the policy will forward
+	// will forward traffic to Khulnasoft. If set to "true", the policy will forward
 	// traffic locally on the Magic Connector. If not included in request, will default
 	// to false.
 	ForwardLocally param.Field[bool]                  `json:"forward_locally"`

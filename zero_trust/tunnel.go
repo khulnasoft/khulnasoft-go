@@ -50,7 +50,7 @@ func NewTunnelService(opts ...option.RequestOption) (r *TunnelService) {
 	return
 }
 
-// Creates a new Cloudflare Tunnel in an account.
+// Creates a new Khulnasoft Tunnel in an account.
 func (r *TunnelService) New(ctx context.Context, params TunnelNewParams, opts ...option.RequestOption) (res *TunnelNewResponse, err error) {
 	var env TunnelNewResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -67,7 +67,7 @@ func (r *TunnelService) New(ctx context.Context, params TunnelNewParams, opts ..
 	return
 }
 
-// Lists and filters Cloudflare Tunnels in an account.
+// Lists and filters Khulnasoft Tunnels in an account.
 func (r *TunnelService) List(ctx context.Context, params TunnelListParams, opts ...option.RequestOption) (res *pagination.V4PagePaginationArray[TunnelListResponse], err error) {
 	var raw *http.Response
 	opts = append(r.Options[:], opts...)
@@ -89,12 +89,12 @@ func (r *TunnelService) List(ctx context.Context, params TunnelListParams, opts 
 	return res, nil
 }
 
-// Lists and filters Cloudflare Tunnels in an account.
+// Lists and filters Khulnasoft Tunnels in an account.
 func (r *TunnelService) ListAutoPaging(ctx context.Context, params TunnelListParams, opts ...option.RequestOption) *pagination.V4PagePaginationArrayAutoPager[TunnelListResponse] {
 	return pagination.NewV4PagePaginationArrayAutoPager(r.List(ctx, params, opts...))
 }
 
-// Deletes a Cloudflare Tunnel from an account.
+// Deletes a Khulnasoft Tunnel from an account.
 func (r *TunnelService) Delete(ctx context.Context, tunnelID string, body TunnelDeleteParams, opts ...option.RequestOption) (res *TunnelDeleteResponse, err error) {
 	var env TunnelDeleteResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -115,7 +115,7 @@ func (r *TunnelService) Delete(ctx context.Context, tunnelID string, body Tunnel
 	return
 }
 
-// Updates an existing Cloudflare Tunnel.
+// Updates an existing Khulnasoft Tunnel.
 func (r *TunnelService) Edit(ctx context.Context, tunnelID string, params TunnelEditParams, opts ...option.RequestOption) (res *TunnelEditResponse, err error) {
 	var env TunnelEditResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -136,7 +136,7 @@ func (r *TunnelService) Edit(ctx context.Context, tunnelID string, params Tunnel
 	return
 }
 
-// Fetches a single Cloudflare Tunnel.
+// Fetches a single Khulnasoft Tunnel.
 func (r *TunnelService) Get(ctx context.Context, tunnelID string, query TunnelGetParams, opts ...option.RequestOption) (res *TunnelGetResponse, err error) {
 	var env TunnelGetResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -157,17 +157,17 @@ func (r *TunnelService) Get(ctx context.Context, tunnelID string, query TunnelGe
 	return
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelNewResponse struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// This field can have the runtime type of [[]shared.CloudflareTunnelConnection],
+	// This field can have the runtime type of [[]shared.KhulnasoftTunnelConnection],
 	// [[]TunnelNewResponseTunnelWARPConnectorTunnelConnection].
 	Connections interface{} `json:"connections,required"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -187,7 +187,7 @@ type TunnelNewResponse struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelNewResponseStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelNewResponseTunType `json:"tun_type"`
@@ -230,15 +230,15 @@ func (r *TunnelNewResponse) UnmarshalJSON(data []byte) (err error) {
 // AsUnion returns a [TunnelNewResponseUnion] interface which you can cast to the
 // specific types for more type safety.
 //
-// Possible runtime types of the union are [shared.CloudflareTunnel],
+// Possible runtime types of the union are [shared.KhulnasoftTunnel],
 // [zero_trust.TunnelNewResponseTunnelWARPConnectorTunnel].
 func (r TunnelNewResponse) AsUnion() TunnelNewResponseUnion {
 	return r.union
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 //
-// Union satisfied by [shared.CloudflareTunnel] or
+// Union satisfied by [shared.KhulnasoftTunnel] or
 // [zero_trust.TunnelNewResponseTunnelWARPConnectorTunnel].
 type TunnelNewResponseUnion interface {
 	ImplementsZeroTrustTunnelNewResponse()
@@ -250,7 +250,7 @@ func init() {
 		"",
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
-			Type:       reflect.TypeOf(shared.CloudflareTunnel{}),
+			Type:       reflect.TypeOf(shared.KhulnasoftTunnel{}),
 		},
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
@@ -259,18 +259,18 @@ func init() {
 	)
 }
 
-// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
+// A Warp Connector Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelNewResponseTunnelWARPConnectorTunnel struct {
 	// UUID of the tunnel.
 	ID string `json:"id" format:"uuid"`
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	// The Khulnasoft Tunnel connections between your origin and Khulnasoft's edge.
 	Connections []TunnelNewResponseTunnelWARPConnectorTunnelConnection `json:"connections"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -285,7 +285,7 @@ type TunnelNewResponseTunnelWARPConnectorTunnel struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelNewResponseTunnelWARPConnectorTunnelStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelNewResponseTunnelWARPConnectorTunnelTunType `json:"tun_type"`
@@ -321,15 +321,15 @@ func (r tunnelNewResponseTunnelWARPConnectorTunnelJSON) RawJSON() string {
 func (r TunnelNewResponseTunnelWARPConnectorTunnel) ImplementsZeroTrustTunnelNewResponse() {}
 
 type TunnelNewResponseTunnelWARPConnectorTunnelConnection struct {
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	ID string `json:"id" format:"uuid"`
-	// UUID of the Cloudflare Tunnel connector.
+	// UUID of the Khulnasoft Tunnel connector.
 	ClientID string `json:"client_id" format:"uuid"`
 	// The khulnasoftd version used to establish this connection.
 	ClientVersion string `json:"client_version"`
-	// The Cloudflare data center used for this connection.
+	// The Khulnasoft data center used for this connection.
 	ColoName string `json:"colo_name"`
-	// Cloudflare continues to track connections for several minutes after they
+	// Khulnasoft continues to track connections for several minutes after they
 	// disconnect. This is an optimization to improve latency and reliability of
 	// reconnecting. If `true`, the connection has disconnected but is still being
 	// tracked. If `false`, the connection is actively serving traffic.
@@ -338,7 +338,7 @@ type TunnelNewResponseTunnelWARPConnectorTunnelConnection struct {
 	OpenedAt time.Time `json:"opened_at" format:"date-time"`
 	// The public IP address of the host running khulnasoftd.
 	OriginIP string `json:"origin_ip"`
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	UUID string                                                   `json:"uuid" format:"uuid"`
 	JSON tunnelNewResponseTunnelWARPConnectorTunnelConnectionJSON `json:"-"`
 }
@@ -369,7 +369,7 @@ func (r tunnelNewResponseTunnelWARPConnectorTunnelConnectionJSON) RawJSON() stri
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelNewResponseTunnelWARPConnectorTunnelStatus string
 
 const (
@@ -409,7 +409,7 @@ func (r TunnelNewResponseTunnelWARPConnectorTunnelTunType) IsKnown() bool {
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelNewResponseStatus string
 
 const (
@@ -446,17 +446,17 @@ func (r TunnelNewResponseTunType) IsKnown() bool {
 	return false
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelListResponse struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// This field can have the runtime type of [[]shared.CloudflareTunnelConnection],
+	// This field can have the runtime type of [[]shared.KhulnasoftTunnelConnection],
 	// [[]TunnelListResponseTunnelWARPConnectorTunnelConnection].
 	Connections interface{} `json:"connections,required"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -476,7 +476,7 @@ type TunnelListResponse struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelListResponseStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelListResponseTunType `json:"tun_type"`
@@ -519,15 +519,15 @@ func (r *TunnelListResponse) UnmarshalJSON(data []byte) (err error) {
 // AsUnion returns a [TunnelListResponseUnion] interface which you can cast to the
 // specific types for more type safety.
 //
-// Possible runtime types of the union are [shared.CloudflareTunnel],
+// Possible runtime types of the union are [shared.KhulnasoftTunnel],
 // [zero_trust.TunnelListResponseTunnelWARPConnectorTunnel].
 func (r TunnelListResponse) AsUnion() TunnelListResponseUnion {
 	return r.union
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 //
-// Union satisfied by [shared.CloudflareTunnel] or
+// Union satisfied by [shared.KhulnasoftTunnel] or
 // [zero_trust.TunnelListResponseTunnelWARPConnectorTunnel].
 type TunnelListResponseUnion interface {
 	ImplementsZeroTrustTunnelListResponse()
@@ -539,7 +539,7 @@ func init() {
 		"",
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
-			Type:       reflect.TypeOf(shared.CloudflareTunnel{}),
+			Type:       reflect.TypeOf(shared.KhulnasoftTunnel{}),
 		},
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
@@ -548,18 +548,18 @@ func init() {
 	)
 }
 
-// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
+// A Warp Connector Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelListResponseTunnelWARPConnectorTunnel struct {
 	// UUID of the tunnel.
 	ID string `json:"id" format:"uuid"`
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	// The Khulnasoft Tunnel connections between your origin and Khulnasoft's edge.
 	Connections []TunnelListResponseTunnelWARPConnectorTunnelConnection `json:"connections"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -574,7 +574,7 @@ type TunnelListResponseTunnelWARPConnectorTunnel struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelListResponseTunnelWARPConnectorTunnelStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelListResponseTunnelWARPConnectorTunnelTunType `json:"tun_type"`
@@ -610,15 +610,15 @@ func (r tunnelListResponseTunnelWARPConnectorTunnelJSON) RawJSON() string {
 func (r TunnelListResponseTunnelWARPConnectorTunnel) ImplementsZeroTrustTunnelListResponse() {}
 
 type TunnelListResponseTunnelWARPConnectorTunnelConnection struct {
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	ID string `json:"id" format:"uuid"`
-	// UUID of the Cloudflare Tunnel connector.
+	// UUID of the Khulnasoft Tunnel connector.
 	ClientID string `json:"client_id" format:"uuid"`
 	// The khulnasoftd version used to establish this connection.
 	ClientVersion string `json:"client_version"`
-	// The Cloudflare data center used for this connection.
+	// The Khulnasoft data center used for this connection.
 	ColoName string `json:"colo_name"`
-	// Cloudflare continues to track connections for several minutes after they
+	// Khulnasoft continues to track connections for several minutes after they
 	// disconnect. This is an optimization to improve latency and reliability of
 	// reconnecting. If `true`, the connection has disconnected but is still being
 	// tracked. If `false`, the connection is actively serving traffic.
@@ -627,7 +627,7 @@ type TunnelListResponseTunnelWARPConnectorTunnelConnection struct {
 	OpenedAt time.Time `json:"opened_at" format:"date-time"`
 	// The public IP address of the host running khulnasoftd.
 	OriginIP string `json:"origin_ip"`
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	UUID string                                                    `json:"uuid" format:"uuid"`
 	JSON tunnelListResponseTunnelWARPConnectorTunnelConnectionJSON `json:"-"`
 }
@@ -658,7 +658,7 @@ func (r tunnelListResponseTunnelWARPConnectorTunnelConnectionJSON) RawJSON() str
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelListResponseTunnelWARPConnectorTunnelStatus string
 
 const (
@@ -698,7 +698,7 @@ func (r TunnelListResponseTunnelWARPConnectorTunnelTunType) IsKnown() bool {
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelListResponseStatus string
 
 const (
@@ -735,17 +735,17 @@ func (r TunnelListResponseTunType) IsKnown() bool {
 	return false
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelDeleteResponse struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// This field can have the runtime type of [[]shared.CloudflareTunnelConnection],
+	// This field can have the runtime type of [[]shared.KhulnasoftTunnelConnection],
 	// [[]TunnelDeleteResponseTunnelWARPConnectorTunnelConnection].
 	Connections interface{} `json:"connections,required"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -765,7 +765,7 @@ type TunnelDeleteResponse struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelDeleteResponseStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelDeleteResponseTunType `json:"tun_type"`
@@ -808,15 +808,15 @@ func (r *TunnelDeleteResponse) UnmarshalJSON(data []byte) (err error) {
 // AsUnion returns a [TunnelDeleteResponseUnion] interface which you can cast to
 // the specific types for more type safety.
 //
-// Possible runtime types of the union are [shared.CloudflareTunnel],
+// Possible runtime types of the union are [shared.KhulnasoftTunnel],
 // [zero_trust.TunnelDeleteResponseTunnelWARPConnectorTunnel].
 func (r TunnelDeleteResponse) AsUnion() TunnelDeleteResponseUnion {
 	return r.union
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 //
-// Union satisfied by [shared.CloudflareTunnel] or
+// Union satisfied by [shared.KhulnasoftTunnel] or
 // [zero_trust.TunnelDeleteResponseTunnelWARPConnectorTunnel].
 type TunnelDeleteResponseUnion interface {
 	ImplementsZeroTrustTunnelDeleteResponse()
@@ -828,7 +828,7 @@ func init() {
 		"",
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
-			Type:       reflect.TypeOf(shared.CloudflareTunnel{}),
+			Type:       reflect.TypeOf(shared.KhulnasoftTunnel{}),
 		},
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
@@ -837,18 +837,18 @@ func init() {
 	)
 }
 
-// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
+// A Warp Connector Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelDeleteResponseTunnelWARPConnectorTunnel struct {
 	// UUID of the tunnel.
 	ID string `json:"id" format:"uuid"`
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	// The Khulnasoft Tunnel connections between your origin and Khulnasoft's edge.
 	Connections []TunnelDeleteResponseTunnelWARPConnectorTunnelConnection `json:"connections"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -863,7 +863,7 @@ type TunnelDeleteResponseTunnelWARPConnectorTunnel struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelDeleteResponseTunnelWARPConnectorTunnelStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelDeleteResponseTunnelWARPConnectorTunnelTunType `json:"tun_type"`
@@ -899,15 +899,15 @@ func (r tunnelDeleteResponseTunnelWARPConnectorTunnelJSON) RawJSON() string {
 func (r TunnelDeleteResponseTunnelWARPConnectorTunnel) ImplementsZeroTrustTunnelDeleteResponse() {}
 
 type TunnelDeleteResponseTunnelWARPConnectorTunnelConnection struct {
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	ID string `json:"id" format:"uuid"`
-	// UUID of the Cloudflare Tunnel connector.
+	// UUID of the Khulnasoft Tunnel connector.
 	ClientID string `json:"client_id" format:"uuid"`
 	// The khulnasoftd version used to establish this connection.
 	ClientVersion string `json:"client_version"`
-	// The Cloudflare data center used for this connection.
+	// The Khulnasoft data center used for this connection.
 	ColoName string `json:"colo_name"`
-	// Cloudflare continues to track connections for several minutes after they
+	// Khulnasoft continues to track connections for several minutes after they
 	// disconnect. This is an optimization to improve latency and reliability of
 	// reconnecting. If `true`, the connection has disconnected but is still being
 	// tracked. If `false`, the connection is actively serving traffic.
@@ -916,7 +916,7 @@ type TunnelDeleteResponseTunnelWARPConnectorTunnelConnection struct {
 	OpenedAt time.Time `json:"opened_at" format:"date-time"`
 	// The public IP address of the host running khulnasoftd.
 	OriginIP string `json:"origin_ip"`
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	UUID string                                                      `json:"uuid" format:"uuid"`
 	JSON tunnelDeleteResponseTunnelWARPConnectorTunnelConnectionJSON `json:"-"`
 }
@@ -948,7 +948,7 @@ func (r tunnelDeleteResponseTunnelWARPConnectorTunnelConnectionJSON) RawJSON() s
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelDeleteResponseTunnelWARPConnectorTunnelStatus string
 
 const (
@@ -988,7 +988,7 @@ func (r TunnelDeleteResponseTunnelWARPConnectorTunnelTunType) IsKnown() bool {
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelDeleteResponseStatus string
 
 const (
@@ -1025,17 +1025,17 @@ func (r TunnelDeleteResponseTunType) IsKnown() bool {
 	return false
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelEditResponse struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// This field can have the runtime type of [[]shared.CloudflareTunnelConnection],
+	// This field can have the runtime type of [[]shared.KhulnasoftTunnelConnection],
 	// [[]TunnelEditResponseTunnelWARPConnectorTunnelConnection].
 	Connections interface{} `json:"connections,required"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -1055,7 +1055,7 @@ type TunnelEditResponse struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelEditResponseStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelEditResponseTunType `json:"tun_type"`
@@ -1098,15 +1098,15 @@ func (r *TunnelEditResponse) UnmarshalJSON(data []byte) (err error) {
 // AsUnion returns a [TunnelEditResponseUnion] interface which you can cast to the
 // specific types for more type safety.
 //
-// Possible runtime types of the union are [shared.CloudflareTunnel],
+// Possible runtime types of the union are [shared.KhulnasoftTunnel],
 // [zero_trust.TunnelEditResponseTunnelWARPConnectorTunnel].
 func (r TunnelEditResponse) AsUnion() TunnelEditResponseUnion {
 	return r.union
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 //
-// Union satisfied by [shared.CloudflareTunnel] or
+// Union satisfied by [shared.KhulnasoftTunnel] or
 // [zero_trust.TunnelEditResponseTunnelWARPConnectorTunnel].
 type TunnelEditResponseUnion interface {
 	ImplementsZeroTrustTunnelEditResponse()
@@ -1118,7 +1118,7 @@ func init() {
 		"",
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
-			Type:       reflect.TypeOf(shared.CloudflareTunnel{}),
+			Type:       reflect.TypeOf(shared.KhulnasoftTunnel{}),
 		},
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
@@ -1127,18 +1127,18 @@ func init() {
 	)
 }
 
-// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
+// A Warp Connector Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelEditResponseTunnelWARPConnectorTunnel struct {
 	// UUID of the tunnel.
 	ID string `json:"id" format:"uuid"`
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	// The Khulnasoft Tunnel connections between your origin and Khulnasoft's edge.
 	Connections []TunnelEditResponseTunnelWARPConnectorTunnelConnection `json:"connections"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -1153,7 +1153,7 @@ type TunnelEditResponseTunnelWARPConnectorTunnel struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelEditResponseTunnelWARPConnectorTunnelStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelEditResponseTunnelWARPConnectorTunnelTunType `json:"tun_type"`
@@ -1189,15 +1189,15 @@ func (r tunnelEditResponseTunnelWARPConnectorTunnelJSON) RawJSON() string {
 func (r TunnelEditResponseTunnelWARPConnectorTunnel) ImplementsZeroTrustTunnelEditResponse() {}
 
 type TunnelEditResponseTunnelWARPConnectorTunnelConnection struct {
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	ID string `json:"id" format:"uuid"`
-	// UUID of the Cloudflare Tunnel connector.
+	// UUID of the Khulnasoft Tunnel connector.
 	ClientID string `json:"client_id" format:"uuid"`
 	// The khulnasoftd version used to establish this connection.
 	ClientVersion string `json:"client_version"`
-	// The Cloudflare data center used for this connection.
+	// The Khulnasoft data center used for this connection.
 	ColoName string `json:"colo_name"`
-	// Cloudflare continues to track connections for several minutes after they
+	// Khulnasoft continues to track connections for several minutes after they
 	// disconnect. This is an optimization to improve latency and reliability of
 	// reconnecting. If `true`, the connection has disconnected but is still being
 	// tracked. If `false`, the connection is actively serving traffic.
@@ -1206,7 +1206,7 @@ type TunnelEditResponseTunnelWARPConnectorTunnelConnection struct {
 	OpenedAt time.Time `json:"opened_at" format:"date-time"`
 	// The public IP address of the host running khulnasoftd.
 	OriginIP string `json:"origin_ip"`
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	UUID string                                                    `json:"uuid" format:"uuid"`
 	JSON tunnelEditResponseTunnelWARPConnectorTunnelConnectionJSON `json:"-"`
 }
@@ -1237,7 +1237,7 @@ func (r tunnelEditResponseTunnelWARPConnectorTunnelConnectionJSON) RawJSON() str
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelEditResponseTunnelWARPConnectorTunnelStatus string
 
 const (
@@ -1277,7 +1277,7 @@ func (r TunnelEditResponseTunnelWARPConnectorTunnelTunType) IsKnown() bool {
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelEditResponseStatus string
 
 const (
@@ -1314,17 +1314,17 @@ func (r TunnelEditResponseTunType) IsKnown() bool {
 	return false
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelGetResponse struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// This field can have the runtime type of [[]shared.CloudflareTunnelConnection],
+	// This field can have the runtime type of [[]shared.KhulnasoftTunnelConnection],
 	// [[]TunnelGetResponseTunnelWARPConnectorTunnelConnection].
 	Connections interface{} `json:"connections,required"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -1344,7 +1344,7 @@ type TunnelGetResponse struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelGetResponseStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelGetResponseTunType `json:"tun_type"`
@@ -1387,15 +1387,15 @@ func (r *TunnelGetResponse) UnmarshalJSON(data []byte) (err error) {
 // AsUnion returns a [TunnelGetResponseUnion] interface which you can cast to the
 // specific types for more type safety.
 //
-// Possible runtime types of the union are [shared.CloudflareTunnel],
+// Possible runtime types of the union are [shared.KhulnasoftTunnel],
 // [zero_trust.TunnelGetResponseTunnelWARPConnectorTunnel].
 func (r TunnelGetResponse) AsUnion() TunnelGetResponseUnion {
 	return r.union
 }
 
-// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 //
-// Union satisfied by [shared.CloudflareTunnel] or
+// Union satisfied by [shared.KhulnasoftTunnel] or
 // [zero_trust.TunnelGetResponseTunnelWARPConnectorTunnel].
 type TunnelGetResponseUnion interface {
 	ImplementsZeroTrustTunnelGetResponse()
@@ -1407,7 +1407,7 @@ func init() {
 		"",
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
-			Type:       reflect.TypeOf(shared.CloudflareTunnel{}),
+			Type:       reflect.TypeOf(shared.KhulnasoftTunnel{}),
 		},
 		apijson.UnionVariant{
 			TypeFilter: gjson.JSON,
@@ -1416,18 +1416,18 @@ func init() {
 	)
 }
 
-// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
+// A Warp Connector Tunnel that connects your origin to Khulnasoft's edge.
 type TunnelGetResponseTunnelWARPConnectorTunnel struct {
 	// UUID of the tunnel.
 	ID string `json:"id" format:"uuid"`
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountTag string `json:"account_tag"`
-	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	// The Khulnasoft Tunnel connections between your origin and Khulnasoft's edge.
 	Connections []TunnelGetResponseTunnelWARPConnectorTunnelConnection `json:"connections"`
-	// Timestamp of when the tunnel established at least one connection to Cloudflare's
+	// Timestamp of when the tunnel established at least one connection to Khulnasoft's
 	// edge. If `null`, the tunnel is inactive.
 	ConnsActiveAt time.Time `json:"conns_active_at" format:"date-time"`
-	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's
+	// Timestamp of when the tunnel became inactive (no connections to Khulnasoft's
 	// edge). If `null`, the tunnel is active.
 	ConnsInactiveAt time.Time `json:"conns_inactive_at" format:"date-time"`
 	// Timestamp of when the resource was created.
@@ -1442,7 +1442,7 @@ type TunnelGetResponseTunnelWARPConnectorTunnel struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status TunnelGetResponseTunnelWARPConnectorTunnelStatus `json:"status"`
 	// The type of tunnel.
 	TunType TunnelGetResponseTunnelWARPConnectorTunnelTunType `json:"tun_type"`
@@ -1478,15 +1478,15 @@ func (r tunnelGetResponseTunnelWARPConnectorTunnelJSON) RawJSON() string {
 func (r TunnelGetResponseTunnelWARPConnectorTunnel) ImplementsZeroTrustTunnelGetResponse() {}
 
 type TunnelGetResponseTunnelWARPConnectorTunnelConnection struct {
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	ID string `json:"id" format:"uuid"`
-	// UUID of the Cloudflare Tunnel connector.
+	// UUID of the Khulnasoft Tunnel connector.
 	ClientID string `json:"client_id" format:"uuid"`
 	// The khulnasoftd version used to establish this connection.
 	ClientVersion string `json:"client_version"`
-	// The Cloudflare data center used for this connection.
+	// The Khulnasoft data center used for this connection.
 	ColoName string `json:"colo_name"`
-	// Cloudflare continues to track connections for several minutes after they
+	// Khulnasoft continues to track connections for several minutes after they
 	// disconnect. This is an optimization to improve latency and reliability of
 	// reconnecting. If `true`, the connection has disconnected but is still being
 	// tracked. If `false`, the connection is actively serving traffic.
@@ -1495,7 +1495,7 @@ type TunnelGetResponseTunnelWARPConnectorTunnelConnection struct {
 	OpenedAt time.Time `json:"opened_at" format:"date-time"`
 	// The public IP address of the host running khulnasoftd.
 	OriginIP string `json:"origin_ip"`
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	UUID string                                                   `json:"uuid" format:"uuid"`
 	JSON tunnelGetResponseTunnelWARPConnectorTunnelConnectionJSON `json:"-"`
 }
@@ -1526,7 +1526,7 @@ func (r tunnelGetResponseTunnelWARPConnectorTunnelConnectionJSON) RawJSON() stri
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelGetResponseTunnelWARPConnectorTunnelStatus string
 
 const (
@@ -1566,7 +1566,7 @@ func (r TunnelGetResponseTunnelWARPConnectorTunnelTunType) IsKnown() bool {
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelGetResponseStatus string
 
 const (
@@ -1604,7 +1604,7 @@ func (r TunnelGetResponseTunType) IsKnown() bool {
 }
 
 type TunnelNewParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// A user-friendly name for a tunnel.
 	Name param.Field[string] `json:"name,required"`
@@ -1628,12 +1628,12 @@ type TunnelNewParamsConfigSrc string
 
 const (
 	TunnelNewParamsConfigSrcLocal      TunnelNewParamsConfigSrc = "local"
-	TunnelNewParamsConfigSrcCloudflare TunnelNewParamsConfigSrc = "khulnasoft"
+	TunnelNewParamsConfigSrcKhulnasoft TunnelNewParamsConfigSrc = "khulnasoft"
 )
 
 func (r TunnelNewParamsConfigSrc) IsKnown() bool {
 	switch r {
-	case TunnelNewParamsConfigSrcLocal, TunnelNewParamsConfigSrcCloudflare:
+	case TunnelNewParamsConfigSrcLocal, TunnelNewParamsConfigSrcKhulnasoft:
 		return true
 	}
 	return false
@@ -1642,7 +1642,7 @@ func (r TunnelNewParamsConfigSrc) IsKnown() bool {
 type TunnelNewResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
-	// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+	// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 	Result TunnelNewResponse `json:"result,required"`
 	// Whether the API call was successful
 	Success TunnelNewResponseEnvelopeSuccess `json:"success,required"`
@@ -1684,7 +1684,7 @@ func (r TunnelNewResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type TunnelListParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID     param.Field[string] `path:"account_id,required"`
 	ExcludePrefix param.Field[string] `query:"exclude_prefix"`
 	// If provided, include only tunnels that were created (and not deleted) before
@@ -1703,7 +1703,7 @@ type TunnelListParams struct {
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been
 	// run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 	// state), `healthy` (tunnel is active and able to serve traffic), or `down`
-	// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 	Status param.Field[TunnelListParamsStatus] `query:"status"`
 	// UUID of the tunnel.
 	UUID          param.Field[string]    `query:"uuid" format:"uuid"`
@@ -1722,7 +1722,7 @@ func (r TunnelListParams) URLQuery() (v url.Values) {
 // The status of the tunnel. Valid values are `inactive` (tunnel has never been
 // run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy
 // state), `healthy` (tunnel is active and able to serve traffic), or `down`
-// (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+// (tunnel can not serve traffic as it has no connections to the Khulnasoft Edge).
 type TunnelListParamsStatus string
 
 const (
@@ -1741,14 +1741,14 @@ func (r TunnelListParamsStatus) IsKnown() bool {
 }
 
 type TunnelDeleteParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 
 type TunnelDeleteResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
-	// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+	// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 	Result TunnelDeleteResponse `json:"result,required"`
 	// Whether the API call was successful
 	Success TunnelDeleteResponseEnvelopeSuccess `json:"success,required"`
@@ -1790,7 +1790,7 @@ func (r TunnelDeleteResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type TunnelEditParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// A user-friendly name for a tunnel.
 	Name param.Field[string] `json:"name"`
@@ -1806,7 +1806,7 @@ func (r TunnelEditParams) MarshalJSON() (data []byte, err error) {
 type TunnelEditResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
-	// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+	// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 	Result TunnelEditResponse `json:"result,required"`
 	// Whether the API call was successful
 	Success TunnelEditResponseEnvelopeSuccess `json:"success,required"`
@@ -1848,14 +1848,14 @@ func (r TunnelEditResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type TunnelGetParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 
 type TunnelGetResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
-	// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+	// A Khulnasoft Tunnel that connects your origin to Khulnasoft's edge.
 	Result TunnelGetResponse `json:"result,required"`
 	// Whether the API call was successful
 	Success TunnelGetResponseEnvelopeSuccess `json:"success,required"`

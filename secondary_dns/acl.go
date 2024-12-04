@@ -146,7 +146,7 @@ type ACL struct {
 	ID string `json:"id,required"`
 	// Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will
 	// be applied for the entire account. The IP range is used to allow additional
-	// NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from
+	// NOTIFY IPs for secondary zones and IPs Khulnasoft allows AXFR/IXFR requests from
 	// for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for
 	// IPv6 respectively.
 	IPRange string `json:"ip_range,required"`
@@ -175,7 +175,7 @@ func (r aclJSON) RawJSON() string {
 type ACLParam struct {
 	// Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will
 	// be applied for the entire account. The IP range is used to allow additional
-	// NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from
+	// NOTIFY IPs for secondary zones and IPs Khulnasoft allows AXFR/IXFR requests from
 	// for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for
 	// IPv6 respectively.
 	IPRange param.Field[string] `json:"ip_range,required"`
@@ -212,7 +212,7 @@ type ACLNewParams struct {
 	AccountID param.Field[string] `path:"account_id,required"`
 	// Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will
 	// be applied for the entire account. The IP range is used to allow additional
-	// NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from
+	// NOTIFY IPs for secondary zones and IPs Khulnasoft allows AXFR/IXFR requests from
 	// for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for
 	// IPv6 respectively.
 	IPRange param.Field[string] `json:"ip_range,required"`

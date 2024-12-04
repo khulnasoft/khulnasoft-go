@@ -114,7 +114,7 @@ type PagePreviewParams struct {
 	// html file that will be rendered at the edge. If no custom_page_html is provided,
 	// the default waiting room will be used. The template is based on mustache (
 	// https://mustache.github.io/ ). There are several variables that are evaluated by
-	// the Cloudflare edge:
+	// the Khulnasoft edge:
 	//
 	//  1. {{`waitTimeKnown`}} Acts like a boolean value that indicates the behavior to
 	//     take when wait time is not available, for instance when queue_all is

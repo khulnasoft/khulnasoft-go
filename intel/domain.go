@@ -68,7 +68,7 @@ type Domain struct {
 	// inherited, if applicable.
 	InheritedFrom      string                    `json:"inherited_from"`
 	InheritedRiskTypes []DomainInheritedRiskType `json:"inherited_risk_types"`
-	// Global Cloudflare 100k ranking for the last 30 days, if available for the
+	// Global Khulnasoft 100k ranking for the last 30 days, if available for the
 	// hostname. The top ranked domain is 1, the lowest ranked domain is 100,000.
 	PopularityRank int64 `json:"popularity_rank"`
 	// Specifies a list of references to one or more IP addresses or domain names that

@@ -36,7 +36,7 @@ func NewTURNKeyService(opts ...option.RequestOption) (r *TURNKeyService) {
 	return
 }
 
-// Creates a new Cloudflare Calls TURN key.
+// Creates a new Khulnasoft Calls TURN key.
 func (r *TURNKeyService) New(ctx context.Context, params TURNKeyNewParams, opts ...option.RequestOption) (res *TURNKeyNewResponse, err error) {
 	opts = append(r.Options[:], opts...)
 	if params.AccountID.Value == "" {
@@ -69,7 +69,7 @@ func (r *TURNKeyService) Update(ctx context.Context, keyID string, params TURNKe
 	return
 }
 
-// Lists all TURN keys in the Cloudflare account
+// Lists all TURN keys in the Khulnasoft account
 func (r *TURNKeyService) List(ctx context.Context, query TURNKeyListParams, opts ...option.RequestOption) (res *pagination.SinglePage[string], err error) {
 	var raw *http.Response
 	opts = append(r.Options[:], opts...)
@@ -91,12 +91,12 @@ func (r *TURNKeyService) List(ctx context.Context, query TURNKeyListParams, opts
 	return res, nil
 }
 
-// Lists all TURN keys in the Cloudflare account
+// Lists all TURN keys in the Khulnasoft account
 func (r *TURNKeyService) ListAutoPaging(ctx context.Context, query TURNKeyListParams, opts ...option.RequestOption) *pagination.SinglePageAutoPager[string] {
 	return pagination.NewSinglePageAutoPager(r.List(ctx, query, opts...))
 }
 
-// Deletes a TURN key from Cloudflare Calls
+// Deletes a TURN key from Khulnasoft Calls
 func (r *TURNKeyService) Delete(ctx context.Context, keyID string, body TURNKeyDeleteParams, opts ...option.RequestOption) (res *string, err error) {
 	var env TURNKeyDeleteResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -147,7 +147,7 @@ type TURNKeyNewResponse struct {
 	Modified time.Time `json:"modified" format:"date-time"`
 	// A short description of a TURN key, not shown to end users.
 	Name string `json:"name"`
-	// A Cloudflare-generated unique identifier for a item.
+	// A Khulnasoft-generated unique identifier for a item.
 	UID  string                 `json:"uid"`
 	JSON turnKeyNewResponseJSON `json:"-"`
 }

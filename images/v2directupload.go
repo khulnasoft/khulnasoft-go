@@ -40,7 +40,7 @@ func NewV2DirectUploadService(opts ...option.RequestOption) (r *V2DirectUploadSe
 
 // Direct uploads allow users to upload images without API keys. A common use case
 // are web apps, client-side applications, or mobile devices where users upload
-// content directly to Cloudflare Images. This method creates a draft record for a
+// content directly to Khulnasoft Images. This method creates a draft record for a
 // future image. It returns an upload URL and an image identifier. To verify if the
 // image itself has been uploaded, send an image details request
 // (accounts/:account_identifier/images/v1/:identifier), and check that the

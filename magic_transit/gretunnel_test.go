@@ -59,7 +59,7 @@ func TestGRETunnelUpdateWithOptionalParams(t *testing.T) {
 		"023e105f4ecef8ad9ca31a8372d0c353",
 		magic_transit.GRETunnelUpdateParams{
 			AccountID:             khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
-			CloudflareGREEndpoint: khulnasoft.F("203.0.113.1"),
+			KhulnasoftGREEndpoint: khulnasoft.F("203.0.113.1"),
 			CustomerGREEndpoint:   khulnasoft.F("203.0.113.1"),
 			InterfaceAddress:      khulnasoft.F("192.0.2.0/31"),
 			Name:                  khulnasoft.F("GRE_1"),

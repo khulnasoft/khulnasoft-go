@@ -60,7 +60,7 @@ func (r *URLNormalizationService) Get(ctx context.Context, query URLNormalizatio
 type URLNormalizationUpdateResponse struct {
 	// The scope of the URL normalization.
 	Scope string `json:"scope"`
-	// The type of URL normalization performed by Cloudflare.
+	// The type of URL normalization performed by Khulnasoft.
 	Type string                             `json:"type"`
 	JSON urlNormalizationUpdateResponseJSON `json:"-"`
 }
@@ -85,7 +85,7 @@ func (r urlNormalizationUpdateResponseJSON) RawJSON() string {
 type URLNormalizationGetResponse struct {
 	// The scope of the URL normalization.
 	Scope string `json:"scope"`
-	// The type of URL normalization performed by Cloudflare.
+	// The type of URL normalization performed by Khulnasoft.
 	Type string                          `json:"type"`
 	JSON urlNormalizationGetResponseJSON `json:"-"`
 }
@@ -112,7 +112,7 @@ type URLNormalizationUpdateParams struct {
 	ZoneID param.Field[string] `path:"zone_id,required"`
 	// The scope of the URL normalization.
 	Scope param.Field[string] `json:"scope"`
-	// The type of URL normalization performed by Cloudflare.
+	// The type of URL normalization performed by Khulnasoft.
 	Type param.Field[string] `json:"type"`
 }
 

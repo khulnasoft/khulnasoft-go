@@ -37,7 +37,7 @@ func NewDLPDatasetVersionService(opts ...option.RequestOption) (r *DLPDatasetVer
 }
 
 // This is used for multi-column EDMv2 datasets. The EDMv2 format can only be
-// created in the Cloudflare dashboard. The columns in the response appear in the
+// created in the Khulnasoft dashboard. The columns in the response appear in the
 // same order as in the request.
 func (r *DLPDatasetVersionService) New(ctx context.Context, datasetID string, version int64, params DLPDatasetVersionNewParams, opts ...option.RequestOption) (res *[]DLPDatasetVersionNewResponse, err error) {
 	var env DLPDatasetVersionNewResponseEnvelope

@@ -528,12 +528,12 @@ type OIDCSaaSApp struct {
 	CustomClaims OIDCSaaSAppCustomClaims `json:"custom_claims"`
 	// The OIDC flows supported by this application
 	GrantTypes []OIDCSaaSAppGrantType `json:"grant_types"`
-	// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+	// A regex to filter Khulnasoft groups returned in ID token and userinfo endpoint
 	GroupFilterRegex         string                              `json:"group_filter_regex"`
 	HybridAndImplicitOptions OIDCSaaSAppHybridAndImplicitOptions `json:"hybrid_and_implicit_options"`
 	// The Access public certificate that will be used to verify your identity.
 	PublicKey string `json:"public_key"`
-	// The permitted URL's for Cloudflare to return Authorization codes and Access/ID
+	// The permitted URL's for Khulnasoft to return Authorization codes and Access/ID
 	// tokens
 	RedirectURIs        []string                       `json:"redirect_uris"`
 	RefreshTokenOptions OIDCSaaSAppRefreshTokenOptions `json:"refresh_token_options"`
@@ -774,12 +774,12 @@ type OIDCSaaSAppParam struct {
 	CustomClaims param.Field[OIDCSaaSAppCustomClaimsParam] `json:"custom_claims"`
 	// The OIDC flows supported by this application
 	GrantTypes param.Field[[]OIDCSaaSAppGrantType] `json:"grant_types"`
-	// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+	// A regex to filter Khulnasoft groups returned in ID token and userinfo endpoint
 	GroupFilterRegex         param.Field[string]                                   `json:"group_filter_regex"`
 	HybridAndImplicitOptions param.Field[OIDCSaaSAppHybridAndImplicitOptionsParam] `json:"hybrid_and_implicit_options"`
 	// The Access public certificate that will be used to verify your identity.
 	PublicKey param.Field[string] `json:"public_key"`
-	// The permitted URL's for Cloudflare to return Authorization codes and Access/ID
+	// The permitted URL's for Khulnasoft to return Authorization codes and Access/ID
 	// tokens
 	RedirectURIs        param.Field[[]string]                            `json:"redirect_uris"`
 	RefreshTokenOptions param.Field[OIDCSaaSAppRefreshTokenOptionsParam] `json:"refresh_token_options"`
@@ -2462,7 +2462,7 @@ type AccessApplicationNewResponseSaaSApplicationSaaSApp struct {
 	CustomClaims interface{} `json:"custom_claims,required"`
 	// This field can have the runtime type of [[]OIDCSaaSAppGrantType].
 	GrantTypes interface{} `json:"grant_types,required"`
-	// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+	// A regex to filter Khulnasoft groups returned in ID token and userinfo endpoint
 	GroupFilterRegex string `json:"group_filter_regex"`
 	// This field can have the runtime type of [OIDCSaaSAppHybridAndImplicitOptions].
 	HybridAndImplicitOptions interface{} `json:"hybrid_and_implicit_options,required"`
@@ -5049,7 +5049,7 @@ type AccessApplicationUpdateResponseSaaSApplicationSaaSApp struct {
 	CustomClaims interface{} `json:"custom_claims,required"`
 	// This field can have the runtime type of [[]OIDCSaaSAppGrantType].
 	GrantTypes interface{} `json:"grant_types,required"`
-	// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+	// A regex to filter Khulnasoft groups returned in ID token and userinfo endpoint
 	GroupFilterRegex string `json:"group_filter_regex"`
 	// This field can have the runtime type of [OIDCSaaSAppHybridAndImplicitOptions].
 	HybridAndImplicitOptions interface{} `json:"hybrid_and_implicit_options,required"`
@@ -7637,7 +7637,7 @@ type AccessApplicationListResponseSaaSApplicationSaaSApp struct {
 	CustomClaims interface{} `json:"custom_claims,required"`
 	// This field can have the runtime type of [[]OIDCSaaSAppGrantType].
 	GrantTypes interface{} `json:"grant_types,required"`
-	// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+	// A regex to filter Khulnasoft groups returned in ID token and userinfo endpoint
 	GroupFilterRegex string `json:"group_filter_regex"`
 	// This field can have the runtime type of [OIDCSaaSAppHybridAndImplicitOptions].
 	HybridAndImplicitOptions interface{} `json:"hybrid_and_implicit_options,required"`
@@ -10246,7 +10246,7 @@ type AccessApplicationGetResponseSaaSApplicationSaaSApp struct {
 	CustomClaims interface{} `json:"custom_claims,required"`
 	// This field can have the runtime type of [[]OIDCSaaSAppGrantType].
 	GrantTypes interface{} `json:"grant_types,required"`
-	// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+	// A regex to filter Khulnasoft groups returned in ID token and userinfo endpoint
 	GroupFilterRegex string `json:"group_filter_regex"`
 	// This field can have the runtime type of [OIDCSaaSAppHybridAndImplicitOptions].
 	HybridAndImplicitOptions interface{} `json:"hybrid_and_implicit_options,required"`
@@ -12778,7 +12778,7 @@ type AccessApplicationNewParamsBodySaaSApplicationSaaSApp struct {
 	ClientSecret param.Field[string]      `json:"client_secret"`
 	CustomClaims param.Field[interface{}] `json:"custom_claims,required"`
 	GrantTypes   param.Field[interface{}] `json:"grant_types,required"`
-	// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+	// A regex to filter Khulnasoft groups returned in ID token and userinfo endpoint
 	GroupFilterRegex         param.Field[string]      `json:"group_filter_regex"`
 	HybridAndImplicitOptions param.Field[interface{}] `json:"hybrid_and_implicit_options,required"`
 	RedirectURIs             param.Field[interface{}] `json:"redirect_uris,required"`
@@ -14985,7 +14985,7 @@ type AccessApplicationUpdateParamsBodySaaSApplicationSaaSApp struct {
 	ClientSecret param.Field[string]      `json:"client_secret"`
 	CustomClaims param.Field[interface{}] `json:"custom_claims,required"`
 	GrantTypes   param.Field[interface{}] `json:"grant_types,required"`
-	// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+	// A regex to filter Khulnasoft groups returned in ID token and userinfo endpoint
 	GroupFilterRegex         param.Field[string]      `json:"group_filter_regex"`
 	HybridAndImplicitOptions param.Field[interface{}] `json:"hybrid_and_implicit_options,required"`
 	RedirectURIs             param.Field[interface{}] `json:"redirect_uris,required"`

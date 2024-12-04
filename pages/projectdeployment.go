@@ -43,7 +43,7 @@ func NewProjectDeploymentService(opts ...option.RequestOption) (r *ProjectDeploy
 }
 
 // Start a new deployment from production. The repository and account must have
-// already been authorized on the Cloudflare Pages dashboard.
+// already been authorized on the Khulnasoft Pages dashboard.
 func (r *ProjectDeploymentService) New(ctx context.Context, projectName string, params ProjectDeploymentNewParams, opts ...option.RequestOption) (res *Deployment, err error) {
 	var env ProjectDeploymentNewResponseEnvelope
 	opts = append(r.Options[:], opts...)

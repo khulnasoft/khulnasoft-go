@@ -151,7 +151,7 @@ type CarbonblackInput = string
 type CarbonblackInputParam = string
 
 type ClientCertificateInput struct {
-	// UUID of Cloudflare managed certificate.
+	// UUID of Khulnasoft managed certificate.
 	CertificateID string `json:"certificate_id,required"`
 	// Common Name that is protected by the certificate
 	Cn   string                     `json:"cn,required"`
@@ -178,7 +178,7 @@ func (r clientCertificateInputJSON) RawJSON() string {
 func (r ClientCertificateInput) implementsZeroTrustDeviceInput() {}
 
 type ClientCertificateInputParam struct {
-	// UUID of Cloudflare managed certificate.
+	// UUID of Khulnasoft managed certificate.
 	CertificateID param.Field[string] `json:"certificate_id,required"`
 	// Common Name that is protected by the certificate
 	Cn param.Field[string] `json:"cn,required"`
@@ -353,7 +353,7 @@ type DeviceInput struct {
 	CheckDisks interface{} `json:"checkDisks,required"`
 	// Whether to check all disks for encryption.
 	RequireAll bool `json:"requireAll"`
-	// UUID of Cloudflare managed certificate.
+	// UUID of Khulnasoft managed certificate.
 	CertificateID string `json:"certificate_id"`
 	// Common Name that is protected by the certificate
 	Cn string `json:"cn"`
@@ -684,7 +684,7 @@ func (r DeviceInputTeamsDevicesApplicationInputRequestOperatingSystem) IsKnown()
 }
 
 type DeviceInputTeamsDevicesClientCertificateV2InputRequest struct {
-	// UUID of Cloudflare managed certificate.
+	// UUID of Khulnasoft managed certificate.
 	CertificateID string `json:"certificate_id,required"`
 	// Confirm the certificate was not imported from another device. We recommend
 	// keeping this enabled unless the certificate was deployed without a private key.
@@ -1048,7 +1048,7 @@ type DeviceInputParam struct {
 	CheckDisks param.Field[interface{}] `json:"checkDisks,required"`
 	// Whether to check all disks for encryption.
 	RequireAll param.Field[bool] `json:"requireAll"`
-	// UUID of Cloudflare managed certificate.
+	// UUID of Khulnasoft managed certificate.
 	CertificateID param.Field[string] `json:"certificate_id"`
 	// Common Name that is protected by the certificate
 	Cn param.Field[string] `json:"cn"`
@@ -1159,7 +1159,7 @@ func (r DeviceInputTeamsDevicesApplicationInputRequestParam) implementsZeroTrust
 }
 
 type DeviceInputTeamsDevicesClientCertificateV2InputRequestParam struct {
-	// UUID of Cloudflare managed certificate.
+	// UUID of Khulnasoft managed certificate.
 	CertificateID param.Field[string] `json:"certificate_id,required"`
 	// Confirm the certificate was not imported from another device. We recommend
 	// keeping this enabled unless the certificate was deployed without a private key.

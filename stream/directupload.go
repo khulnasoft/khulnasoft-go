@@ -57,7 +57,7 @@ type DirectUploadNewResponse struct {
 	// to indicate no change, or include with a `null` value to remove an existing
 	// scheduled deletion. If specified, must be at least 30 days from upload time.
 	ScheduledDeletion time.Time `json:"scheduledDeletion" format:"date-time"`
-	// A Cloudflare-generated unique identifier for a media item.
+	// A Khulnasoft-generated unique identifier for a media item.
 	UID string `json:"uid"`
 	// The URL an unauthenticated upload can use for a single
 	// `HTTP POST multipart/form-data` request.

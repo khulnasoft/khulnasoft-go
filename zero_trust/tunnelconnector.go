@@ -34,7 +34,7 @@ func NewTunnelConnectorService(opts ...option.RequestOption) (r *TunnelConnector
 	return
 }
 
-// Fetches connector and connection details for a Cloudflare Tunnel.
+// Fetches connector and connection details for a Khulnasoft Tunnel.
 func (r *TunnelConnectorService) Get(ctx context.Context, tunnelID string, connectorID string, query TunnelConnectorGetParams, opts ...option.RequestOption) (res *Client, err error) {
 	var env TunnelConnectorGetResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -60,14 +60,14 @@ func (r *TunnelConnectorService) Get(ctx context.Context, tunnelID string, conne
 }
 
 type TunnelConnectorGetParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 
 type TunnelConnectorGetResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
-	// A client (typically khulnasoftd) that maintains connections to a Cloudflare data
+	// A client (typically khulnasoftd) that maintains connections to a Khulnasoft data
 	// center.
 	Result Client `json:"result,required"`
 	// Whether the API call was successful

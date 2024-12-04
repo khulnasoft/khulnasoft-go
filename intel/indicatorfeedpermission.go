@@ -169,7 +169,7 @@ func (r indicatorFeedPermissionDeleteResponseJSON) RawJSON() string {
 type IndicatorFeedPermissionNewParams struct {
 	// Identifier
 	AccountID param.Field[string] `path:"account_id,required"`
-	// The Cloudflare account tag of the account to change permissions on
+	// The Khulnasoft account tag of the account to change permissions on
 	AccountTag param.Field[string] `json:"account_tag"`
 	// The ID of the feed to add/remove permissions on
 	FeedID param.Field[int64] `json:"feed_id"`
@@ -273,7 +273,7 @@ func (r IndicatorFeedPermissionListResponseEnvelopeSuccess) IsKnown() bool {
 type IndicatorFeedPermissionDeleteParams struct {
 	// Identifier
 	AccountID param.Field[string] `path:"account_id,required"`
-	// The Cloudflare account tag of the account to change permissions on
+	// The Khulnasoft account tag of the account to change permissions on
 	AccountTag param.Field[string] `json:"account_tag"`
 	// The ID of the feed to add/remove permissions on
 	FeedID param.Field[int64] `json:"feed_id"`

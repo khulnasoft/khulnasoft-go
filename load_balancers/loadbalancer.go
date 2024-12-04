@@ -372,12 +372,12 @@ type LoadBalancer struct {
 	LocationStrategy LocationStrategy `json:"location_strategy"`
 	ModifiedOn       string           `json:"modified_on"`
 	// The DNS hostname to associate with your Load Balancer. If this hostname already
-	// exists as a DNS record in Cloudflare's DNS, the Load Balancer will take
+	// exists as a DNS record in Khulnasoft's DNS, the Load Balancer will take
 	// precedence and the DNS record will not be used.
 	Name string `json:"name"`
 	// List of networks where Load Balancer or Pool is enabled.
 	Networks []string `json:"networks"`
-	// (Enterprise only): A mapping of Cloudflare PoP identifiers to a list of pool IDs
+	// (Enterprise only): A mapping of Khulnasoft PoP identifiers to a list of pool IDs
 	// (ordered by their failover priority) for the PoP (datacenter). Any PoPs not
 	// explicitly defined will fall back to using the corresponding country_pool, then
 	// region_pool mapping if it exists else to default_pools.
@@ -447,7 +447,7 @@ type LoadBalancer struct {
 	//   - `"dynamic_latency"`: Use round trip time to select the closest pool in
 	//     default_pools (requires pool health checks).
 	//   - `"proximity"`: Use the pools' latitude and longitude to select the closest
-	//     pool using the Cloudflare PoP location for proxied requests or the location
+	//     pool using the Khulnasoft PoP location for proxied requests or the location
 	//     determined by `location_strategy` for non-proxied requests.
 	//   - `"least_outstanding_requests"`: Select a pool by taking into consideration
 	//     `random_steering` weights, as well as each pool's number of outstanding
@@ -602,9 +602,9 @@ type LocationStrategy struct {
 	// Determines the authoritative location when ECS is not preferred, does not exist
 	// in the request, or its GeoIP lookup is unsuccessful.
 	//
-	//   - `"pop"`: Use the Cloudflare PoP location.
+	//   - `"pop"`: Use the Khulnasoft PoP location.
 	//   - `"resolver_ip"`: Use the DNS resolver GeoIP location. If the GeoIP lookup is
-	//     unsuccessful, use the Cloudflare PoP location.
+	//     unsuccessful, use the Khulnasoft PoP location.
 	Mode LocationStrategyMode `json:"mode"`
 	// Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the
 	// authoritative location.
@@ -637,9 +637,9 @@ func (r locationStrategyJSON) RawJSON() string {
 // Determines the authoritative location when ECS is not preferred, does not exist
 // in the request, or its GeoIP lookup is unsuccessful.
 //
-//   - `"pop"`: Use the Cloudflare PoP location.
+//   - `"pop"`: Use the Khulnasoft PoP location.
 //   - `"resolver_ip"`: Use the DNS resolver GeoIP location. If the GeoIP lookup is
-//     unsuccessful, use the Cloudflare PoP location.
+//     unsuccessful, use the Khulnasoft PoP location.
 type LocationStrategyMode string
 
 const (
@@ -685,9 +685,9 @@ type LocationStrategyParam struct {
 	// Determines the authoritative location when ECS is not preferred, does not exist
 	// in the request, or its GeoIP lookup is unsuccessful.
 	//
-	//   - `"pop"`: Use the Cloudflare PoP location.
+	//   - `"pop"`: Use the Khulnasoft PoP location.
 	//   - `"resolver_ip"`: Use the DNS resolver GeoIP location. If the GeoIP lookup is
-	//     unsuccessful, use the Cloudflare PoP location.
+	//     unsuccessful, use the Khulnasoft PoP location.
 	Mode param.Field[LocationStrategyMode] `json:"mode"`
 	// Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the
 	// authoritative location.
@@ -750,7 +750,7 @@ func (r NotificationFilterParam) MarshalJSON() (data []byte, err error) {
 type Origin struct {
 	// The IP address (IPv4 or IPv6) of the origin, or its publicly addressable
 	// hostname. Hostnames entered here should resolve directly to the origin, and not
-	// be a hostname proxied by Cloudflare. To set an internal/reserved address,
+	// be a hostname proxied by Khulnasoft. To set an internal/reserved address,
 	// virtual_network_id must also be set.
 	Address string `json:"address"`
 	// This field shows up only if the origin is disabled. This field is set with the
@@ -804,7 +804,7 @@ func (r originJSON) RawJSON() string {
 type OriginParam struct {
 	// The IP address (IPv4 or IPv6) of the origin, or its publicly addressable
 	// hostname. Hostnames entered here should resolve directly to the origin, and not
-	// be a hostname proxied by Cloudflare. To set an internal/reserved address,
+	// be a hostname proxied by Khulnasoft. To set an internal/reserved address,
 	// virtual_network_id must also be set.
 	Address param.Field[string] `json:"address"`
 	// Whether to enable (the default) this origin within the pool. Disabled origins
@@ -1126,7 +1126,7 @@ type RulesOverrides struct {
 	// Controls location-based steering for non-proxied requests. See `steering_policy`
 	// to learn how steering is affected.
 	LocationStrategy LocationStrategy `json:"location_strategy"`
-	// (Enterprise only): A mapping of Cloudflare PoP identifiers to a list of pool IDs
+	// (Enterprise only): A mapping of Khulnasoft PoP identifiers to a list of pool IDs
 	// (ordered by their failover priority) for the PoP (datacenter). Any PoPs not
 	// explicitly defined will fall back to using the corresponding country_pool, then
 	// region_pool mapping if it exists else to default_pools.
@@ -1191,7 +1191,7 @@ type RulesOverrides struct {
 	//   - `"dynamic_latency"`: Use round trip time to select the closest pool in
 	//     default_pools (requires pool health checks).
 	//   - `"proximity"`: Use the pools' latitude and longitude to select the closest
-	//     pool using the Cloudflare PoP location for proxied requests or the location
+	//     pool using the Khulnasoft PoP location for proxied requests or the location
 	//     determined by `location_strategy` for non-proxied requests.
 	//   - `"least_outstanding_requests"`: Select a pool by taking into consideration
 	//     `random_steering` weights, as well as each pool's number of outstanding
@@ -1312,7 +1312,7 @@ type RulesOverridesParam struct {
 	// Controls location-based steering for non-proxied requests. See `steering_policy`
 	// to learn how steering is affected.
 	LocationStrategy param.Field[LocationStrategyParam] `json:"location_strategy"`
-	// (Enterprise only): A mapping of Cloudflare PoP identifiers to a list of pool IDs
+	// (Enterprise only): A mapping of Khulnasoft PoP identifiers to a list of pool IDs
 	// (ordered by their failover priority) for the PoP (datacenter). Any PoPs not
 	// explicitly defined will fall back to using the corresponding country_pool, then
 	// region_pool mapping if it exists else to default_pools.
@@ -1377,7 +1377,7 @@ type RulesOverridesParam struct {
 	//   - `"dynamic_latency"`: Use round trip time to select the closest pool in
 	//     default_pools (requires pool health checks).
 	//   - `"proximity"`: Use the pools' latitude and longitude to select the closest
-	//     pool using the Cloudflare PoP location for proxied requests or the location
+	//     pool using the Khulnasoft PoP location for proxied requests or the location
 	//     determined by `location_strategy` for non-proxied requests.
 	//   - `"least_outstanding_requests"`: Select a pool by taking into consideration
 	//     `random_steering` weights, as well as each pool's number of outstanding
@@ -1639,7 +1639,7 @@ func (r SessionAffinityAttributesParam) MarshalJSON() (data []byte, err error) {
 //   - `"dynamic_latency"`: Use round trip time to select the closest pool in
 //     default_pools (requires pool health checks).
 //   - `"proximity"`: Use the pools' latitude and longitude to select the closest
-//     pool using the Cloudflare PoP location for proxied requests or the location
+//     pool using the Khulnasoft PoP location for proxied requests or the location
 //     determined by `location_strategy` for non-proxied requests.
 //   - `"least_outstanding_requests"`: Select a pool by taking into consideration
 //     `random_steering` weights, as well as each pool's number of outstanding
@@ -1701,7 +1701,7 @@ type LoadBalancerNewParams struct {
 	// The pool ID to use when all other pools are detected as unhealthy.
 	FallbackPool param.Field[string] `json:"fallback_pool,required"`
 	// The DNS hostname to associate with your Load Balancer. If this hostname already
-	// exists as a DNS record in Cloudflare's DNS, the Load Balancer will take
+	// exists as a DNS record in Khulnasoft's DNS, the Load Balancer will take
 	// precedence and the DNS record will not be used.
 	Name param.Field[string] `json:"name,required"`
 	// Controls features that modify the routing of requests to pools and origins in
@@ -1723,7 +1723,7 @@ type LoadBalancerNewParams struct {
 	LocationStrategy param.Field[LocationStrategyParam] `json:"location_strategy"`
 	// List of networks where Load Balancer or Pool is enabled.
 	Networks param.Field[[]string] `json:"networks"`
-	// (Enterprise only): A mapping of Cloudflare PoP identifiers to a list of pool IDs
+	// (Enterprise only): A mapping of Khulnasoft PoP identifiers to a list of pool IDs
 	// (ordered by their failover priority) for the PoP (datacenter). Any PoPs not
 	// explicitly defined will fall back to using the corresponding country_pool, then
 	// region_pool mapping if it exists else to default_pools.
@@ -1793,7 +1793,7 @@ type LoadBalancerNewParams struct {
 	//   - `"dynamic_latency"`: Use round trip time to select the closest pool in
 	//     default_pools (requires pool health checks).
 	//   - `"proximity"`: Use the pools' latitude and longitude to select the closest
-	//     pool using the Cloudflare PoP location for proxied requests or the location
+	//     pool using the Khulnasoft PoP location for proxied requests or the location
 	//     determined by `location_strategy` for non-proxied requests.
 	//   - `"least_outstanding_requests"`: Select a pool by taking into consideration
 	//     `random_steering` weights, as well as each pool's number of outstanding
@@ -1866,7 +1866,7 @@ type LoadBalancerUpdateParams struct {
 	// The pool ID to use when all other pools are detected as unhealthy.
 	FallbackPool param.Field[string] `json:"fallback_pool,required"`
 	// The DNS hostname to associate with your Load Balancer. If this hostname already
-	// exists as a DNS record in Cloudflare's DNS, the Load Balancer will take
+	// exists as a DNS record in Khulnasoft's DNS, the Load Balancer will take
 	// precedence and the DNS record will not be used.
 	Name param.Field[string] `json:"name,required"`
 	// Controls features that modify the routing of requests to pools and origins in
@@ -1890,7 +1890,7 @@ type LoadBalancerUpdateParams struct {
 	LocationStrategy param.Field[LocationStrategyParam] `json:"location_strategy"`
 	// List of networks where Load Balancer or Pool is enabled.
 	Networks param.Field[[]string] `json:"networks"`
-	// (Enterprise only): A mapping of Cloudflare PoP identifiers to a list of pool IDs
+	// (Enterprise only): A mapping of Khulnasoft PoP identifiers to a list of pool IDs
 	// (ordered by their failover priority) for the PoP (datacenter). Any PoPs not
 	// explicitly defined will fall back to using the corresponding country_pool, then
 	// region_pool mapping if it exists else to default_pools.
@@ -1960,7 +1960,7 @@ type LoadBalancerUpdateParams struct {
 	//   - `"dynamic_latency"`: Use round trip time to select the closest pool in
 	//     default_pools (requires pool health checks).
 	//   - `"proximity"`: Use the pools' latitude and longitude to select the closest
-	//     pool using the Cloudflare PoP location for proxied requests or the location
+	//     pool using the Khulnasoft PoP location for proxied requests or the location
 	//     determined by `location_strategy` for non-proxied requests.
 	//   - `"least_outstanding_requests"`: Select a pool by taking into consideration
 	//     `random_steering` weights, as well as each pool's number of outstanding
@@ -2103,10 +2103,10 @@ type LoadBalancerEditParams struct {
 	// to learn how steering is affected.
 	LocationStrategy param.Field[LocationStrategyParam] `json:"location_strategy"`
 	// The DNS hostname to associate with your Load Balancer. If this hostname already
-	// exists as a DNS record in Cloudflare's DNS, the Load Balancer will take
+	// exists as a DNS record in Khulnasoft's DNS, the Load Balancer will take
 	// precedence and the DNS record will not be used.
 	Name param.Field[string] `json:"name"`
-	// (Enterprise only): A mapping of Cloudflare PoP identifiers to a list of pool IDs
+	// (Enterprise only): A mapping of Khulnasoft PoP identifiers to a list of pool IDs
 	// (ordered by their failover priority) for the PoP (datacenter). Any PoPs not
 	// explicitly defined will fall back to using the corresponding country_pool, then
 	// region_pool mapping if it exists else to default_pools.
@@ -2176,7 +2176,7 @@ type LoadBalancerEditParams struct {
 	//   - `"dynamic_latency"`: Use round trip time to select the closest pool in
 	//     default_pools (requires pool health checks).
 	//   - `"proximity"`: Use the pools' latitude and longitude to select the closest
-	//     pool using the Cloudflare PoP location for proxied requests or the location
+	//     pool using the Khulnasoft PoP location for proxied requests or the location
 	//     determined by `location_strategy` for non-proxied requests.
 	//   - `"least_outstanding_requests"`: Select a pool by taking into consideration
 	//     `random_steering` weights, as well as each pool's number of outstanding

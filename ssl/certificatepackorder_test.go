@@ -34,7 +34,7 @@ func TestCertificatePackOrderNewWithOptionalParams(t *testing.T) {
 		Type:                 khulnasoft.F(ssl.CertificatePackOrderNewParamsTypeAdvanced),
 		ValidationMethod:     khulnasoft.F(ssl.CertificatePackOrderNewParamsValidationMethodTXT),
 		ValidityDays:         khulnasoft.F(ssl.CertificatePackOrderNewParamsValidityDays14),
-		CloudflareBranding:   khulnasoft.F(false),
+		KhulnasoftBranding:   khulnasoft.F(false),
 	})
 	if err != nil {
 		var apierr *khulnasoft.Error

@@ -168,7 +168,7 @@ func (r *GatewayCertificateService) Get(ctx context.Context, certificateID strin
 type GatewayCertificateNewResponse struct {
 	// Certificate UUID tag.
 	ID string `json:"id"`
-	// The deployment status of the certificate on Cloudflare's edge. Certificates in
+	// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 	// the 'active' state may be used for Gateway TLS interception.
 	BindingStatus GatewayCertificateNewResponseBindingStatus `json:"binding_status"`
 	// The CA certificate
@@ -217,7 +217,7 @@ func (r gatewayCertificateNewResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// The deployment status of the certificate on Cloudflare's edge. Certificates in
+// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 // the 'active' state may be used for Gateway TLS interception.
 type GatewayCertificateNewResponseBindingStatus string
 
@@ -255,7 +255,7 @@ func (r GatewayCertificateNewResponseType) IsKnown() bool {
 type GatewayCertificateListResponse struct {
 	// Certificate UUID tag.
 	ID string `json:"id"`
-	// The deployment status of the certificate on Cloudflare's edge. Certificates in
+	// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 	// the 'active' state may be used for Gateway TLS interception.
 	BindingStatus GatewayCertificateListResponseBindingStatus `json:"binding_status"`
 	// The CA certificate
@@ -304,7 +304,7 @@ func (r gatewayCertificateListResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// The deployment status of the certificate on Cloudflare's edge. Certificates in
+// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 // the 'active' state may be used for Gateway TLS interception.
 type GatewayCertificateListResponseBindingStatus string
 
@@ -342,7 +342,7 @@ func (r GatewayCertificateListResponseType) IsKnown() bool {
 type GatewayCertificateDeleteResponse struct {
 	// Certificate UUID tag.
 	ID string `json:"id"`
-	// The deployment status of the certificate on Cloudflare's edge. Certificates in
+	// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 	// the 'active' state may be used for Gateway TLS interception.
 	BindingStatus GatewayCertificateDeleteResponseBindingStatus `json:"binding_status"`
 	// The CA certificate
@@ -391,7 +391,7 @@ func (r gatewayCertificateDeleteResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// The deployment status of the certificate on Cloudflare's edge. Certificates in
+// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 // the 'active' state may be used for Gateway TLS interception.
 type GatewayCertificateDeleteResponseBindingStatus string
 
@@ -429,7 +429,7 @@ func (r GatewayCertificateDeleteResponseType) IsKnown() bool {
 type GatewayCertificateActivateResponse struct {
 	// Certificate UUID tag.
 	ID string `json:"id"`
-	// The deployment status of the certificate on Cloudflare's edge. Certificates in
+	// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 	// the 'active' state may be used for Gateway TLS interception.
 	BindingStatus GatewayCertificateActivateResponseBindingStatus `json:"binding_status"`
 	// The CA certificate
@@ -478,7 +478,7 @@ func (r gatewayCertificateActivateResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// The deployment status of the certificate on Cloudflare's edge. Certificates in
+// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 // the 'active' state may be used for Gateway TLS interception.
 type GatewayCertificateActivateResponseBindingStatus string
 
@@ -516,7 +516,7 @@ func (r GatewayCertificateActivateResponseType) IsKnown() bool {
 type GatewayCertificateDeactivateResponse struct {
 	// Certificate UUID tag.
 	ID string `json:"id"`
-	// The deployment status of the certificate on Cloudflare's edge. Certificates in
+	// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 	// the 'active' state may be used for Gateway TLS interception.
 	BindingStatus GatewayCertificateDeactivateResponseBindingStatus `json:"binding_status"`
 	// The CA certificate
@@ -565,7 +565,7 @@ func (r gatewayCertificateDeactivateResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// The deployment status of the certificate on Cloudflare's edge. Certificates in
+// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 // the 'active' state may be used for Gateway TLS interception.
 type GatewayCertificateDeactivateResponseBindingStatus string
 
@@ -603,7 +603,7 @@ func (r GatewayCertificateDeactivateResponseType) IsKnown() bool {
 type GatewayCertificateGetResponse struct {
 	// Certificate UUID tag.
 	ID string `json:"id"`
-	// The deployment status of the certificate on Cloudflare's edge. Certificates in
+	// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 	// the 'active' state may be used for Gateway TLS interception.
 	BindingStatus GatewayCertificateGetResponseBindingStatus `json:"binding_status"`
 	// The CA certificate
@@ -652,7 +652,7 @@ func (r gatewayCertificateGetResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// The deployment status of the certificate on Cloudflare's edge. Certificates in
+// The deployment status of the certificate on Khulnasoft's edge. Certificates in
 // the 'active' state may be used for Gateway TLS interception.
 type GatewayCertificateGetResponseBindingStatus string
 

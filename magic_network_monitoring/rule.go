@@ -163,7 +163,7 @@ func (r *RuleService) Get(ctx context.Context, ruleID string, query RuleGetParam
 }
 
 type MagicNetworkMonitoringRule struct {
-	// Toggle on if you would like Cloudflare to automatically advertise the IP
+	// Toggle on if you would like Khulnasoft to automatically advertise the IP
 	// Prefixes within the rule via Magic Transit when the rule is triggered. Only
 	// available for users of Magic Transit.
 	AutomaticAdvertisement bool `json:"automatic_advertisement,required,nullable"`
@@ -223,7 +223,7 @@ type RuleNewParams struct {
 	// underscore (\_), dash (-), period (.), and tilde (~). You can’t have a space in
 	// the rule name. Max 256 characters.
 	Name param.Field[string] `json:"name,required"`
-	// Toggle on if you would like Cloudflare to automatically advertise the IP
+	// Toggle on if you would like Khulnasoft to automatically advertise the IP
 	// Prefixes within the rule via Magic Transit when the rule is triggered. Only
 	// available for users of Magic Transit.
 	AutomaticAdvertisement param.Field[bool] `json:"automatic_advertisement"`
@@ -297,7 +297,7 @@ type RuleUpdateParams struct {
 	Name param.Field[string] `json:"name,required"`
 	// The id of the rule. Must be unique.
 	ID param.Field[string] `json:"id"`
-	// Toggle on if you would like Cloudflare to automatically advertise the IP
+	// Toggle on if you would like Khulnasoft to automatically advertise the IP
 	// Prefixes within the rule via Magic Transit when the rule is triggered. Only
 	// available for users of Magic Transit.
 	AutomaticAdvertisement param.Field[bool] `json:"automatic_advertisement"`
@@ -410,7 +410,7 @@ func (r RuleDeleteResponseEnvelopeSuccess) IsKnown() bool {
 
 type RuleEditParams struct {
 	AccountID param.Field[string] `path:"account_id,required"`
-	// Toggle on if you would like Cloudflare to automatically advertise the IP
+	// Toggle on if you would like Khulnasoft to automatically advertise the IP
 	// Prefixes within the rule via Magic Transit when the rule is triggered. Only
 	// available for users of Magic Transit.
 	AutomaticAdvertisement param.Field[bool] `json:"automatic_advertisement"`

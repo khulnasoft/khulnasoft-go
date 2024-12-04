@@ -387,14 +387,14 @@ type RuleNewParamsAction struct {
 	Mode param.Field[RuleNewParamsActionMode] `json:"mode"`
 	// A custom content type and reponse to return when the threshold is exceeded. The
 	// custom response configured in this object will override the custom error for the
-	// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+	// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 	// use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-	// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+	// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 	// not provide the "response" object.
 	Response param.Field[RuleNewParamsActionResponse] `json:"response"`
-	// The time in seconds during which Cloudflare will perform the mitigation action.
+	// The time in seconds during which Khulnasoft will perform the mitigation action.
 	// Must be an integer value greater than or equal to the period. Notes: If "mode"
-	// is "challenge", "managed_challenge", or "js_challenge", Cloudflare will use the
+	// is "challenge", "managed_challenge", or "js_challenge", Khulnasoft will use the
 	// zone's Challenge Passage time and you should not provide this value.
 	Timeout param.Field[float64] `json:"timeout"`
 }
@@ -424,9 +424,9 @@ func (r RuleNewParamsActionMode) IsKnown() bool {
 
 // A custom content type and reponse to return when the threshold is exceeded. The
 // custom response configured in this object will override the custom error for the
-// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 // use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 // not provide the "response" object.
 type RuleNewParamsActionResponse struct {
 	// The response body to return. The value must conform to the configured content
@@ -535,14 +535,14 @@ type RuleUpdateParamsAction struct {
 	Mode param.Field[RuleUpdateParamsActionMode] `json:"mode"`
 	// A custom content type and reponse to return when the threshold is exceeded. The
 	// custom response configured in this object will override the custom error for the
-	// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+	// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 	// use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-	// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+	// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 	// not provide the "response" object.
 	Response param.Field[RuleUpdateParamsActionResponse] `json:"response"`
-	// The time in seconds during which Cloudflare will perform the mitigation action.
+	// The time in seconds during which Khulnasoft will perform the mitigation action.
 	// Must be an integer value greater than or equal to the period. Notes: If "mode"
-	// is "challenge", "managed_challenge", or "js_challenge", Cloudflare will use the
+	// is "challenge", "managed_challenge", or "js_challenge", Khulnasoft will use the
 	// zone's Challenge Passage time and you should not provide this value.
 	Timeout param.Field[float64] `json:"timeout"`
 }
@@ -572,9 +572,9 @@ func (r RuleUpdateParamsActionMode) IsKnown() bool {
 
 // A custom content type and reponse to return when the threshold is exceeded. The
 // custom response configured in this object will override the custom error for the
-// zone. This object is optional. Notes: If you omit this object, Cloudflare will
+// zone. This object is optional. Notes: If you omit this object, Khulnasoft will
 // use the default HTML error page. If "mode" is "challenge", "managed_challenge",
-// or "js_challenge", Cloudflare will use the zone challenge pages and you should
+// or "js_challenge", Khulnasoft will use the zone challenge pages and you should
 // not provide the "response" object.
 type RuleUpdateParamsActionResponse struct {
 	// The response body to return. The value must conform to the configured content

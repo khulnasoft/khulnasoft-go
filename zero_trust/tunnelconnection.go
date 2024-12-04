@@ -37,7 +37,7 @@ func NewTunnelConnectionService(opts ...option.RequestOption) (r *TunnelConnecti
 	return
 }
 
-// Removes a connection (aka Cloudflare Tunnel Connector) from a Cloudflare Tunnel
+// Removes a connection (aka Khulnasoft Tunnel Connector) from a Khulnasoft Tunnel
 // independently of its current state. If no connector id (client_id) is provided
 // all connectors will be removed. We recommend running this command after rotating
 // tokens.
@@ -61,7 +61,7 @@ func (r *TunnelConnectionService) Delete(ctx context.Context, tunnelID string, p
 	return
 }
 
-// Fetches connection details for a Cloudflare Tunnel.
+// Fetches connection details for a Khulnasoft Tunnel.
 func (r *TunnelConnectionService) Get(ctx context.Context, tunnelID string, query TunnelConnectionGetParams, opts ...option.RequestOption) (res *[]Client, err error) {
 	var env TunnelConnectionGetResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -82,19 +82,19 @@ func (r *TunnelConnectionService) Get(ctx context.Context, tunnelID string, quer
 	return
 }
 
-// A client (typically khulnasoftd) that maintains connections to a Cloudflare data
+// A client (typically khulnasoftd) that maintains connections to a Khulnasoft data
 // center.
 type Client struct {
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	ID string `json:"id" format:"uuid"`
 	// The khulnasoftd OS architecture used to establish this connection.
 	Arch string `json:"arch"`
 	// The version of the remote tunnel configuration. Used internally to sync
 	// khulnasoftd with the Zero Trust dashboard.
 	ConfigVersion int64 `json:"config_version"`
-	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	// The Khulnasoft Tunnel connections between your origin and Khulnasoft's edge.
 	Conns []ClientConn `json:"conns"`
-	// Features enabled for the Cloudflare Tunnel.
+	// Features enabled for the Khulnasoft Tunnel.
 	Features []string `json:"features"`
 	// Timestamp of when the tunnel connection was started.
 	RunAt time.Time `json:"run_at" format:"date-time"`
@@ -125,15 +125,15 @@ func (r clientJSON) RawJSON() string {
 }
 
 type ClientConn struct {
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	ID string `json:"id" format:"uuid"`
-	// UUID of the Cloudflare Tunnel connector.
+	// UUID of the Khulnasoft Tunnel connector.
 	ClientID string `json:"client_id" format:"uuid"`
 	// The khulnasoftd version used to establish this connection.
 	ClientVersion string `json:"client_version"`
-	// The Cloudflare data center used for this connection.
+	// The Khulnasoft data center used for this connection.
 	ColoName string `json:"colo_name"`
-	// Cloudflare continues to track connections for several minutes after they
+	// Khulnasoft continues to track connections for several minutes after they
 	// disconnect. This is an optimization to improve latency and reliability of
 	// reconnecting. If `true`, the connection has disconnected but is still being
 	// tracked. If `false`, the connection is actively serving traffic.
@@ -142,7 +142,7 @@ type ClientConn struct {
 	OpenedAt time.Time `json:"opened_at" format:"date-time"`
 	// The public IP address of the host running khulnasoftd.
 	OriginIP string `json:"origin_ip"`
-	// UUID of the Cloudflare Tunnel connection.
+	// UUID of the Khulnasoft Tunnel connection.
 	UUID string         `json:"uuid" format:"uuid"`
 	JSON clientConnJSON `json:"-"`
 }
@@ -172,9 +172,9 @@ func (r clientConnJSON) RawJSON() string {
 type TunnelConnectionDeleteResponse = interface{}
 
 type TunnelConnectionDeleteParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
-	// UUID of the Cloudflare Tunnel connector.
+	// UUID of the Khulnasoft Tunnel connector.
 	ClientID param.Field[string] `query:"client_id" format:"uuid"`
 }
 
@@ -231,7 +231,7 @@ func (r TunnelConnectionDeleteResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type TunnelConnectionGetParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 

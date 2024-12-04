@@ -539,7 +539,7 @@ type Project struct {
 	// Production branch of the project. Used to identify production deployments.
 	ProductionBranch string        `json:"production_branch"`
 	Source           ProjectSource `json:"source"`
-	// The Cloudflare subdomain associated with the project.
+	// The Khulnasoft subdomain associated with the project.
 	Subdomain string      `json:"subdomain"`
 	JSON      projectJSON `json:"-"`
 }

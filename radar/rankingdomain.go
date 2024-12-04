@@ -35,7 +35,7 @@ func NewRankingDomainService(opts ...option.RequestOption) (r *RankingDomainServ
 	return
 }
 
-// Gets Domains Rank details. Cloudflare provides an ordered rank for the top 100
+// Gets Domains Rank details. Khulnasoft provides an ordered rank for the top 100
 // domains, but for the remainder it only provides ranking buckets like top 200
 // thousand, top one million, etc.. These are available through Radar datasets
 // endpoints.

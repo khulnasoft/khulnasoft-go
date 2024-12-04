@@ -35,7 +35,7 @@ func NewRegionalTieredCacheService(opts ...option.RequestOption) (r *RegionalTie
 	return
 }
 
-// Instructs Cloudflare to check a regional hub data center on the way to your
+// Instructs Khulnasoft to check a regional hub data center on the way to your
 // upper tier. This can help improve performance for smart and custom tiered cache
 // topologies.
 func (r *RegionalTieredCacheService) Edit(ctx context.Context, params RegionalTieredCacheEditParams, opts ...option.RequestOption) (res *RegionalTieredCacheEditResponse, err error) {
@@ -54,7 +54,7 @@ func (r *RegionalTieredCacheService) Edit(ctx context.Context, params RegionalTi
 	return
 }
 
-// Instructs Cloudflare to check a regional hub data center on the way to your
+// Instructs Khulnasoft to check a regional hub data center on the way to your
 // upper tier. This can help improve performance for smart and custom tiered cache
 // topologies.
 func (r *RegionalTieredCacheService) Get(ctx context.Context, query RegionalTieredCacheGetParams, opts ...option.RequestOption) (res *RegionalTieredCacheGetResponse, err error) {
@@ -88,7 +88,7 @@ func (r RegionalTieredCache) IsKnown() bool {
 	return false
 }
 
-// Instructs Cloudflare to check a regional hub data center on the way to your
+// Instructs Khulnasoft to check a regional hub data center on the way to your
 // upper tier. This can help improve performance for smart and custom tiered cache
 // topologies.
 type RegionalTieredCacheEditResponse struct {
@@ -96,7 +96,7 @@ type RegionalTieredCacheEditResponse struct {
 	ID RegionalTieredCache `json:"id,required"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,required,nullable" format:"date-time"`
-	// Instructs Cloudflare to check a regional hub data center on the way to your
+	// Instructs Khulnasoft to check a regional hub data center on the way to your
 	// upper tier. This can help improve performance for smart and custom tiered cache
 	// topologies.
 	Value RegionalTieredCacheEditResponseValue `json:"value,required"`
@@ -121,7 +121,7 @@ func (r regionalTieredCacheEditResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// Instructs Cloudflare to check a regional hub data center on the way to your
+// Instructs Khulnasoft to check a regional hub data center on the way to your
 // upper tier. This can help improve performance for smart and custom tiered cache
 // topologies.
 type RegionalTieredCacheEditResponseValue struct {
@@ -149,7 +149,7 @@ func (r regionalTieredCacheEditResponseValueJSON) RawJSON() string {
 	return r.raw
 }
 
-// Instructs Cloudflare to check a regional hub data center on the way to your
+// Instructs Khulnasoft to check a regional hub data center on the way to your
 // upper tier. This can help improve performance for smart and custom tiered cache
 // topologies.
 type RegionalTieredCacheGetResponse struct {
@@ -157,7 +157,7 @@ type RegionalTieredCacheGetResponse struct {
 	ID RegionalTieredCache `json:"id,required"`
 	// last time this setting was modified.
 	ModifiedOn time.Time `json:"modified_on,required,nullable" format:"date-time"`
-	// Instructs Cloudflare to check a regional hub data center on the way to your
+	// Instructs Khulnasoft to check a regional hub data center on the way to your
 	// upper tier. This can help improve performance for smart and custom tiered cache
 	// topologies.
 	Value RegionalTieredCacheGetResponseValue `json:"value,required"`
@@ -182,7 +182,7 @@ func (r regionalTieredCacheGetResponseJSON) RawJSON() string {
 	return r.raw
 }
 
-// Instructs Cloudflare to check a regional hub data center on the way to your
+// Instructs Khulnasoft to check a regional hub data center on the way to your
 // upper tier. This can help improve performance for smart and custom tiered cache
 // topologies.
 type RegionalTieredCacheGetResponseValue struct {
@@ -240,7 +240,7 @@ func (r RegionalTieredCacheEditParamsValue) IsKnown() bool {
 type RegionalTieredCacheEditResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
-	// Instructs Cloudflare to check a regional hub data center on the way to your
+	// Instructs Khulnasoft to check a regional hub data center on the way to your
 	// upper tier. This can help improve performance for smart and custom tiered cache
 	// topologies.
 	Result RegionalTieredCacheEditResponse `json:"result,required"`
@@ -291,7 +291,7 @@ type RegionalTieredCacheGetParams struct {
 type RegionalTieredCacheGetResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
-	// Instructs Cloudflare to check a regional hub data center on the way to your
+	// Instructs Khulnasoft to check a regional hub data center on the way to your
 	// upper tier. This can help improve performance for smart and custom tiered cache
 	// topologies.
 	Result RegionalTieredCacheGetResponse `json:"result,required"`

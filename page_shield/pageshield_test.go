@@ -30,7 +30,7 @@ func TestPageShieldUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.PageShield.Update(context.TODO(), page_shield.PageShieldUpdateParams{
 		ZoneID:                         khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
 		Enabled:                        khulnasoft.F(true),
-		UseCloudflareReportingEndpoint: khulnasoft.F(true),
+		UseKhulnasoftReportingEndpoint: khulnasoft.F(true),
 		UseConnectionURLPath:           khulnasoft.F(true),
 	})
 	if err != nil {

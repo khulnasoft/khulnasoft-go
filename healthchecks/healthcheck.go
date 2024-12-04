@@ -205,7 +205,7 @@ type Healthcheck struct {
 	ID string `json:"id"`
 	// The hostname or IP address of the origin server to run health checks on.
 	Address string `json:"address"`
-	// A list of regions from which to run health checks. Null means Cloudflare will
+	// A list of regions from which to run health checks. Null means Khulnasoft will
 	// pick a default region.
 	CheckRegions []CheckRegion `json:"check_regions,nullable"`
 	// The number of consecutive fails required from a health check before changing the
@@ -394,7 +394,7 @@ type QueryHealthcheckParam struct {
 	// A short name to identify the health check. Only alphanumeric characters, hyphens
 	// and underscores are allowed.
 	Name param.Field[string] `json:"name,required"`
-	// A list of regions from which to run health checks. Null means Cloudflare will
+	// A list of regions from which to run health checks. Null means Khulnasoft will
 	// pick a default region.
 	CheckRegions param.Field[[]CheckRegion] `json:"check_regions"`
 	// The number of consecutive fails required from a health check before changing the

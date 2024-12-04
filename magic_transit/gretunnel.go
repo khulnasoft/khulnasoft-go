@@ -157,8 +157,8 @@ func (r greTunnelNewResponseJSON) RawJSON() string {
 }
 
 type GRETunnelNewResponseGRETunnel struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel.
-	CloudflareGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel.
+	KhulnasoftGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
 	// The IP address assigned to the customer side of the GRE tunnel.
 	CustomerGREEndpoint string `json:"customer_gre_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
@@ -188,7 +188,7 @@ type GRETunnelNewResponseGRETunnel struct {
 // greTunnelNewResponseGRETunnelJSON contains the JSON metadata for the struct
 // [GRETunnelNewResponseGRETunnel]
 type greTunnelNewResponseGRETunnelJSON struct {
-	CloudflareGREEndpoint apijson.Field
+	KhulnasoftGREEndpoint apijson.Field
 	CustomerGREEndpoint   apijson.Field
 	InterfaceAddress      apijson.Field
 	Name                  apijson.Field
@@ -235,8 +235,8 @@ func (r greTunnelUpdateResponseJSON) RawJSON() string {
 }
 
 type GRETunnelUpdateResponseModifiedGRETunnel struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel.
-	CloudflareGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel.
+	KhulnasoftGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
 	// The IP address assigned to the customer side of the GRE tunnel.
 	CustomerGREEndpoint string `json:"customer_gre_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
@@ -266,7 +266,7 @@ type GRETunnelUpdateResponseModifiedGRETunnel struct {
 // greTunnelUpdateResponseModifiedGRETunnelJSON contains the JSON metadata for the
 // struct [GRETunnelUpdateResponseModifiedGRETunnel]
 type greTunnelUpdateResponseModifiedGRETunnelJSON struct {
-	CloudflareGREEndpoint apijson.Field
+	KhulnasoftGREEndpoint apijson.Field
 	CustomerGREEndpoint   apijson.Field
 	InterfaceAddress      apijson.Field
 	Name                  apijson.Field
@@ -311,8 +311,8 @@ func (r greTunnelListResponseJSON) RawJSON() string {
 }
 
 type GRETunnelListResponseGRETunnel struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel.
-	CloudflareGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel.
+	KhulnasoftGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
 	// The IP address assigned to the customer side of the GRE tunnel.
 	CustomerGREEndpoint string `json:"customer_gre_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
@@ -342,7 +342,7 @@ type GRETunnelListResponseGRETunnel struct {
 // greTunnelListResponseGRETunnelJSON contains the JSON metadata for the struct
 // [GRETunnelListResponseGRETunnel]
 type greTunnelListResponseGRETunnelJSON struct {
-	CloudflareGREEndpoint apijson.Field
+	KhulnasoftGREEndpoint apijson.Field
 	CustomerGREEndpoint   apijson.Field
 	InterfaceAddress      apijson.Field
 	Name                  apijson.Field
@@ -389,8 +389,8 @@ func (r greTunnelDeleteResponseJSON) RawJSON() string {
 }
 
 type GRETunnelDeleteResponseDeletedGRETunnel struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel.
-	CloudflareGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel.
+	KhulnasoftGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
 	// The IP address assigned to the customer side of the GRE tunnel.
 	CustomerGREEndpoint string `json:"customer_gre_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
@@ -420,7 +420,7 @@ type GRETunnelDeleteResponseDeletedGRETunnel struct {
 // greTunnelDeleteResponseDeletedGRETunnelJSON contains the JSON metadata for the
 // struct [GRETunnelDeleteResponseDeletedGRETunnel]
 type greTunnelDeleteResponseDeletedGRETunnelJSON struct {
-	CloudflareGREEndpoint apijson.Field
+	KhulnasoftGREEndpoint apijson.Field
 	CustomerGREEndpoint   apijson.Field
 	InterfaceAddress      apijson.Field
 	Name                  apijson.Field
@@ -465,8 +465,8 @@ func (r greTunnelGetResponseJSON) RawJSON() string {
 }
 
 type GRETunnelGetResponseGRETunnel struct {
-	// The IP address assigned to the Cloudflare side of the GRE tunnel.
-	CloudflareGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel.
+	KhulnasoftGREEndpoint string `json:"khulnasoft_gre_endpoint,required"`
 	// The IP address assigned to the customer side of the GRE tunnel.
 	CustomerGREEndpoint string `json:"customer_gre_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
@@ -496,7 +496,7 @@ type GRETunnelGetResponseGRETunnel struct {
 // greTunnelGetResponseGRETunnelJSON contains the JSON metadata for the struct
 // [GRETunnelGetResponseGRETunnel]
 type greTunnelGetResponseGRETunnelJSON struct {
-	CloudflareGREEndpoint apijson.Field
+	KhulnasoftGREEndpoint apijson.Field
 	CustomerGREEndpoint   apijson.Field
 	InterfaceAddress      apijson.Field
 	Name                  apijson.Field
@@ -575,8 +575,8 @@ func (r GRETunnelNewResponseEnvelopeSuccess) IsKnown() bool {
 type GRETunnelUpdateParams struct {
 	// Identifier
 	AccountID param.Field[string] `path:"account_id,required"`
-	// The IP address assigned to the Cloudflare side of the GRE tunnel.
-	CloudflareGREEndpoint param.Field[string] `json:"khulnasoft_gre_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the GRE tunnel.
+	KhulnasoftGREEndpoint param.Field[string] `json:"khulnasoft_gre_endpoint,required"`
 	// The IP address assigned to the customer side of the GRE tunnel.
 	CustomerGREEndpoint param.Field[string] `json:"customer_gre_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side

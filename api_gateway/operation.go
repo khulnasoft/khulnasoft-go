@@ -129,7 +129,7 @@ func (r *OperationService) Get(ctx context.Context, operationID string, params O
 type APIShield struct {
 	// The endpoint which can contain path parameter templates in curly braces, each
 	// will be replaced from left to right with {varN}, starting with {var1}, during
-	// insertion. This will further be Cloudflare-normalized upon insertion. See:
+	// insertion. This will further be Khulnasoft-normalized upon insertion. See:
 	// https://developers.khulnasoft.com/rules/normalization/how-it-works/.
 	Endpoint string `json:"endpoint,required" format:"uri-template"`
 	// RFC3986-compliant host.
@@ -693,7 +693,7 @@ func (r APIShieldFeaturesAPIShieldOperationFeatureSchemaInfo) implementsAPIGatew
 type APIShieldFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfo struct {
 	// Schema active on endpoint.
 	ActiveSchema APIShieldFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema `json:"active_schema"`
-	// True if a Cloudflare-provided learned schema is available for this endpoint.
+	// True if a Khulnasoft-provided learned schema is available for this endpoint.
 	LearnedAvailable bool `json:"learned_available"`
 	// Action taken on requests failing validation.
 	MitigationAction APIShieldFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction `json:"mitigation_action,nullable"`
@@ -724,7 +724,7 @@ type APIShieldFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema 
 	// UUID
 	ID        string    `json:"id"`
 	CreatedAt time.Time `json:"created_at" format:"date-time"`
-	// True if schema is Cloudflare-provided.
+	// True if schema is Khulnasoft-provided.
 	IsLearned bool `json:"is_learned"`
 	// Schema file name.
 	Name string                                                                         `json:"name"`
@@ -771,7 +771,7 @@ func (r APIShieldFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoMitigation
 type OperationListResponse struct {
 	// The endpoint which can contain path parameter templates in curly braces, each
 	// will be replaced from left to right with {varN}, starting with {var1}, during
-	// insertion. This will further be Cloudflare-normalized upon insertion. See:
+	// insertion. This will further be Khulnasoft-normalized upon insertion. See:
 	// https://developers.khulnasoft.com/rules/normalization/how-it-works/.
 	Endpoint string `json:"endpoint,required" format:"uri-template"`
 	// RFC3986-compliant host.
@@ -1338,7 +1338,7 @@ func (r OperationListResponseFeaturesAPIShieldOperationFeatureSchemaInfo) implem
 type OperationListResponseFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfo struct {
 	// Schema active on endpoint.
 	ActiveSchema OperationListResponseFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema `json:"active_schema"`
-	// True if a Cloudflare-provided learned schema is available for this endpoint.
+	// True if a Khulnasoft-provided learned schema is available for this endpoint.
 	LearnedAvailable bool `json:"learned_available"`
 	// Action taken on requests failing validation.
 	MitigationAction OperationListResponseFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction `json:"mitigation_action,nullable"`
@@ -1369,7 +1369,7 @@ type OperationListResponseFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoA
 	// UUID
 	ID        string    `json:"id"`
 	CreatedAt time.Time `json:"created_at" format:"date-time"`
-	// True if schema is Cloudflare-provided.
+	// True if schema is Khulnasoft-provided.
 	IsLearned bool `json:"is_learned"`
 	// Schema file name.
 	Name string                                                                                     `json:"name"`
@@ -1457,7 +1457,7 @@ func (r OperationDeleteResponseSuccess) IsKnown() bool {
 type OperationGetResponse struct {
 	// The endpoint which can contain path parameter templates in curly braces, each
 	// will be replaced from left to right with {varN}, starting with {var1}, during
-	// insertion. This will further be Cloudflare-normalized upon insertion. See:
+	// insertion. This will further be Khulnasoft-normalized upon insertion. See:
 	// https://developers.khulnasoft.com/rules/normalization/how-it-works/.
 	Endpoint string `json:"endpoint,required" format:"uri-template"`
 	// RFC3986-compliant host.
@@ -2024,7 +2024,7 @@ func (r OperationGetResponseFeaturesAPIShieldOperationFeatureSchemaInfo) impleme
 type OperationGetResponseFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfo struct {
 	// Schema active on endpoint.
 	ActiveSchema OperationGetResponseFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema `json:"active_schema"`
-	// True if a Cloudflare-provided learned schema is available for this endpoint.
+	// True if a Khulnasoft-provided learned schema is available for this endpoint.
 	LearnedAvailable bool `json:"learned_available"`
 	// Action taken on requests failing validation.
 	MitigationAction OperationGetResponseFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction `json:"mitigation_action,nullable"`
@@ -2055,7 +2055,7 @@ type OperationGetResponseFeaturesAPIShieldOperationFeatureSchemaInfoSchemaInfoAc
 	// UUID
 	ID        string    `json:"id"`
 	CreatedAt time.Time `json:"created_at" format:"date-time"`
-	// True if schema is Cloudflare-provided.
+	// True if schema is Khulnasoft-provided.
 	IsLearned bool `json:"is_learned"`
 	// Schema file name.
 	Name string                                                                                    `json:"name"`
@@ -2112,7 +2112,7 @@ func (r OperationNewParams) MarshalJSON() (data []byte, err error) {
 type OperationNewParamsBody struct {
 	// The endpoint which can contain path parameter templates in curly braces, each
 	// will be replaced from left to right with {varN}, starting with {var1}, during
-	// insertion. This will further be Cloudflare-normalized upon insertion. See:
+	// insertion. This will further be Khulnasoft-normalized upon insertion. See:
 	// https://developers.khulnasoft.com/rules/normalization/how-it-works/.
 	Endpoint param.Field[string] `json:"endpoint,required" format:"uri-template"`
 	// RFC3986-compliant host.

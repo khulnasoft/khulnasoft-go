@@ -141,7 +141,7 @@ func (r *ZoneService) Get(ctx context.Context, query ZoneGetParams, opts ...opti
 	return
 }
 
-// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+// A full zone implies that DNS is hosted with Khulnasoft. A partial zone is
 // typically a partner-hosted zone or a CNAME setup.
 type Type string
 
@@ -178,22 +178,22 @@ type Zone struct {
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
 	// The domain name
 	Name string `json:"name,required"`
-	// The name servers Cloudflare assigns to a zone
+	// The name servers Khulnasoft assigns to a zone
 	NameServers []string `json:"name_servers,required" format:"hostname"`
-	// DNS host at the time of switching to Cloudflare
+	// DNS host at the time of switching to Khulnasoft
 	OriginalDnshost string `json:"original_dnshost,required,nullable"`
-	// Original name servers before moving to Cloudflare
+	// Original name servers before moving to Khulnasoft
 	OriginalNameServers []string `json:"original_name_servers,required,nullable" format:"hostname"`
-	// Registrar for the domain at the time of switching to Cloudflare
+	// Registrar for the domain at the time of switching to Khulnasoft
 	OriginalRegistrar string `json:"original_registrar,required,nullable"`
 	// The owner of the zone
 	Owner ZoneOwner `json:"owner,required"`
-	// Indicates whether the zone is only using Cloudflare DNS services. A true value
+	// Indicates whether the zone is only using Khulnasoft DNS services. A true value
 	// means the zone will not receive security or performance benefits.
 	Paused bool `json:"paused"`
-	// The zone status on Cloudflare.
+	// The zone status on Khulnasoft.
 	Status ZoneStatus `json:"status"`
-	// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+	// A full zone implies that DNS is hosted with Khulnasoft. A partial zone is
 	// typically a partner-hosted zone or a CNAME setup.
 	Type Type `json:"type"`
 	// An array of domains used for custom name servers. This is only available for
@@ -325,7 +325,7 @@ func (r zoneOwnerJSON) RawJSON() string {
 	return r.raw
 }
 
-// The zone status on Cloudflare.
+// The zone status on Khulnasoft.
 type ZoneStatus string
 
 const (
@@ -369,7 +369,7 @@ type ZoneNewParams struct {
 	Account param.Field[ZoneNewParamsAccount] `json:"account,required"`
 	// The domain name
 	Name param.Field[string] `json:"name,required"`
-	// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+	// A full zone implies that DNS is hosted with Khulnasoft. A partial zone is
 	// typically a partner-hosted zone or a CNAME setup.
 	Type param.Field[Type] `json:"type"`
 }
@@ -580,7 +580,7 @@ func (r zoneDeleteResponseEnvelopeJSON) RawJSON() string {
 type ZoneEditParams struct {
 	// Identifier
 	ZoneID param.Field[string] `path:"zone_id,required"`
-	// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+	// A full zone implies that DNS is hosted with Khulnasoft. A partial zone is
 	// typically a partner-hosted zone or a CNAME setup. This parameter is only
 	// available to Enterprise customers or if it has been explicitly enabled on a
 	// zone.
@@ -594,7 +594,7 @@ func (r ZoneEditParams) MarshalJSON() (data []byte, err error) {
 	return apijson.MarshalRoot(r)
 }
 
-// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+// A full zone implies that DNS is hosted with Khulnasoft. A partial zone is
 // typically a partner-hosted zone or a CNAME setup. This parameter is only
 // available to Enterprise customers or if it has been explicitly enabled on a
 // zone.

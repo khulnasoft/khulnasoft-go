@@ -77,7 +77,7 @@ func (r availabilityJSON) RawJSON() string {
 }
 
 type AvailabilityQuota struct {
-	// Cloudflare plan.
+	// Khulnasoft plan.
 	Plan string `json:"plan"`
 	// The number of tests available per plan.
 	QuotasPerPlan AvailabilityQuotaQuotasPerPlan `json:"quotasPerPlan"`

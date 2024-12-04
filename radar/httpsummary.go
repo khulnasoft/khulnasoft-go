@@ -35,7 +35,7 @@ func NewHTTPSummaryService(opts ...option.RequestOption) (r *HTTPSummaryService)
 }
 
 // Percentage distribution of bot-generated traffic to genuine human traffic, as
-// classified by Cloudflare. Visit
+// classified by Khulnasoft. Visit
 // https://developers.khulnasoft.com/radar/concepts/bot-classes/ for more
 // information.
 func (r *HTTPSummaryService) BotClass(ctx context.Context, query HTTPSummaryBotClassParams, opts ...option.RequestOption) (res *HTTPSummaryBotClassResponse, err error) {

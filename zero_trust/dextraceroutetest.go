@@ -459,7 +459,7 @@ type DEXTracerouteTestGetParams struct {
 	Interval param.Field[DEXTracerouteTestGetParamsInterval] `query:"interval,required"`
 	// End time for aggregate metrics in ISO ms
 	To param.Field[string] `query:"to,required"`
-	// Optionally filter result stats to a Cloudflare colo. Cannot be used in
+	// Optionally filter result stats to a Khulnasoft colo. Cannot be used in
 	// combination with deviceId param.
 	Colo param.Field[string] `query:"colo"`
 	// Optionally filter result stats to a specific device(s). Cannot be used in
@@ -621,7 +621,7 @@ type DEXTracerouteTestPercentilesParams struct {
 	From param.Field[string] `query:"from,required"`
 	// End time for aggregate metrics in ISO format
 	To param.Field[string] `query:"to,required"`
-	// Optionally filter result stats to a Cloudflare colo. Cannot be used in
+	// Optionally filter result stats to a Khulnasoft colo. Cannot be used in
 	// combination with deviceId param.
 	Colo param.Field[string] `query:"colo"`
 	// Optionally filter result stats to a specific device(s). Cannot be used in

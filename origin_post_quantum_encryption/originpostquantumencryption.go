@@ -34,8 +34,8 @@ func NewOriginPostQuantumEncryptionService(opts ...option.RequestOption) (r *Ori
 	return
 }
 
-// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when
-// connecting to your origin. Preferred instructs Cloudflare to opportunistically
+// Instructs Khulnasoft to use Post-Quantum (PQ) key agreement algorithms when
+// connecting to your origin. Preferred instructs Khulnasoft to opportunistically
 // send a Post-Quantum keyshare in the first message to the origin (for fastest
 // connections when the origin supports and prefers PQ), supported means that PQ
 // algorithms are advertised but only used when requested by the origin, and off
@@ -56,8 +56,8 @@ func (r *OriginPostQuantumEncryptionService) Update(ctx context.Context, params 
 	return
 }
 
-// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when
-// connecting to your origin. Preferred instructs Cloudflare to opportunistically
+// Instructs Khulnasoft to use Post-Quantum (PQ) key agreement algorithms when
+// connecting to your origin. Preferred instructs Khulnasoft to opportunistically
 // send a Post-Quantum keyshare in the first message to the origin (for fastest
 // connections when the origin supports and prefers PQ), supported means that PQ
 // algorithms are advertised but only used when requested by the origin, and off

@@ -151,7 +151,7 @@ func (r BotFightModeConfigurationParam) implementsBotManagementBotManagementUpda
 type SubscriptionConfiguration struct {
 	// Enable rule to block AI Scrapers and Crawlers.
 	AIBotsProtection SubscriptionConfigurationAIBotsProtection `json:"ai_bots_protection"`
-	// Automatically update to the newest bot detection models created by Cloudflare as
+	// Automatically update to the newest bot detection models created by Khulnasoft as
 	// they are released.
 	// [Learn more.](https://developers.khulnasoft.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
 	AutoUpdateModel bool `json:"auto_update_model"`
@@ -210,7 +210,7 @@ func (r SubscriptionConfigurationAIBotsProtection) IsKnown() bool {
 type SubscriptionConfigurationParam struct {
 	// Enable rule to block AI Scrapers and Crawlers.
 	AIBotsProtection param.Field[SubscriptionConfigurationAIBotsProtection] `json:"ai_bots_protection"`
-	// Automatically update to the newest bot detection models created by Cloudflare as
+	// Automatically update to the newest bot detection models created by Khulnasoft as
 	// they are released.
 	// [Learn more.](https://developers.khulnasoft.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
 	AutoUpdateModel param.Field[bool] `json:"auto_update_model"`
@@ -518,7 +518,7 @@ type BotManagementUpdateResponse struct {
 	SBFMVerifiedBots BotManagementUpdateResponseSBFMVerifiedBots `json:"sbfm_verified_bots"`
 	// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
 	SBFMLikelyAutomated BotManagementUpdateResponseSBFMLikelyAutomated `json:"sbfm_likely_automated"`
-	// Automatically update to the newest bot detection models created by Cloudflare as
+	// Automatically update to the newest bot detection models created by Khulnasoft as
 	// they are released.
 	// [Learn more.](https://developers.khulnasoft.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
 	AutoUpdateModel bool `json:"auto_update_model"`
@@ -692,7 +692,7 @@ type BotManagementGetResponse struct {
 	SBFMVerifiedBots BotManagementGetResponseSBFMVerifiedBots `json:"sbfm_verified_bots"`
 	// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
 	SBFMLikelyAutomated BotManagementGetResponseSBFMLikelyAutomated `json:"sbfm_likely_automated"`
-	// Automatically update to the newest bot detection models created by Cloudflare as
+	// Automatically update to the newest bot detection models created by Khulnasoft as
 	// they are released.
 	// [Learn more.](https://developers.khulnasoft.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
 	AutoUpdateModel bool `json:"auto_update_model"`
@@ -873,7 +873,7 @@ type BotManagementUpdateParamsBody struct {
 	SBFMVerifiedBots param.Field[BotManagementUpdateParamsBodySBFMVerifiedBots] `json:"sbfm_verified_bots"`
 	// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
 	SBFMLikelyAutomated param.Field[BotManagementUpdateParamsBodySBFMLikelyAutomated] `json:"sbfm_likely_automated"`
-	// Automatically update to the newest bot detection models created by Cloudflare as
+	// Automatically update to the newest bot detection models created by Khulnasoft as
 	// they are released.
 	// [Learn more.](https://developers.khulnasoft.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
 	AutoUpdateModel param.Field[bool] `json:"auto_update_model"`

@@ -138,7 +138,7 @@ type Audio struct {
 	Label string `json:"label"`
 	// Specifies the processing status of the video.
 	Status AudioStatus `json:"status"`
-	// A Cloudflare-generated unique identifier for a media item.
+	// A Khulnasoft-generated unique identifier for a media item.
 	UID  string    `json:"uid"`
 	JSON audioJSON `json:"-"`
 }

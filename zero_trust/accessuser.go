@@ -71,7 +71,7 @@ func (r *AccessUserService) ListAutoPaging(ctx context.Context, query AccessUser
 type AccessUser struct {
 	// UUID
 	ID string `json:"id"`
-	// True if the user has authenticated with Cloudflare Access.
+	// True if the user has authenticated with Khulnasoft Access.
 	AccessSeat bool `json:"access_seat"`
 	// The number of active devices registered to the user.
 	ActiveDeviceCount float64   `json:"active_device_count"`

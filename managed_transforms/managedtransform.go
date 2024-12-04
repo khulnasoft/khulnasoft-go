@@ -141,7 +141,7 @@ func (r managedTransformEditResponseJSON) RawJSON() string {
 type ManagedTransformEditResponseManagedRequestHeader struct {
 	// Human-readable identifier of the Managed Transform.
 	ID string `json:"id"`
-	// When true, the Managed Transform is available in the current Cloudflare plan.
+	// When true, the Managed Transform is available in the current Khulnasoft plan.
 	Available bool `json:"available"`
 	// When true, the Managed Transform is enabled.
 	Enabled bool                                                 `json:"enabled"`
@@ -169,7 +169,7 @@ func (r managedTransformEditResponseManagedRequestHeaderJSON) RawJSON() string {
 type ManagedTransformEditResponseManagedResponseHeader struct {
 	// Human-readable identifier of the Managed Transform.
 	ID string `json:"id"`
-	// When true, the Managed Transform is available in the current Cloudflare plan.
+	// When true, the Managed Transform is available in the current Khulnasoft plan.
 	Available bool `json:"available"`
 	// When true, the Managed Transform is enabled.
 	Enabled bool                                                  `json:"enabled"`

@@ -444,7 +444,7 @@ type GatewayConfigurationSettings struct {
 	// Browser isolation settings.
 	BrowserIsolation BrowserIsolationSettings `json:"browser_isolation"`
 	// Certificate settings for Gateway TLS interception. If not specified, the
-	// Cloudflare Root CA will be used.
+	// Khulnasoft Root CA will be used.
 	Certificate GatewayConfigurationSettingsCertificate `json:"certificate"`
 	// Custom certificate settings for BYO-PKI. (deprecated and replaced by
 	// `certificate`)
@@ -487,10 +487,10 @@ func (r gatewayConfigurationSettingsJSON) RawJSON() string {
 }
 
 // Certificate settings for Gateway TLS interception. If not specified, the
-// Cloudflare Root CA will be used.
+// Khulnasoft Root CA will be used.
 type GatewayConfigurationSettingsCertificate struct {
 	// UUID of certificate to be used for interception. Certificate must be active on
-	// the edge. A nil UUID will indicate the Cloudflare Root CA should be used.
+	// the edge. A nil UUID will indicate the Khulnasoft Root CA should be used.
 	ID   string                                      `json:"id,required"`
 	JSON gatewayConfigurationSettingsCertificateJSON `json:"-"`
 }
@@ -524,7 +524,7 @@ type GatewayConfigurationSettingsParam struct {
 	// Browser isolation settings.
 	BrowserIsolation param.Field[BrowserIsolationSettingsParam] `json:"browser_isolation"`
 	// Certificate settings for Gateway TLS interception. If not specified, the
-	// Cloudflare Root CA will be used.
+	// Khulnasoft Root CA will be used.
 	Certificate param.Field[GatewayConfigurationSettingsCertificateParam] `json:"certificate"`
 	// Custom certificate settings for BYO-PKI. (deprecated and replaced by
 	// `certificate`)
@@ -544,10 +544,10 @@ func (r GatewayConfigurationSettingsParam) MarshalJSON() (data []byte, err error
 }
 
 // Certificate settings for Gateway TLS interception. If not specified, the
-// Cloudflare Root CA will be used.
+// Khulnasoft Root CA will be used.
 type GatewayConfigurationSettingsCertificateParam struct {
 	// UUID of certificate to be used for interception. Certificate must be active on
-	// the edge. A nil UUID will indicate the Cloudflare Root CA should be used.
+	// the edge. A nil UUID will indicate the Khulnasoft Root CA should be used.
 	ID param.Field[string] `json:"id,required"`
 }
 

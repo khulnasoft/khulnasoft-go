@@ -409,10 +409,10 @@ type RuleSetting struct {
 	OverrideIPs []string `json:"override_ips"`
 	// Configure DLP payload logging.
 	PayloadLog RuleSettingPayloadLog `json:"payload_log"`
-	// Enable to send queries that match the policy to Cloudflare's default 1.1.1.1 DNS
+	// Enable to send queries that match the policy to Khulnasoft's default 1.1.1.1 DNS
 	// resolver. Cannot be set when dns_resolvers are specified. Only valid when a
 	// rule's action is set to 'resolve'.
-	ResolveDNSThroughCloudflare bool `json:"resolve_dns_through_khulnasoft"`
+	ResolveDNSThroughKhulnasoft bool `json:"resolve_dns_through_khulnasoft"`
 	// Configure behavior when an upstream cert is invalid or an SSL error occurs.
 	UntrustedCERT RuleSettingUntrustedCERT `json:"untrusted_cert"`
 	JSON          ruleSettingJSON          `json:"-"`
@@ -439,7 +439,7 @@ type ruleSettingJSON struct {
 	OverrideHost                    apijson.Field
 	OverrideIPs                     apijson.Field
 	PayloadLog                      apijson.Field
-	ResolveDNSThroughCloudflare     apijson.Field
+	ResolveDNSThroughKhulnasoft     apijson.Field
 	UntrustedCERT                   apijson.Field
 	raw                             string
 	ExtraFields                     map[string]apijson.Field
@@ -771,10 +771,10 @@ type RuleSettingParam struct {
 	OverrideIPs param.Field[[]string] `json:"override_ips"`
 	// Configure DLP payload logging.
 	PayloadLog param.Field[RuleSettingPayloadLogParam] `json:"payload_log"`
-	// Enable to send queries that match the policy to Cloudflare's default 1.1.1.1 DNS
+	// Enable to send queries that match the policy to Khulnasoft's default 1.1.1.1 DNS
 	// resolver. Cannot be set when dns_resolvers are specified. Only valid when a
 	// rule's action is set to 'resolve'.
-	ResolveDNSThroughCloudflare param.Field[bool] `json:"resolve_dns_through_khulnasoft"`
+	ResolveDNSThroughKhulnasoft param.Field[bool] `json:"resolve_dns_through_khulnasoft"`
 	// Configure behavior when an upstream cert is invalid or an SSL error occurs.
 	UntrustedCERT param.Field[RuleSettingUntrustedCERTParam] `json:"untrusted_cert"`
 }

@@ -36,7 +36,7 @@ func NewQualitySpeedService(opts ...option.RequestOption) (r *QualitySpeedServic
 	return
 }
 
-// Get an histogram from the previous 90 days of Cloudflare Speed Test data, split
+// Get an histogram from the previous 90 days of Khulnasoft Speed Test data, split
 // into fixed bandwidth (Mbps), latency (ms) or jitter (ms) buckets.
 func (r *QualitySpeedService) Histogram(ctx context.Context, query QualitySpeedHistogramParams, opts ...option.RequestOption) (res *QualitySpeedHistogramResponse, err error) {
 	var env QualitySpeedHistogramResponseEnvelope
@@ -51,7 +51,7 @@ func (r *QualitySpeedService) Histogram(ctx context.Context, query QualitySpeedH
 }
 
 // Get a summary of bandwidth, latency, jitter and packet loss, from the previous
-// 90 days of Cloudflare Speed Test data.
+// 90 days of Khulnasoft Speed Test data.
 func (r *QualitySpeedService) Summary(ctx context.Context, query QualitySpeedSummaryParams, opts ...option.RequestOption) (res *QualitySpeedSummaryResponse, err error) {
 	var env QualitySpeedSummaryResponseEnvelope
 	opts = append(r.Options[:], opts...)

@@ -35,7 +35,7 @@ func NewQualitySpeedTopService(opts ...option.RequestOption) (r *QualitySpeedTop
 }
 
 // Get the top autonomous systems by bandwidth, latency, jitter or packet loss,
-// from the previous 90 days of Cloudflare Speed Test data.
+// from the previous 90 days of Khulnasoft Speed Test data.
 func (r *QualitySpeedTopService) Ases(ctx context.Context, query QualitySpeedTopAsesParams, opts ...option.RequestOption) (res *QualitySpeedTopAsesResponse, err error) {
 	var env QualitySpeedTopAsesResponseEnvelope
 	opts = append(r.Options[:], opts...)
@@ -49,7 +49,7 @@ func (r *QualitySpeedTopService) Ases(ctx context.Context, query QualitySpeedTop
 }
 
 // Get the top locations by bandwidth, latency, jitter or packet loss, from the
-// previous 90 days of Cloudflare Speed Test data.
+// previous 90 days of Khulnasoft Speed Test data.
 func (r *QualitySpeedTopService) Locations(ctx context.Context, query QualitySpeedTopLocationsParams, opts ...option.RequestOption) (res *QualitySpeedTopLocationsResponse, err error) {
 	var env QualitySpeedTopLocationsResponseEnvelope
 	opts = append(r.Options[:], opts...)

@@ -77,7 +77,7 @@ func (r *TunnelConfigurationService) Get(ctx context.Context, tunnelID string, q
 	return
 }
 
-// Cloudflare Tunnel configuration
+// Khulnasoft Tunnel configuration
 type TunnelConfigurationUpdateResponse struct {
 	// Identifier
 	AccountID string `json:"account_id"`
@@ -190,7 +190,7 @@ type TunnelConfigurationUpdateResponseConfigIngressOriginRequest struct {
 	// Cf-Access-Jwt-Assertion request header.
 	Access TunnelConfigurationUpdateResponseConfigIngressOriginRequestAccess `json:"access"`
 	// Path to the certificate authority (CA) for the certificate of your origin. This
-	// option should be used only if your certificate is not signed by Cloudflare.
+	// option should be used only if your certificate is not signed by Khulnasoft.
 	CAPool string `json:"caPool"`
 	// Timeout for establishing a new TCP connection to your origin server. This
 	// excludes the time taken to establish TLS, which is controlled by tlsTimeout.
@@ -297,7 +297,7 @@ type TunnelConfigurationUpdateResponseConfigOriginRequest struct {
 	// Cf-Access-Jwt-Assertion request header.
 	Access TunnelConfigurationUpdateResponseConfigOriginRequestAccess `json:"access"`
 	// Path to the certificate authority (CA) for the certificate of your origin. This
-	// option should be used only if your certificate is not signed by Cloudflare.
+	// option should be used only if your certificate is not signed by Khulnasoft.
 	CAPool string `json:"caPool"`
 	// Timeout for establishing a new TCP connection to your origin server. This
 	// excludes the time taken to establish TLS, which is controlled by tlsTimeout.
@@ -426,18 +426,18 @@ type TunnelConfigurationUpdateResponseSource string
 
 const (
 	TunnelConfigurationUpdateResponseSourceLocal      TunnelConfigurationUpdateResponseSource = "local"
-	TunnelConfigurationUpdateResponseSourceCloudflare TunnelConfigurationUpdateResponseSource = "khulnasoft"
+	TunnelConfigurationUpdateResponseSourceKhulnasoft TunnelConfigurationUpdateResponseSource = "khulnasoft"
 )
 
 func (r TunnelConfigurationUpdateResponseSource) IsKnown() bool {
 	switch r {
-	case TunnelConfigurationUpdateResponseSourceLocal, TunnelConfigurationUpdateResponseSourceCloudflare:
+	case TunnelConfigurationUpdateResponseSourceLocal, TunnelConfigurationUpdateResponseSourceKhulnasoft:
 		return true
 	}
 	return false
 }
 
-// Cloudflare Tunnel configuration
+// Khulnasoft Tunnel configuration
 type TunnelConfigurationGetResponse struct {
 	// Identifier
 	AccountID string `json:"account_id"`
@@ -550,7 +550,7 @@ type TunnelConfigurationGetResponseConfigIngressOriginRequest struct {
 	// Cf-Access-Jwt-Assertion request header.
 	Access TunnelConfigurationGetResponseConfigIngressOriginRequestAccess `json:"access"`
 	// Path to the certificate authority (CA) for the certificate of your origin. This
-	// option should be used only if your certificate is not signed by Cloudflare.
+	// option should be used only if your certificate is not signed by Khulnasoft.
 	CAPool string `json:"caPool"`
 	// Timeout for establishing a new TCP connection to your origin server. This
 	// excludes the time taken to establish TLS, which is controlled by tlsTimeout.
@@ -657,7 +657,7 @@ type TunnelConfigurationGetResponseConfigOriginRequest struct {
 	// Cf-Access-Jwt-Assertion request header.
 	Access TunnelConfigurationGetResponseConfigOriginRequestAccess `json:"access"`
 	// Path to the certificate authority (CA) for the certificate of your origin. This
-	// option should be used only if your certificate is not signed by Cloudflare.
+	// option should be used only if your certificate is not signed by Khulnasoft.
 	CAPool string `json:"caPool"`
 	// Timeout for establishing a new TCP connection to your origin server. This
 	// excludes the time taken to establish TLS, which is controlled by tlsTimeout.
@@ -786,12 +786,12 @@ type TunnelConfigurationGetResponseSource string
 
 const (
 	TunnelConfigurationGetResponseSourceLocal      TunnelConfigurationGetResponseSource = "local"
-	TunnelConfigurationGetResponseSourceCloudflare TunnelConfigurationGetResponseSource = "khulnasoft"
+	TunnelConfigurationGetResponseSourceKhulnasoft TunnelConfigurationGetResponseSource = "khulnasoft"
 )
 
 func (r TunnelConfigurationGetResponseSource) IsKnown() bool {
 	switch r {
-	case TunnelConfigurationGetResponseSourceLocal, TunnelConfigurationGetResponseSourceCloudflare:
+	case TunnelConfigurationGetResponseSourceLocal, TunnelConfigurationGetResponseSourceKhulnasoft:
 		return true
 	}
 	return false
@@ -848,7 +848,7 @@ type TunnelConfigurationUpdateParamsConfigIngressOriginRequest struct {
 	// Cf-Access-Jwt-Assertion request header.
 	Access param.Field[TunnelConfigurationUpdateParamsConfigIngressOriginRequestAccess] `json:"access"`
 	// Path to the certificate authority (CA) for the certificate of your origin. This
-	// option should be used only if your certificate is not signed by Cloudflare.
+	// option should be used only if your certificate is not signed by Khulnasoft.
 	CAPool param.Field[string] `json:"caPool"`
 	// Timeout for establishing a new TCP connection to your origin server. This
 	// excludes the time taken to establish TLS, which is controlled by tlsTimeout.
@@ -912,7 +912,7 @@ type TunnelConfigurationUpdateParamsConfigOriginRequest struct {
 	// Cf-Access-Jwt-Assertion request header.
 	Access param.Field[TunnelConfigurationUpdateParamsConfigOriginRequestAccess] `json:"access"`
 	// Path to the certificate authority (CA) for the certificate of your origin. This
-	// option should be used only if your certificate is not signed by Cloudflare.
+	// option should be used only if your certificate is not signed by Khulnasoft.
 	CAPool param.Field[string] `json:"caPool"`
 	// Timeout for establishing a new TCP connection to your origin server. This
 	// excludes the time taken to establish TLS, which is controlled by tlsTimeout.
@@ -984,7 +984,7 @@ type TunnelConfigurationUpdateResponseEnvelope struct {
 	Messages []shared.ResponseInfo `json:"messages,required"`
 	// Whether the API call was successful
 	Success TunnelConfigurationUpdateResponseEnvelopeSuccess `json:"success,required"`
-	// Cloudflare Tunnel configuration
+	// Khulnasoft Tunnel configuration
 	Result TunnelConfigurationUpdateResponse             `json:"result"`
 	JSON   tunnelConfigurationUpdateResponseEnvelopeJSON `json:"-"`
 }
@@ -1033,7 +1033,7 @@ type TunnelConfigurationGetResponseEnvelope struct {
 	Messages []shared.ResponseInfo `json:"messages,required"`
 	// Whether the API call was successful
 	Success TunnelConfigurationGetResponseEnvelopeSuccess `json:"success,required"`
-	// Cloudflare Tunnel configuration
+	// Khulnasoft Tunnel configuration
 	Result TunnelConfigurationGetResponse             `json:"result"`
 	JSON   tunnelConfigurationGetResponseEnvelopeJSON `json:"-"`
 }

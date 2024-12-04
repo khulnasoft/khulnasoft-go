@@ -179,7 +179,7 @@ type CustomCertificate struct {
 	Signature string `json:"signature,required"`
 	// Status of the zone's custom SSL.
 	Status CustomCertificateStatus `json:"status,required"`
-	// When the certificate was uploaded to Cloudflare.
+	// When the certificate was uploaded to Khulnasoft.
 	UploadedOn time.Time `json:"uploaded_on,required" format:"date-time"`
 	// Identifier
 	ZoneID string `json:"zone_id,required"`
@@ -188,7 +188,7 @@ type CustomCertificate struct {
 	// encrypted, but will incur some latency while Keyless SSL is used to complete the
 	// handshake with the nearest allowed data center. Options allow distribution to
 	// only to U.S. data centers, only to E.U. data centers, or only to highest
-	// security data centers. Default distribution is to all Cloudflare datacenters,
+	// security data centers. Default distribution is to all Khulnasoft datacenters,
 	// for optimal performance.
 	GeoRestrictions GeoRestrictions                         `json:"geo_restrictions"`
 	KeylessServer   keyless_certificates.KeylessCertificate `json:"keyless_server"`
@@ -258,7 +258,7 @@ func (r CustomCertificateStatus) IsKnown() bool {
 // encrypted, but will incur some latency while Keyless SSL is used to complete the
 // handshake with the nearest allowed data center. Options allow distribution to
 // only to U.S. data centers, only to E.U. data centers, or only to highest
-// security data centers. Default distribution is to all Cloudflare datacenters,
+// security data centers. Default distribution is to all Khulnasoft datacenters,
 // for optimal performance.
 type GeoRestrictions struct {
 	Label GeoRestrictionsLabel `json:"label"`
@@ -301,7 +301,7 @@ func (r GeoRestrictionsLabel) IsKnown() bool {
 // encrypted, but will incur some latency while Keyless SSL is used to complete the
 // handshake with the nearest allowed data center. Options allow distribution to
 // only to U.S. data centers, only to E.U. data centers, or only to highest
-// security data centers. Default distribution is to all Cloudflare datacenters,
+// security data centers. Default distribution is to all Khulnasoft datacenters,
 // for optimal performance.
 type GeoRestrictionsParam struct {
 	Label param.Field[GeoRestrictionsLabel] `json:"label"`
@@ -369,7 +369,7 @@ type CustomCertificateNewParams struct {
 	// encrypted, but will incur some latency while Keyless SSL is used to complete the
 	// handshake with the nearest allowed data center. Options allow distribution to
 	// only to U.S. data centers, only to E.U. data centers, or only to highest
-	// security data centers. Default distribution is to all Cloudflare datacenters,
+	// security data centers. Default distribution is to all Khulnasoft datacenters,
 	// for optimal performance.
 	GeoRestrictions param.Field[GeoRestrictionsParam] `json:"geo_restrictions"`
 	// Specify the policy that determines the region where your private key will be
@@ -571,7 +571,7 @@ type CustomCertificateEditParams struct {
 	// encrypted, but will incur some latency while Keyless SSL is used to complete the
 	// handshake with the nearest allowed data center. Options allow distribution to
 	// only to U.S. data centers, only to E.U. data centers, or only to highest
-	// security data centers. Default distribution is to all Cloudflare datacenters,
+	// security data centers. Default distribution is to all Khulnasoft datacenters,
 	// for optimal performance.
 	GeoRestrictions param.Field[GeoRestrictionsParam] `json:"geo_restrictions"`
 	// Specify the policy that determines the region where your private key will be

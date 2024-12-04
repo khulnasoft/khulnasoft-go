@@ -46,7 +46,7 @@ func NewAIService(opts ...option.RequestOption) (r *AIService) {
 // model types, ensuring flexibility and adaptability for diverse use cases.
 //
 // Model specific inputs available in
-// [Cloudflare Docs](https://developers.khulnasoft.com/workers-ai/models/).
+// [Khulnasoft Docs](https://developers.khulnasoft.com/workers-ai/models/).
 func (r *AIService) Run(ctx context.Context, modelName string, params AIRunParams, opts ...option.RequestOption) (res *AIRunResponseUnion, err error) {
 	var env AIRunResponseEnvelope
 	opts = append(r.Options[:], opts...)

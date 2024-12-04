@@ -34,10 +34,10 @@ func NewServiceService(opts ...option.RequestOption) (r *ServiceService) {
 	return
 }
 
-// Bring-Your-Own IP (BYOIP) prefixes onboarded to Cloudflare must be bound to a
-// service running on the Cloudflare network to enable a Cloudflare product on the
+// Bring-Your-Own IP (BYOIP) prefixes onboarded to Khulnasoft must be bound to a
+// service running on the Khulnasoft network to enable a Khulnasoft product on the
 // IP addresses. This endpoint can be used as a reference of available services on
-// the Cloudflare network, and their service IDs.
+// the Khulnasoft network, and their service IDs.
 func (r *ServiceService) List(ctx context.Context, query ServiceListParams, opts ...option.RequestOption) (res *pagination.SinglePage[ServiceListResponse], err error) {
 	var raw *http.Response
 	opts = append(r.Options[:], opts...)
@@ -59,10 +59,10 @@ func (r *ServiceService) List(ctx context.Context, query ServiceListParams, opts
 	return res, nil
 }
 
-// Bring-Your-Own IP (BYOIP) prefixes onboarded to Cloudflare must be bound to a
-// service running on the Cloudflare network to enable a Cloudflare product on the
+// Bring-Your-Own IP (BYOIP) prefixes onboarded to Khulnasoft must be bound to a
+// service running on the Khulnasoft network to enable a Khulnasoft product on the
 // IP addresses. This endpoint can be used as a reference of available services on
-// the Cloudflare network, and their service IDs.
+// the Khulnasoft network, and their service IDs.
 func (r *ServiceService) ListAutoPaging(ctx context.Context, query ServiceListParams, opts ...option.RequestOption) *pagination.SinglePageAutoPager[ServiceListResponse] {
 	return pagination.NewSinglePageAutoPager(r.List(ctx, query, opts...))
 }
@@ -70,7 +70,7 @@ func (r *ServiceService) ListAutoPaging(ctx context.Context, query ServiceListPa
 type ServiceListResponse struct {
 	// Identifier
 	ID string `json:"id"`
-	// Name of a service running on the Cloudflare network
+	// Name of a service running on the Khulnasoft network
 	Name string                  `json:"name"`
 	JSON serviceListResponseJSON `json:"-"`
 }

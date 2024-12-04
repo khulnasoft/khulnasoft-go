@@ -56,7 +56,7 @@ func (r *CacheReserveService) Clear(ctx context.Context, params CacheReserveClea
 }
 
 // Increase cache lifetimes by automatically storing all cacheable files into
-// Cloudflare's persistent object storage buckets. Requires Cache Reserve
+// Khulnasoft's persistent object storage buckets. Requires Cache Reserve
 // subscription. Note: using Tiered Cache with Cache Reserve is highly recommended
 // to reduce Reserve operations costs. See the
 // [developer docs](https://developers.khulnasoft.com/cache/about/cache-reserve)
@@ -78,7 +78,7 @@ func (r *CacheReserveService) Edit(ctx context.Context, params CacheReserveEditP
 }
 
 // Increase cache lifetimes by automatically storing all cacheable files into
-// Cloudflare's persistent object storage buckets. Requires Cache Reserve
+// Khulnasoft's persistent object storage buckets. Requires Cache Reserve
 // subscription. Note: using Tiered Cache with Cache Reserve is highly recommended
 // to reduce Reserve operations costs. See the
 // [developer docs](https://developers.khulnasoft.com/cache/about/cache-reserve)
@@ -204,7 +204,7 @@ func (r cacheReserveClearResponseJSON) RawJSON() string {
 }
 
 // Increase cache lifetimes by automatically storing all cacheable files into
-// Cloudflare's persistent object storage buckets. Requires Cache Reserve
+// Khulnasoft's persistent object storage buckets. Requires Cache Reserve
 // subscription. Note: using Tiered Cache with Cache Reserve is highly recommended
 // to reduce Reserve operations costs. See the
 // [developer docs](https://developers.khulnasoft.com/cache/about/cache-reserve)
@@ -254,7 +254,7 @@ func (r CacheReserveEditResponseValue) IsKnown() bool {
 }
 
 // Increase cache lifetimes by automatically storing all cacheable files into
-// Cloudflare's persistent object storage buckets. Requires Cache Reserve
+// Khulnasoft's persistent object storage buckets. Requires Cache Reserve
 // subscription. Note: using Tiered Cache with Cache Reserve is highly recommended
 // to reduce Reserve operations costs. See the
 // [developer docs](https://developers.khulnasoft.com/cache/about/cache-reserve)
@@ -429,7 +429,7 @@ type CacheReserveEditResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
 	// Increase cache lifetimes by automatically storing all cacheable files into
-	// Cloudflare's persistent object storage buckets. Requires Cache Reserve
+	// Khulnasoft's persistent object storage buckets. Requires Cache Reserve
 	// subscription. Note: using Tiered Cache with Cache Reserve is highly recommended
 	// to reduce Reserve operations costs. See the
 	// [developer docs](https://developers.khulnasoft.com/cache/about/cache-reserve)
@@ -483,7 +483,7 @@ type CacheReserveGetResponseEnvelope struct {
 	Errors   []shared.ResponseInfo `json:"errors,required"`
 	Messages []shared.ResponseInfo `json:"messages,required"`
 	// Increase cache lifetimes by automatically storing all cacheable files into
-	// Cloudflare's persistent object storage buckets. Requires Cache Reserve
+	// Khulnasoft's persistent object storage buckets. Requires Cache Reserve
 	// subscription. Note: using Tiered Cache with Cache Reserve is highly recommended
 	// to reduce Reserve operations costs. See the
 	// [developer docs](https://developers.khulnasoft.com/cache/about/cache-reserve)

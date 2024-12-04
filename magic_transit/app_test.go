@@ -30,7 +30,7 @@ func TestAppNewWithOptionalParams(t *testing.T) {
 	)
 	_, err := client.MagicTransit.Apps.New(context.TODO(), magic_transit.AppNewParams{
 		AccountID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
-		Name:      khulnasoft.F("Cloudflare Dashboard"),
+		Name:      khulnasoft.F("Khulnasoft Dashboard"),
 		Type:      khulnasoft.F("Development"),
 		Hostnames: khulnasoft.F([]string{"auth.khulnasoft.com", "auth.khulnasoft.com", "auth.khulnasoft.com"}),
 		IPSubnets: khulnasoft.F([]string{"1.1.1.1/32", "1.1.1.1/32", "1.1.1.1/32"}),
@@ -65,7 +65,7 @@ func TestAppUpdateWithOptionalParams(t *testing.T) {
 			AccountID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
 			Hostnames: khulnasoft.F([]string{"auth.khulnasoft.com", "auth.khulnasoft.com", "auth.khulnasoft.com"}),
 			IPSubnets: khulnasoft.F([]string{"1.1.1.1/32", "1.1.1.1/32", "1.1.1.1/32"}),
-			Name:      khulnasoft.F("Cloudflare Dashboard"),
+			Name:      khulnasoft.F("Khulnasoft Dashboard"),
 			Type:      khulnasoft.F("Development"),
 		},
 	)

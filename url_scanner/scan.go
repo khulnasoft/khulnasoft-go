@@ -913,7 +913,7 @@ func (r scanGetResponseScanTaskErrorJSON) RawJSON() string {
 }
 
 type ScanGetResponseScanTaskScannedFrom struct {
-	// IATA code of Cloudflare datacenter
+	// IATA code of Khulnasoft datacenter
 	Colo string                                 `json:"colo,required"`
 	JSON scanGetResponseScanTaskScannedFromJSON `json:"-"`
 }

@@ -83,7 +83,7 @@ type Setting struct {
 	UpdatedAt string `json:"updated_at,required"`
 	// When true, CSP reports will be sent to
 	// https://csp-reporting.khulnasoft.com/cdn-cgi/script_monitor/report
-	UseCloudflareReportingEndpoint bool `json:"use_khulnasoft_reporting_endpoint,required"`
+	UseKhulnasoftReportingEndpoint bool `json:"use_khulnasoft_reporting_endpoint,required"`
 	// When true, the paths associated with connections URLs will also be analyzed.
 	UseConnectionURLPath bool        `json:"use_connection_url_path,required"`
 	JSON                 settingJSON `json:"-"`
@@ -93,7 +93,7 @@ type Setting struct {
 type settingJSON struct {
 	Enabled                        apijson.Field
 	UpdatedAt                      apijson.Field
-	UseCloudflareReportingEndpoint apijson.Field
+	UseKhulnasoftReportingEndpoint apijson.Field
 	UseConnectionURLPath           apijson.Field
 	raw                            string
 	ExtraFields                    map[string]apijson.Field
@@ -114,7 +114,7 @@ type PageShieldUpdateResponse struct {
 	UpdatedAt string `json:"updated_at,required"`
 	// When true, CSP reports will be sent to
 	// https://csp-reporting.khulnasoft.com/cdn-cgi/script_monitor/report
-	UseCloudflareReportingEndpoint bool `json:"use_khulnasoft_reporting_endpoint,required"`
+	UseKhulnasoftReportingEndpoint bool `json:"use_khulnasoft_reporting_endpoint,required"`
 	// When true, the paths associated with connections URLs will also be analyzed.
 	UseConnectionURLPath bool                         `json:"use_connection_url_path,required"`
 	JSON                 pageShieldUpdateResponseJSON `json:"-"`
@@ -125,7 +125,7 @@ type PageShieldUpdateResponse struct {
 type pageShieldUpdateResponseJSON struct {
 	Enabled                        apijson.Field
 	UpdatedAt                      apijson.Field
-	UseCloudflareReportingEndpoint apijson.Field
+	UseKhulnasoftReportingEndpoint apijson.Field
 	UseConnectionURLPath           apijson.Field
 	raw                            string
 	ExtraFields                    map[string]apijson.Field
@@ -146,7 +146,7 @@ type PageShieldUpdateParams struct {
 	Enabled param.Field[bool] `json:"enabled"`
 	// When true, CSP reports will be sent to
 	// https://csp-reporting.khulnasoft.com/cdn-cgi/script_monitor/report
-	UseCloudflareReportingEndpoint param.Field[bool] `json:"use_khulnasoft_reporting_endpoint"`
+	UseKhulnasoftReportingEndpoint param.Field[bool] `json:"use_khulnasoft_reporting_endpoint"`
 	// When true, the paths associated with connections URLs will also be analyzed.
 	UseConnectionURLPath param.Field[bool] `json:"use_connection_url_path"`
 }

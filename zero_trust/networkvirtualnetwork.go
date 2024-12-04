@@ -183,7 +183,7 @@ func (r virtualNetworkJSON) RawJSON() string {
 }
 
 type NetworkVirtualNetworkNewParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// A user-friendly name for the virtual network.
 	Name param.Field[string] `json:"name,required"`
@@ -241,7 +241,7 @@ func (r NetworkVirtualNetworkNewResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type NetworkVirtualNetworkListParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// UUID of the virtual network.
 	ID param.Field[string] `query:"id" format:"uuid"`
@@ -265,7 +265,7 @@ func (r NetworkVirtualNetworkListParams) URLQuery() (v url.Values) {
 }
 
 type NetworkVirtualNetworkDeleteParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 
@@ -313,7 +313,7 @@ func (r NetworkVirtualNetworkDeleteResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type NetworkVirtualNetworkEditParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 	// Optional remark describing the virtual network.
 	Comment param.Field[string] `json:"comment"`
@@ -371,7 +371,7 @@ func (r NetworkVirtualNetworkEditResponseEnvelopeSuccess) IsKnown() bool {
 }
 
 type NetworkVirtualNetworkGetParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string] `path:"account_id,required"`
 }
 

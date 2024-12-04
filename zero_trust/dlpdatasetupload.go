@@ -56,7 +56,7 @@ func (r *DLPDatasetUploadService) New(ctx context.Context, datasetID string, bod
 }
 
 // This is used for single-column EDMv1 and Custom Word Lists. The EDM format can
-// only be created in the Cloudflare dashboard. For other clients, this operation
+// only be created in the Khulnasoft dashboard. For other clients, this operation
 // can only be used for non-secret Custom Word Lists. The body must be a UTF-8
 // encoded, newline (NL or CRNL) separated list of words to be matched.
 func (r *DLPDatasetUploadService) Edit(ctx context.Context, datasetID string, version int64, params DLPDatasetUploadEditParams, opts ...option.RequestOption) (res *Dataset, err error) {

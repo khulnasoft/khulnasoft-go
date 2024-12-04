@@ -141,7 +141,7 @@ func (r *IPSECTunnelService) Get(ctx context.Context, ipsecTunnelID string, quer
 // Generates a Pre Shared Key for a specific IPsec tunnel used in the IKE session.
 // Use `?validate_only=true` as an optional query parameter to only run validation
 // without persisting changes. After a PSK is generated, the PSK is immediately
-// persisted to Cloudflare's edge and cannot be retrieved later. Note the PSK in a
+// persisted to Khulnasoft's edge and cannot be retrieved later. Note the PSK in a
 // safe place.
 func (r *IPSECTunnelService) PSKGenerate(ctx context.Context, ipsecTunnelID string, params IPSECTunnelPSKGenerateParams, opts ...option.RequestOption) (res *IPSECTunnelPSKGenerateResponse, err error) {
 	var env IPSECTunnelPSKGenerateResponseEnvelope
@@ -207,8 +207,8 @@ func (r ipsecTunnelNewResponseJSON) RawJSON() string {
 }
 
 type IPSECTunnelNewResponseIPSECTunnel struct {
-	// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-	CloudflareEndpoint string `json:"khulnasoft_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the IPsec tunnel.
+	KhulnasoftEndpoint string `json:"khulnasoft_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
 	// of the tunnel. Select the subnet from the following private IP space:
 	// 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
@@ -232,7 +232,7 @@ type IPSECTunnelNewResponseIPSECTunnel struct {
 	// The PSK metadata that includes when the PSK was generated.
 	PSKMetadata PSKMetadata `json:"psk_metadata"`
 	// If `true`, then IPsec replay protection will be supported in the
-	// Cloudflare-to-customer direction.
+	// Khulnasoft-to-customer direction.
 	ReplayProtection  bool                                                `json:"replay_protection"`
 	TunnelHealthCheck IPSECTunnelNewResponseIPSECTunnelsTunnelHealthCheck `json:"tunnel_health_check"`
 	JSON              ipsecTunnelNewResponseIPSECTunnelJSON               `json:"-"`
@@ -241,7 +241,7 @@ type IPSECTunnelNewResponseIPSECTunnel struct {
 // ipsecTunnelNewResponseIPSECTunnelJSON contains the JSON metadata for the struct
 // [IPSECTunnelNewResponseIPSECTunnel]
 type ipsecTunnelNewResponseIPSECTunnelJSON struct {
-	CloudflareEndpoint apijson.Field
+	KhulnasoftEndpoint apijson.Field
 	InterfaceAddress   apijson.Field
 	Name               apijson.Field
 	ID                 apijson.Field
@@ -322,8 +322,8 @@ func (r ipsecTunnelUpdateResponseJSON) RawJSON() string {
 }
 
 type IPSECTunnelUpdateResponseModifiedIPSECTunnel struct {
-	// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-	CloudflareEndpoint string `json:"khulnasoft_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the IPsec tunnel.
+	KhulnasoftEndpoint string `json:"khulnasoft_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
 	// of the tunnel. Select the subnet from the following private IP space:
 	// 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
@@ -347,7 +347,7 @@ type IPSECTunnelUpdateResponseModifiedIPSECTunnel struct {
 	// The PSK metadata that includes when the PSK was generated.
 	PSKMetadata PSKMetadata `json:"psk_metadata"`
 	// If `true`, then IPsec replay protection will be supported in the
-	// Cloudflare-to-customer direction.
+	// Khulnasoft-to-customer direction.
 	ReplayProtection  bool                                                          `json:"replay_protection"`
 	TunnelHealthCheck IPSECTunnelUpdateResponseModifiedIPSECTunnelTunnelHealthCheck `json:"tunnel_health_check"`
 	JSON              ipsecTunnelUpdateResponseModifiedIPSECTunnelJSON              `json:"-"`
@@ -356,7 +356,7 @@ type IPSECTunnelUpdateResponseModifiedIPSECTunnel struct {
 // ipsecTunnelUpdateResponseModifiedIPSECTunnelJSON contains the JSON metadata for
 // the struct [IPSECTunnelUpdateResponseModifiedIPSECTunnel]
 type ipsecTunnelUpdateResponseModifiedIPSECTunnelJSON struct {
-	CloudflareEndpoint apijson.Field
+	KhulnasoftEndpoint apijson.Field
 	InterfaceAddress   apijson.Field
 	Name               apijson.Field
 	ID                 apijson.Field
@@ -436,8 +436,8 @@ func (r ipsecTunnelListResponseJSON) RawJSON() string {
 }
 
 type IPSECTunnelListResponseIPSECTunnel struct {
-	// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-	CloudflareEndpoint string `json:"khulnasoft_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the IPsec tunnel.
+	KhulnasoftEndpoint string `json:"khulnasoft_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
 	// of the tunnel. Select the subnet from the following private IP space:
 	// 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
@@ -461,7 +461,7 @@ type IPSECTunnelListResponseIPSECTunnel struct {
 	// The PSK metadata that includes when the PSK was generated.
 	PSKMetadata PSKMetadata `json:"psk_metadata"`
 	// If `true`, then IPsec replay protection will be supported in the
-	// Cloudflare-to-customer direction.
+	// Khulnasoft-to-customer direction.
 	ReplayProtection  bool                                                 `json:"replay_protection"`
 	TunnelHealthCheck IPSECTunnelListResponseIPSECTunnelsTunnelHealthCheck `json:"tunnel_health_check"`
 	JSON              ipsecTunnelListResponseIPSECTunnelJSON               `json:"-"`
@@ -470,7 +470,7 @@ type IPSECTunnelListResponseIPSECTunnel struct {
 // ipsecTunnelListResponseIPSECTunnelJSON contains the JSON metadata for the struct
 // [IPSECTunnelListResponseIPSECTunnel]
 type ipsecTunnelListResponseIPSECTunnelJSON struct {
-	CloudflareEndpoint apijson.Field
+	KhulnasoftEndpoint apijson.Field
 	InterfaceAddress   apijson.Field
 	Name               apijson.Field
 	ID                 apijson.Field
@@ -551,8 +551,8 @@ func (r ipsecTunnelDeleteResponseJSON) RawJSON() string {
 }
 
 type IPSECTunnelDeleteResponseDeletedIPSECTunnel struct {
-	// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-	CloudflareEndpoint string `json:"khulnasoft_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the IPsec tunnel.
+	KhulnasoftEndpoint string `json:"khulnasoft_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
 	// of the tunnel. Select the subnet from the following private IP space:
 	// 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
@@ -576,7 +576,7 @@ type IPSECTunnelDeleteResponseDeletedIPSECTunnel struct {
 	// The PSK metadata that includes when the PSK was generated.
 	PSKMetadata PSKMetadata `json:"psk_metadata"`
 	// If `true`, then IPsec replay protection will be supported in the
-	// Cloudflare-to-customer direction.
+	// Khulnasoft-to-customer direction.
 	ReplayProtection  bool                                                         `json:"replay_protection"`
 	TunnelHealthCheck IPSECTunnelDeleteResponseDeletedIPSECTunnelTunnelHealthCheck `json:"tunnel_health_check"`
 	JSON              ipsecTunnelDeleteResponseDeletedIPSECTunnelJSON              `json:"-"`
@@ -585,7 +585,7 @@ type IPSECTunnelDeleteResponseDeletedIPSECTunnel struct {
 // ipsecTunnelDeleteResponseDeletedIPSECTunnelJSON contains the JSON metadata for
 // the struct [IPSECTunnelDeleteResponseDeletedIPSECTunnel]
 type ipsecTunnelDeleteResponseDeletedIPSECTunnelJSON struct {
-	CloudflareEndpoint apijson.Field
+	KhulnasoftEndpoint apijson.Field
 	InterfaceAddress   apijson.Field
 	Name               apijson.Field
 	ID                 apijson.Field
@@ -665,8 +665,8 @@ func (r ipsecTunnelGetResponseJSON) RawJSON() string {
 }
 
 type IPSECTunnelGetResponseIPSECTunnel struct {
-	// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-	CloudflareEndpoint string `json:"khulnasoft_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the IPsec tunnel.
+	KhulnasoftEndpoint string `json:"khulnasoft_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
 	// of the tunnel. Select the subnet from the following private IP space:
 	// 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
@@ -690,7 +690,7 @@ type IPSECTunnelGetResponseIPSECTunnel struct {
 	// The PSK metadata that includes when the PSK was generated.
 	PSKMetadata PSKMetadata `json:"psk_metadata"`
 	// If `true`, then IPsec replay protection will be supported in the
-	// Cloudflare-to-customer direction.
+	// Khulnasoft-to-customer direction.
 	ReplayProtection  bool                                               `json:"replay_protection"`
 	TunnelHealthCheck IPSECTunnelGetResponseIPSECTunnelTunnelHealthCheck `json:"tunnel_health_check"`
 	JSON              ipsecTunnelGetResponseIPSECTunnelJSON              `json:"-"`
@@ -699,7 +699,7 @@ type IPSECTunnelGetResponseIPSECTunnel struct {
 // ipsecTunnelGetResponseIPSECTunnelJSON contains the JSON metadata for the struct
 // [IPSECTunnelGetResponseIPSECTunnel]
 type ipsecTunnelGetResponseIPSECTunnelJSON struct {
-	CloudflareEndpoint apijson.Field
+	KhulnasoftEndpoint apijson.Field
 	InterfaceAddress   apijson.Field
 	Name               apijson.Field
 	ID                 apijson.Field
@@ -787,8 +787,8 @@ func (r ipsecTunnelPSKGenerateResponseJSON) RawJSON() string {
 type IPSECTunnelNewParams struct {
 	// Identifier
 	AccountID param.Field[string] `path:"account_id,required"`
-	// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-	CloudflareEndpoint param.Field[string] `json:"khulnasoft_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the IPsec tunnel.
+	KhulnasoftEndpoint param.Field[string] `json:"khulnasoft_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
 	// of the tunnel. Select the subnet from the following private IP space:
 	// 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
@@ -804,7 +804,7 @@ type IPSECTunnelNewParams struct {
 	// A randomly generated or provided string for use in the IPsec tunnel.
 	PSK param.Field[string] `json:"psk"`
 	// If `true`, then IPsec replay protection will be supported in the
-	// Cloudflare-to-customer direction.
+	// Khulnasoft-to-customer direction.
 	ReplayProtection param.Field[bool] `json:"replay_protection"`
 }
 
@@ -858,8 +858,8 @@ func (r IPSECTunnelNewResponseEnvelopeSuccess) IsKnown() bool {
 type IPSECTunnelUpdateParams struct {
 	// Identifier
 	AccountID param.Field[string] `path:"account_id,required"`
-	// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-	CloudflareEndpoint param.Field[string] `json:"khulnasoft_endpoint,required"`
+	// The IP address assigned to the Khulnasoft side of the IPsec tunnel.
+	KhulnasoftEndpoint param.Field[string] `json:"khulnasoft_endpoint,required"`
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side
 	// of the tunnel. Select the subnet from the following private IP space:
 	// 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
@@ -875,7 +875,7 @@ type IPSECTunnelUpdateParams struct {
 	// A randomly generated or provided string for use in the IPsec tunnel.
 	PSK param.Field[string] `json:"psk"`
 	// If `true`, then IPsec replay protection will be supported in the
-	// Cloudflare-to-customer direction.
+	// Khulnasoft-to-customer direction.
 	ReplayProtection param.Field[bool] `json:"replay_protection"`
 }
 

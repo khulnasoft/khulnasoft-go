@@ -35,7 +35,7 @@ func TestSettingEditWithOptionalParams(t *testing.T) {
 			FoundationDNS:    khulnasoft.F(false),
 			MultiProvider:    khulnasoft.F(false),
 			Nameservers: khulnasoft.F(dns.NameserverParam{
-				Type: khulnasoft.F(dns.NameserverTypeCloudflareStandard),
+				Type: khulnasoft.F(dns.NameserverTypeKhulnasoftStandard),
 			}),
 			NSTTL:              khulnasoft.F(86400.000000),
 			SecondaryOverrides: khulnasoft.F(false),

@@ -258,7 +258,7 @@ type RecordParam struct {
 	// DNS record name (or @ for the zone apex) in Punycode.
 	Name param.Field[string] `json:"name"`
 	// Whether the record is receiving the performance and security benefits of
-	// Cloudflare.
+	// Khulnasoft.
 	Proxied param.Field[bool] `json:"proxied"`
 	// Settings for the DNS record.
 	Settings param.Field[interface{}] `json:"settings"`
@@ -328,16 +328,16 @@ type RecordNewResponse struct {
 	Comment string `json:"comment,required"`
 	// When the record was created.
 	CreatedOn time.Time `json:"created_on,required" format:"date-time"`
-	// Extra Cloudflare-specific information about the record.
+	// Extra Khulnasoft-specific information about the record.
 	Meta interface{} `json:"meta,required"`
 	// When the record was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
 	// DNS record name (or @ for the zone apex) in Punycode.
 	Name string `json:"name,required"`
-	// Whether the record can be proxied by Cloudflare or not.
+	// Whether the record can be proxied by Khulnasoft or not.
 	Proxiable bool `json:"proxiable,required"`
 	// Whether the record is receiving the performance and security benefits of
-	// Cloudflare.
+	// Khulnasoft.
 	Proxied bool `json:"proxied,required"`
 	// Settings for the DNS record.
 	Settings interface{} `json:"settings,required"`
@@ -390,16 +390,16 @@ type RecordUpdateResponse struct {
 	Comment string `json:"comment,required"`
 	// When the record was created.
 	CreatedOn time.Time `json:"created_on,required" format:"date-time"`
-	// Extra Cloudflare-specific information about the record.
+	// Extra Khulnasoft-specific information about the record.
 	Meta interface{} `json:"meta,required"`
 	// When the record was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
 	// DNS record name (or @ for the zone apex) in Punycode.
 	Name string `json:"name,required"`
-	// Whether the record can be proxied by Cloudflare or not.
+	// Whether the record can be proxied by Khulnasoft or not.
 	Proxiable bool `json:"proxiable,required"`
 	// Whether the record is receiving the performance and security benefits of
-	// Cloudflare.
+	// Khulnasoft.
 	Proxied bool `json:"proxied,required"`
 	// Settings for the DNS record.
 	Settings interface{} `json:"settings,required"`
@@ -452,16 +452,16 @@ type RecordListResponse struct {
 	Comment string `json:"comment,required"`
 	// When the record was created.
 	CreatedOn time.Time `json:"created_on,required" format:"date-time"`
-	// Extra Cloudflare-specific information about the record.
+	// Extra Khulnasoft-specific information about the record.
 	Meta interface{} `json:"meta,required"`
 	// When the record was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
 	// DNS record name (or @ for the zone apex) in Punycode.
 	Name string `json:"name,required"`
-	// Whether the record can be proxied by Cloudflare or not.
+	// Whether the record can be proxied by Khulnasoft or not.
 	Proxiable bool `json:"proxiable,required"`
 	// Whether the record is receiving the performance and security benefits of
-	// Cloudflare.
+	// Khulnasoft.
 	Proxied bool `json:"proxied,required"`
 	// Settings for the DNS record.
 	Settings interface{} `json:"settings,required"`
@@ -536,16 +536,16 @@ type RecordEditResponse struct {
 	Comment string `json:"comment,required"`
 	// When the record was created.
 	CreatedOn time.Time `json:"created_on,required" format:"date-time"`
-	// Extra Cloudflare-specific information about the record.
+	// Extra Khulnasoft-specific information about the record.
 	Meta interface{} `json:"meta,required"`
 	// When the record was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
 	// DNS record name (or @ for the zone apex) in Punycode.
 	Name string `json:"name,required"`
-	// Whether the record can be proxied by Cloudflare or not.
+	// Whether the record can be proxied by Khulnasoft or not.
 	Proxiable bool `json:"proxiable,required"`
 	// Whether the record is receiving the performance and security benefits of
-	// Cloudflare.
+	// Khulnasoft.
 	Proxied bool `json:"proxied,required"`
 	// Settings for the DNS record.
 	Settings interface{} `json:"settings,required"`
@@ -598,16 +598,16 @@ type RecordGetResponse struct {
 	Comment string `json:"comment,required"`
 	// When the record was created.
 	CreatedOn time.Time `json:"created_on,required" format:"date-time"`
-	// Extra Cloudflare-specific information about the record.
+	// Extra Khulnasoft-specific information about the record.
 	Meta interface{} `json:"meta,required"`
 	// When the record was last modified.
 	ModifiedOn time.Time `json:"modified_on,required" format:"date-time"`
 	// DNS record name (or @ for the zone apex) in Punycode.
 	Name string `json:"name,required"`
-	// Whether the record can be proxied by Cloudflare or not.
+	// Whether the record can be proxied by Khulnasoft or not.
 	Proxiable bool `json:"proxiable,required"`
 	// Whether the record is receiving the performance and security benefits of
-	// Cloudflare.
+	// Khulnasoft.
 	Proxied bool `json:"proxied,required"`
 	// Settings for the DNS record.
 	Settings interface{} `json:"settings,required"`
@@ -830,7 +830,7 @@ type RecordListParams struct {
 	// Number of DNS records per page.
 	PerPage param.Field[float64] `query:"per_page"`
 	// Whether the record is receiving the performance and security benefits of
-	// Cloudflare.
+	// Khulnasoft.
 	Proxied param.Field[bool] `query:"proxied"`
 	// Allows searching in multiple properties of a DNS record simultaneously. This
 	// parameter is intended for human users, not automation. Its exact behavior is
@@ -1146,7 +1146,7 @@ type RecordImportParams struct {
 	// `--form 'file=@bind_config.txt'`.
 	File param.Field[string] `json:"file,required"`
 	// Whether or not proxiable records should receive the performance and security
-	// benefits of Cloudflare.
+	// benefits of Khulnasoft.
 	//
 	// The value should be either `true` or `false`.
 	Proxied param.Field[string] `json:"proxied"`

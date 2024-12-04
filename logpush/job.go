@@ -219,7 +219,7 @@ type LogpushJob struct {
 	// are set to null.
 	ErrorMessage time.Time `json:"error_message,nullable" format:"date-time"`
 	// This field is deprecated. Please use `max_upload_*` parameters instead. The
-	// frequency at which Cloudflare sends batches of logs to your destination. Setting
+	// frequency at which Khulnasoft sends batches of logs to your destination. Setting
 	// frequency to high sends your logs in larger quantities of smaller files. Setting
 	// frequency to low sends logs in smaller quantities of larger files.
 	Frequency LogpushJobFrequency `json:"frequency,nullable"`
@@ -259,7 +259,7 @@ type LogpushJob struct {
 	// lines than this. This parameter is not available for jobs with `edge` as its
 	// kind.
 	MaxUploadRecords int64 `json:"max_upload_records,nullable"`
-	// Optional human readable job name. Not unique. Cloudflare suggests that you set
+	// Optional human readable job name. Not unique. Khulnasoft suggests that you set
 	// this to a meaningful string, like the domain name, to make it easier to identify
 	// your job.
 	Name string `json:"name,nullable"`
@@ -299,7 +299,7 @@ func (r logpushJobJSON) RawJSON() string {
 }
 
 // This field is deprecated. Please use `max_upload_*` parameters instead. The
-// frequency at which Cloudflare sends batches of logs to your destination. Setting
+// frequency at which Khulnasoft sends batches of logs to your destination. Setting
 // frequency to high sends your logs in larger quantities of smaller files. Setting
 // frequency to low sends logs in smaller quantities of larger files.
 type LogpushJobFrequency string
@@ -516,7 +516,7 @@ type JobNewParams struct {
 	// Flag that indicates if the job is enabled.
 	Enabled param.Field[bool] `json:"enabled"`
 	// This field is deprecated. Please use `max_upload_*` parameters instead. The
-	// frequency at which Cloudflare sends batches of logs to your destination. Setting
+	// frequency at which Khulnasoft sends batches of logs to your destination. Setting
 	// frequency to high sends your logs in larger quantities of smaller files. Setting
 	// frequency to low sends logs in smaller quantities of larger files.
 	Frequency param.Field[JobNewParamsFrequency] `json:"frequency"`
@@ -547,7 +547,7 @@ type JobNewParams struct {
 	// lines than this. This parameter is not available for jobs with `edge` as its
 	// kind.
 	MaxUploadRecords param.Field[int64] `json:"max_upload_records"`
-	// Optional human readable job name. Not unique. Cloudflare suggests that you set
+	// Optional human readable job name. Not unique. Khulnasoft suggests that you set
 	// this to a meaningful string, like the domain name, to make it easier to identify
 	// your job.
 	Name param.Field[string] `json:"name"`
@@ -563,7 +563,7 @@ func (r JobNewParams) MarshalJSON() (data []byte, err error) {
 }
 
 // This field is deprecated. Please use `max_upload_*` parameters instead. The
-// frequency at which Cloudflare sends batches of logs to your destination. Setting
+// frequency at which Khulnasoft sends batches of logs to your destination. Setting
 // frequency to high sends your logs in larger quantities of smaller files. Setting
 // frequency to low sends logs in smaller quantities of larger files.
 type JobNewParamsFrequency string
@@ -653,7 +653,7 @@ type JobUpdateParams struct {
 	// Flag that indicates if the job is enabled.
 	Enabled param.Field[bool] `json:"enabled"`
 	// This field is deprecated. Please use `max_upload_*` parameters instead. The
-	// frequency at which Cloudflare sends batches of logs to your destination. Setting
+	// frequency at which Khulnasoft sends batches of logs to your destination. Setting
 	// frequency to high sends your logs in larger quantities of smaller files. Setting
 	// frequency to low sends logs in smaller quantities of larger files.
 	Frequency param.Field[JobUpdateParamsFrequency] `json:"frequency"`
@@ -696,7 +696,7 @@ func (r JobUpdateParams) MarshalJSON() (data []byte, err error) {
 }
 
 // This field is deprecated. Please use `max_upload_*` parameters instead. The
-// frequency at which Cloudflare sends batches of logs to your destination. Setting
+// frequency at which Khulnasoft sends batches of logs to your destination. Setting
 // frequency to high sends your logs in larger quantities of smaller files. Setting
 // frequency to low sends logs in smaller quantities of larger files.
 type JobUpdateParamsFrequency string

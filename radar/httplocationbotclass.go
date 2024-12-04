@@ -36,7 +36,7 @@ func NewHTTPLocationBotClassService(opts ...option.RequestOption) (r *HTTPLocati
 }
 
 // Get the top locations, by HTTP traffic, of the requested bot class. These two
-// categories use Cloudflare's bot score - refer to [Bot
+// categories use Khulnasoft's bot score - refer to [Bot
 // scores])https://developers.khulnasoft.com/bots/concepts/bot-score). Values are a
 // percentage out of the total traffic.
 func (r *HTTPLocationBotClassService) Get(ctx context.Context, botClass HTTPLocationBotClassGetParamsBotClass, query HTTPLocationBotClassGetParams, opts ...option.RequestOption) (res *HTTPLocationBotClassGetResponse, err error) {

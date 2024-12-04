@@ -33,7 +33,7 @@ func NewEmbedService(opts ...option.RequestOption) (r *EmbedService) {
 }
 
 // Fetches an HTML code snippet to embed a video in a web page delivered through
-// Cloudflare. On success, returns an HTML fragment for use on web pages to display
+// Khulnasoft. On success, returns an HTML fragment for use on web pages to display
 // a video. On failure, returns a JSON response body.
 func (r *EmbedService) Get(ctx context.Context, identifier string, query EmbedGetParams, opts ...option.RequestOption) (res *string, err error) {
 	opts = append(r.Options[:], opts...)

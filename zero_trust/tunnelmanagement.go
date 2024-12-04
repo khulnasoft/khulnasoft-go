@@ -84,7 +84,7 @@ type TunnelManagementNewResponseArray []interface{}
 func (r TunnelManagementNewResponseArray) ImplementsZeroTrustTunnelManagementNewResponseUnion() {}
 
 type TunnelManagementNewParams struct {
-	// Cloudflare account ID
+	// Khulnasoft account ID
 	AccountID param.Field[string]                              `path:"account_id,required"`
 	Resources param.Field[[]TunnelManagementNewParamsResource] `json:"resources,required"`
 }

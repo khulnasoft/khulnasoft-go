@@ -349,7 +349,7 @@ func (r testsTestsHTTPResultsResourceFetchTimeOverTimeValueJSON) RawJSON() strin
 }
 
 type TestsTestsHTTPResultsByColo struct {
-	// Cloudflare colo
+	// Khulnasoft colo
 	Colo              string                                       `json:"colo,required"`
 	ResourceFetchTime TestsTestsHTTPResultsByColoResourceFetchTime `json:"resourceFetchTime,required"`
 	JSON              testsTestsHTTPResultsByColoJSON              `json:"-"`
@@ -587,7 +587,7 @@ func (r testsTestsTracerouteResultsRoundTripTimeOverTimeValueJSON) RawJSON() str
 }
 
 type TestsTestsTracerouteResultsByColo struct {
-	// Cloudflare colo
+	// Khulnasoft colo
 	Colo          string                                         `json:"colo,required"`
 	RoundTripTime TestsTestsTracerouteResultsByColoRoundTripTime `json:"roundTripTime,required"`
 	JSON          testsTestsTracerouteResultsByColoJSON          `json:"-"`
@@ -785,7 +785,7 @@ func (r dexTestListResponseResultInfoJSON) RawJSON() string {
 
 type DEXTestListParams struct {
 	AccountID param.Field[string] `path:"account_id,required"`
-	// Optionally filter result stats to a Cloudflare colo. Cannot be used in
+	// Optionally filter result stats to a Khulnasoft colo. Cannot be used in
 	// combination with deviceId param.
 	Colo param.Field[string] `query:"colo"`
 	// Optionally filter result stats to a specific device(s). Cannot be used in

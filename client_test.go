@@ -44,7 +44,7 @@ func TestUserAgentHeader(t *testing.T) {
 		Name: khulnasoft.F("example.com"),
 		Type: khulnasoft.F(zones.TypeFull),
 	})
-	if userAgent != fmt.Sprintf("Cloudflare/Go %s", internal.PackageVersion) {
+	if userAgent != fmt.Sprintf("Khulnasoft/Go %s", internal.PackageVersion) {
 		t.Errorf("Expected User-Agent to be correct, but got: %#v", userAgent)
 	}
 }

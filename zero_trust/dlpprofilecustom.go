@@ -181,7 +181,7 @@ type DLPProfileCustomNewParamsProfile struct {
 	// The description of the profile
 	Description param.Field[string] `json:"description"`
 	OCREnabled  param.Field[bool]   `json:"ocr_enabled"`
-	// Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your
+	// Entries from other profiles (e.g. pre-defined Khulnasoft profiles, or your
 	// Microsoft Information Protection profiles).
 	SharedEntries param.Field[[]DLPProfileCustomNewParamsProfilesSharedEntryUnion] `json:"shared_entries"`
 }

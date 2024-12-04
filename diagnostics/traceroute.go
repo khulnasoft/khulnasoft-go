@@ -34,7 +34,7 @@ func NewTracerouteService(opts ...option.RequestOption) (r *TracerouteService) {
 	return
 }
 
-// Run traceroutes from Cloudflare colos.
+// Run traceroutes from Khulnasoft colos.
 func (r *TracerouteService) New(ctx context.Context, params TracerouteNewParams, opts ...option.RequestOption) (res *[]Traceroute, err error) {
 	var env TracerouteNewResponseEnvelope
 	opts = append(r.Options[:], opts...)
