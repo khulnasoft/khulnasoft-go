@@ -1,3 +1,3 @@
-```release-note:enhancement
-develop
+```release-note:bug
+go fmt fix
 ```
