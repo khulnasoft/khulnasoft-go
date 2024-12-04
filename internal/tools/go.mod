@@ -4,7 +4,6 @@ go 1.23.3
 
 require (
 	github.com/breml/bidichk v0.2.3
-	github.com/khulnasoft/khulnasoft-go v0.0.0-20241125112000-28307c6bbe7c // indirect
 	github.com/curioswitch/go-reassign v0.2.0
 	github.com/cweill/gotests v1.6.0
 	github.com/go-delve/delve v1.9.0
@@ -12,6 +11,7 @@ require (
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/hashicorp/go-changelog v0.0.0-20220419201213-5edfc0d651d8
 	github.com/jgautheron/goconst v1.5.1
+	github.com/khulnasoft/khulnasoft-go v0.0.0-20241125112000-28307c6bbe7c // indirect
 	github.com/kyoh86/exportloopref v0.1.8
 	github.com/orijtech/structslop v0.0.6
 	github.com/ramya-rao-a/go-outline v0.0.0-20210608161538-9736a4bde949
@@ -19,7 +19,7 @@ require (
 	github.com/uudashr/gopkgs/v2 v2.1.2
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616
 	golang.org/x/oauth2 v0.0.0-20220822191816-0ebed06d0094
-	golang.org/x/tools v0.13.0
+	golang.org/x/tools v0.27.0
 	golang.org/x/tools/gopls v0.9.4
 )
 
@@ -224,13 +224,13 @@ require (
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.17.0 // indirect
 	golang.org/x/arch v0.0.0-20190927153633-4e8777c89be4 // indirect
-	golang.org/x/crypto v0.21.0 // indirect
+	golang.org/x/crypto v0.29.0 // indirect
 	golang.org/x/exp/typeparams v0.0.0-20220722155223-a9213eeb770e // indirect
-	golang.org/x/mod v0.12.0 // indirect
-	golang.org/x/net v0.23.0 // indirect
-	golang.org/x/sync v0.3.0 // indirect
-	golang.org/x/sys v0.20.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/mod v0.22.0 // indirect
+	golang.org/x/net v0.31.0 // indirect
+	golang.org/x/sync v0.9.0 // indirect
+	golang.org/x/sys v0.27.0 // indirect
+	golang.org/x/text v0.20.0 // indirect
 	golang.org/x/time v0.0.0-20220224211638-0e9765cccd65 // indirect
 	golang.org/x/vuln v0.0.0-20220725105440-4151a5aca1df // indirect
 	google.golang.org/appengine v1.6.7 // indirect
