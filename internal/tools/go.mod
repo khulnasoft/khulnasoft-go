@@ -48,7 +48,7 @@ require (
 	github.com/charithe/durationcheck v0.0.9 // indirect
 	github.com/chavacava/garif v0.0.0-20220316182200-5cad0b5181d4 // indirect
 	github.com/cilium/ebpf v0.7.0 // indirect
-	github.com/cloudflare/circl v1.5.0 // indirect
+	github.com/cloudflare/circl v1.3.3 // indirect
 	github.com/cosiner/argv v0.1.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.5 // indirect
 	github.com/cyphar/filepath-securejoin v0.2.4 // indirect
@@ -222,5 +222,3 @@ require (
 	mvdan.cc/unparam v0.0.0-20230312165513-e84e2d14e3b8 // indirect
 	mvdan.cc/xurls/v2 v2.5.0 // indirect
 )
-
-replace github.com/cloudflare/circl => github.com/khulnasoft/recryptor v0.0.0-20241125111706-e931c3280600
