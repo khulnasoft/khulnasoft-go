@@ -1,6 +1,4 @@
-.idea
-.vscode/
-cmd/firectl/dist/
-cmd/firectl/firectl
-cmd/firectl/firectl.exe
-.flox/
+.prism.log
+codegen.log
+Brewfile.lock.json
+.idea/

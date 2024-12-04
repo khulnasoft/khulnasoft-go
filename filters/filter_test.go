@@ -1,0 +1,165 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+package filters_test
+
+import (
+	"context"
+	"errors"
+	"os"
+	"testing"
+
+	"github.com/khulnasoft/khulnasoft-go"
+	"github.com/khulnasoft/khulnasoft-go/filters"
+	"github.com/khulnasoft/khulnasoft-go/internal/testutil"
+	"github.com/khulnasoft/khulnasoft-go/option"
+)
+
+func TestFilterNew(t *testing.T) {
+	t.Skip("TODO: investigate broken test")
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Filters.New(
+		context.TODO(),
+		"023e105f4ecef8ad9ca31a8372d0c353",
+		filters.FilterNewParams{
+			Expression: khulnasoft.F("(http.request.uri.path ~ \".*wp-login.php\" or http.request.uri.path ~ \".*xmlrpc.php\") and ip.addr ne 172.16.22.155"),
+		},
+	)
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}
+
+func TestFilterUpdate(t *testing.T) {
+	t.Skip("TODO: investigate broken test")
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Filters.Update(
+		context.TODO(),
+		"023e105f4ecef8ad9ca31a8372d0c353",
+		"372e67954025e0ba6aaa6d586b9e0b61",
+		filters.FilterUpdateParams{
+			Body: map[string]interface{}{},
+		},
+	)
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}
+
+func TestFilterListWithOptionalParams(t *testing.T) {
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Filters.List(
+		context.TODO(),
+		"023e105f4ecef8ad9ca31a8372d0c353",
+		filters.FilterListParams{
+			ID:          khulnasoft.F("372e67954025e0ba6aaa6d586b9e0b61"),
+			Description: khulnasoft.F("browsers"),
+			Expression:  khulnasoft.F("php"),
+			Page:        khulnasoft.F(1.000000),
+			Paused:      khulnasoft.F(false),
+			PerPage:     khulnasoft.F(5.000000),
+			Ref:         khulnasoft.F("FIL-100"),
+		},
+	)
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}
+
+func TestFilterDelete(t *testing.T) {
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Filters.Delete(
+		context.TODO(),
+		"023e105f4ecef8ad9ca31a8372d0c353",
+		"372e67954025e0ba6aaa6d586b9e0b61",
+	)
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}
+
+func TestFilterGet(t *testing.T) {
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Filters.Get(
+		context.TODO(),
+		"023e105f4ecef8ad9ca31a8372d0c353",
+		"372e67954025e0ba6aaa6d586b9e0b61",
+	)
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}

@@ -4,8 +4,8 @@ contact_links:
     url: https://github.com/khulnasoft/khulnasoft-go/discussions/1538
     about: |
       If you have a feature request or feedback on our new v2 library, please comment in our discussion page.
-  - name: Khulnasoft support
+  - name: Cloudflare support
     url: https://developers.khulnasoft.com/support/contacting-khulnasoft-support
     about: |
-      Please only file issues here that you believe represent actual bugs for the Khulnasoft Go library.
-      If you're having general trouble with the Khulnasoft API, please visit our help center to get support.
+      Please only file issues here that you believe represent actual bugs for the Cloudflare Go library.
+      If you're having general trouble with the Cloudflare API, please visit our help center to get support.
