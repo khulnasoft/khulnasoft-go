@@ -18,7 +18,7 @@ A Go library for interacting with
   zones
 - Fetch Khulnasoft's IP ranges for automating your firewall whitelisting
 
-A command-line client, [flarectl](cmd/flarectl), is also available as part of
+A command-line client, [firectl](cmd/firectl), is also available as part of
 this project.
 
 ## Installation

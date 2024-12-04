@@ -18,7 +18,7 @@ var api *khulnasoft.API
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "flarectl"
+	app.Name = "firectl"
 	app.Usage = "Khulnasoft CLI"
 	app.Version = version
 	app.Flags = []cli.Flag{

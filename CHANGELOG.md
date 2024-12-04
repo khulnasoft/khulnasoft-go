@@ -4,231 +4,231 @@
 
 ENHANCEMENTS:
 
-* access_identity_provider: Adds identity_update_behavior to SCIM config. ([#3618](https://github.com/khulnasoft/khulnasoft-go/issues/3618))
-* turnstile: fix UpdateTurnstileWidgetParams (support setting values to `false`) ([#3594](https://github.com/khulnasoft/khulnasoft-go/issues/3594))
+- access_identity_provider: Adds identity_update_behavior to SCIM config. ([#3618](https://github.com/khulnasoft/khulnasoft-go/issues/3618))
+- turnstile: fix UpdateTurnstileWidgetParams (support setting values to `false`) ([#3594](https://github.com/khulnasoft/khulnasoft-go/issues/3594))
 
 BUG FIXES:
 
-* snippets: fix response type for `UpdateZoneSnippet` ([#3596](https://github.com/khulnasoft/khulnasoft-go/issues/3596))
+- snippets: fix response type for `UpdateZoneSnippet` ([#3596](https://github.com/khulnasoft/khulnasoft-go/issues/3596))
 
 DEPENDENCIES:
 
-* deps: bumps golang.org/x/net from 0.30.0 to 0.31.0 ([#3588](https://github.com/khulnasoft/khulnasoft-go/issues/3588))
-* deps: bumps golang.org/x/time from 0.7.0 to 0.8.0 ([#3584](https://github.com/khulnasoft/khulnasoft-go/issues/3584))
-* deps: bumps goreleaser/goreleaser-action from 6.0.0 to 6.1.0 ([#3578](https://github.com/khulnasoft/khulnasoft-go/issues/3578))
+- deps: bumps golang.org/x/net from 0.30.0 to 0.31.0 ([#3588](https://github.com/khulnasoft/khulnasoft-go/issues/3588))
+- deps: bumps golang.org/x/time from 0.7.0 to 0.8.0 ([#3584](https://github.com/khulnasoft/khulnasoft-go/issues/3584))
+- deps: bumps goreleaser/goreleaser-action from 6.0.0 to 6.1.0 ([#3578](https://github.com/khulnasoft/khulnasoft-go/issues/3578))
 
 ## 0.109.0 (November 6th, 2024)
 
 ENHANCEMENTS:
 
-* access_application: add support for controlling schema strictness in Access SCIM application provisioning mappings ([#3510](https://github.com/khulnasoft/khulnasoft-go/issues/3510))
-* regional_hostname: add support for `routing` attribute ([#3560](https://github.com/khulnasoft/khulnasoft-go/issues/3560))
-* snippets: add missing delete and get a single snippet methods ([#3529](https://github.com/khulnasoft/khulnasoft-go/issues/3529))
+- access_application: add support for controlling schema strictness in Access SCIM application provisioning mappings ([#3510](https://github.com/khulnasoft/khulnasoft-go/issues/3510))
+- regional_hostname: add support for `routing` attribute ([#3560](https://github.com/khulnasoft/khulnasoft-go/issues/3560))
+- snippets: add missing delete and get a single snippet methods ([#3529](https://github.com/khulnasoft/khulnasoft-go/issues/3529))
 
 ## 0.108.0 (October 23rd, 2024)
 
 ENHANCEMENTS:
 
-* snippets: add CRUD support ([#3458](https://github.com/khulnasoft/khulnasoft-go/issues/3458))
-* snippets_rules: add CRUD support ([#3458](https://github.com/khulnasoft/khulnasoft-go/issues/3458))
-* waiting_room: Add CookieAttributes property ([#3388](https://github.com/khulnasoft/khulnasoft-go/issues/3388))
+- snippets: add CRUD support ([#3458](https://github.com/khulnasoft/khulnasoft-go/issues/3458))
+- snippets_rules: add CRUD support ([#3458](https://github.com/khulnasoft/khulnasoft-go/issues/3458))
+- waiting_room: Add CookieAttributes property ([#3388](https://github.com/khulnasoft/khulnasoft-go/issues/3388))
 
 DEPENDENCIES:
 
-* deps: bumps github.com/urfave/cli/v2 from 2.27.4 to 2.27.5 ([#3391](https://github.com/khulnasoft/khulnasoft-go/issues/3391))
+- deps: bumps github.com/urfave/cli/v2 from 2.27.4 to 2.27.5 ([#3391](https://github.com/khulnasoft/khulnasoft-go/issues/3391))
 
 ## 0.107.0 (October 9th, 2024)
 
 ENHANCEMENTS:
 
-* device_posture_rule: support operational_state for sentinelone_s2s posture rule ([#3234](https://github.com/khulnasoft/khulnasoft-go/issues/3234))
+- device_posture_rule: support operational_state for sentinelone_s2s posture rule ([#3234](https://github.com/khulnasoft/khulnasoft-go/issues/3234))
 
 DEPENDENCIES:
 
-* deps: bumps golang.org/x/net from 0.29.0 to 0.30.0 ([#3336](https://github.com/khulnasoft/khulnasoft-go/issues/3336))
-* deps: bumps golang.org/x/time from 0.6.0 to 0.7.0 ([#3321](https://github.com/khulnasoft/khulnasoft-go/issues/3321))
+- deps: bumps golang.org/x/net from 0.29.0 to 0.30.0 ([#3336](https://github.com/khulnasoft/khulnasoft-go/issues/3336))
+- deps: bumps golang.org/x/time from 0.6.0 to 0.7.0 ([#3321](https://github.com/khulnasoft/khulnasoft-go/issues/3321))
 
 ## 0.106.0 (September 27th, 2024)
 
 ENHANCEMENTS:
 
-* access_application: added target contexts support for access application type infrastructure ([#3186](https://github.com/khulnasoft/khulnasoft-go/issues/3186))
-* access_policy: added infrastructure connection rule support for access policy ([#3186](https://github.com/khulnasoft/khulnasoft-go/issues/3186))
+- access_application: added target contexts support for access application type infrastructure ([#3186](https://github.com/khulnasoft/khulnasoft-go/issues/3186))
+- access_policy: added infrastructure connection rule support for access policy ([#3186](https://github.com/khulnasoft/khulnasoft-go/issues/3186))
 
 ## 0.105.0 (September 25th, 2024)
 
 ENHANCEMENTS:
 
-* device_posture_rule: add score field for custom_s2s posture rule ([#3031](https://github.com/khulnasoft/khulnasoft-go/issues/3031))
-* infrastructure_targets: initialize CRUD endpoints for infrastructure access endpoints ([#3184](https://github.com/khulnasoft/khulnasoft-go/issues/3184))
-* load_balancing: add account load balancer support ([#3027](https://github.com/khulnasoft/khulnasoft-go/issues/3027))
+- device_posture_rule: add score field for custom_s2s posture rule ([#3031](https://github.com/khulnasoft/khulnasoft-go/issues/3031))
+- infrastructure_targets: initialize CRUD endpoints for infrastructure access endpoints ([#3184](https://github.com/khulnasoft/khulnasoft-go/issues/3184))
+- load_balancing: add account load balancer support ([#3027](https://github.com/khulnasoft/khulnasoft-go/issues/3027))
 
 ## 0.104.0 (September 11th, 2024)
 
 BREAKING CHANGES:
 
-* dns: removed deprecated `ZoneID` and `ZoneName` fields ([#2986](https://github.com/khulnasoft/khulnasoft-go/issues/2986))
+- dns: removed deprecated `ZoneID` and `ZoneName` fields ([#2986](https://github.com/khulnasoft/khulnasoft-go/issues/2986))
 
 ENHANCEMENTS:
 
-* bot_management: add ai_bots_protection to public API ([#2974](https://github.com/khulnasoft/khulnasoft-go/issues/2974))
+- bot_management: add ai_bots_protection to public API ([#2974](https://github.com/khulnasoft/khulnasoft-go/issues/2974))
 
 DEPENDENCIES:
 
-* deps: bumps golang.org/x/net from 0.28.0 to 0.29.0 ([#3030](https://github.com/khulnasoft/khulnasoft-go/issues/3030))
-* deps: bumps golang.org/x/time from 0.5.0 to 0.6.0 ([#2816](https://github.com/khulnasoft/khulnasoft-go/issues/2816))
+- deps: bumps golang.org/x/net from 0.28.0 to 0.29.0 ([#3030](https://github.com/khulnasoft/khulnasoft-go/issues/3030))
+- deps: bumps golang.org/x/time from 0.5.0 to 0.6.0 ([#2816](https://github.com/khulnasoft/khulnasoft-go/issues/2816))
 
 ## 0.103.0 (August 28th, 2024)
 
 ENHANCEMENTS:
 
-* errors: implement the Unwrap method for custom error types to access the wrapped errors via errors.Is and errors.As ([#2857](https://github.com/khulnasoft/khulnasoft-go/issues/2857))
-* rulesets: add "contains" field to custom cache key header ([#2935](https://github.com/khulnasoft/khulnasoft-go/issues/2935))
-* teams_certificates: renamed `enabled` to `in_use` ([#2937](https://github.com/khulnasoft/khulnasoft-go/issues/2937))
-* waiting_room: add support for `enabled_origin_commands` ([#2931](https://github.com/khulnasoft/khulnasoft-go/issues/2931))
+- errors: implement the Unwrap method for custom error types to access the wrapped errors via errors.Is and errors.As ([#2857](https://github.com/khulnasoft/khulnasoft-go/issues/2857))
+- rulesets: add "contains" field to custom cache key header ([#2935](https://github.com/khulnasoft/khulnasoft-go/issues/2935))
+- teams_certificates: renamed `enabled` to `in_use` ([#2937](https://github.com/khulnasoft/khulnasoft-go/issues/2937))
+- waiting_room: add support for `enabled_origin_commands` ([#2931](https://github.com/khulnasoft/khulnasoft-go/issues/2931))
 
 DEPENDENCIES:
 
-* deps: bumps github.com/urfave/cli/v2 from 2.27.3 to 2.27.4 ([#2863](https://github.com/khulnasoft/khulnasoft-go/issues/2863))
+- deps: bumps github.com/urfave/cli/v2 from 2.27.3 to 2.27.4 ([#2863](https://github.com/khulnasoft/khulnasoft-go/issues/2863))
 
 ## 0.102.0 (August 14th, 2024)
 
 ENHANCEMENTS:
 
-* rulesets: Add `DeleteRulesetRule` ([#2833](https://github.com/khulnasoft/khulnasoft-go/issues/2833))
-* rulesets: Export `DeleteRulesetRuleParams` fields ([#2886](https://github.com/khulnasoft/khulnasoft-go/issues/2886))
-* teams_accounts: Add `disable_for_time` attribute ([#2797](https://github.com/khulnasoft/khulnasoft-go/issues/2797))
+- rulesets: Add `DeleteRulesetRule` ([#2833](https://github.com/khulnasoft/khulnasoft-go/issues/2833))
+- rulesets: Export `DeleteRulesetRuleParams` fields ([#2886](https://github.com/khulnasoft/khulnasoft-go/issues/2886))
+- teams_accounts: Add `disable_for_time` attribute ([#2797](https://github.com/khulnasoft/khulnasoft-go/issues/2797))
 
 DEPENDENCIES:
 
-* deps: bumps golang.org/x/net from 0.27.0 to 0.28.0 ([#2835](https://github.com/khulnasoft/khulnasoft-go/issues/2835))
+- deps: bumps golang.org/x/net from 0.27.0 to 0.28.0 ([#2835](https://github.com/khulnasoft/khulnasoft-go/issues/2835))
 
 ## 0.101.0 (July 31st, 2024)
 
 ENHANCEMENTS:
 
-* access_application: add `skip_app_launcher_login_page` flag to skip the App Launcher landing page ([#2793](https://github.com/khulnasoft/khulnasoft-go/issues/2793))
-* device_posture_rule: support extended_key_usage, check_private_key, and locations for client_certificate_v2 posture rule ([#1685](https://github.com/khulnasoft/khulnasoft-go/issues/1685))
-* devices_policy: Add new tunnel_protocol field to policy ([#2778](https://github.com/khulnasoft/khulnasoft-go/issues/2778))
-* risk_score_integration: Add support for Risk Score Integrations ([#2786](https://github.com/khulnasoft/khulnasoft-go/issues/2786))
+- access_application: add `skip_app_launcher_login_page` flag to skip the App Launcher landing page ([#2793](https://github.com/khulnasoft/khulnasoft-go/issues/2793))
+- device_posture_rule: support extended_key_usage, check_private_key, and locations for client_certificate_v2 posture rule ([#1685](https://github.com/khulnasoft/khulnasoft-go/issues/1685))
+- devices_policy: Add new tunnel_protocol field to policy ([#2778](https://github.com/khulnasoft/khulnasoft-go/issues/2778))
+- risk_score_integration: Add support for Risk Score Integrations ([#2786](https://github.com/khulnasoft/khulnasoft-go/issues/2786))
 
 DEPENDENCIES:
 
-* deps: bumps github.com/urfave/cli/v2 from 2.27.2 to 2.27.3 ([#2787](https://github.com/khulnasoft/khulnasoft-go/issues/2787))
+- deps: bumps github.com/urfave/cli/v2 from 2.27.2 to 2.27.3 ([#2787](https://github.com/khulnasoft/khulnasoft-go/issues/2787))
 
 ## 0.100.0 (July 18th, 2024)
 
 BREAKING CHANGES:
 
-* teams_accounts: rename `TeamsCertificate` in `TeamsAccountConfiguration` to `TeamsCertificateSetting` ([#2754](https://github.com/khulnasoft/khulnasoft-go/issues/2754))
+- teams_accounts: rename `TeamsCertificate` in `TeamsAccountConfiguration` to `TeamsCertificateSetting` ([#2754](https://github.com/khulnasoft/khulnasoft-go/issues/2754))
 
 ENHANCEMENTS:
 
-* Add CloudConnectorAPI Client ([#2698](https://github.com/khulnasoft/khulnasoft-go/issues/2698))
-* gateway_categories: add ListGatewayCategories which returns all gateway categories. ([#2722](https://github.com/khulnasoft/khulnasoft-go/issues/2722))
-* teams_certificates: add `TeamsCertificate` resource to manage gateway certificates ([#2754](https://github.com/khulnasoft/khulnasoft-go/issues/2754))
+- Add CloudConnectorAPI Client ([#2698](https://github.com/khulnasoft/khulnasoft-go/issues/2698))
+- gateway_categories: add ListGatewayCategories which returns all gateway categories. ([#2722](https://github.com/khulnasoft/khulnasoft-go/issues/2722))
+- teams_certificates: add `TeamsCertificate` resource to manage gateway certificates ([#2754](https://github.com/khulnasoft/khulnasoft-go/issues/2754))
 
 DEPENDENCIES:
 
-* deps: bumps dependabot/fetch-metadata from 2.1.0 to 2.2.0 ([#2727](https://github.com/khulnasoft/khulnasoft-go/issues/2727))
-* deps: bumps golang.org/x/net from 0.26.0 to 0.27.0 ([#2726](https://github.com/khulnasoft/khulnasoft-go/issues/2726))
+- deps: bumps dependabot/fetch-metadata from 2.1.0 to 2.2.0 ([#2727](https://github.com/khulnasoft/khulnasoft-go/issues/2727))
+- deps: bumps golang.org/x/net from 0.26.0 to 0.27.0 ([#2726](https://github.com/khulnasoft/khulnasoft-go/issues/2726))
 
 ## 0.99.0 (July 3rd, 2024)
 
 ENHANCEMENTS:
 
-* teams: added per account certificate setting to teams gateway configuration ([#2713](https://github.com/khulnasoft/khulnasoft-go/issues/2713))
-* teams_list: Added description to ZT list item ([#2621](https://github.com/khulnasoft/khulnasoft-go/issues/2621))
-* teams_rules: Added ZT rule settings `ignore_cname_category_matches` ([#2621](https://github.com/khulnasoft/khulnasoft-go/issues/2621))
+- teams: added per account certificate setting to teams gateway configuration ([#2713](https://github.com/khulnasoft/khulnasoft-go/issues/2713))
+- teams_list: Added description to ZT list item ([#2621](https://github.com/khulnasoft/khulnasoft-go/issues/2621))
+- teams_rules: Added ZT rule settings `ignore_cname_category_matches` ([#2621](https://github.com/khulnasoft/khulnasoft-go/issues/2621))
 
 DEPENDENCIES:
 
-* deps: bumps github.com/hashicorp/go-retryablehttp from 0.7.1 to 0.7.7 ([#2699](https://github.com/khulnasoft/khulnasoft-go/issues/2699))
+- deps: bumps github.com/hashicorp/go-retryablehttp from 0.7.1 to 0.7.7 ([#2699](https://github.com/khulnasoft/khulnasoft-go/issues/2699))
 
 ## 0.98.0 (June 19th, 2024)
 
 ENHANCEMENTS:
 
-* access_application: Add support for SaaS OIDC Access Token Lifetime ([#2455](https://github.com/khulnasoft/khulnasoft-go/issues/2455))
+- access_application: Add support for SaaS OIDC Access Token Lifetime ([#2455](https://github.com/khulnasoft/khulnasoft-go/issues/2455))
 
 DEPENDENCIES:
 
-* deps: bumps golang.org/x/net from 0.25.0 to 0.26.0 ([#2364](https://github.com/khulnasoft/khulnasoft-go/issues/2364))
-* deps: bumps goreleaser/goreleaser-action from 5.1.0 to 6.0.0 ([#2365](https://github.com/khulnasoft/khulnasoft-go/issues/2365))
+- deps: bumps golang.org/x/net from 0.25.0 to 0.26.0 ([#2364](https://github.com/khulnasoft/khulnasoft-go/issues/2364))
+- deps: bumps goreleaser/goreleaser-action from 5.1.0 to 6.0.0 ([#2365](https://github.com/khulnasoft/khulnasoft-go/issues/2365))
 
 ## 0.97.0 (June 5th, 2024)
 
 ENHANCEMENTS:
 
-* access_application: Add support for Hybrid/Implicit flows and options ([#2131](https://github.com/khulnasoft/khulnasoft-go/issues/2131))
-* teams_account: Add Zero Trust connectivity settings ([#2165](https://github.com/khulnasoft/khulnasoft-go/issues/2165))
-* teams_accounts: Add `use_zt_virtual_ip` attribute ([#2126](https://github.com/khulnasoft/khulnasoft-go/issues/2126))
+- access_application: Add support for Hybrid/Implicit flows and options ([#2131](https://github.com/khulnasoft/khulnasoft-go/issues/2131))
+- teams_account: Add Zero Trust connectivity settings ([#2165](https://github.com/khulnasoft/khulnasoft-go/issues/2165))
+- teams_accounts: Add `use_zt_virtual_ip` attribute ([#2126](https://github.com/khulnasoft/khulnasoft-go/issues/2126))
 
 DEPENDENCIES:
 
-* deps: bumps `github.com/goccy/go-json` from 0.10.2 to 0.10.3 ([#2107](https://github.com/khulnasoft/khulnasoft-go/issues/2107))
-* deps: bumps github.com/hashicorp/go-retryablehttp from 0.7.6 to 0.7.7 ([#2249](https://github.com/khulnasoft/khulnasoft-go/issues/2249))
+- deps: bumps `github.com/goccy/go-json` from 0.10.2 to 0.10.3 ([#2107](https://github.com/khulnasoft/khulnasoft-go/issues/2107))
+- deps: bumps github.com/hashicorp/go-retryablehttp from 0.7.6 to 0.7.7 ([#2249](https://github.com/khulnasoft/khulnasoft-go/issues/2249))
 
 ## 0.96.0 (May 22nd, 2024)
 
 ENHANCEMENTS:
 
-* access_application: Add Refresh Token, Custom Claims, and PKCE Without Client Secret support for OIDC SaaS configurations ([#1981](https://github.com/khulnasoft/khulnasoft-go/issues/1981))
-* ruleset: add support for action parameters `fonts` and `disable_rum` ([#1832](https://github.com/khulnasoft/khulnasoft-go/issues/1832))
+- access_application: Add Refresh Token, Custom Claims, and PKCE Without Client Secret support for OIDC SaaS configurations ([#1981](https://github.com/khulnasoft/khulnasoft-go/issues/1981))
+- ruleset: add support for action parameters `fonts` and `disable_rum` ([#1832](https://github.com/khulnasoft/khulnasoft-go/issues/1832))
 
 DEPENDENCIES:
 
-* deps: bumps bflad/action-milestone-comment from 1 to 2 ([#1991](https://github.com/khulnasoft/khulnasoft-go/issues/1991))
-* deps: bumps github.com/hashicorp/go-retryablehttp from 0.7.5 to 0.7.6 ([#1993](https://github.com/khulnasoft/khulnasoft-go/issues/1993))
-* deps: bumps goreleaser/goreleaser-action from 5.0.0 to 5.1.0 ([#1992](https://github.com/khulnasoft/khulnasoft-go/issues/1992))
+- deps: bumps bflad/action-milestone-comment from 1 to 2 ([#1991](https://github.com/khulnasoft/khulnasoft-go/issues/1991))
+- deps: bumps github.com/hashicorp/go-retryablehttp from 0.7.5 to 0.7.6 ([#1993](https://github.com/khulnasoft/khulnasoft-go/issues/1993))
+- deps: bumps goreleaser/goreleaser-action from 5.0.0 to 5.1.0 ([#1992](https://github.com/khulnasoft/khulnasoft-go/issues/1992))
 
 ## 0.95.0 (May 8th, 2024)
 
 ENHANCEMENTS:
 
-* access_application: add support for `policies` array ([#1956](https://github.com/khulnasoft/khulnasoft-go/issues/1956))
-* access_application: add support for `scim_config` ([#1921](https://github.com/khulnasoft/khulnasoft-go/issues/1921))
-* access_policy: add support for reusable policies ([#1956](https://github.com/khulnasoft/khulnasoft-go/issues/1956))
-* dlp: add support for zt risk behavior configuration ([#1887](https://github.com/khulnasoft/khulnasoft-go/issues/1887))
+- access_application: add support for `policies` array ([#1956](https://github.com/khulnasoft/khulnasoft-go/issues/1956))
+- access_application: add support for `scim_config` ([#1921](https://github.com/khulnasoft/khulnasoft-go/issues/1921))
+- access_policy: add support for reusable policies ([#1956](https://github.com/khulnasoft/khulnasoft-go/issues/1956))
+- dlp: add support for zt risk behavior configuration ([#1887](https://github.com/khulnasoft/khulnasoft-go/issues/1887))
 
 BUG FIXES:
 
-* access_application: fix scim configuration authentication json marshalling ([#1959](https://github.com/khulnasoft/khulnasoft-go/issues/1959))
+- access_application: fix scim configuration authentication json marshalling ([#1959](https://github.com/khulnasoft/khulnasoft-go/issues/1959))
 
 DEPENDENCIES:
 
-* deps: bumps dependabot/fetch-metadata from 2.0.0 to 2.1.0 ([#1839](https://github.com/khulnasoft/khulnasoft-go/issues/1839))
-* deps: bumps github.com/urfave/cli/v2 from 2.27.1 to 2.27.2 ([#1861](https://github.com/khulnasoft/khulnasoft-go/issues/1861))
-* deps: bumps golang.org/x/net from 0.24.0 to 0.25.0 ([#1974](https://github.com/khulnasoft/khulnasoft-go/issues/1974))
-* deps: bumps golangci/golangci-lint-action from 4 to 5 ([#1845](https://github.com/khulnasoft/khulnasoft-go/issues/1845))
-* deps: bumps golangci/golangci-lint-action from 5 to 6 ([#1975](https://github.com/khulnasoft/khulnasoft-go/issues/1975))
+- deps: bumps dependabot/fetch-metadata from 2.0.0 to 2.1.0 ([#1839](https://github.com/khulnasoft/khulnasoft-go/issues/1839))
+- deps: bumps github.com/urfave/cli/v2 from 2.27.1 to 2.27.2 ([#1861](https://github.com/khulnasoft/khulnasoft-go/issues/1861))
+- deps: bumps golang.org/x/net from 0.24.0 to 0.25.0 ([#1974](https://github.com/khulnasoft/khulnasoft-go/issues/1974))
+- deps: bumps golangci/golangci-lint-action from 4 to 5 ([#1845](https://github.com/khulnasoft/khulnasoft-go/issues/1845))
+- deps: bumps golangci/golangci-lint-action from 5 to 6 ([#1975](https://github.com/khulnasoft/khulnasoft-go/issues/1975))
 
 ## 0.94.0 (April 24th, 2024)
 
 ENHANCEMENTS:
 
-* access_application: support options_preflight_bypass for access_application ([#1790](https://github.com/khulnasoft/khulnasoft-go/issues/1790))
-* gateway: added ecs_support field to teams_location resource ([#1826](https://github.com/khulnasoft/khulnasoft-go/issues/1826))
-* teams_account: adds custom certificate setting to teams account configuration ([#1811](https://github.com/khulnasoft/khulnasoft-go/issues/1811))
-* workers: support deleting namespaced Workers ([#1737](https://github.com/khulnasoft/khulnasoft-go/issues/1737))
+- access_application: support options_preflight_bypass for access_application ([#1790](https://github.com/khulnasoft/khulnasoft-go/issues/1790))
+- gateway: added ecs_support field to teams_location resource ([#1826](https://github.com/khulnasoft/khulnasoft-go/issues/1826))
+- teams_account: adds custom certificate setting to teams account configuration ([#1811](https://github.com/khulnasoft/khulnasoft-go/issues/1811))
+- workers: support deleting namespaced Workers ([#1737](https://github.com/khulnasoft/khulnasoft-go/issues/1737))
 
 DEPENDENCIES:
 
-* deps: bumps golang.org/x/net from 0.19.0 to 0.23.0 ([#1825](https://github.com/khulnasoft/khulnasoft-go/issues/1825))
+- deps: bumps golang.org/x/net from 0.19.0 to 0.23.0 ([#1825](https://github.com/khulnasoft/khulnasoft-go/issues/1825))
 
 ## 0.93.0 (April 10th, 2024)
 
 BREAKING CHANGES:
 
-* dns: Remove "locked" flag which is always false ([#1618](https://github.com/khulnasoft/khulnasoft-go/issues/1618))
+- dns: Remove "locked" flag which is always false ([#1618](https://github.com/khulnasoft/khulnasoft-go/issues/1618))
 
 ENHANCEMENTS:
 
-* magic_transit_ipsec_tunnel: Adds support for replay_protection boolean flag ([#1710](https://github.com/khulnasoft/khulnasoft-go/issues/1710))
+- magic_transit_ipsec_tunnel: Adds support for replay_protection boolean flag ([#1710](https://github.com/khulnasoft/khulnasoft-go/issues/1710))
 
 DEPENDENCIES:
 
-* deps: bumps golang.org/x/net from 0.22.0 to 0.24.0 ([#1688](https://github.com/khulnasoft/khulnasoft-go/issues/1688))
+- deps: bumps golang.org/x/net from 0.22.0 to 0.24.0 ([#1688](https://github.com/khulnasoft/khulnasoft-go/issues/1688))
 
 ## 0.92.0 (March 27th, 2024)
 
@@ -332,7 +332,7 @@ BUG FIXES:
 
 - access_seats: UpdateAccessUserSeat: fix parameters not being an array when sending to the api. This caused an error when updating a user's seat ([#1480](https://github.com/khulnasoft/khulnasoft-go/issues/1480))
 - access_users: ListAccessUsers was returning wrong values in pointer fields due to variable missused in loop ([#1482](https://github.com/khulnasoft/khulnasoft-go/issues/1482))
-- flarectl: alias zone certs to "ct" instead of duplicating the "c" alias ([#1484](https://github.com/khulnasoft/khulnasoft-go/issues/1484))
+- firectl: alias zone certs to "ct" instead of duplicating the "c" alias ([#1484](https://github.com/khulnasoft/khulnasoft-go/issues/1484))
 
 DEPENDENCIES:
 
@@ -607,7 +607,7 @@ ENHANCEMENTS:
 
 BUG FIXES:
 
-- flarectl: allow for create or update to actually create the record ([#1341](https://github.com/khulnasoft/khulnasoft-go/issues/1341))
+- firectl: allow for create or update to actually create the record ([#1341](https://github.com/khulnasoft/khulnasoft-go/issues/1341))
 - load_balancing: Fix pool creation with MinimumOrigins set to 0 ([#1338](https://github.com/khulnasoft/khulnasoft-go/issues/1338))
 - workers: Fix namespace dispatch upload API path ([#1345](https://github.com/khulnasoft/khulnasoft-go/issues/1345))
 
@@ -780,7 +780,7 @@ ENHANCEMENTS:
 BUG FIXES:
 
 - dns: fix MX record priority not set by UpdateDNSRecord ([#1290](https://github.com/khulnasoft/khulnasoft-go/issues/1290))
-- flarectl/dns: ensure MX priority value is dereferenced ([#1289](https://github.com/khulnasoft/khulnasoft-go/issues/1289))
+- firectl/dns: ensure MX priority value is dereferenced ([#1289](https://github.com/khulnasoft/khulnasoft-go/issues/1289))
 - turnstile: remove `SiteKey` being sent in rotate secret's request body ([#1285](https://github.com/khulnasoft/khulnasoft-go/issues/1285))
 - turnstile: remove `SiteKey`/`Secret` being sent in update request body ([#1284](https://github.com/khulnasoft/khulnasoft-go/issues/1284))
 

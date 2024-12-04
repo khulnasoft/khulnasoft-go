@@ -1,6 +1,6 @@
 .idea
 .vscode/
-cmd/flarectl/dist/
-cmd/flarectl/flarectl
-cmd/flarectl/flarectl.exe
+cmd/firectl/dist/
+cmd/firectl/firectl
+cmd/firectl/firectl.exe
 .flox/
