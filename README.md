@@ -1,35 +1,39 @@
-# khulnasoft-go
+# Khulnasoft Go API Library
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/khulnasoft/khulnasoft-go.svg)](https://pkg.go.dev/github.com/khulnasoft/khulnasoft-go)
-![Test](https://github.com/khulnasoft/khulnasoft-go/workflows/Test/badge.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/khulnasoft/khulnasoft-go?style=flat-square)](https://goreportcard.com/report/github.com/khulnasoft/khulnasoft-go)
+<a href="https://pkg.go.dev/github.com/khulnasoft/khulnasoft-go"><img src="https://pkg.go.dev/badge/github.com/khulnasoft/khulnasoft-go.svg" alt="Go Reference"></a>
 
-> **Note**: This library is under active development as we expand it to cover
-> our (expanding!) API. Consider the public API of this package a little
-> unstable as we work towards a v1.0.
-
-A Go library for interacting with
-[Khulnasoft's API v4](https://api.khulnasoft.com/). This library allows you to:
-
-- Manage and automate changes to your DNS records within Khulnasoft
-- Manage and automate changes to your zones (domains) on Khulnasoft, including
-  adding new zones to your account
-- List and modify the status of WAF (Web Application Firewall) rules for your
-  zones
-- Fetch Khulnasoft's IP ranges for automating your firewall whitelisting
-
-A command-line client, [flarectl](cmd/flarectl), is also available as part of
-this project.
+The Khulnasoft Go library provides convenient access to [the Khulnasoft REST
+API](https://developers.khulnasoft.com/api) from applications written in Go. The full API of this library can be found in [api.md](api.md).
 
 ## Installation
 
-You need a working Go environment. We officially support only currently supported Go versions according to [Go project's release policy](https://go.dev/doc/devel/release#policy).
+<!-- x-release-please-start-version -->
 
-```
-go get github.com/khulnasoft/khulnasoft-go
+```go
+import (
+	"github.com/khulnasoft/khulnasoft-go" // imported as khulnasoft
+)
 ```
 
-## Getting Started
+<!-- x-release-please-end -->
+
+Or to pin the version:
+
+<!-- x-release-please-start-version -->
+
+```sh
+go get -u 'github.com/khulnasoft/khulnasoft-go@v3.1.0'
+```
+
+<!-- x-release-please-end -->
+
+## Requirements
+
+This library requires Go 1.18+.
+
+## Usage
+
+The full API of this library can be found in [api.md](api.md).
 
 ```go
 package main
@@ -37,49 +41,338 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
-	"os"
 
 	"github.com/khulnasoft/khulnasoft-go"
+	"github.com/khulnasoft/khulnasoft-go/option"
+	"github.com/khulnasoft/khulnasoft-go/zones"
 )
 
 func main() {
-	// Construct a new API object using a global API key
-	api, err := khulnasoft.New(os.Getenv("KHULNASOFT_API_KEY"), os.Getenv("KHULNASOFT_API_EMAIL"))
-	// alternatively, you can use a scoped API token
-	// api, err := khulnasoft.NewWithAPIToken(os.Getenv("KHULNASOFT_API_TOKEN"))
+	client := khulnasoft.NewClient(
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"), // defaults to os.LookupEnv("KHULNASOFT_API_KEY")
+		option.WithAPIEmail("user@example.com"),               // defaults to os.LookupEnv("KHULNASOFT_EMAIL")
+	)
+	zone, err := client.Zones.New(context.TODO(), zones.ZoneNewParams{
+		Account: khulnasoft.F(zones.ZoneNewParamsAccount{
+			ID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
+		}),
+		Name: khulnasoft.F("example.com"),
+		Type: khulnasoft.F(zones.TypeFull),
+	})
 	if err != nil {
-		log.Fatal(err)
+		panic(err.Error())
 	}
+	fmt.Printf("%+v\n", zone.ID)
+}
 
-	// Most API calls require a Context
-	ctx := context.Background()
+```
 
-	// Fetch user details on the account
-	u, err := api.UserDetails(ctx)
-	if err != nil {
-		log.Fatal(err)
-	}
-	// Print user details
-	fmt.Println(u)
+### Request fields
+
+All request parameters are wrapped in a generic `Field` type,
+which we use to distinguish zero values from null or omitted fields.
+
+This prevents accidentally sending a zero value if you forget a required parameter,
+and enables explicitly sending `null`, `false`, `''`, or `0` on optional parameters.
+Any field not specified is not sent.
+
+To construct fields with values, use the helpers `String()`, `Int()`, `Float()`, or most commonly, the generic `F[T]()`.
+To send a null, use `Null[T]()`, and to send a nonconforming value, use `Raw[T](any)`. For example:
+
+```go
+params := FooParams{
+	Name: khulnasoft.F("hello"),
+
+	// Explicitly send `"description": null`
+	Description: khulnasoft.Null[string](),
+
+	Point: khulnasoft.F(khulnasoft.Point{
+		X: khulnasoft.Int(0),
+		Y: khulnasoft.Int(1),
+
+		// In cases where the API specifies a given type,
+		// but you want to send something else, use `Raw`:
+		Z: khulnasoft.Raw[int64](0.01), // sends a float
+	}),
 }
 ```
 
-Also refer to the
-[API documentation](https://pkg.go.dev/github.com/khulnasoft/khulnasoft-go) for
-how to use this package in-depth.
+### Response objects
 
-## Experimental improvements
+All fields in response structs are value types (not pointers or wrappers).
 
-This library is starting to ship with experimental improvements that are not yet
-ready for production but will be introduced before the next major version. See
-[experimental README](/docs/experimental.md) for full details.
+If a given field is `null`, not present, or invalid, the corresponding field
+will simply be its zero value.
 
-## Contributing
+All response structs also include a special `JSON` field, containing more detailed
+information about each property, which you can use like so:
 
-Pull Requests are welcome, but please open an issue (or comment in an existing
-issue) to discuss any non-trivial changes before submitting code.
+```go
+if res.Name == "" {
+	// true if `"name"` is either not present or explicitly null
+	res.JSON.Name.IsNull()
 
-## License
+	// true if the `"name"` key was not present in the repsonse JSON at all
+	res.JSON.Name.IsMissing()
 
-BSD licensed. See the [LICENSE](LICENSE) file for details.
+	// When the API returns data that cannot be coerced to the expected type:
+	if res.JSON.Name.IsInvalid() {
+		raw := res.JSON.Name.Raw()
+
+		legacyName := struct{
+			First string `json:"first"`
+			Last  string `json:"last"`
+		}{}
+		json.Unmarshal([]byte(raw), &legacyName)
+		name = legacyName.First + " " + legacyName.Last
+	}
+}
+```
+
+These `.JSON` structs also include an `Extras` map containing
+any properties in the json response that were not specified
+in the struct. This can be useful for API features not yet
+present in the SDK.
+
+```go
+body := res.JSON.ExtraFields["my_unexpected_field"].Raw()
+```
+
+### RequestOptions
+
+This library uses the functional options pattern. Functions defined in the
+`option` package return a `RequestOption`, which is a closure that mutates a
+`RequestConfig`. These options can be supplied to the client or at individual
+requests. For example:
+
+```go
+client := khulnasoft.NewClient(
+	// Adds a header to every request made by the client
+	option.WithHeader("X-Some-Header", "custom_header_info"),
+)
+
+client.Zones.New(context.TODO(), ...,
+	// Override the header
+	option.WithHeader("X-Some-Header", "some_other_custom_header_info"),
+	// Add an undocumented field to the request body, using sjson syntax
+	option.WithJSONSet("some.json.path", map[string]string{"my": "object"}),
+)
+```
+
+See the [full list of request options](https://pkg.go.dev/github.com/khulnasoft/khulnasoft-go/option).
+
+### Pagination
+
+This library provides some conveniences for working with paginated list endpoints.
+
+You can use `.ListAutoPaging()` methods to iterate through items across all pages:
+
+```go
+iter := client.Accounts.ListAutoPaging(context.TODO(), accounts.AccountListParams{})
+// Automatically fetches more pages as needed.
+for iter.Next() {
+	account := iter.Current()
+	fmt.Printf("%+v\n", account)
+}
+if err := iter.Err(); err != nil {
+	panic(err.Error())
+}
+```
+
+Or you can use simple `.List()` methods to fetch a single page and receive a standard response object
+with additional helper methods like `.GetNextPage()`, e.g.:
+
+```go
+page, err := client.Accounts.List(context.TODO(), accounts.AccountListParams{})
+for page != nil {
+	for _, account := range page.Result {
+		fmt.Printf("%+v\n", account)
+	}
+	page, err = page.GetNextPage()
+}
+if err != nil {
+	panic(err.Error())
+}
+```
+
+### Errors
+
+When the API returns a non-success status code, we return an error with type
+`*khulnasoft.Error`. This contains the `StatusCode`, `*http.Request`, and
+`*http.Response` values of the request, as well as the JSON of the error body
+(much like other response objects in the SDK).
+
+To handle errors, we recommend that you use the `errors.As` pattern:
+
+```go
+_, err := client.Zones.Get(context.TODO(), zones.ZoneGetParams{
+	ZoneID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
+})
+if err != nil {
+	var apierr *khulnasoft.Error
+	if errors.As(err, &apierr) {
+		println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
+		println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
+	}
+	panic(err.Error()) // GET "/zones/{zone_id}": 400 Bad Request { ... }
+}
+```
+
+When other errors occur, they are returned unwrapped; for example,
+if HTTP transport fails, you might receive `*url.Error` wrapping `*net.OpError`.
+
+### Timeouts
+
+Requests do not time out by default; use context to configure a timeout for a request lifecycle.
+
+Note that if a request is [retried](#retries), the context timeout does not start over.
+To set a per-retry timeout, use `option.WithRequestTimeout()`.
+
+```go
+// This sets the timeout for the request, including all the retries.
+ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
+defer cancel()
+client.Zones.Edit(
+	ctx,
+	zones.ZoneEditParams{
+		ZoneID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
+	},
+	// This sets the per-retry timeout
+	option.WithRequestTimeout(20*time.Second),
+)
+```
+
+### File uploads
+
+Request parameters that correspond to file uploads in multipart requests are typed as
+`param.Field[io.Reader]`. The contents of the `io.Reader` will by default be sent as a multipart form
+part with the file name of "anonymous_file" and content-type of "application/octet-stream".
+
+The file name and content-type can be customized by implementing `Name() string` or `ContentType()
+string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a
+file returned by `os.Open` will be sent with the file name on disk.
+
+We also provide a helper `khulnasoft.FileParam(reader io.Reader, filename string, contentType string)`
+which can be used to wrap any `io.Reader` with the appropriate file name and content type.
+
+### Retries
+
+Certain errors will be automatically retried 2 times by default, with a short exponential backoff.
+We retry by default all connection errors, 408 Request Timeout, 409 Conflict, 429 Rate Limit,
+and >=500 Internal errors.
+
+You can use the `WithMaxRetries` option to configure or disable this:
+
+```go
+// Configure the default for all requests:
+client := khulnasoft.NewClient(
+	option.WithMaxRetries(0), // default is 2
+)
+
+// Override per-request:
+client.Zones.Get(
+	context.TODO(),
+	zones.ZoneGetParams{
+		ZoneID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
+	},
+	option.WithMaxRetries(5),
+)
+```
+
+### Making custom/undocumented requests
+
+This library is typed for convenient access to the documented API. If you need to access undocumented
+endpoints, params, or response properties, the library can still be used.
+
+#### Undocumented endpoints
+
+To make requests to undocumented endpoints, you can use `client.Get`, `client.Post`, and other HTTP verbs.
+`RequestOptions` on the client, such as retries, will be respected when making these requests.
+
+```go
+var (
+    // params can be an io.Reader, a []byte, an encoding/json serializable object,
+    // or a "…Params" struct defined in this library.
+    params map[string]interface{}
+
+    // result can be an []byte, *http.Response, a encoding/json deserializable object,
+    // or a model defined in this library.
+    result *http.Response
+)
+err := client.Post(context.Background(), "/unspecified", params, &result)
+if err != nil {
+    …
+}
+```
+
+#### Undocumented request params
+
+To make requests using undocumented parameters, you may use either the `option.WithQuerySet()`
+or the `option.WithJSONSet()` methods.
+
+```go
+params := FooNewParams{
+    ID:   khulnasoft.F("id_xxxx"),
+    Data: khulnasoft.F(FooNewParamsData{
+        FirstName: khulnasoft.F("John"),
+    }),
+}
+client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name", "Doe"))
+```
+
+#### Undocumented response properties
+
+To access undocumented response properties, you may either access the raw JSON of the response as a string
+with `result.JSON.RawJSON()`, or get the raw JSON of a particular field on the result with
+`result.JSON.Foo.Raw()`.
+
+Any fields that are not present on the response struct will be saved and can be accessed by `result.JSON.ExtraFields()` which returns the extra fields as a `map[string]Field`.
+
+### Middleware
+
+We provide `option.WithMiddleware` which applies the given
+middleware to requests.
+
+```go
+func Logger(req *http.Request, next option.MiddlewareNext) (res *http.Response, err error) {
+	// Before the request
+	start := time.Now()
+	LogReq(req)
+
+	// Forward the request to the next handler
+	res, err = next(req)
+
+	// Handle stuff after the request
+	end := time.Now()
+	LogRes(res, err, start - end)
+
+    return res, err
+}
+
+client := khulnasoft.NewClient(
+	option.WithMiddleware(Logger),
+)
+```
+
+When multiple middlewares are provided as variadic arguments, the middlewares
+are applied left to right. If `option.WithMiddleware` is given
+multiple times, for example first in the client then the method, the
+middleware in the client will run first and the middleware given in the method
+will run next.
+
+You may also replace the default `http.Client` with
+`option.WithHTTPClient(client)`. Only one http client is
+accepted (this overwrites any previous client) and receives requests after any
+middleware has been applied.
+
+## Semantic versioning
+
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+
+1. Changes that only affect static types, without breaking runtime behavior.
+1. Changes to library internals which are technically public but not intended or documented for external use. _(Please open a GitHub issue to let us know if you are relying on such internals)_.
+1. Changes that we do not expect to impact the vast majority of users in practice.
+
+> [!WARNING]
+> In addition to the above, changes to type names, structure or methods _may_ occur as we stabilise the automated codegen pipeline. This will be removed in the future once we are further along and the service owner OpenAPI schemas have reached a higher maturity level where changes are not as constant.
+> If this isn't suitable for your project, we recommend pinning to a known version or using the previous major version.

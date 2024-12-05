@@ -1,0 +1,148 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+package accounts_test
+
+import (
+	"context"
+	"errors"
+	"os"
+	"testing"
+
+	"github.com/khulnasoft/khulnasoft-go"
+	"github.com/khulnasoft/khulnasoft-go/accounts"
+	"github.com/khulnasoft/khulnasoft-go/internal/testutil"
+	"github.com/khulnasoft/khulnasoft-go/option"
+	"github.com/khulnasoft/khulnasoft-go/shared"
+)
+
+func TestSubscriptionNewWithOptionalParams(t *testing.T) {
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Accounts.Subscriptions.New(context.TODO(), accounts.SubscriptionNewParams{
+		AccountID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
+		Subscription: shared.SubscriptionParam{
+			Frequency: khulnasoft.F(shared.SubscriptionFrequencyWeekly),
+			RatePlan: khulnasoft.F(shared.RatePlanParam{
+				ID:                khulnasoft.F("free"),
+				Currency:          khulnasoft.F("USD"),
+				ExternallyManaged: khulnasoft.F(false),
+				IsContract:        khulnasoft.F(false),
+				PublicName:        khulnasoft.F("Business Plan"),
+				Scope:             khulnasoft.F("zone"),
+				Sets:              khulnasoft.F([]string{"string", "string", "string"}),
+			}),
+		},
+	})
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}
+
+func TestSubscriptionUpdateWithOptionalParams(t *testing.T) {
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Accounts.Subscriptions.Update(
+		context.TODO(),
+		"506e3185e9c882d175a2d0cb0093d9f2",
+		accounts.SubscriptionUpdateParams{
+			AccountID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
+			Subscription: shared.SubscriptionParam{
+				Frequency: khulnasoft.F(shared.SubscriptionFrequencyWeekly),
+				RatePlan: khulnasoft.F(shared.RatePlanParam{
+					ID:                khulnasoft.F("free"),
+					Currency:          khulnasoft.F("USD"),
+					ExternallyManaged: khulnasoft.F(false),
+					IsContract:        khulnasoft.F(false),
+					PublicName:        khulnasoft.F("Business Plan"),
+					Scope:             khulnasoft.F("zone"),
+					Sets:              khulnasoft.F([]string{"string", "string", "string"}),
+				}),
+			},
+		},
+	)
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}
+
+func TestSubscriptionDelete(t *testing.T) {
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Accounts.Subscriptions.Delete(
+		context.TODO(),
+		"506e3185e9c882d175a2d0cb0093d9f2",
+		accounts.SubscriptionDeleteParams{
+			AccountID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
+		},
+	)
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}
+
+func TestSubscriptionGet(t *testing.T) {
+	baseURL := "http://localhost:4010"
+	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
+		baseURL = envURL
+	}
+	if !testutil.CheckTestServer(t, baseURL) {
+		return
+	}
+	client := khulnasoft.NewClient(
+		option.WithBaseURL(baseURL),
+		option.WithAPIKey("144c9defac04969c7bfad8efaa8ea194"),
+		option.WithAPIEmail("user@example.com"),
+	)
+	_, err := client.Accounts.Subscriptions.Get(context.TODO(), accounts.SubscriptionGetParams{
+		AccountID: khulnasoft.F("023e105f4ecef8ad9ca31a8372d0c353"),
+	})
+	if err != nil {
+		var apierr *khulnasoft.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
+	}
+}
